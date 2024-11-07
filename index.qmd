@@ -1,7 +1,5 @@
-# Preface {.unnumbered}
+# Preface to the {{< var ay >}} presentation {.unnumbered}
 
-This is a Quarto book, generated using the `sipbs-compbiol-book-template` GitHub template.
+Welcome to the {{< var ay >}} edition of online supporting material for the MP968 workshop in Experimental Design.
 
-The Preface page is intended as a frontispiece with brief introductory information about the book and, maybe, its authors.
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This is the first presentation of this material in this form, and we would be very grateful to hear feedback [by email]({{< var admin.email >}}) or through the [GitHub repository Issues page]({{< var github.issues >}}).
