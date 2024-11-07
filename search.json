@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "MP968: Experimental Design Workshop",
     "section": "",
-    "text": "Preface\nThis is a Quarto book, generated using the sipbs-compbiol-book-template GitHub template.\nThe Preface page is intended as a frontispiece with brief introductory information about the book and, maybe, its authors.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "text": "Preface to the 2024-25 presentation\nWelcome to the 2024-25 edition of online supporting material for the MP968 workshop in Experimental Design.\nThis is the first presentation of this material in this form, and we would be very grateful to hear feedback by email or through the GitHub repository Issues page.",
     "crumbs": [
-      "Preface"
+      "Preface to the {{< var ay >}} presentation"
     ]
   },
   {
@@ -14,7 +14,17 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "The Introduction page is intended as a short introduction to the book.\nLike most Quarto books, this is a book created from markdown and executable code.\nThis kind of book is an example of literate programming - the intertwining of nicely-formatted text and images, and executable code. For example, the R code cell below executes and produces output when the book is compiled:\n\n1 + 1\n\n[1] 2\n\n\nBut the R code cell below does not:\n\nsummary(cars)\n\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "1.1 Learning Objectives\nAfter this workshop, students should be able to…",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#learning-objectives",
+    "href": "intro.html#learning-objectives",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Understand and explain the relationship between measurements, statistics, and experimental design.\nUnderstand and explain that statistical models are devices that process data to produce estimates that support scientific insight.\nUnderstand how assumptions and expectations about the factors influencing an experiment can be translated into an effective experimental design.\nUse g*Power to estimate a group size for a statistical test.\nUse the NC3Rs Experimental Design Assistant to lay out and analyse a simple experiment, and export the design information.\n\n\n\n\n\n\n\nWhat this workshop is\n\n\n\nThis workshop is an introduction to…\n\nthe way your data collection is subject to factors that affect all measurements\nhow the biological or physical process you are studying affects the data you collect\nmaking assumptions about causal factors in your data explicit\nusing experimental design to improve data collection, exclude influences you are not scientifically interested in, and minimise the number of experimental subjects required to test a model\nhow to use the NC3Rs Experimental Design Assistant (EDA) to lay out and analyse an experimental design\n\n\n\n\n\n\n\n\n\nWhat this workshop is not\n\n\n\n\nYet another introduction to t-tests, means, and standard deviations\nA guide to how you should design or analyse any specific experiment\nAdvocacy for any particular statistical method, software, or tool\nAn exhaustive presentation of statistics or methodology",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -61,16 +71,6 @@
     "crumbs": [
       "Late Section",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>`R` Playground</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
     ]
   },
   {
