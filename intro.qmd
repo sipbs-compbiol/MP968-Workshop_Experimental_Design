@@ -45,5 +45,5 @@ This workshop is an introduction to…
 1. Yet another introduction to t-tests, means, and standard deviations
 2. A guide to how you should design or analyse any specific experiment
 3. Advocacy for any particular statistical method, software, or tool
-4. An exhaustive presentation of statistics or methodology
+4. An exhaustive presentation of statistics or training in statistical methodology
 :::
