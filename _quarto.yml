@@ -6,7 +6,7 @@ project:
 # These variables define the book contents - adjust them as necessary
 book:
   # [A] BOOK TITLE
-  title: "THE TITLE OF THE BOOK"
+  title: "MP968: Experimental Design Workshop"
   reader-mode: true
   
   # The cover image and favicon; these may not need to be changed
@@ -17,20 +17,20 @@ book:
   # [B] FOOTER TEXT
   page-footer:
     left: |
-      THIS IS A SHORT PIECE OF FOOTER TEXT NAMING THE BOOK/AUTHORS
+      This workshop is written and maintained by Dr Leighton Pritchard
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
 
   # Sets the URL for the repository
   # [C] GITHUB REPOSITORY URL
-  repo-url: https://github.com/sipbs-compbiol/REPOSITORY
+  repo-url: https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design
   repo-branch: main
   repo-actions: [edit, issue]
 
   # Sets author information and publication/presentation date
   # [D] AUTHOR INFORMATION AND PUBLICATION/PRESENTATION DATE
-  author: "AUTHOR NAME"
-  date: "DD/MM/YY"
+  author: "Leighton Pritchard"
+  date: "25/11/2024"
 
   # Define chapters and sections here
   # [E] CHAPTERS AND SECTIONS
