@@ -47,6 +47,7 @@ book:
         - webr-example.qmd
     
     - references.qmd
+#    - additional_reading.qmd
 
 # Location of BibTeX format reference file; may not need to be changed
 bibliography: references.bib

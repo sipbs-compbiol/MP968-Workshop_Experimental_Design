@@ -1,15 +1,20 @@
-# How Wet Is The Earth? {#sec-wet-earth .unnumbered}
+# How Wet Is The Earth? {#sec-wet-earth}
 
 ## Measuring something that can't practically be measured
 
-Suppose you want to measure the proportion of the Earth's surface that is water. How would you go about it, practically?
+Suppose you want to measure the proportion of the Earth's surface that is water. How would you go about it, practically? Maybe you could…
 
-- You could pour the water off into a large measuring cylinder, only there isn't one big enough.
-- You could take a tape measure and find the cumulative distance around the edge of all the oceans, then calculate the area. But you can't measure the length of all coastlines. Due to the [Coastline Paradox](https://en.wikipedia.org/wiki/Coastline_paradox), coastlines have no well-defined length.
+- pour the water off into a large measuring cylinder. But there isn't a container big enough.
+- take some time out of your studies and walk around the globe with a tape measure to find the cumulative distance around the edge of all the oceans, then calculate the area. **But you can't measure the length of a coastline**. Due to the [Coastline Paradox](https://en.wikipedia.org/wiki/Coastline_paradox), coastlines have no well-defined length.
 
-So, if we can't find a way to absolutely, precisely measure this, we must instead _estimate_ the proportion of the Earth's surface that is water.
+::: {.column-margin}
 
-::: {.callout-information}
+![The Earth, hanging in space, with a faucet inserted so that we can drain the oceans and measure their volume.](assets/images/earth_faucet.jpg){#fig-earth-faucet width=80%}
+:::
+
+So, if we can't find a way to absolutely, precisely measure it, we must instead _estimate_ the proportion of the Earth's surface that is water.
+
+::: {.callout-note}
 ## It's an analogy
 
 This situation is not really that far removed from making an experimental measurement. 
