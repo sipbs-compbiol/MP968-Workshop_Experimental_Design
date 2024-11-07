@@ -1,0 +1,25 @@
+# How Wet Is The Earth? {#sec-wet-earth .unnumbered}
+
+## Measuring something that can't practically be measured
+
+Suppose you want to measure the proportion of the Earth's surface that is water. How would you go about it, practically?
+
+- You could pour the water off into a large measuring cylinder, only there isn't one big enough.
+- You could take a tape measure and find the cumulative distance around the edge of all the oceans, then calculate the area. But you can't measure the length of all coastlines. Due to the [Coastline Paradox](https://en.wikipedia.org/wiki/Coastline_paradox), coastlines have no well-defined length.
+
+So, if we can't find a way to absolutely, precisely measure this, we must instead _estimate_ the proportion of the Earth's surface that is water.
+
+::: {.callout-information}
+## It's an analogy
+
+This situation is not really that far removed from making an experimental measurement. 
+
+There may be a value you'd like to measure accurately, like the concentration of a drug in a patient's blood. But how exact can your measurement really be?
+
+- Is the concentration of the drug uniform throughout the bloodstream?
+- Does the way you process the sample make any change, however small, to the concentration?
+- Is the machine you use to measure the concentration accurately calibrated and absolutely precise?
+- Are you considering concentration in one patient, or several patients? How much does variation from patient to patient matter?
+
+There are many influences on experimental measurements that can mean they are, in fact, _estimates_.
+:::

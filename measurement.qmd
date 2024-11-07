@@ -1,0 +1,16 @@
+# Measurement {#sec-measurement .unnumbered}
+
+In this section of the material, we are going to think about what it means to measure some kind of value. You're all scientists and you will have measured things before, so you might think that you should be working with more advanced material. But we're going to look at measurement in a way that emphasises the role of **scientific modelling** and explores the idea of sample size and variance.
+
+::: {.callout-tip}
+## Data Context
+
+The example we are using is attempting to estimate the proportion of the Earth's surface that is covered by water.
+
+You probably already have an idea of what proportion that is - about 70%. But…
+
+- How accurate is that value of 70%?
+- How would you go about measuring the exact surface area?
+  - Aren't there tides? And coastal erosion? And other things?
+:::
+

@@ -38,9 +38,9 @@ book:
     - index.qmd
     - intro.qmd
 
-    - part: early-section.qmd
+    - part: measurement.qmd
       chapters: 
-        - early-section-topic.qmd
+        - wet_earth.qmd
     
     - part: late-section.qmd
       chapters: 
