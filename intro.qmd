@@ -1,21 +1,49 @@
 # Introduction
 
-The Introduction page is intended as a short introduction to the book.
+This section is intended as a short introduction to the workshop.
 
-Like most Quarto books, this is a book created from markdown and executable code. 
+::: {.callout-tip}
+## Disclaimer
 
-This kind of book is an example of literate programming - the intertwining of nicely-formatted text and images, and executable code. For example, the `R` code cell below executes and produces output when the book is compiled:
+The workshop is, effectively, a short statistics primer for people who would rather not be doing statistics. What I think you'd prefer to be doing is carrying out experiments and researching the effectiveness of drug treatments or formulations, or measuring some kind of effect on complex biological systems.
 
-```{r}
-1 + 1
-```
+I think that what you really want to do is collect data about your system, then connect the data you collect with scientific models (which may not be mathematical) that might explain whether your drug is effective, or your new formulation improves drug availability, or some other clever thing with great potential to improve society.
 
-But the `R` code cell below does not:
+The way we connect the data you collect with those scientific models is by using a branch of Applied Mathematics called Statistics. But this workshop is not about "learning Statistics." Instead we'll be treating Statistics as a way to understand and process our scientific investigations, and how what we understand about the science - and especially how we express this understanding through the design of our experiments - motivates and guides statistical reasoning.
 
-```{r}
-#| eval: false
+This topic is part of a very large field and discipline but we do not have much time together, so this workshop takes a particular line through the material which tries to illustrate how make statistics serve the science, and help you start to develop an intuition about how statistics and experimental design work together. The approach we're taking involves simulation and analysis using the `R` language, for the sake of the workshop. It's very effective and I recommend it, but other statistical approaches may be appropriate or necessary for your experiments and their analysis. We do not have time to cover eberything here, but there is a reading list that you should explore for useful knowledge if your goal is to be a professional scientist.
 
-summary(cars)
-```
+And, if in doubt, consult a statistician.
+:::
 
-See @knuth84 for additional discussion of literate programming.
+## Learning Objectives
+
+After this workshop, students should be able to…
+
+1. Understand and explain the relationship between measurements, statistics, and experimental design.
+2. Understand and explain that statistical models are devices that process data to produce estimates that support scientific insight.
+3. Understand how assumptions and expectations about the factors influencing an experiment can be translated into an effective experimental design.
+4. Use `g*Power` to estimate a group size for a statistical test.
+5. Use the NC3Rs Experimental Design Assistant to lay out and analyse a simple experiment, and export the design information.
+
+::: {.callout-warning}
+## What this workshop is
+
+This workshop is an introduction to…
+
+1. the way your data collection is subject to factors that affect all measurements
+2. how the biological or physical process you are studying affects the data you collect
+3. making assumptions about causal factors in your data explicit
+4. using experimental design to improve data collection, exclude influences you are not scientifically interested in, and minimise the number of experimental subjects required to test a model
+5. how to use the NC3Rs Experimental Design Assistant (EDA) to lay out and analyse an experimental design
+:::
+
+
+::: {.callout-important}
+## What this workshop is not
+
+1. Yet another introduction to t-tests, means, and standard deviations
+2. A guide to how you should design or analyse any specific experiment
+3. Advocacy for any particular statistical method, software, or tool
+4. An exhaustive presentation of statistics or methodology
+:::
