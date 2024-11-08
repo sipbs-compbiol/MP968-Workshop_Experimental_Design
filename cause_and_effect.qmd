@@ -1,0 +1,33 @@
+# Cause and Effect {#sec-cause-and-effect .unnumbered}
+
+In this first part of the material, we are going to think about the fundamental issue we care about when performing a scientific experiment: _cause and effect_. For this we need to be aware of something called _Causal Inference_, which is a large and separate field of study, but from which we will borrow some key ideas.
+
+## The Problem With Statistics
+
+Causal inference attempts to put science before statistics, or at least to make statistics work to give us useful scientific outputs. The reason we need something like causal inference is this: **the reasons for carrying out a statistical analysis are not present in the data.**
+
+::: {.callout-important}
+## The reasons for carrying out a statistical analysis are not present in the data
+
+What do we mean by this statement?
+
+As an example, consider a statistical question where you have two sets of numbers: {10, 11, 12} and {14, 15, 16}, and you ask: are the averages of these two sets different from each other?
+
+We can calculate the means and standard deviations of the two sets of numbers, and perform a _t_-test to calculate a proability that we should _reject a null hypothesis_ of the means being equal. So we can answer the question. But what do those numbers represent? What is the _scientific insight that is gained_? Maybe it's something like:
+
+1. the number of people who vote in an election before and after a bribe is offered
+2. the number of mice that survive a condition, after some drug intervention
+3. reaction times in an individual before and after drinking alcohol
+
+The point is, **we can't tell what the numbers represent, or what any differences mean, from the data alone!** We cannot look at the numbers alone and extract the causes of the data.
+
+> "No causes in, no causes out." - _Nancy Cartwright_, @Cartwright2011-jb
+:::
+
+Statistical models are only devices that process data to provide estimates. To understand what the data are telling us, and for statistical analysis to give us scientific insight, we need additional information: _scientific (causal) models_. 
+
+## What is a causal model?
+
+A causal model is a system where if we change only one variable will modify _some_ variables in the model. The variable we change is called a _cause_ and the variables that respond suffer the _effects_.
+
+The assumptions and beliefs you have that cause you to consider setting up your experiment are a kind of causal model. If you believe that reaction times get slower when someone has drunk alcohol, then your causal model is that _alcohol consumption_ **causes** _change in reaction times_.

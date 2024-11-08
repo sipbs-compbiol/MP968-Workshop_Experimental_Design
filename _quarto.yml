@@ -38,6 +38,8 @@ book:
     - index.qmd
     - intro.qmd
 
+    - part: cause_and_effect.qmd
+
     - part: measurement.qmd
       chapters: 
         - wet_earth.qmd
