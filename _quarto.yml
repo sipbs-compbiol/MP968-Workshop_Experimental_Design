@@ -39,6 +39,8 @@ book:
     - intro.qmd
 
     - part: cause_and_effect.qmd
+      chapters: 
+        - dags.qmd
 
     - part: measurement.qmd
       chapters: 
