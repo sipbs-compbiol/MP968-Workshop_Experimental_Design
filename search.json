@@ -67,10 +67,153 @@
     "href": "eda_account.html#setting-up-an-account",
     "title": "4  EDA Account Setup",
     "section": "",
-    "text": "Important\n\n\n\nIf you already have an account with the NC3Rs EDA, please skip this registration step and log in with your existing account, then move on to the next step in the workshop.\n\n\n\nNavigate in your browser to the NC3Rs EDA website at https://eda.nc3rs.org.uk (Figure 4.1)\n\n\n\n\n\n\n\nFigure 4.1: Landing page of the NC3Rs EDA website\n\n\n\n\nClick on the blue Sign in button at the top right of the landing page (Figure 4.2).\n\n\n\n\n\n\n\nFigure 4.2: NC3Rs EDA website Sign in button\n\n\n\n\nClick on the Don't have an account? Get started link (Figure 4.3)\n\n\n\n\n\n\n\nFigure 4.3: NC3Rs EDA website sign-in page\n\n\n\n\nCreate an account on the Create an account page by entering a Username, your university email address, and a password (you will need to enter the password twice), and completing the CAPTCHA, then clicking on Create account.\n\n\n\n\n\n\n\nFigure 4.4: NC3Rs EDA website account creation page\n\n\n\n\nYou will receive an email at the email address you used to register. Open this email and click on the Verify your email address now link. This will take you to the NC3Rs EDA dashboard page (Figure 4.5)\n\n\n\n\n\n\n\nFigure 4.5: NC3Rs EDA Dashboard page",
+    "text": "Important\n\n\n\nIf you already have an account with the NC3Rs EDA, please skip this registration step and log in with your existing account, then move on to the next step in the workshop.\n\n\n\nNavigate in your browser to the NC3Rs EDA website at https://eda.nc3rs.org.uk (Figure 4.1)\n\n\n\n\n\n\n\nFigure 4.1: Landing page of the NC3Rs EDA website\n\n\n\n\nClick on the blue Sign in button at the top right of the landing page (Figure 4.2).\n\n\n\n\n\n\n\nFigure 4.2: NC3Rs EDA website Sign in button\n\n\n\n\nClick on the Don't have an account? Get started link (Figure 4.3)\n\n\n\n\n\n\n\nFigure 4.3: NC3Rs EDA website sign-in page\n\n\n\n\nCreate an account on the Create an account page by entering a Username, your university email address, and a password (you will need to enter the password twice), and completing the CAPTCHA, then clicking on Create account.\n\n\n\n\n\n\n\nFigure 4.4: NC3Rs EDA website account creation page\n\n\n\n\nYou will receive an email at the email address you used to register. Open this email and click on the Verify your email address now link. This will take you to the NC3Rs EDA dashboard page (Figure 4.5).\n\n\n\n\n\n\n\nFigure 4.5: NC3Rs EDA Dashboard page",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>EDA Account Setup</span>"
+    ]
+  },
+  {
+    "objectID": "eda_account.html#using-an-existing-account",
+    "href": "eda_account.html#using-an-existing-account",
+    "title": "4  EDA Account Setup",
+    "section": "4.2 Using an existing account",
+    "text": "4.2 Using an existing account\nIf you already have an account with NC3Rs EDA, you can log in at the sign-in page. This will take you to the NC3Rs EDA dashboard page (Figure 4.5).\n\nNC3Rs EDA sign-in page\n\n\n\n\n\n\n\nNote\n\n\n\nBe sure to use your username to log in, rather than your email address.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>EDA Account Setup</span>"
+    ]
+  },
+  {
+    "objectID": "workshop_experiment.html",
+    "href": "workshop_experiment.html",
+    "title": "5  The Workshop Experiment",
+    "section": "",
+    "text": "5.1 The experimental description\nWe can describe our experiment in the usual manner as something like:\nThis is a concise and accurate description of the experiment but, as is good practice, we will begin by laying out what we understand about the experiment that is relevant to the design.\nThis is enough information to construct an EDA diagram describing the experiment.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The Workshop Experiment</span>"
+    ]
+  },
+  {
+    "objectID": "workshop_experiment.html#the-experimental-description",
+    "href": "workshop_experiment.html#the-experimental-description",
+    "title": "5  The Workshop Experiment",
+    "section": "",
+    "text": "We will use NONcNZO10/LtJ mice (JAX) to represent a polygenic form of diabetes. Mice in the treatment group will receive a single subcutaneous injection of drug A (up to 30mg/kg). Mice in the control group will receive a single subcutaneous injection of vehicle. Mice will be randomly assigned to receive either drug A or vehicle only without regard to the sex of the animal. 48 hours after administration of drug or vehicle, the blood glucose level will be measured.\n\n\n\n\n\n\n\n\nOur beliefs about the experiment\n\n\n\n\nWe are testing the effect of a new drug - drug A - on plasma glucose levels\n\nThere is a single experimental variable of interest: whether drug A is present (treatment) or absent (control)\nThe plasma glucose level is our outcome measure\n\nOur experimental subjects are diabetic (NONcNZO10/LtJ) mice\nWe will divide individuals into two groups, by different pharmacological treatment\n\nGroup 1 will receive the vehicle with no active drug (the control)\nGroup 2 will receive the vehicle, containing active drug (the treatment)\n\nIndividuals will be allocated to each group randomly, by complete randomisation\nWe are not testing for the effect of sex on drug performance as an experimental variable of interest\n\nWe are also not monitoring for the effect of sex on drug performance as a nuisance factor",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The Workshop Experiment</span>"
+    ]
+  },
+  {
+    "objectID": "workshop_experiment.html#the-eda-diagram",
+    "href": "workshop_experiment.html#the-eda-diagram",
+    "title": "5  The Workshop Experiment",
+    "section": "5.2 The EDA Diagram",
+    "text": "5.2 The EDA Diagram\nWhen we have finished our design, the resulting diagram will look like that in Figure 5.1.\n\n\n\n\n\n\nFigure 5.1: The final EDA diagram, incorporating all elements of the experimental design described on this page.\n\n\n\nWe will use this diagram to get some feedback from the EDA about improvements to the design, and our choice of statistical methods.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The Workshop Experiment</span>"
+    ]
+  },
+  {
+    "objectID": "create_new_diagram.html",
+    "href": "create_new_diagram.html",
+    "title": "6  Create a New Diagram",
+    "section": "",
+    "text": "6.1 Create a new diagram\nClick on the blue New Diagram button (Figure 6.2). This will take you to a blank “Untitled diagram” canvas, where we will start to construct our experiment (Figure 6.3).\nWe can start to build our experimental design by adding an Experiment node.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Create a New Diagram</span>"
+    ]
+  },
+  {
+    "objectID": "create_new_diagram.html#create-a-new-diagram",
+    "href": "create_new_diagram.html#create-a-new-diagram",
+    "title": "6  Create a New Diagram",
+    "section": "",
+    "text": "Figure 6.2: The New Diagram button. Click on this to start preparing a new diagram\n\n\n\n\n\n\n\n\n\nFigure 6.3: The “Untitled diagram” blank NC3Rs EDA canvas. The large white space is where the experimental design diagram will be built. The sidebar on the left shows a list of node types that can be added to the design. The menu bar at the top allows you to save the experiment in a number of formats, and use tools to carry out analysis of your design.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Create a New Diagram</span>"
+    ]
+  },
+  {
+    "objectID": "add_experiment_node.html",
+    "href": "add_experiment_node.html",
+    "title": "7  Add an Experiment Node",
+    "section": "",
+    "text": "7.1 Getting Help",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Add an Experiment Node</span>"
+    ]
+  },
+  {
+    "objectID": "add_experiment_node.html#getting-help",
+    "href": "add_experiment_node.html#getting-help",
+    "title": "7  Add an Experiment Node",
+    "section": "",
+    "text": "Move your mouse pointer over the Experiment node in the EDA window. Note that the entry in the list is highlighted, and a blue question mark appears.\nClick on the blue question mark. This brings up the Help Centre popup (Figure 7.1).\n\n\n\n\n\n\n\nFigure 7.1: The NC3Rs EDA, showing the Experiment node Help Centre entry\n\n\n\n\n\n\n\n\n\nHelp Centre information\n\n\n\n\n\nAll entries in the sidebar list of nodes have a corresponding Help Centre information page. You can bring this up by moving your mouse over the entry in the sidebar, and clicking on the blue question mark for the node of interest.\nThe Help Centre will remain open by default. To hide the Help Centre, click on the two chevrons at the top left of the Help Centre popup.\nTo reopen the Help Centre, you can also click on the Help Centre link at the top right of the EDA. This will open up a browseable set of help pages, including HowTo guides that can be useful to supplement this walkthrough.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Add an Experiment Node</span>"
+    ]
+  },
+  {
+    "objectID": "add_experiment_node.html#add-an-experiment-node",
+    "href": "add_experiment_node.html#add-an-experiment-node",
+    "title": "7  Add an Experiment Node",
+    "section": "7.2 Add an Experiment Node",
+    "text": "7.2 Add an Experiment Node\n\nClick and hold on the Experiment node in the sidebar.\nDrag and drop the Experiment node on the main canvas to place a blank Experiment node (Figure 7.2).\n\n\n\n\n\n\n\nFigure 7.2: A blank Experiment node on the NC3Rs EDA canvas. The red square around the node indicates that our diagram has an error (in this case it’s because we have not attached it to any Animal characteristics nodes).\n\n\n\n\n\n\n\n\n\nThe red square\n\n\n\n\n\nThe Experiment node is initially surrounded by a red square to indicate that there is a problem with our diagram. At this point, we have not connected the Experiment to any Animal characterisics nodes, or filled out essential property information. As we progress with our diagram and fill out all the necessary parts of the experimental design, the red square will go away.\n\n\n\n\n7.2.1 Edit node properties\nWe need to fill in some information in our Experiment node’s properties.\n\nClick on the properties icon in the bottom right of the node icon (it looks like six short horizontal lines). This will bring up the Node properties edit dialogue box (Figure 7.3).\nEnter relevant information for each field, where you have it.\n\n\n\n\n\n\n\nFigure 7.3: The Node properties dialogue box for an Experiment node. Fields marked with a single asterisk are essential for the internal validity of the experiment. Those with a double asterisk should be completed once the experiment has concluded.\n\n\n\n\nChange the text in the label field to read “Effect of drug A on plasma glucose levels”.\nLeave the other fields blank for now, and click on the Close button.\n\n\n\n\n\n\n\nFields with an asterisk (*)\n\n\n\n\n\nA node’s properties dialogue box will indicate that some fields must be filled in for the internal validity of the experiment by marking them with an asterisk (*). If we do not enter information into these fields, the EDA will notice this and provide feedback for how to fill in the field.\nYou can also bring up the Help Centre popup by clicking on the blue question mark, which will provide further information about how each field should be completed.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Add an Experiment Node</span>"
+    ]
+  },
+  {
+    "objectID": "add_experiment_node.html#add-an-animal-characteristics-node",
+    "href": "add_experiment_node.html#add-an-animal-characteristics-node",
+    "title": "7  Add an Experiment Node",
+    "section": "7.3 Add an Animal characteristics node",
+    "text": "7.3 Add an Animal characteristics node\nThe Animal characteristics node describes the characteristics of the animals used in the experiment.\n\n\n\n\n\n\nEvery experimental design should contain at least one Animal characteristics node.\n\n\n\nIf the animals in your experiment have distinct characteristics, such as sex (males/femailes), or different genotypes, then multiple Animal characteristics nodes should be used.\n\n\n\n\n\n\n\n\nNote\n\n\n\nOnly Animal characteristics nodes can be connected to an Experiment node.\n\n\n\nMove your mouse over the grey box just to the right of the Experiment node to bring up the tooltip information (Figure 7.4).\n\n\n\n\n\n\n\nFigure 7.4: Hovering the mouse pointer over the grey box shows the tooltip.\n\n\n\n\nClick on the grey box. This will link the Experiment node to a new Animal characteristics node (Figure 7.5).\n\n\n\n\n\n\n\nFigure 7.5: The Experiment node, linked to a new Animal characteristics node.\n\n\n\n\nClick on the properties icon for the Animal characteristics node\nChange the label to “male mice”\nChange the species to “mouse” (this is a drop-down choice)\nSpecify sex as “male” (this is also a drop-down choice)\nClick on the Close button to close the dialogue box (Figure 7.6)\n\n\n\n\n\n\n\nFigure 7.6: Properties ascribed to the new Animal characteristics node.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Add an Experiment Node</span>"
+    ]
+  },
+  {
+    "objectID": "group_assignment.html",
+    "href": "group_assignment.html",
+    "title": "8  Group Assignment",
+    "section": "",
+    "text": "8.1 Create the experimental subject group structure",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Group Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "group_assignment.html#create-the-experimental-subject-group-structure",
+    "href": "group_assignment.html#create-the-experimental-subject-group-structure",
+    "title": "8  Group Assignment",
+    "section": "",
+    "text": "8.1.1 Add the initial pool\n\nClick and hold the Group node in the sidebar and drag-and-drop it to the canvas (Figure 8.1). This will represent the complete pool of animals involved in the experiment.\n\n\n\n\n\n\n\nFigure 8.1: A new Group node, added to the EDA canvas\n\n\n\n\nDouble click on the Group node to change the label. Call this Group “Pool Group” (Figure 8.2)\n\n\n\n\n\n\n\n\n\nFigure 8.2: The Group node representing the complete pool of animals, with the label field as highlighted by double-clicking.\n\n\n\n\n\n8.1.2 Add an Allocation node\n\nThe icon panel to the right of the Group node has more options than that for the Experiment node (Figure 8.3). Move the pointer over the blue circle and then click on it, to link a new Allocation node (Figure 8.4).\n\n\n\n\n\n\n\nFigure 8.3: The icon panel to the right of the Group node has more options than that for the Experiment node, as more kinds of node can be linked from a Group.\n\n\n\n\n\n\n\n\n\nFigure 8.4: A new Allocation node, linked to the pool of individuals that will be allocated.\n\n\n\n\nOpen the Allocation node properties and set the label to read “Complete randomisation”, and the randomisation strategy (a drop-down) to be “complete randomisation” (Figure 8.5). Click on the Close button to return to the canvas.\n\n\n\n\n\n\n\nFigure 8.5: Setting properties for the Allocation node. The label is changed by typing directly, and the choice of randomisation scheme is made in a drop-down menu.\n\n\n\n\n\n8.1.3 Add Treatment and Control groups\n\nClick the blue square (Group node) icon to the right of the Allocation group twice, to generate two new Group nodes (Figure 8.6).\n\n\n\n\n\n\n\nFigure 8.6: Two new groups are generated by the randomisation, one for control individuals receiving no drug, and one for the treatment group, who receive the drug.\n\n\n\n\nClick and hold the mouse on each group, and move it until the nodes are positioned separately from each other (Figure 8.7).\n\n\n\n\n\n\n\nFigure 8.7: By clicking on a group and holding the mouse button down, you can move a node into a more aesthetically-pleasing location.\n\n\n\n\nDouble-click on each new group and name as “Control” and “Treatment” accordingly (Figure 8.8)\n\n\n\n\n\n\n\nFigure 8.8: It can be helpdul for understanding to name each group according to its role in the experiment. Here the two post-randomisation groups are called “Control” and “Treatment”.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Group Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "group_assignment.html#summary",
+    "href": "group_assignment.html#summary",
+    "title": "8  Group Assignment",
+    "section": "8.2 Summary",
+    "text": "8.2 Summary\nBy following the process above we have defined our initial pool of experimental subjects, and described how they are randomly assigned to either a control or a treatment group. In the next steps, we will add the nodes that describe our experimental interventions, and the measurements we intend to record.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Group Assignment</span>"
     ]
   },
   {

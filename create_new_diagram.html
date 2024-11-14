@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>Cause and Effect – MP968: Experimental Design Workshop</title>
+<title>6&nbsp; Create a New Diagram – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -51,8 +31,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./dags.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./add_experiment_node.html" rel="next">
+<link href="./workshop_experiment.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -103,7 +83,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cause_and_effect.html">Cause and Effect</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./create_new_diagram.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,7 +130,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./cause_and_effect.html" class="sidebar-item-text sidebar-link active">
+            <a href="./cause_and_effect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cause and Effect</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -205,7 +185,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_new_diagram.html" class="sidebar-item-text sidebar-link">
+  <a href="./create_new_diagram.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></a>
   </div>
 </li>
@@ -239,21 +219,16 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-problem-with-statistics" id="toc-the-problem-with-statistics" class="nav-link active" data-scroll-target="#the-problem-with-statistics">The Problem With Statistics</a></li>
-  <li><a href="#what-is-a-causal-model" id="toc-what-is-a-causal-model" class="nav-link" data-scroll-target="#what-is-a-causal-model">What is a causal model?</a>
-  <ul class="collapse">
-  <li><a href="#your-beliefs-about-the-system-are-the-causal-model" id="toc-your-beliefs-about-the-system-are-the-causal-model" class="nav-link" data-scroll-target="#your-beliefs-about-the-system-are-the-causal-model">Your beliefs about the system are the causal model</a></li>
-  </ul></li>
-  <li><a href="#we-need-to-talk-about-dags" id="toc-we-need-to-talk-about-dags" class="nav-link" data-scroll-target="#we-need-to-talk-about-dags">We need to talk about DAGs</a></li>
+  <li><a href="#create-a-new-diagram" id="toc-create-a-new-diagram" class="nav-link active" data-scroll-target="#create-a-new-diagram"><span class="header-section-number">6.1</span> Create a new diagram</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/cause_and_effect.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/create_new_diagram.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./create_new_diagram.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-cause-and-effect" class="quarto-section-identifier">Cause and Effect</span></h1>
+<h1 class="title"><span id="sec-create-new-diagram" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></h1>
 </div>
 
 
@@ -270,131 +245,43 @@ div.csl-indent {
 </header>
 
 
-<p>In this first part of the material, we are going to take a close look at <strong>the</strong> fundamental issue we care about when performing a scientific experiment: <em>cause and effect</em>. For this we need to be aware of something called <em>Causal Inference</em>, which is a large and separate field of study, but from which we will borrow some key ideas.</p>
-<section id="the-problem-with-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-with-statistics">The Problem With Statistics</h2>
-<p>Causal inference attempts to put science before statistics, or at least to make statistics work to give us useful scientific outputs. The reason we need something like causal inference is this: <strong>the reasons for carrying out a statistical analysis are not present in the data.</strong></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The reasons for carrying out a statistical analysis are not present in the data
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What do we mean by this statement?</p>
-<p>As an example, consider a statistical question where you have two sets of numbers: {10, 11, 12} and {14, 15, 16}, and you ask: are the averages of these two sets different from each other?</p>
-<p>As you will recall from your introductory statistics courses, we can always calculate the means and standard deviations of the two sets of numbers, and perform a <em>t</em>-test to calculate a proability that we should <em>reject a null hypothesis</em> of the means being equal. So we can answer the question: “Are the means of these two sets of values statistically different from each other?”.</p>
-<p>But we’re usually not asking that question in isolation. In an experiment, those numbers represent something in the real world, and in which we’re interested. We want to know what is the <em>scientific insight that is gained</em>? Maybe it’s something like:</p>
-<ol type="1">
-<li>the number of people who vote in an election before and after a bribe is offered</li>
-<li>the number of mice that survive a condition, after some drug intervention</li>
-<li>reaction times in an individual before and after drinking alcohol</li>
-</ol>
-<p>The point is, <strong>we can’t tell what the numbers represent, or what any differences mean, from the data alone!</strong> We cannot look at the numbers alone and extract the causes of the data.</p>
-<blockquote class="blockquote">
-<p>“No causes in, no causes out.” - <em>Nancy Cartwright</em>, <span class="citation" data-cites="Cartwright2011-jb">Cartwright (<a href="references.html#ref-Cartwright2011-jb" role="doc-biblioref">2011</a>)</span></p>
-</blockquote>
-</div>
-</div>
-<p>Statistical models are only devices that process data to provide estimates. To understand what the data are telling us, and for statistical analysis to give us scientific insight, we need additional information: <em>scientific (causal) models</em>.</p>
-</section>
-<section id="what-is-a-causal-model" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-causal-model">What is a causal model?</h2>
-<p>A causal model is a system where if we change only one variable we will modify some variables in the model. The variable we change is called a <em>cause</em> and the variables that respond suffer the <em>effects</em>.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Correlation does not imply causation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You will probably have <strong>correctly</strong> heard phrases like “<em>correlation does not imply causation</em>” in reference to the observation that just because you can identify two values apparently changing together, that doesn’t mean that the change in one value <em>causes</em> the other to change. The relationship might be the reverse of what you think (after all, an association between two sets values could run in either direction - the direction is not evident from the data alone), or it may be pure coincidence. There’s even a whole website dedicated to such <a href="https://www.tylervigen.com/spurious-correlations">spurious correlations</a>.</p>
-<p>It turns out that <em>causation does not imply correlation</em> either, but this is a complex topic that we don’t have time to get into in a single workshop about experimental design.</p>
-<p>The statment “<em>correlation does not imply causation</em>” is often used dismissively to demean the role of statistics, but that’s unfair. It <em>is</em> possible to estimate causal effects using statistics, but <strong>all of the information about causal relationships comes from the researcher</strong>.</p>
-</div>
-</div>
-<p>When we talk about <em>causes</em> and <em>effects</em> in the context of a <em>statistical association</em> (such as correlation) it is usually intended to mean one of two things:</p>
-<ol type="1">
-<li><strong>The estimate or prediction of the consequences of an intervention</strong> - and in an experimental context you are often aiming to set up a system where a single intervention of interest (such as administration of a drug) is being made, and the consequences measured.</li>
-<li><strong>The imputation of a missing observation</strong> - such that, if you have a causal model, you can play “what if?” games by substituting values which you have not directly measured to see what changes in the system might result. This allows us to construct <em>unobserved counterfactual outcomes</em>.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-A tangible example
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>If you are aware of, or propose, a <em>causal relationship</em> you are expressing the belief that you can predict the consequences of an intervention.</p>
-<p>For example, if you look out of the window and see trees swaying, and there is some wind, you know the ttwo are connected because the <em>wind is causing the trees to sway</em>, not because the trees are moving and creating the wind. But, if you measured windspeed and tree movement, there would be only a <em>statistical association</em>: there would be nothing in the data itself to tell you which was the cause and which was the effect. But you <em>know</em> the causal relationship and the nature of the intervention: <strong>wind makes trees sway</strong>. If you climbed into the tree and rocked it, you would not generate wind. But if you measured the amount by which a tree sways, you could make an estimate of the prevailing windspeed.</p>
-</div>
-</div>
-</div>
-<p>All information about causal relationships comes from <strong>the scientists’ understanding of the world</strong> or, more to the point, <strong>their understanding of the experimental system</strong>.</p>
-<section id="your-beliefs-about-the-system-are-the-causal-model" class="level3">
-<h3 class="anchored" data-anchor-id="your-beliefs-about-the-system-are-the-causal-model">Your beliefs about the system are the causal model</h3>
-<p>The assumptions and beliefs you have that cause you to consider setting up your experiment are a kind of causal model.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For instance, if you believe that reaction times get slower when someone has drunk alcohol, then your causal model is that <em>alcohol consumption</em> <strong>causes</strong> <em>change in reaction times</em>.</p>
-</div>
-</div>
-<p>You would design your experiment to enable measurements of alcohol consumption and reaction time to be measured, and you might look to find a statistical association. But if you <em>did</em> find a statistical association, your causal interpretation (e.g.&nbsp;that “reaction time slows with increasing alcohol dose”) would be the result of your beliefs about the experimental system, not a result of simply running statistical analysis on the dataset.</p>
-<div id="fig-spiderman-causal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>To create a new EDA diagram, first ensure that you are <a href="./eda_account.html">signed in</a> to your account (<a href="eda_account.html" class="quarto-xref"><span>Chapter 4</span></a>), and navigate to the <a href="https://eda.nc3rs.org.uk/eda/landing"><code>Dashboard</code></a> page (<a href="#fig-nc3rs-eda-dashboard-1" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>).</p>
+<div id="fig-nc3rs-eda-dashboard-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-spiderman-causal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/inference_spiderman.jpg" class="img-fluid figure-img" style="width:80.0%">
+<div aria-describedby="fig-nc3rs-eda-dashboard-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/nc3rs-dashboard.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spiderman-causal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Experimental design, causal (statistical) inference, and the (statistical) description of a system all depend on the existence of a well-constructed scientific (causal) model. <a href="https://github.com/rmcelreath/stat_rethinking_2023">Meme</a> by Richard McElreath, CC0
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-dashboard-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: NC3Rs EDA <code>Dashboard</code> page.
 </figcaption>
 </figure>
 </div>
-</section>
-</section>
-<section id="we-need-to-talk-about-dags" class="level2">
-<h2 class="anchored" data-anchor-id="we-need-to-talk-about-dags">We need to talk about DAGs</h2>
-<p>A <em>DAG</em> is a <em>Directed Acyclic Graph</em>. DAGs are abstract mathematical structures that are extremely useful in many contexts. But, for our purposes, what is important is that they can be used to describe the causal relationships you believe are present in your experimental system. Describing your beliefs as a DAG has advantages:</p>
-<ol type="1">
-<li><strong>It is a concise way to express your understanding of the experiment clearly</strong></li>
-</ol>
-<ul>
-<li>It is easy to visualise and share with others, so they can understand your view of the experiment</li>
-</ul>
-<ol start="2" type="1">
-<li><strong>The structure of a DAG can be analysed to suggest an appropriate statistical model</strong></li>
-</ol>
-<ul>
-<li>A DAG’s structure can suggest which controls to use in an experiment, and what statistical analysis might be most appropriate</li>
-<li>Analysis of the DAG structure can tell you what can (and what <em>cannot</em>) be logically decided by the experiment, without having to make additional assumptions</li>
-</ul>
-<p>We will introduce DAGs for experimental design in more detail, in the next section.</p>
+<section id="create-a-new-diagram" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="create-a-new-diagram"><span class="header-section-number">6.1</span> Create a new diagram</h2>
+<p>Click on the blue <code>New Diagram</code> button (<a href="#fig-nc3rs-eda-new-diagram-button" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>). This will take you to a blank “Untitled diagram” canvas, where we will start to construct our experiment (<a href="#fig-nc3rs-eda-blank-canvas" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>).</p>
+<div id="fig-nc3rs-eda-new-diagram-button" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nc3rs-eda-new-diagram-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/nc3rs-eda-new-diagram-button.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-new-diagram-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: The <code>New Diagram</code> button. Click on this to start preparing a new diagram
+</figcaption>
+</figure>
+</div>
+<div id="fig-nc3rs-eda-blank-canvas" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nc3rs-eda-blank-canvas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/nc3rs-eda-blank-canvas.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-blank-canvas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: The “Untitled diagram” blank NC3Rs EDA canvas. The large white space is where the experimental design diagram will be built. The sidebar on the left shows a list of <em>node</em> types that can be added to the design. The menu bar at the top allows you to save the experiment in a number of formats, and use tools to carry out analysis of your design.
+</figcaption>
+</figure>
+</div>
+<p>We can start to build our experimental design by adding an <em>Experiment node</em>.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-Cartwright2011-jb" class="csl-entry" role="listitem">
-Cartwright, Nancy. 2011. <span>“A Philosopher’s View of the Long Road from <span>RCTs</span> to Effectiveness.”</span> <em>Lancet</em> 377 (9775): 1400–1401.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -820,13 +707,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./workshop_experiment.html" class="pagination-link" aria-label="The Workshop Experiment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Workshop Experiment</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./dags.html" class="pagination-link" aria-label="An Introduction to Causal Graphs">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./add_experiment_node.html" class="pagination-link" aria-label="Add an Experiment Node">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -838,7 +725,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/cause_and_effect.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/create_new_diagram.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
