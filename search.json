@@ -120,11 +120,22 @@
     ]
   },
   {
+    "objectID": "workshop_experiment.html#causal-relationships-in-our-experiment",
+    "href": "workshop_experiment.html#causal-relationships-in-our-experiment",
+    "title": "5  The Workshop Experiment",
+    "section": "5.2 Causal relationships in our experiment",
+    "text": "5.2 Causal relationships in our experiment\nFor the experiment we are building in our EDA example, we assume that the outcome variable, plasma glucose level, is potentially dependent on three causal relationships:\n\nthe pharmacological effect of drug A\nthe pharmacological effect of the vehicle\nindividual differences between experimental subjects (mice)\n\nand we have structured our experiment accordingly:\n\n5.2.1 The pharmacological effect of drug A: treatment vs no treatment\nThe causal influence of administering drug A (or not) on the plasma glucose levels of our experimental subjects is the central reason for performing this experiment. Naturally then, we would want to compare what happens to plasma glucose levels when we intervene with drug A, and when we do not.\n\n\n\n\n\n\nNote\n\n\n\nIn statistical terms, the presence or absence of drug A is our independent variable or explanatory variable.\nWhether drug A is administered or not is entirely under our control, as experimenters.\n\n\nThere are several ways to structure such a comparison, but this research question naturally suggests the use of two experimental groups: one receiving drug A, and one not. We can assume that the results for these groups are each representative of a much larger population, for which the effect of introducing drug A (or not) follows the shape of a parametrisable statistical distribution, like a Normal distribution.\n\n\n5.2.2 Control vs treatment groups\nUnfortunately, we cannot administer the drug in isolation. Drug A, like most drugs, is carried in a vehicle - a substance expected to be inert in the context of the treatment.\nIt would be possible, but unwise, to assume that we could administer drug A alone to one group of mice, and apply no intervention to the other. We are measuring a physiological response which might be affected by many other processes, including the individual being subject to an injection. It might not be correct to assume that the vehicle is inert, either. So we must follow the same protocol as closely as possible in a control group, where the only difference under our control between control and treatment is the presence or absence of drug A.\nPractically then, in our experiment we use two pharmacological interventions:\n\ninjection of a vehicle (control)\ninjection of a vehicle containing drug A (treatment)\n\nWe assume that any variation between individual vehicle preparations (or the experimental subjects’ responses to them) are effectively “drawn from the same population,” and that both groups experience the same causal influence from the injection process, and the introduction of the vehicle. As a consequence we assume that any observed difference between the groups is the result of either receiving drug A, or not receiving it.\n\n\n5.2.3 Random assignment of individuals to groups\nThe remaining potential causal influence we consider - that due to underlying differences between individuals - is accounted for inour experimental design by randomising subjects into experimental groups (treatment and control, see Chapter 8).\nThis works because we assume that all individuals are “drawn from the same population,” such that each mouse as a random choice from a single pool whose underlying plasma glucose level is distributed according to some kind of regular (potentially parametrisable) statistical distribution. This is usually a reasonable assumption, and implies that the groups are samples from the same larger population, so should have similar properties\nThe important consequence of this is that we can argue that - before we intervene with the experimental treatments - we should expect the underlying plasma distribution levels of our treatment and control groups to be comparable. Any differences in measured outcome should then be expected to derive only from our experimental interventions and, in particular, only from the presence or absence of drug A.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The Workshop Experiment</span>"
+    ]
+  },
+  {
     "objectID": "workshop_experiment.html#the-eda-diagram",
     "href": "workshop_experiment.html#the-eda-diagram",
     "title": "5  The Workshop Experiment",
-    "section": "5.2 The EDA Diagram",
-    "text": "5.2 The EDA Diagram\nWhen we have finished our design, the resulting diagram will look like that in Figure 5.1.\n\n\n\n\n\n\nFigure 5.1: The final EDA diagram, incorporating all elements of the experimental design described on this page.\n\n\n\nWe will use this diagram to get some feedback from the EDA about improvements to the design, and our choice of statistical methods.",
+    "section": "5.3 The EDA Diagram",
+    "text": "5.3 The EDA Diagram\nWhen we have finished our design, the resulting diagram will look like that in Figure 5.1.\n\n\n\n\n\n\nFigure 5.1: The final EDA diagram, incorporating all elements of the experimental design described on this page.\n\n\n\nWe will use this diagram to get some feedback from the EDA about improvements to the design, and our choice of statistical methods.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>The Workshop Experiment</span>"
@@ -232,12 +243,56 @@
   {
     "objectID": "interventions.html",
     "href": "interventions.html",
-    "title": "9  Defining Interventions",
+    "title": "9  Defining Interventions and Measurements",
     "section": "",
-    "text": "As we learned in Chapter 1, when we perform an experiment we are interested in understanding causes, in the sense of a causal model of our experimental system. The definitions of causes and effects comes entirely from us, as investigators. We set up our experiments with a certain set of causes and outcomes in mind, with a view to estimating the sizes of the influence due to each cause.\nFor the experiment we are building in our EDA example, we have assumed that the outcome variable, plasma glucose level, is potentially dependent on three causes:\n\nindividual differences between experimental subjects (mice)\nthe pharmacological effect of the vehicle\nthe pharmacological effect of drug A\n\nThe first potential influence is accounted for by randomising individuals into experimental groups (treatment and control, see Chapter 8). We assume that all individuals are “drawn from the same population.” This means that we consider each mouse as a random choice from a single pool whose underlying plasma glucose level is distributed according to some kind of regular (potentially parametrisable) statistical distribution, which is often a reasonable choice. The important consequence of this is that we can argue that - before we intervene with the experimental treatments - we should expect the underlying plasma distribution levels of our treatment and control groups to be comparable. Any differences in measured outcome should then be expected to derive only from our experimental interventions.\nWe cannot follow the same Practically, in the experiment we use two pharmacological interventions: injection of a vehicle, and injection of a vehicle plus drug A. We will be measuring the plasma glucose levels of our experimental subjects to estimate whether the two interventions result in different effects.",
+    "text": "9.1 Create the experimental intervention structure",
     "crumbs": [
       "NC3Rs EDA",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Defining Interventions</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Defining Interventions and Measurements</span>"
+    ]
+  },
+  {
+    "objectID": "interventions.html#create-the-experimental-intervention-structure",
+    "href": "interventions.html#create-the-experimental-intervention-structure",
+    "title": "9  Defining Interventions and Measurements",
+    "section": "",
+    "text": "9.1.1 Add the control intervention\n\nClick on the syringe icon, next to the Control Group node (Figure 9.1). This will create a new Pharmacological intervention node, linked to the Control group (Figure 9.2).\n\n\n\n\n\n\n\nFigure 9.1: Hovering the pointer over the syringe shows a tooltip describing the link to a Pharmaceutical intervention. Clicking on the icon creates the new node.\n\n\n\n\n\n\n\n\n\nFigure 9.2: A new Pharmaceutical intervention node, linked to the Control group\n\n\n\n\nRelabel the Pharmaceutical intervention node to read “Vehicle only” (Figure 9.3)\n\n\n\n\n\n\n\nFigure 9.3: The “Vehicle” Pharmaceutical intervention node, linked to the Control group\n\n\n\n\n\n9.1.2 Add the treatment intervention\n\nClick on the syringe icon, next to the Treatment Group node to create a new Pharmacological intervention node, linked to the Treatment group.\nRelabel the Pharmaceutical intervention node to read “Vehicle + drug A” (Figure 9.4)\n\n\n\n\n\n\n\nFigure 9.4: The “Vehicle + drug A” Pharmaceutical intervention node, linked to the Treatment group",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Defining Interventions and Measurements</span>"
+    ]
+  },
+  {
+    "objectID": "interventions.html#add-the-measurement-structure",
+    "href": "interventions.html#add-the-measurement-structure",
+    "title": "9  Defining Interventions and Measurements",
+    "section": "9.2 Add the measurement structure",
+    "text": "9.2 Add the measurement structure\nAll individuals, regardless of whether they are treatment or control are measured in the same way, by readout of plasma glucose levels. We thus need only a single Measurement node, which can be added and linked to both experiment arms, and we also need to define what is actually being measured: our Outcome measure.\n\n\n\n\n\n\nNote\n\n\n\nIn statistical terms, the Outcome measure in an EDA diagram is our dependent variable or response variable.\nThe plasma glucose measurement depends on the experimental factors that we have determined to have a causal influence on it, hence it is the dependent variable.\n\n\n\n9.2.1 Add the Measurement node\n\nClick on the Measurement node icon next to the “Vehicle only” intervention (?fig-nc3rs-meas-icon), to create a new Measurement node.\n\n\n\n\n\n\n\nFigure 9.5: The Measurement node icon is on the top row. Click on it to create a Measurement node linked to the Pharmaceutical intervention node.\n\n\n\n\nDouble-click on the new Measurement icon and rename it to “Plasma glucose” (Figure 9.6)\n\n\n\n\n\n\n\nFigure 9.6: The new Measurement node linked to the Pharmaceutical intervention node, labelled “Plasma glucose”\n\n\n\n\nTo link the “Vehicle + drug A” intervention node to the measurement, click on the arrow icon next to the “Vehicle + drug A” node (Figure 9.7), and drag it to the Measurement node (Figure 9.8).\n\n\n\n\n\n\n\nFigure 9.7: The highlighted arrow icon can be dragged to another node in the diagram, to link the two nodes.\n\n\n\n\n\n\n\n\n\nFigure 9.8: After dragging the arrow from the “Vehicle + drug A” node to the Measurement node, both Pharmaceutical interventions are linked to the same measurement\n\n\n\n\n\n9.2.2 Add the Outcome measure node\n\nClick on the Outcome measure node icon next to the Measurement node, to create a new Outcome measure node.\nDouble-click on this node and rename it to “Glucose levels” (Figure 9.9)\n\n\n\n\n\n\n\nFigure 9.9: The experiment definition, group assignment, intervention and measurement structure for our EDA diagram",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Defining Interventions and Measurements</span>"
+    ]
+  },
+  {
+    "objectID": "interventions.html#add-the-analysis-node",
+    "href": "interventions.html#add-the-analysis-node",
+    "title": "9  Defining Interventions and Measurements",
+    "section": "9.3 Add the Analysis node",
+    "text": "9.3 Add the Analysis node\nIn an EDA diagram, the Analysis node describes how the data is analysed. We need to add an Analysis node to our diagram, linking it to the Outcome measure node.\n\n\n\n\n\n\nImportant\n\n\n\nAll outcome measures (dependent variables) and explanatory variables (independent variables) in the diagram should be connected to the Analysis node\n\n\n\nClick on the Analysis node icon next to the Outcome measure node, to create a new Analysis node.\nRename the Analysis node to “Analysis” (Figure 9.10)\n\n\n\n\n\n\n\nFigure 9.10: The experiment definition, group assignment, intervention and measurement structure, and Analysis node for our EDA diagram",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Defining Interventions and Measurements</span>"
+    ]
+  },
+  {
+    "objectID": "interventions.html#summary",
+    "href": "interventions.html#summary",
+    "title": "9  Defining Interventions and Measurements",
+    "section": "9.4 Summary",
+    "text": "9.4 Summary\nAt this point, we have defined the basic skeleton of our experiment, representing the causes and effects that we believe are in play, in our experimental system.\nWe have defined our pool of experimental subjects and how they are allocated to arms of the experiment. We have defined pharmaceutical interventions and the measurement we want to make.\nNow it is time to ask EDA to critique our design, give us feedback, and make suggestions for how to improve it or make it clearer.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Defining Interventions and Measurements</span>"
     ]
   },
   {
