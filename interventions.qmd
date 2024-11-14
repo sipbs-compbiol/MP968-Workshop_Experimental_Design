@@ -1,14 +1,87 @@
-# Defining Interventions {#sec-interventions}
+# Defining Interventions and Measurements {#sec-interventions}
 
-As we learned in @sec-problem, when we perform an experiment we are interested in understanding _causes_, in the sense of a _causal model_ of our experimental system. The definitions of causes and _effects_ comes entirely from us, as investigators. We set up our experiments with a certain set of causes and outcomes in mind, with a view to estimating the sizes of the influence due to each cause.
+We learned in @sec-problem that when we perform an experiment we are interested in understanding _causes_, in terms of the _causal model_ of our experimental system. We also learned that the definitions of _cause_ and _effect_ in a study come from us, as investigators. We set up our experiments with specific causal influences and outcomes in mind, and try to estimate the amount of the influence due to each cause. Or rationale for the causal relationships underlying this experiment is described in @sec-workshop-experiment.
 
-For the experiment we are building in our EDA example, we have assumed that the _outcome variable_, plasma glucose level, is potentially dependent on three causes:
+We identified two _pharmacological interventions_:
 
-1. individual differences between experimental subjects (mice)
-2. the pharmacological effect of the vehicle
-3. the pharmacological effect of drug A
+1. A _control_ comprising an injection of only vehicle
+2. A _treatment_ comprising an injection of vehicle, also containing drug A
 
-The first potential influence is accounted for by randomising individuals into experimental groups (_treatment_ and _control_, see @sec-group-assignment). We _assume_ that all individuals are "drawn from the same population." This means that we consider each mouse as a random choice from a single pool whose underlying plasma glucose level is distributed according to some kind of regular (potentially parametrisable) statistical distribution, which is often a reasonable choice. The important consequence of this is that we can argue that - before we _intervene_ with the experimental treatments - we should expect the underlying plasma distribution levels of our _treatment_ and _control_ groups to be comparable. Any differences in measured outcome should then be expected to derive _only_ from our experimental interventions.
+In our EDA these will each represented by a different **Pharmacological intervention** node, linked to the Group node that provides the individuals for that part of the experiment.
 
-We cannot follow the same Practically, in the experiment we use two _pharmacological interventions_: injection of a vehicle, and injection of a vehicle plus drug A. We will be measuring the plasma glucose levels of our experimental subjects to estimate whether the two interventions result in different effects.
+As the same measurement (plasma glucose level) is made for all individuals, we define a single **Measurement** node.
 
+## Create the experimental intervention structure
+
+### Add the _control_ intervention
+
+1. Click on the syringe icon, next to the Control Group node (@fig-nc3rs-eda-syringe). This will create a new **Pharmacological intervention** node, linked to the Control group (@fig-nc3rs-eda-pi-control).
+
+![Hovering the pointer over the syringe shows a tooltip describing the link to a Pharmaceutical intervention. Clicking on the icon creates the new node.](assets/images/nc3rs-eda-syringe.png){#fig-nc3rs-eda-syringe width=80%}
+
+![A new Pharmaceutical intervention node, linked to the Control group](assets/images/nc3rs-eda-pi-control.png){#fig-nc3rs-eda-pi-control width=80%}
+
+2. Relabel the Pharmaceutical intervention node to read "Vehicle only" (@fig-nc3rs-eda-pi-vehicle)
+
+![The "Vehicle" Pharmaceutical intervention node, linked to the Control group](assets/images/nc3rs-eda-pi-vehicle.png){#fig-nc3rs-eda-pi-vehicle width=80%}
+
+### Add the _treatment_ intervention
+
+1. Click on the syringe icon, next to the Treatment Group node to create a new **Pharmacological intervention** node, linked to the Treatment group.
+2. Relabel the Pharmaceutical intervention node to read "Vehicle + drug A" (@fig-nc3rs-eda-pi-treatment)
+
+![The "Vehicle + drug A" Pharmaceutical intervention node, linked to the Treatment group](assets/images/nc3rs-eda-pi-treatment.png){#fig-nc3rs-eda-pi-treatment width=80%}
+
+## Add the measurement structure
+
+All individuals, regardless of whether they are _treatment_ or _control_ are measured in the same way, by readout of plasma glucose levels. We thus need only a single **Measurement** node, which can be added and linked to both experiment arms, and we also need to define what is actually being measured: our **Outcome measure**.
+
+::: {.callout-note}
+In statistical terms, the **Outcome measure** in an EDA diagram is our **dependent variable** or **response variable**.
+
+The plasma glucose measurement _depends_ on the experimental factors that we have determined to have a causal influence on it, hence it is the _dependent variable_.
+:::
+
+### Add the Measurement node
+
+1. Click on the **Measurement** node icon next to the "Vehicle only" intervention (@fig-nc3rs-meas-icon), to create a new **Measurement** node.
+
+![The Measurement node icon is on the top row. Click on it to create a Measurement node linked to the Pharmaceutical intervention node.](assets/images/nc3rs-eda-meas-icon.png){#fig-nc3rs-eda-meas-icon width=80%}
+
+2. Double-click on the new Measurement icon and rename it to "Plasma glucose" (@fig-nc3rs-eda-meas-label)
+
+![The new Measurement node linked to the Pharmaceutical intervention node, labelled "Plasma glucose"](assets/images/nc3rs-eda-meas-label.png){#fig-nc3rs-eda-meas-label width=80%}
+
+3. To link the "Vehicle + drug A" intervention node to the measurement, click on the **arrow** icon next to the "Vehicle + drug A" node (@fig-nc3rs-eda-arrow), and drag it to the Measurement node (@fig-nc3rs-eda-linked-meas).
+
+![The highlighted **arrow** icon can be dragged to another node in the diagram, to link the two nodes.](assets/images/nc3rs-eda-arrow.png){#fig-nc3rs-eda-arrow width=80%}
+
+![After dragging the arrow from the "Vehicle + drug A" node to the Measurement node, both Pharmaceutical interventions are linked to the same measurement](assets/images/nc3rs-eda-linked-meas.png){#fig-nc3rs-eda-linked-meas width=80%}
+
+### Add the Outcome measure node
+
+1. Click on the **Outcome measure** node icon next to the Measurement node, to create a new Outcome measure node.
+2. Double-click on this node and rename it to "Glucose levels" (@fig-nc3rs-eda-expt-int-meas)
+
+![The experiment definition, group assignment, intervention and measurement structure for our EDA diagram](assets/images/nc3rs-eda-expt-int-meas.png){#fig-nc3rs-eda-expt-int-meas width=80%}
+
+## Add the Analysis node
+
+In an EDA diagram, the **Analysis** node describes how the data is analysed. We need to add an Analysis node to our diagram, linking it to the Outcome measure node.
+
+::: {.callout-important}
+All outcome measures (dependent variables) and explanatory variables (independent variables) in the diagram should be connected to the Analysis node
+:::
+
+1. Click on the Analysis node icon next to the Outcome measure node, to create a new Analysis node.
+2. Rename the Analysis node to "Analysis" (@fig-nc3rs-eda-analysis)
+
+![The experiment definition, group assignment, intervention and measurement structure, and Analysis node for our EDA diagram](assets/images/nc3rs-eda-analysis.png){#fig-nc3rs-eda-analysis width=80%}
+
+## Summary
+
+At this point, we have defined the basic skeleton of our experiment, representing the causes and effects that we believe are in play, in our experimental system.
+
+We have defined our pool of experimental subjects and how they are allocated to arms of the experiment. We have defined pharmaceutical interventions and the measurement we want to make.
+
+Now it is time to ask EDA to critique our design, give us feedback, and make suggestions for how to improve it or make it clearer.
