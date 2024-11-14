@@ -27,6 +27,43 @@ This is a concise and accurate description of the experiment but, as is good pra
 
 This is enough information to construct an EDA diagram describing the experiment.
 
+## Causal relationships in our experiment
+
+For the experiment we are building in our EDA example, we assume that the _outcome variable_, plasma glucose level, is potentially dependent on three causal relationships:
+
+1. the pharmacological effect of drug A
+2. the pharmacological effect of the vehicle
+3. individual differences between experimental subjects (mice)
+
+and we have structured our experiment accordingly:
+
+### The pharmacological effect of drug A: _treatment_ vs _no treatment_
+
+The causal influence of administering drug A (or not) on the plasma glucose levels of our experimental subjects is the central reason for performing this experiment. Naturally then, we would want to compare what happens to plasma glucose levels when we _intervene_ with drug A, and when we do not.
+
+There are several ways to structure such a comparison, but this research question naturally suggests the use of two experimental groups: one receiving drug A, and one not. We can assume that the results for these groups are each representative of a much larger population, for which the effect of introducing drug A (or not) follows the shape of a parametrisable statistical distribution, like a Normal distribution.
+
+### _Control_ vs _treatment_ groups
+
+Unfortunately, we cannot administer the drug in isolation. Drug A, like most drugs, is carried in a _vehicle_ - a substance expected to be inert in the context of the treatment.
+
+It would be possible, but unwise, to assume that we could administer drug A alone to one group of mice, and apply no intervention to the other. We are measuring a physiological response which might be affected by many other processes, including the individual being subject to an injection. It might not be correct to assume that the vehicle is inert, either. So we _must_ follow the same protocol as closely as possible in a _control_ group, where the only difference under our control between _control_ and _treatment_ is the presence or absence of drug A.
+
+Practically then, in our experiment we use two _pharmacological interventions_: 
+
+1. injection of a vehicle (_control_)
+2. injection of a vehicle containing drug A (_treatment_)
+
+We assume that any variation between individual vehicle preparations (or the experimental subjects' responses to them) are effectively "drawn from the same population," and that both groups experience the same causal influence from the injection process, and the introduction of the vehicle. As a consequence we assume that any observed difference between the groups is the result of either receiving drug A, or not receiving it.
+
+### Random assignment of individuals to groups
+
+The remaining potential causal influence we consider - that due to underlying differences between individuals - is accounted for inour experimental design by randomising subjects into experimental groups (_treatment_ and _control_, see @sec-group-assignment). 
+
+This works because we _assume_ that all individuals are "drawn from the same population," such that each mouse as a random choice from a single pool whose underlying plasma glucose level is distributed according to some kind of regular (potentially parametrisable) statistical distribution. This is usually a reasonable assumption, and implies that the groups are _samples_ from the same larger population, so should have similar properties
+
+The important consequence of this is that we can argue that - before we _intervene_ with the experimental treatments - we should expect the underlying plasma distribution levels of our _treatment_ and _control_ groups to be comparable. Any differences in measured outcome should then be expected to derive _only_ from our experimental interventions and, in particular, only from the presence or absence of drug A.
+
 ## The EDA Diagram
 
 When we have finished our design, the resulting diagram will look like that in @fig-eda-diagram-final.
