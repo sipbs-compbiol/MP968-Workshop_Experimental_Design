@@ -26,5 +26,6 @@ There may be a value you'd like to measure accurately, like the concentration of
 - Is the machine you use to measure the concentration accurately calibrated and absolutely precise?
 - Are you considering concentration in one patient, or several patients? How much does variation from patient to patient matter?
 
-There are many influences on experimental measurements that can mean they are, in fact, _estimates_.
+There are many influences on experimental measurements that can mean they are, in fact, _estimates_, rather than the true value we hope to measure.
 :::
+
