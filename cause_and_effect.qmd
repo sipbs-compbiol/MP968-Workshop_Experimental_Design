@@ -1,4 +1,4 @@
-# Cause and Effect {#sec-cause-and-effect .unnumbered}
+# Cause and Effect {#sec-cause-and-effect}
 
 In this first part of the material, we are going to take a close look at **the** fundamental issue we care about when performing a scientific experiment: _cause and effect_. For this we need to be aware of something called _Causal Inference_, which is a large and separate field of study, but from which we will borrow some key ideas.
 
