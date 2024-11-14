@@ -1,0 +1,14 @@
+# Defining Interventions {#sec-interventions}
+
+As we learned in @sec-problem, when we perform an experiment we are interested in understanding _causes_, in the sense of a _causal model_ of our experimental system. The definitions of causes and _effects_ comes entirely from us, as investigators. We set up our experiments with a certain set of causes and outcomes in mind, with a view to estimating the sizes of the influence due to each cause.
+
+For the experiment we are building in our EDA example, we have assumed that the _outcome variable_, plasma glucose level, is potentially dependent on three causes:
+
+1. individual differences between experimental subjects (mice)
+2. the pharmacological effect of the vehicle
+3. the pharmacological effect of drug A
+
+The first potential influence is accounted for by randomising individuals into experimental groups (_treatment_ and _control_, see @sec-group-assignment). We _assume_ that all individuals are "drawn from the same population." This means that we consider each mouse as a random choice from a single pool whose underlying plasma glucose level is distributed according to some kind of regular (potentially parametrisable) statistical distribution, which is often a reasonable choice. The important consequence of this is that we can argue that - before we _intervene_ with the experimental treatments - we should expect the underlying plasma distribution levels of our _treatment_ and _control_ groups to be comparable. Any differences in measured outcome should then be expected to derive _only_ from our experimental interventions.
+
+We cannot follow the same Practically, in the experiment we use two _pharmacological interventions_: injection of a vehicle, and injection of a vehicle plus drug A. We will be measuring the plasma glucose levels of our experimental subjects to estimate whether the two interventions result in different effects.
+
