@@ -41,6 +41,13 @@ and we have structured our experiment accordingly:
 
 The causal influence of administering drug A (or not) on the plasma glucose levels of our experimental subjects is the central reason for performing this experiment. Naturally then, we would want to compare what happens to plasma glucose levels when we _intervene_ with drug A, and when we do not.
 
+::: {.callout-note}
+In statistical terms, the presence or absence of drug A is our **independent variable** or **explanatory variable**.
+
+Whether drug A is administered or not is entirely under our control, as experimenters.
+:::
+
+
 There are several ways to structure such a comparison, but this research question naturally suggests the use of two experimental groups: one receiving drug A, and one not. We can assume that the results for these groups are each representative of a much larger population, for which the effect of introducing drug A (or not) follows the shape of a parametrisable statistical distribution, like a Normal distribution.
 
 ### _Control_ vs _treatment_ groups
