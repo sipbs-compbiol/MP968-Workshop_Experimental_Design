@@ -49,6 +49,7 @@ book:
     - part: nc3rs-eda.qmd
       chapters: 
         - eda_account.qmd
+        - workshop_experiment.qmd
     
     - references.qmd
 #    - additional_reading.qmd

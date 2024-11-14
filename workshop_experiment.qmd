@@ -1,0 +1,37 @@
+# The Workshop Experiment {#sec-workshop-experiment}
+
+In this workshop we are going to build an EDA diagram from scratch to represent a simple experiment with the aim to test for the effect of novel drug on glucose levels in the plasma of diabetic mice.
+
+## The experimental description
+
+We can describe our experiment in the usual manner as something like:
+
+> We will use NONcNZO10/LtJ mice (JAX) to represent a polygenic form of diabetes. Mice in the treatment group will receive a single subcutaneous injection of drug A (up to 30mg/kg). Mice in the control group will receive a single subcutaneous injection of vehicle. Mice will be randomly assigned to receive either drug A or vehicle only without regard to the sex of the animal. 48 hours after administration of drug or vehicle, the blood glucose level will be measured.
+
+This is a concise and accurate description of the experiment but, as is good practice, we will begin by laying out what we understand about the experiment that is relevant to the design.
+
+::: {.callout-note}
+## Our beliefs about the experiment
+
+- We are testing the effect of a new drug - _drug A_ - on plasma glucose levels
+  - There is a single experimental _variable_ of interest: whether drug A is present (treatment) or absent (control)
+  - The plasma glucose level is our _outcome measure_
+- Our experimental subjects are diabetic (NONcNZO10/LtJ) mice
+- We will divide individuals into two groups, by different _pharmacological treatment_
+  - Group 1 will receive the vehicle with no active drug (the _control_)
+  - Group 2 will receive the vehicle, containing active drug (the _treatment_)
+- Individuals will be allocated to each group randomly, by _complete randomisation_
+- We are not testing for the effect of sex on drug performance as an experimental _variable of interest_
+  - We are also not monitoring for the effect of sex on drug performance as a _nuisance factor_
+:::
+
+This is enough information to construct an EDA diagram describing the experiment.
+
+## The EDA Diagram
+
+When we have finished our design, the resulting diagram will look like that in @fig-eda-diagram-final.
+
+![The final EDA diagram, incorporating all elements of the experimental design described on this page.](){#fig-eda-diagram-final width=80%}
+
+We will use this diagram to get some feedback from the EDA about improvements to the design, and our choice of statistical methods.
+
