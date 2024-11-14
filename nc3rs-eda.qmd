@@ -1,3 +1,34 @@
-# Late Section {#sec-late .unnumbered}
+# NC3Rs EDA {#sec-nc3rs-eda}
 
-This `.qmd` file introduces a `Part` of the Quarto book. We use the `{#sec-REFERENCE}` option to make it cross-referenceable elsewhere in the text, and the `{.unnumbered}` option to avoid giving it a section number.
+The [NC3Rs](https://nc3rs.org.uk) is a BBSRC and MRC-funded UK-based scientific organisation that works to help the research community to **replace**, **refine**, and **reduce** (the [3Rs](https://www.gov.uk/government/collections/animals-in-science-regulation-unit)) the use of animals in research and testing. They fund 3Rs research, train early career researchers, and provide services, information, and resources to the scientific community, animal care staff, and vets.
+
+::: {.callout-warning}
+## Experimental Design Assistant
+
+Most importantly for this workshop, the NC3Rs provides the `Experimental Design Assistant (EDA)`, an online tool that helps researchers design robust experiments. The researcher builds their experiment as an annotated [DAG](dags.qmd), which the EDA analyses and provides bespoke feedback, including suggestions of suitable statistical approaches. The EDA also produces helpful visualisations of the experimental design, which can be shared with others and in publications, for transparency and clear communication.
+
+**We will be using the EDA to design an experiment, in this workshop.**
+:::
+
+- [NC3Rs website](https://nc3rs.org.uk)
+- [Experimental Design Assistant (EDA)](https://eda.nc3rs.org.uk/)
+
+::: {.column-margin}
+
+![NC3Rs website ["Who We Are" page](https://nc3rs.org.uk/who-we-are).](assets/images/nc3rs.png){#fig-nc3rs-landing}
+
+:::
+
+## The Experimental Design Assistant (EDA)
+
+The EDA is a web application that can be used in any modern browseer. It is intended to help researchers improve the design of animal experiments by making it simple to describe their experiment graphically and in detail, by creating a [directed, acyclic graph (DAG)](dags.qmd). Once created, the graph can be analysed by the tool to make suggestions of suitable statistical analyses, and to identify potential issues with the current design.
+
+The tool also provides a number of functions that aid with _randomisation_ and _blinding_ in an experiment, and to help with calculating sample sizes for experimental groups, on the basis of power calculations. To some extent, the EDA system plays the role of a biostatistician, identifying features of the experimental design, and prompting the researcher to include information about their design, in the same way a statistician might.
+
+The EDA is a powerful communication tool, allowing researchers rapidly to lay out an unambiguous experimental design, to be shared with other researchers, used in grant and licence applications, or in publications, as publication-quality illustrations.
+
+![Landing page of the [NC3Rs EDA website](https://eda.nc3rs.org.uk/)](assets/images/nc3rs-eda-landing.png){#fig-nc3rs-eda-landing width=80%}
+
+### Getting Started
+
+To start using the EDA, you need to have an account at the NC3Rs site (@fig-nc3rs-eda-landing). The rest of the pages in this workshop chapter will walk you through the process of setting up an account and designing an experiment.

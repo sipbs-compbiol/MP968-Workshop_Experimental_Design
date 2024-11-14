@@ -46,9 +46,9 @@ book:
       chapters: 
         - wet_earth.qmd
     
-    - part: late-section.qmd
+    - part: nc3rs-eda.qmd
       chapters: 
-        - webr-example.qmd
+        - eda_account.qmd
     
     - references.qmd
 #    - additional_reading.qmd

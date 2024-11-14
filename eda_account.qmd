@@ -1,0 +1,29 @@
+# EDA Account Setup {#sec-eda-account}
+
+This page will walk you through the process of setting up an account, so that you can use the NC3Rs EDA web application.
+
+## Setting up an account
+
+::: {.callout-important}
+If you already have an account with the NC3Rs EDA, please skip this registration step and log in with your existing account, then move on to the next step in the workshop.
+:::
+
+1. Navigate in your browser to the NC3Rs EDA website at [https://eda.nc3rs.org.uk](https://eda.nc3rs.org.uk) (@fig-nc3rs-eda-landing-1)
+
+![Landing page of the [NC3Rs EDA website](https://eda.nc3rs.org.uk/)](assets/images/nc3rs-eda-landing.png){#fig-nc3rs-eda-landing-1}
+
+2. Click on the blue `Sign in` button at the top right of the landing page (@fig-nc3rs-eda-button).
+
+![NC3Rs EDA website `Sign in` button](assets/images/nc3rs-sign-in-button.png){#fig-nc3rs-eda-button width=80%}
+
+3. Click on the `Don't have an account? Get started` [link](https://eda.nc3rs.org.uk/eda/register/register) (@fig-nc3rs-eda-signin)
+
+![NC3Rs EDA website sign-in page](assets/images/nc3rs-signin.png){#fig-nc3rs-eda-signin width=80%}
+
+4. Create an account on the `Create an account` [page](https://eda.nc3rs.org.uk/eda/register/register) by entering a Username, your **university** email address, and a password (you will need to enter the password twice), and completing the CAPTCHA, then clicking on `Create account`.
+
+![NC3Rs EDA website account creation page](assets/images/nc3rs-create-account.png){#fig-nc3rs-eda-create-account width=80%}
+
+5. You will receive an email **at the email address you used to register**. Open this email and click on the `Verify your email address now` link. This will take you to the [NC3Rs EDA dashboard page](https://eda.nc3rs.org.uk/eda/landing) (@fig-nc3rs-eda-dashboard)
+
+![NC3Rs EDA Dashboard page](assets/images/nc3rs-dashboard.png){#fig-nc3rs-eda-dashboard width=80%}
