@@ -51,6 +51,7 @@ book:
         - eda_account.qmd
         - workshop_experiment.qmd
         - create_new_diagram.qmd
+        - add_experiment_node.qmd
     
     - references.qmd
 #    - additional_reading.qmd

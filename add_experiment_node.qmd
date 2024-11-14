@@ -1,0 +1,100 @@
+# Add an Experiment Node {#sec-add-experiment-node}
+
+The first node we will add to our design is an _Experiment node_.
+
+::: {.callout-important}
+## Every experimental design should contain one experiment node.
+
+The Experiment node is necessary for EDA feedback to work correctly.
+:::
+
+The Experiment node provides destails about the experimental hypotheses, and the effect of interest. It can contain a number of annotated properties, important to the experiment, including:
+
+- **Label**: the name of the experiment
+- **Description**: a longer account of the experiment
+- **Null hypothesis**
+- **Alternative hypothesis**
+- **Effect of interest**
+- **Effect size**
+
+and so on.
+
+## Getting Help
+
+1. Move your mouse pointer over the Experiment node in the EDA window. Note that the entry in the list is highlighted, and a blue question mark appears.
+2. Click on the blue question mark. This brings up the `Help Centre` popup (@fig-nc3rs-help-centre-expt).
+
+![The NC3Rs EDA, showing the Experiment node Help Centre entry](assets/images/nc3rs-eda-expt-help.png){#fig-nc3rs-help-centre-expt width=80%}
+
+::: {.callout-tip collapse="true"}
+## Help Centre information
+
+All entries in the sidebar list of nodes have a corresponding Help Centre information page. You can bring this up by moving your mouse over the entry in the sidebar, and clicking on the blue question mark for the node of interest.
+
+The Help Centre will remain open by default. To hide the Help Centre, click on the two chevrons at the top left of the Help Centre popup.
+
+To reopen the Help Centre, you can also click on the `Help Centre` link at the top right of the EDA. This will open up a browseable set of help pages, including HowTo guides that can be useful to supplement this walkthrough.
+:::
+
+## Add an Experiment Node
+
+1. Click and hold on the Experiment node in the sidebar.
+2. Drag and drop the Experiment node on the main canvas to place a blank Experiment node (@fig-nc3rs-eda-blank-expt).
+
+![A blank Experiment node on the NC3Rs EDA canvas. The red square around the node indicates that our diagram has an error (in this case it's because we have not attached it to any _Animal characteristics_ nodes).](assets/images/nc3rs-eda-blank-expt.png){#fig-nc3rs-eda-blank-expt width=80%}
+
+::: {.callout-warning collapse="true"}
+## The red square
+
+The Experiment node is initially surrounded by a red square to indicate that there is a problem with our diagram. At this point, we have not connected the Experiment to any Animal characterisics nodes, or filled out essential property information. As we progress with our diagram and fill out all the necessary parts of the experimental design, the red square will go away.
+:::
+
+### Edit node properties
+
+We need to fill in some information in our Experiment node's properties.
+
+1. Click on the `properties` icon in the bottom right of the node icon (it looks like six short horizontal lines). This will bring up the `Node properties` edit dialogue box (@fig-nc3rs-eda-expt-props).
+2. Enter relevant information for each field, where you have it.
+
+![The Node properties dialogue box for an Experiment node. Fields marked with a single asterisk are essential for the internal validity of the experiment. Those with a double asterisk should be completed once the experiment has concluded.](assets/images/nc3rs-eda-expt-props.png){#fig-nc3rs-eda-expt-props width=80%}
+
+3. Change the text in the **label** field to read "Effect of drug A on plasma glucose levels".
+4. Leave the other fields blank for now, and click on the `Close` button.
+
+::: {.callout-important collapse="true"}
+## Fields with an asterisk (*)
+
+A node's properties dialogue box will indicate that some fields _must_ be filled in for the internal validity of the experiment by marking them with an asterisk (*). If we do not enter information into these fields, the EDA will notice this and provide feedback for how to fill in the field.
+
+You can also bring up the Help Centre popup by clicking on the blue question mark, which will provide further information about how each field should be completed.
+:::
+
+## Add an Animal characteristics node
+
+The _Animal characteristics_ node describes the characteristics of the animals used in the experiment.
+
+::: {.callout-important}
+## Every experimental design should contain at least one Animal characteristics node.
+
+If the animals in your experiment have distinct characteristics, such as sex (males/femailes), or different genotypes, then multiple Animal characteristics nodes should be used.
+:::
+
+::: {.callout-note}
+Only _Animal characteristics_ nodes can be connected to an Experiment node.
+:::
+
+1. Move your mouse over the grey box just to the right of the Experiment node to bring up the tooltip information (@fig-nc3rs-eda-ac-tooltip).
+
+![Hovering the mouse pointer over the grey box shows the tooltip.](assets/images/nc3rs-eda-ac-tooltip.png){#fig-nc3rs-eda-ac-tooltip width=80%}
+
+2. Click on the grey box. This will link the Experiment node to a new Animal characteristics node (@fig-nc3rs-eda-ac-link).
+
+![The Experiment node, linked to a new Animal characteristics node.](assets/images/nc3rs-eda-ac-link.png){#fig-nc3rs-eda-ac-link width=80%}
+
+3. Click on the `properties` icon for the Animal characteristics node
+4. Change the **label** to "male mice"
+5. Change the **species** to "mouse" (this is a drop-down choice)
+6. Specify **sex** as "male" (this is also a drop-down choice)
+7. Click on the `Close` button to close the dialogue box (@fig-nc3rs-eda-ac-props)
+
+![Properties ascribed to the new Animal characteristics node.](assets/images/nc3rs-eda-ac-props.png){#fig-nc3rs-eda-ac-props width=80%}

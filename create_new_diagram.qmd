@@ -12,4 +12,4 @@ Click on the blue `New Diagram` button (@fig-nc3rs-eda-new-diagram-button). This
 
 ![The "Untitled diagram" blank NC3Rs EDA canvas. The large white space is where the experimental design diagram will be built. The sidebar on the left shows a list of _node_ types that can be added to the design. The menu bar at the top allows you to save the experiment in a number of formats, and use tools to carry out analysis of your design.](assets/images/nc3rs-eda-blank-canvas.png){#fig-nc3rs-eda-blank-canvas width=80%}
 
-We can start to build our experimental design by adding an _experiment node_.
+We can start to build our experimental design by adding an _Experiment node_.
