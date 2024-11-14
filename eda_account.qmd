@@ -24,6 +24,16 @@ This page will walk you through the process of setting up an account, so that yo
 
 ![NC3Rs EDA website account creation page](assets/images/nc3rs-create-account.png){#fig-nc3rs-eda-create-account width=80%}
 
-5. You will receive an email **at the email address you used to register**. Open this email and click on the `Verify your email address now` link. This will take you to the [NC3Rs EDA dashboard page](https://eda.nc3rs.org.uk/eda/landing) (@fig-nc3rs-eda-dashboard)
+5. You will receive an email **at the email address you used to register**. Open this email and click on the `Verify your email address now` link. This will take you to the [NC3Rs EDA dashboard page](https://eda.nc3rs.org.uk/eda/landing) (@fig-nc3rs-eda-dashboard).
 
 ![NC3Rs EDA Dashboard page](assets/images/nc3rs-dashboard.png){#fig-nc3rs-eda-dashboard width=80%}
+
+## Using an existing account
+
+If you already have an account with NC3Rs EDA, you can log in at the [sign-in page](https://eda.nc3rs.org.uk/eda/login/auth). This will take you to the [NC3Rs EDA dashboard page](https://eda.nc3rs.org.uk/eda/landing) (@fig-nc3rs-eda-dashboard).
+
+- [NC3Rs EDA sign-in page](https://eda.nc3rs.org.uk/eda/login/auth)
+
+::: {.callout-note}
+Be sure to use your _username_ to log in, rather than your email address.
+:::
