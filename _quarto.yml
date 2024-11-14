@@ -36,10 +36,11 @@ book:
   # [E] CHAPTERS AND SECTIONS
   chapters:
     - index.qmd
-    - intro.qmd
+    - part: intro.qmd
 
     - part: cause_and_effect.qmd
-      chapters: 
+      chapters:
+        - problem.qmd
         - dags.qmd
 
     - part: measurement.qmd
@@ -53,6 +54,7 @@ book:
         - create_new_diagram.qmd
         - add_experiment_node.qmd
         - group_assignment.qmd
+        - interventions.qmd
     
     - references.qmd
 #    - additional_reading.qmd
