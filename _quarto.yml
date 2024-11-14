@@ -50,6 +50,7 @@ book:
       chapters: 
         - eda_account.qmd
         - workshop_experiment.qmd
+        - create_new_diagram.qmd
     
     - references.qmd
 #    - additional_reading.qmd

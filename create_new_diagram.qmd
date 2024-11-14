@@ -1,0 +1,15 @@
+# Create a New Diagram {#sec-create-new-diagram}
+
+To create a new EDA diagram, first ensure that you are [signed in](eda_account.qmd) to your account (@sec-eda-account), and navigate to the [`Dashboard`](https://eda.nc3rs.org.uk/eda/landing) page (@fig-nc3rs-eda-dashboard-1).
+
+![NC3Rs EDA `Dashboard` page.](assets/images/nc3rs-dashboard.png){#fig-nc3rs-eda-dashboard-1 width=80%}
+
+## Create a new diagram
+
+Click on the blue `New Diagram` button (@fig-nc3rs-eda-new-diagram-button). This will take you to a blank "Untitled diagram" canvas, where we will start to construct our experiment (@fig-nc3rs-eda-blank-canvas).
+
+![The `New Diagram` button. Click on this to start preparing a new diagram](assets/images/nc3rs-eda-new-diagram-button.png){#fig-nc3rs-eda-new-diagram-button width=80%}
+
+![The "Untitled diagram" blank NC3Rs EDA canvas. The large white space is where the experimental design diagram will be built. The sidebar on the left shows a list of _node_ types that can be added to the design. The menu bar at the top allows you to save the experiment in a number of formats, and use tools to carry out analysis of your design.](assets/images/nc3rs-eda-blank-canvas.png){#fig-nc3rs-eda-blank-canvas width=80%}
+
+We can start to build our experimental design by adding an _experiment node_.
