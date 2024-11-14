@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>Measurement – MP968: Experimental Design Workshop</title>
+<title>2&nbsp; An Introduction to Causal Graphs – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./wet_earth.html" rel="next">
-<link href="./dags.html" rel="prev">
+<link href="./measurement.html" rel="next">
+<link href="./cause_and_effect.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cause_and_effect.html">Cause and Effect</a></li><li class="breadcrumb-item"><a href="./dags.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -139,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dags.html" class="sidebar-item-text sidebar-link">
+  <a href="./dags.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></span></a>
   </div>
 </li>
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./measurement.html" class="sidebar-item-text sidebar-link active">
+            <a href="./measurement.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Measurement</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -196,9 +196,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cause_and_effect.html">Cause and Effect</a></li><li class="breadcrumb-item"><a href="./dags.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-measurement" class="quarto-section-identifier">Measurement</span></h1>
+<h1 class="title"><span id="sec-causal-graphs" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></span></h1>
 </div>
 
 
@@ -215,28 +215,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this section of the material, we are going to think about what it means to measure some kind of value. You’re all scientists and you will have measured things before, so you might think that you should be working with more advanced material. But we’re going to look at measurement in a way that emphasises the role of <strong>scientific modelling</strong> and explores the idea of sample size and variance.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Data Context
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The example we are using is attempting to estimate the proportion of the Earth’s surface that is covered by water.</p>
-<p>You probably already have an idea of what proportion that is - about 70%. But…</p>
-<ul>
-<li>How accurate is that value of 70%?</li>
-<li>How would you go about measuring the exact surface area?
-<ul>
-<li>Aren’t there tides? And coastal erosion? And other things?</li>
-</ul></li>
-</ul>
-</div>
-</div>
 
 
 
@@ -663,13 +641,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./dags.html" class="pagination-link" aria-label="An Introduction to Causal Graphs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></span>
+      <a href="./cause_and_effect.html" class="pagination-link" aria-label="Cause and Effect">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cause and Effect</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./wet_earth.html" class="pagination-link" aria-label="How Wet Is The Earth?">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./measurement.html" class="pagination-link" aria-label="Measurement">
+        <span class="nav-page-text">Measurement</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -681,7 +659,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/measurement.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/dags.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

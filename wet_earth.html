@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>2&nbsp; How Wet Is The Earth? – MP968: Experimental Design Workshop</title>
+<title>3&nbsp; How Wet Is The Earth? – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./wet_earth.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./wet_earth.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -129,8 +129,21 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Cause and Effect</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="./cause_and_effect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cause and Effect</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dags.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -144,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./wet_earth.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></a>
   </div>
 </li>
       </ul>
@@ -161,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./webr-example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><code>R</code> Playground</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><code>R</code> Playground</span></span></a>
   </div>
 </li>
       </ul>
@@ -182,16 +195,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#measuring-something-that-cant-practically-be-measured" id="toc-measuring-something-that-cant-practically-be-measured" class="nav-link active" data-scroll-target="#measuring-something-that-cant-practically-be-measured"><span class="header-section-number">2.1</span> Measuring something that can’t practically be measured</a></li>
+  <li><a href="#measuring-something-that-cant-practically-be-measured" id="toc-measuring-something-that-cant-practically-be-measured" class="nav-link active" data-scroll-target="#measuring-something-that-cant-practically-be-measured"><span class="header-section-number">3.1</span> Measuring something that can’t practically be measured</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/wet_earth.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./wet_earth.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./wet_earth.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-wet-earth" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></h1>
+<h1 class="title"><span id="sec-wet-earth" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></h1>
 </div>
 
 
@@ -208,8 +221,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="measuring-something-that-cant-practically-be-measured" class="level2 page-columns page-full" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="measuring-something-that-cant-practically-be-measured"><span class="header-section-number">2.1</span> Measuring something that can’t practically be measured</h2>
+<section id="measuring-something-that-cant-practically-be-measured" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="measuring-something-that-cant-practically-be-measured"><span class="header-section-number">3.1</span> Measuring something that can’t practically be measured</h2>
 <p>Suppose you want to measure the proportion of the Earth’s surface that is water. How would you go about it, practically? Maybe you could…</p>
 <ul>
 <li>pour the water off into a large measuring cylinder. But there isn’t a container big enough.</li>
@@ -223,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
 <img src="assets/images/earth_faucet.jpg" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-earth-faucet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: The Earth, hanging in space, with a faucet inserted so that we can drain the oceans and measure their volume.
+Figure&nbsp;3.1: The Earth, hanging in space, with a faucet inserted so that we can drain the oceans and measure their volume.
 </figcaption>
 </figure>
 </div>
