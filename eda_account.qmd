@@ -5,7 +5,7 @@ This page will walk you through the process of setting up an account, so that yo
 ## Setting up an account
 
 ::: {.callout-important}
-If you already have an account with the NC3Rs EDA, please skip this registration step and log in with your existing account, then move on to the next step in the workshop.
+**If you already have an account with the NC3Rs EDA, please skip this registration step and log in with your existing account**, then move on to the next step in the workshop.
 :::
 
 1. Navigate in your browser to the NC3Rs EDA website at [https://eda.nc3rs.org.uk](https://eda.nc3rs.org.uk) (@fig-nc3rs-eda-landing-1)
