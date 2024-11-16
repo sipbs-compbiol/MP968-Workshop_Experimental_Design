@@ -4,7 +4,7 @@ In this workshop we are going to build an EDA diagram from scratch to represent 
 
 ## The experimental description
 
-We can describe our experiment in the usual manner as something like:
+We can describe our experiment in the usual way we'd approach writing a grant application (or, in the past tense, a Methods section) as something like:
 
 > We will use NONcNZO10/LtJ mice (JAX) to represent a polygenic form of diabetes. Mice in the treatment group will receive a single subcutaneous injection of drug A (up to 30mg/kg). Mice in the control group will receive a single subcutaneous injection of vehicle. Mice will be randomly assigned to receive either drug A or vehicle only without regard to the sex of the animal. 48 hours after administration of drug or vehicle, the blood glucose level will be measured.
 
@@ -25,7 +25,7 @@ This is a concise and accurate description of the experiment but, as is good pra
   - We are also not monitoring for the effect of sex on drug performance as a _nuisance factor_
 :::
 
-This is enough information to construct an EDA diagram describing the experiment.
+It seems like we understand what we want to study, and how to control for outside influences that aren't of direct interest, so this is enough information to begin constructing an EDA diagram describing the experiment.
 
 ## Causal relationships in our experiment
 
