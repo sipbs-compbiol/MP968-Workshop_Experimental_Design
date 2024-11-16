@@ -55,6 +55,7 @@ book:
         - add_experiment_node.qmd
         - group_assignment.qmd
         - interventions.qmd
+        - critique1.qmd
     
     - references.qmd
 #    - additional_reading.qmd

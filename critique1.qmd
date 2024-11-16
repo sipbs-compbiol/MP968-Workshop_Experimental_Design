@@ -1,0 +1,255 @@
+# Critique the Experiment {#sec-critique-1}
+
+EDA provides a number of tools to help us, as researchers, improve our experimental designs and make them more rigourous. Some of these, such as the `Critique` tool, embody rules and principles that would be applied by a competent statistician, if you brought one in to advise on your experiment. Using these tools can save you time, and be useful as a training aid so that we can see and understand elements of good and bad experimental design ourselves, with experience.
+
+::: {.callout-warning}
+Tools like `Critique` are very useful but, because they work from a finite set of rules and are not themselves intelligent, it is always useful - especially for experiments that are not very simple - to consult with a competent statistician.
+:::
+
+In this section, we will use the EDA `Critique` tool to get feedback on our basic experimental design.
+
+::: {.callout-note collapse="true"}
+## What no-one tells you
+
+Good experimental design can be very difficult, and quite nuanced. But even experienced scientists with many publications and long track records of research funding may never have received any formal training in experimental design. This can, and too frequently does, give rise to experiments or results that are compromised. In the worst cases, these experiments may be unable - because of their structure - to provide useful information about the system under test. More often a poor match between the experimental design and statistical analysis gives rise to misleading results or uncorrect conclusions.
+
+An accessible introduction to the hazards associated with poor experimental design can be found in Ben Goldacre's books _Bad Pharma_ (about poor research practice in the pharmaceutical industry) and _I Think You'll Find It's A Bit More Complicated Than That_, which collects his _Bad Science_ newspaper columns, including this one:
+
+- ["What if academics were as dumb as quacks with statistics?"](https://www.badscience.net/2011/10/what-if-academics-were-as-dumb-as-quacks-with-statistics/)
+
+which makes a popular presentation of a study of work published in prestigious journals such as _Science_ and _Nature_ (@Nieuwenhuis2011-nl). Their paper begins:
+
+> In theory, a comparison of two experimental effects requires a statistical test on their difference. In practice, this comparison is often based on an incorrect procedure involving two separate tests in which researchers conclude that effects differ when one effect is significant (P < 0.05) but the other is not (P > 0.05). We reviewed 513 behavioral, systems and cognitive neuroscience articles in five top-ranking journals (Science, Nature, Nature Neuroscience, Neuron and The Journal of Neuroscience) and found that 78 used the correct procedure and 79 used the incorrect procedure. An additional analysis suggests that incorrect analyses of interactions are even more common in cellular and molecular neuroscience.
+:::
+
+## Run the `Critique` tool
+
+1. Use the `Tools` menu and click on `Tools -> Critique` (@fig-critique-1)
+
+![EDA, showing the `Tools` menu and some text from the `Critique` Help Centre entry](assets/images/nc3rs-eda-critique-1.png){#fig-critique-1 width=80%}
+
+::: {.callout-important}
+The critique involves running analysis on a remote machine, and may take a couple of minutes, so please be patient.
+:::
+
+When the critique has finished, you will see a pop-up dialogue box describing the results of the analysis.
+
+## Read the critique results
+
+![EDA critique output indicating five errors, 19 warnings, and an advice message associated with our design](assets/images/nc3rs-eda-critique-2.png){#fig-critique-2 width=80%}
+
+It turns out our experimental design has some issues: five errors, 19 warnings, and an advice message. Our simple design might be a bit more complicated than we think.
+
+::: {.column-margin}
+![Our experimental design isn't as good as we think it is!](assets/images/oh-noes.jpg){#fig-oh-noes}
+:::
+
+1. Click on the `OK` button
+2. Note the locations and kinds of feedback the `Critique` tool provided (@fig-critique-3)
+
+![The EDA critique output highlights errors with a red box, warnings with an amber box, and advice with a blue box. There are errors in our Experiment node, in the _control_ and _treatment_ Group nodes, and in our Outcome measure node. There are warnings all over the experimental design.](assets/images/nc3rs-eda-critique-3.png){#fig-critique-3 width=80%}
+
+::: {.callout-note}
+## Errors and Warnings: What should we fix?
+
+The EDA `Critique` tool reports three kinds of issue:
+
+1. **Errors** are critical problems with the design that would prevent the tool from being able to decide upon an appropriate statistical analysis, or that would indicate structural problems with the design, such as missing or inappropriate elements, that would compromise the experiment fatally. Errors will block further analysis of the experimental design.
+2. **Warnings** are generally about missing information that, while not compromising the experiment to the point that it just won't work, may result in inappropriate analyses. A typical example of this is when the design does not take experimental subject sex into account, this is raised as a warning. Working with a single sex can be justified (e.g. prostate cancer research, breast cancer research) but in general is not good practice and can compromise the interpretation or applicability of results. Warnings typically highlight where clarification could alter the analysis method or interpretation.
+3. **Advice** labels are similar to warnings in that they highlight ambiguities or areas where unstated decisions might alter the conduct or interpretation of the experiment. They are typically less severe than warnings.
+
+Errors must be fixed for the experimental design to be considered at all usable. Issues flagged as warnings or advice notices need not be fixed, as the choices made may be justified. However, it is always worthwhile inspecting the warnings, as attending to them may help clarify and improve the design. 
+:::
+
+::: {.callout-tip}
+It can help to have a strategy to approach dealing with `Critique` tool output. Two principles might help resolve issues more efficiently.
+
+1. Deal with errors first, then warnings, then advice
+2. Issues in the Experiment node might affect other nodes in the experiment, so attend to these first.
+3. Issues in nodes "early" in the experiment (e.g. in defining experimental groups) might affect nodes "downstream" in the experiment, so work from defining your groups through to the analysis step.
+:::
+
+::: {.callout-important}
+On this page we will deal only with the highlighted errors. Later in the workshop we will handle an implication of one of the warnings.
+:::
+
+## Resolve Experiment node errors
+
+1. Following our advice in the box above, click on the red error box associated with the Experiment node to see the error message (@fig-critique-4).
+
+![The Experiment node error indicates two problems: our experimental unit is missing, and the independent variable of interest is not specified. These errors would be expected to affect the whole experiment.](assets/images/nc3rs-eda-critique-4.png){#fig-critique-4 width=80%}
+
+::: {.callout-tip}
+The bold text in the error dialogue box provides links to help text and advice about resolving each specific error, and what options are available to you.
+:::
+
+### Resolve the "experimental unit" error
+
+1. Click on the `OK` button to close the dialogue box.
+
+::: {.callout-note collapse="true"}
+## Experimental units
+
+An _experimental unit_ is the subject that is exposed to an intervention, in the course of the experiment, _independently_ of other experimental units. Most of the time in _in vivo_ research the experimental unit is a single animal, but it might in some cases be a group of animals, part of an animal (if you are testing distinct limbs of the same animal, for instance), or the same animal at different periods of time.
+
+The _sample size_ of an experiment is the number of experimental units in each group. It is critical for good statistics, and being able to make an appropriate inference from your experiment, that the experimental unit is well defined.
+
+In the workshop experiment, we are taking a _systemic measurement_ of blood glucose from each animal at the endpoint of the experiment, so our experimental unit is the `animal`.
+:::
+
+2. Add a new **Experimental unit** node, by clicking on the grey lozenge in the Pool Group node's icon menu (@fig-critique-5).
+
+![The grey lozenge icon in the Group node panel creates a new **Experimental unit** node.](assets/images/nc3rs-eda-critique-5.png){#fig-critique-5 width=80%}
+
+3. Drag the new node into a clear space, and click on the `properties` icon to bring up the Node properties pane (@fig-critique-6).
+
+![The **Experimental unit** node field panel](assets/images/nc3rs-eda-critique-6.png){#fig-critique-6 width=80%}
+
+4. Rename the node in the **label** field as "Animal" and select "animal" from the **experimental unit is** drop-down (@fig-critique-7). Then click the `Close` button.
+
+![Renaming the **Experimental unit** node, and specifying the experimental unit type.](assets/images/nc3rs-eda-critique-7.png){#fig-critique-7 width=80%}
+
+### Resolve the "independent variable of interest" error
+
+::: {.callout-note collapse="true"}
+## Independent variable of interest
+
+An _independent variable of interest_ in an experiment is a parameter that is under the control of and/or manipulated by the experimenter. Other terms for the same thing include _parameter_, _predictor_, or _factor of interest_.
+
+Here, our independent variable of interest is `drug A`, as we are testing the response of animals in the presence or absence of the drug, and the administration of the drug is under the experimenter's control.
+:::
+
+::: {.callout-important}
+To add an independent variable of interest to our design, we need to introduce two new node types:
+
+1. An **Independent variable of interest** node, which states what the variable itself is (e.g. dosage, surgery, drug)
+2. Two **Variable category** nodes, because our variable is _categorical_ - it is subdivided into two categories: "vehicle only", and "vehicle + drug".
+:::
+
+1. Drag an **Independent variable of interest** node from the sidebar on the left, onto the canvas. Double-click on the node, and rename it as "Drug A" (@fig-critique-8).
+
+![A new **Independent variable of interest** node, renamed as "Drug A". This represents a variable that describes whether drug A was administered or not.](assets/images/nc3rs-eda-critique-8.png){#fig-critique-8 width=80%}
+
+2. Use the green lozenge icon in the Drug A Independent variable node you just made to create two **Variable category** nodes, linked to the independent variable (@fig-critique-9).
+
+![Clicking on the green lozenge icon twice creates two new **Variable category** nodes, which describe the categories that the "Drug A" variable may belong to. ](assets/images/nc3rs-eda-critique-9.png){#fig-critique-9 width=80%}
+
+3. Rename the Variable category nodes as "vehicle" and "vehicle + drug" (@fig-critique-10).
+
+![The **Variable category** nodes are named "vehicle" and "vehicle + drug" to represent the two categories for the "Drug A" variable.](assets/images/nc3rs-eda-critique-10.png){#fig-critique-10 width=80%}
+
+4. Link the "Drug A" variable to the **Analysis** node by dragging the _arrow_ icon from the "Drug A" node icon panel onto the Analysis node (@fig-critique-11). This adds an arrow to the diagram indicating that "Drug A" is a _factor of interest_ for the analysis.
+
+![The "Drug A" variable is linked to the Analysis node as a _factor of interest_.](assets/images/nc3rs-eda-critique-11.png){#fig-critique-11 width=80%}
+
+## Rerun the `Critique` tool
+
+::: {.callout-tip}
+## The critique-fix-critique cycle
+
+The usual way to run the EDA tool is to critique your design, then fix one or more issues, and run the critique again to see what has changed. We repeat the cycle until the `Critique` tool reports no errors or issues.
+:::
+
+1. Use the `Tools` menu and click on `Tools -> Critique`
+2. Read the critique output.
+
+![EDA critique output indicating seven errors, 19 warnings, and an advice message associated with our design](assets/images/nc3rs-eda-critique-12.png){#fig-critique-12 width=80%}
+
+The output suggests that we have more errors than before, even though the errors on the Experiment node have been successfully resolved (@fig-oh-noes).
+
+## Resolve Group node errors
+
+1. Click on the `OK` button to close the critique results.
+2. Click on the Error icon, on the Control Group node. This brings up a popup warning us that the experimental grous are not differentiated from each other: the EDA tool cannot tell the difference between the two groups (@fig-critique-13).
+
+![The design tool tells us that it cannot differentiate between experimental groups](assets/images/nc3rs-eda-critique-13.png){#fig-critique-13 width=80%}
+
+::: {.callout-important}
+## Using variable categories as "tags"
+
+The EDA tool advises us to use the **Variable category** nodes we created earlier as "tags". This means that it wants us to assign the variable categories ("vehicle" and "vehicle + drug") to explicitly associate one or more variable categories with each **Pharmacological intervention** node. Doing so tells the design tool which variable in the statistical analysis is associated with which practical intervention in our experiment.
+
+To do this, we need to duplicate the two **Variable category** nodes, and drag one each to the appropriate **Pharmacological intervention** node.
+:::
+
+3. Select the "vehicle" and "vehicle + drug" nodes by dragging a box around the two green lozenges (@fig-critique-14).
+
+![Selecting the two Variable category nodes places a blue box around each node.](assets/images/nc3rs-eda-critique-14.png){#fig-critique-14 width=80%}
+
+4. Use the `Edit -> Copy` and `Edit -> Paste` menu items (@fig-critique-15) to create copies of both nodes (@fig-critique-16).
+
+::: {.column-margin}
+![The EDA tool's `Edit` menu.](assets/images/nc3rs-eda-critique-15.png){#fig-critique-15 width=80%}
+:::
+
+![Copy-pasting the Variable category nodes places them on the canvas, surrounded by red boxes.](assets/images/nc3rs-eda-critique-16.png){#fig-critique-16 width=80%}
+
+5. Drag the "vehicle" Variable category node onto the "Vehicle only" Pharmacological intervention node (a green box will appear around the Pharmacological intervention node, when it is in place).
+6. Drag the "vehicle + drug" Variable category node onto the "Vehicle + drug A" Pharmacological intervention node. Both interventions are now tagged with the appropriate variable category (@fig-critique-17).
+
+![The Pharmacological intervention nodes with Variable category tags attached, and their corresponding Group nodes.](assets/images/nc3rs-eda-critique-17.png){#fig-critique-17 width=80%}
+
+## Rerun the `Critique` tool
+
+1. Use the `Tools` menu and click on `Tools -> Critique`
+2. Read the critique output.
+
+![EDA critique output indicating three errors, 19 warnings, and an advice message associated with our design](assets/images/nc3rs-eda-critique-18.png){#fig-critique-18 width=80%}
+
+Everything is not fixed (@fig-oh-noes), but at least we are reducing the total number of errors.
+
+## Resolve Outcome measure node errors
+
+1. Close the critique output by clicking on the `OK` button.
+2. Click on the Outcome measure node's Error icon. This brings up a popup warning us that the EDA tool does not know whether the outcome measure is continuous or categorical.
+
+![The Outcome node error popup explaining that we need to specify whether the measure is continuous or categorical.](assets/images/nc3rs-eda-critique-19.png){#fig-critique-19 width=80%}
+
+::: {.callout-note collapse="true"}
+## Continuous or categorical
+
+In general, variables in a statistical analysis can be either _continuous_, or _categorical_. We need to know whether variables (independent variables or outcome variables) are continuous or categorical in order to be able to determine an appropriate statistical approach.
+
+- **continuous** variables represent measures that can take any value along a continuum, like dose concentration, weight, or age
+- **categorical** variables represent measures that can be members of one of a limited set of categories, like "high dose"/"low dose" (two categories); "underweight"/"normal"/"overweight"; or "infant"/"child"/"adult".
+
+**If the EDA tool does not know what kind of data is measured in the experiment, it cannot recommend a statistical approach.**
+:::
+
+::: {.callout-important}
+In this experiment, our outcome measure is glucose concentration in plasma, which is a _continuous_ variable.
+:::
+
+3. Click on the Node properties icon for the "Glucose levels" Outcome measure node and select "continuous or discrete" from the **continuous or categorical** drop-down options, and set the **is primary outcome measure** to "yes" (@fig-critique-20). Then click on the `Close` button.
+
+![Node properties for the Outcome measure ("glucose concentration") indicating that it is a continuous variable, and the primary experimental outcome measure.](assets/images/nc3rs-eda-critique-20.png){#fig-critique-20 width=80%}
+
+## Rerun the `Critique` tool
+
+1. Use the `Tools` menu and click on `Tools -> Critique`
+2. Read the critique output, then click on the `OK` button to close.
+
+![EDA critique output indicating two errors, 19 warnings, and an advice message associated with our design](assets/images/nc3rs-eda-critique-21.png){#fig-critique-21 width=80%}
+
+All of the errors are _still_ not fixed (@fig-oh-noes), but we're nearly there.
+
+## Resolve Independent variable of interest node errors
+
+1. Click on the Error icon, on the Independent variable of interest node. This brings up a popup explaining what errors EDA finds (@fig-critique-22).
+
+![The EDA tool finds two kinds of errors with the independent variable of interest: it has not been specified whether the variable is continuous or categorical, nor whether it is a repeated factor.](assets/images/nc3rs-eda-critique-22.png){#fig-critique-22 width=80%}
+
+2. Click on the `OK` button to close the dialogue box.
+3. Click on the Node properties icon, on the "Drug A" Independent variable node to bring up the Node properties panel.
+4. Our "Drug A" variable is categorical (the drug is either present or not), and we are taking a single endpoint measurement, so it is not a repeated measure. Set the **continuous or categorical** field to "categorical, ordinal, nominal or binary", and the **is repeated factor** field to "no" (@fig-critique-23), and click on the `Close` button.
+
+![Set the **continuous or categorical** field to "categorical, ordinal, nominal or binary", and the **is repeated factor** field to "no", for the "Drug A" independent variable.](assets/images/nc3rs-eda-critique-23.png){#fig-critique-23 width=80%}
+
+## Rerun the `Critique` tool
+
+1. Use the `Tools` menu and click on `Tools -> Critique`
+2. Read the critique output, then click on the `OK` button to close.
+
+![EDA critique output indicating no errors, 20 warnings, and an advice message associated with our design](assets/images/nc3rs-eda-critique-24.png){#fig-critique-24 width=80%}
+
+We have fixed all of the errors, and can proceed to inspecting the warning messages, to clarify the experimental design further.

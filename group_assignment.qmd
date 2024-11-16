@@ -1,4 +1,4 @@
-# Group Assignment {#sec-group-assignment}
+# Assign Experimental Units {#sec-group-assignment}
 
 Assignment of individuals to appropriate groups is an essential part of experimental design. The NC3Rs EDA provides two nodes to help us describe how this assignment is performed in an experiment:
 

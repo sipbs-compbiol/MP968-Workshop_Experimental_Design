@@ -1,4 +1,4 @@
-# Defining Interventions and Measurements {#sec-interventions}
+# Define Interventions and Measurements {#sec-interventions}
 
 We learned in @sec-problem that when we perform an experiment we are interested in understanding _causes_, in terms of the _causal model_ of our experimental system. We also learned that the definitions of _cause_ and _effect_ in a study come from us, as investigators. We set up our experiments with specific causal influences and outcomes in mind, and try to estimate the amount of the influence due to each cause. Or rationale for the causal relationships underlying this experiment is described in @sec-workshop-experiment.
 
