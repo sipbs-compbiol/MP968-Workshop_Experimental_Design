@@ -56,6 +56,7 @@ book:
         - group_assignment.qmd
         - interventions.qmd
         - critique1.qmd
+        - both_sexes.qmd
     
     - references.qmd
 #    - additional_reading.qmd
