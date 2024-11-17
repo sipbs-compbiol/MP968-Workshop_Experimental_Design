@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -242,11 +242,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#run-the-analysis-suggestion-tool" id="toc-run-the-analysis-suggestion-tool" class="nav-link active" data-scroll-target="#run-the-analysis-suggestion-tool"><span class="header-section-number">12.1</span> Run the Analysis Suggestion Tool</a></li>
+  <li><a href="#interpreting-the-suggestions" id="toc-interpreting-the-suggestions" class="nav-link" data-scroll-target="#interpreting-the-suggestions"><span class="header-section-number">12.2</span> Interpreting the suggestions</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/analysis_suggestion.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./analysis_suggestion.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Obtain an Analysis Suggestion</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -267,8 +274,200 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>EDA provides an <strong>Analysis Suggestion</strong> tool that is able to recommend statistical tests compatible with the design of your experiment. It is able to do this because the diagramming and critique process essentially asks the same questions a biostatistician would ask you, when helping you design your experiment.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The EDA analysis suggestion tool is not infallible. It is designed to provide advice suitable for most common, relatively simple, experimental designs. If your experimental design is complex, it may advise that you consult a statistician for advice.</p>
+<p>The EDA analysis tool will suggest approaches that are compatible with your design, but it may only suggest one of many possible or acceptable analyses, and not necessarily the <em>best</em> one.</p>
+</div>
+</div>
+<p>In this part of the workshop, we will use this tool to get a suggestion from EDA for how to analyse data from the experiment.</p>
+<section id="run-the-analysis-suggestion-tool" class="level2 page-columns page-full" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="run-the-analysis-suggestion-tool"><span class="header-section-number">12.1</span> Run the Analysis Suggestion Tool</h2>
+<ol type="1">
+<li>Click on the <code>Tools -&gt; Analysis Suggestion</code> menu option (<a href="#fig-analysis-1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a>) to start the tool running, to analyse your design.</li>
+</ol>
+<div id="fig-analysis-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-analysis-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/analysis-1.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-analysis-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: The EDA design assistant <code>Tools</code> menu, showing the <code>Analysis Suggestion</code> option.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use the question mark icon to get help for the Analysis Suggestion tool.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The critique involves running analysis on a remote machine, and may take a couple of minutes, so please be patient.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Note the Task Completed message. This should issue no warnings, and a single analysis suggestion for this experiment (<a href="#fig-analysis-2" class="quarto-xref">Figure&nbsp;<span>12.2</span></a>, <a href="#fig-analysis-3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a>)</li>
+</ol>
+<div id="fig-analysis-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-analysis-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/analysis-2.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-analysis-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: For this experiment, the Analysis Suggestion tool returns a single suggestion, and no warnings.
+</figcaption>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-analysis-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-analysis-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/analysis-3.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-analysis-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.3: The Analysis node, showing the blue Analysis Suggestion icon
+</figcaption>
+</figure>
+</div>
+</div></div><ol start="3" type="1">
+<li>Click on the Analysis Suggestion icon, on the Analysis node, to see the pop-up window describing the analysis suggestion, with a justification for the choice (<a href="#fig-analysis-4" class="quarto-xref">Figure&nbsp;<span>12.4</span></a>).</li>
+</ol>
+<div id="fig-analysis-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-analysis-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/analysis-4.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-analysis-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.4: The analysis recommendation provided for this experiment is that one method compatible with the design is to use one-way ANOVA with blocking factors.
+</figcaption>
+</figure>
+</div>
+<div id="fig-eda-diagram-final" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-diagram-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/eda-diagram-final.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-diagram-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.5: The final EDA diagram for the workshop experiment.
+</figcaption>
+</figure>
+</div>
+<p>The <code>Analysis Suggestion</code> tool has recommended a <strong>one-way ANOVA with blocking factor(s)</strong> and we could now proceed to estimating sample sizes that would give us a desired level of statistical power.</p>
+</section>
+<section id="interpreting-the-suggestions" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="interpreting-the-suggestions"><span class="header-section-number">12.2</span> Interpreting the suggestions</h2>
+<p>The Analysis Suggestion tool will recommend an approach consistent with the design and information provided, but it may not be completely comprehensive, and the advice might not be exactly right for your situation. The Analysis Suggestion tool does attempt to describe how you should approach the analysis carefully. For example, with this design the result repeats the assumptions it makes about the design and notes:</p>
+<blockquote class="blockquote">
+<p>If this description is not accurate, please check your diagram and verify that all nodes are connected properly, all variables and variable categories are indicated and tagged to the relevant interventions or measurements and the information provided in the properties of each node is accurate; then critique it again.</p>
+</blockquote>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The design tool is not a mind-reader and can only work with the information provided. If that information is incorrect or not accurate about your design, then the suggestion may be incorrect.</p>
+</div>
+</div>
+<p>The recommendation goes on to list some caveats:</p>
+<blockquote class="blockquote">
+<p>Statistical analysis methods compatible with this design include the one-way ANOVA with blocking factor(s).</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The tool notes that this is only one method compatible with the design, but there are others (including two-way ANOVA, and regression models); just because they are not recommended does not mean they are not appropriate.</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>The ANOVA approach assumes that the data satisfies the parametric assumptions […] If you have reasons to think the data are not normally distributed, […] consider transforming the data.</p>
+</blockquote>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is the researcher’s responsibility to ensure that the data collected meet the assumptions of the statistical methods employed. The EDA tool cannot predict what data will be collected.</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Note that a one-way ANOVA can answer the question: is there an overall difference between the groups; they do not provide information on which individual groups differ. To identify where any differences lie, it may be necessary to carry out a post-hoc test. Note that in this case the sample size might have to increase and the experiment should be powered to detect differences in the pairwise comparisons.</p>
+</blockquote>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is the researcher’s responsibility to ensure that the experiment is correctly powered for the comparisons they wish to perform, and that the statistical test is appropriate. For two categories, the one-way ANOVA should require the same sample size as a t-test, for the same statistical power. But if the design and questions become complex, it is usually best to consult a statistician.</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Please note that an experiment with a single variable of interest might not make the most efficient use of the data. Consider using a factorial design.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The EDA tool cannot guess how many other experiments you might want to run, and is trying to be helpful by reminding you to consider this study in the broader scope of your research. A factorial design might make more efficient use of the data collected, and require the use of fewer experimental subjects for the same statistical confidence, if there are multiple factors of interest that could affect the outcome.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -711,7 +910,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/analysis_suggestion.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/analysis_suggestion.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

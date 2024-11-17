@@ -135,7 +135,7 @@
     "href": "workshop_experiment.html#the-eda-diagram",
     "title": "5  The Workshop Experiment",
     "section": "5.3 The EDA Diagram",
-    "text": "5.3 The EDA Diagram\nWhen we have finished our design, the resulting diagram will look like that in Figure 5.1.\n\n\n\n\n\n\nFigure 5.1: The final EDA diagram, incorporating all elements of the experimental design described on this page.\n\n\n\nWe will use this diagram to get some feedback from the EDA about improvements to the design, and our choice of statistical methods.",
+    "text": "5.3 The EDA Diagram\nWhen we have finished our design, the resulting diagram will look like that in Figure 12.5.\n\n\n\n\n\n\nFigure 5.1: The final EDA diagram, incorporating all elements of the experimental design described on this page.\n\n\n\nWe will use this diagram to get some feedback from the EDA about improvements to the design, and our choice of statistical methods.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>The Workshop Experiment</span>"
@@ -458,6 +458,39 @@
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Monitor for Sex Effects</span>"
+    ]
+  },
+  {
+    "objectID": "analysis_suggestion.html",
+    "href": "analysis_suggestion.html",
+    "title": "12  Obtain an Analysis Suggestion",
+    "section": "",
+    "text": "12.1 Run the Analysis Suggestion Tool\nThe Analysis Suggestion tool has recommended a one-way ANOVA with blocking factor(s) and we could now proceed to estimating sample sizes that would give us a desired level of statistical power.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Obtain an Analysis Suggestion</span>"
+    ]
+  },
+  {
+    "objectID": "analysis_suggestion.html#run-the-analysis-suggestion-tool",
+    "href": "analysis_suggestion.html#run-the-analysis-suggestion-tool",
+    "title": "12  Obtain an Analysis Suggestion",
+    "section": "",
+    "text": "Click on the Tools -&gt; Analysis Suggestion menu option (Figure 12.1) to start the tool running, to analyse your design.\n\n\n\n\n\n\n\nFigure 12.1: The EDA design assistant Tools menu, showing the Analysis Suggestion option.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou can use the question mark icon to get help for the Analysis Suggestion tool.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThe critique involves running analysis on a remote machine, and may take a couple of minutes, so please be patient.\n\n\n\nNote the Task Completed message. This should issue no warnings, and a single analysis suggestion for this experiment (Figure 12.2, Figure 12.3)\n\n\n\n\n\n\n\nFigure 12.2: For this experiment, the Analysis Suggestion tool returns a single suggestion, and no warnings.\n\n\n\n\n\n\n\n\n\n\n\nFigure 12.3: The Analysis node, showing the blue Analysis Suggestion icon\n\n\n\n\nClick on the Analysis Suggestion icon, on the Analysis node, to see the pop-up window describing the analysis suggestion, with a justification for the choice (Figure 12.4).\n\n\n\n\n\n\n\nFigure 12.4: The analysis recommendation provided for this experiment is that one method compatible with the design is to use one-way ANOVA with blocking factors.\n\n\n\n\n\n\n\n\n\nFigure 12.5: The final EDA diagram for the workshop experiment.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Obtain an Analysis Suggestion</span>"
+    ]
+  },
+  {
+    "objectID": "analysis_suggestion.html#interpreting-the-suggestions",
+    "href": "analysis_suggestion.html#interpreting-the-suggestions",
+    "title": "12  Obtain an Analysis Suggestion",
+    "section": "12.2 Interpreting the suggestions",
+    "text": "12.2 Interpreting the suggestions\nThe Analysis Suggestion tool will recommend an approach consistent with the design and information provided, but it may not be completely comprehensive, and the advice might not be exactly right for your situation. The Analysis Suggestion tool does attempt to describe how you should approach the analysis carefully. For example, with this design the result repeats the assumptions it makes about the design and notes:\n\nIf this description is not accurate, please check your diagram and verify that all nodes are connected properly, all variables and variable categories are indicated and tagged to the relevant interventions or measurements and the information provided in the properties of each node is accurate; then critique it again.\n\n\n\n\n\n\n\nImportant\n\n\n\nThe design tool is not a mind-reader and can only work with the information provided. If that information is incorrect or not accurate about your design, then the suggestion may be incorrect.\n\n\nThe recommendation goes on to list some caveats:\n\nStatistical analysis methods compatible with this design include the one-way ANOVA with blocking factor(s).\n\n\n\n\n\n\n\nNote\n\n\n\nThe tool notes that this is only one method compatible with the design, but there are others (including two-way ANOVA, and regression models); just because they are not recommended does not mean they are not appropriate.\n\n\n\nThe ANOVA approach assumes that the data satisfies the parametric assumptions […] If you have reasons to think the data are not normally distributed, […] consider transforming the data.\n\n\n\n\n\n\n\nWarning\n\n\n\nIt is the researcher’s responsibility to ensure that the data collected meet the assumptions of the statistical methods employed. The EDA tool cannot predict what data will be collected.\n\n\n\nNote that a one-way ANOVA can answer the question: is there an overall difference between the groups; they do not provide information on which individual groups differ. To identify where any differences lie, it may be necessary to carry out a post-hoc test. Note that in this case the sample size might have to increase and the experiment should be powered to detect differences in the pairwise comparisons.\n\n\n\n\n\n\n\nWarning\n\n\n\nIt is the researcher’s responsibility to ensure that the experiment is correctly powered for the comparisons they wish to perform, and that the statistical test is appropriate. For two categories, the one-way ANOVA should require the same sample size as a t-test, for the same statistical power. But if the design and questions become complex, it is usually best to consult a statistician.\n\n\n\nPlease note that an experiment with a single variable of interest might not make the most efficient use of the data. Consider using a factorial design.\n\n\n\n\n\n\n\nTip\n\n\n\nThe EDA tool cannot guess how many other experiments you might want to run, and is trying to be helpful by reminding you to consider this study in the broader scope of your research. A factorial design might make more efficient use of the data collected, and require the use of fewer experimental subjects for the same statistical confidence, if there are multiple factors of interest that could affect the outcome.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Obtain an Analysis Suggestion</span>"
     ]
   },
   {
