@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>11&nbsp; Extend to both sexes – MP968: Experimental Design Workshop</title>
+<title>11&nbsp; Monitor for Sex Effects – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -83,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./both_sexes.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Extend to both sexes</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./both_sexes.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -220,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./both_sexes.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Extend to both sexes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span></a>
   </div>
 </li>
       </ul>
@@ -236,15 +256,33 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#expectations-about-sex-in-experimental-design." id="toc-expectations-about-sex-in-experimental-design." class="nav-link active" data-scroll-target="#expectations-about-sex-in-experimental-design."><span class="header-section-number">11.1</span> Expectations about sex in experimental design.</a>
+  <ul class="collapse">
+  <li><a href="#common-statistical-misunderstandings" id="toc-common-statistical-misunderstandings" class="nav-link" data-scroll-target="#common-statistical-misunderstandings"><span class="header-section-number">11.1.1</span> Common statistical misunderstandings</a></li>
+  </ul></li>
+  <li><a href="#modify-the-experimental-design" id="toc-modify-the-experimental-design" class="nav-link" data-scroll-target="#modify-the-experimental-design"><span class="header-section-number">11.2</span> Modify the experimental design</a>
+  <ul class="collapse">
+  <li><a href="#add-an-animal-characteristic-node-for-female-mice" id="toc-add-an-animal-characteristic-node-for-female-mice" class="nav-link" data-scroll-target="#add-an-animal-characteristic-node-for-female-mice"><span class="header-section-number">11.2.1</span> Add an Animal characteristic node for female mice</a></li>
+  <li><a href="#rerun-the-critique-tool" id="toc-rerun-the-critique-tool" class="nav-link" data-scroll-target="#rerun-the-critique-tool"><span class="header-section-number">11.2.2</span> Rerun the <code>Critique</code> tool</a></li>
+  <li><a href="#add-sex-as-a-nuisance-variable" id="toc-add-sex-as-a-nuisance-variable" class="nav-link" data-scroll-target="#add-sex-as-a-nuisance-variable"><span class="header-section-number">11.2.3</span> Add sex as a Nuisance variable</a></li>
+  <li><a href="#link-sex-to-analysis-as-a-blocking-factor" id="toc-link-sex-to-analysis-as-a-blocking-factor" class="nav-link" data-scroll-target="#link-sex-to-analysis-as-a-blocking-factor"><span class="header-section-number">11.2.4</span> Link sex to analysis as a blocking factor</a></li>
+  <li><a href="#link-sex-to-subject-allocation" id="toc-link-sex-to-subject-allocation" class="nav-link" data-scroll-target="#link-sex-to-subject-allocation"><span class="header-section-number">11.2.5</span> Link sex to subject allocation</a></li>
+  <li><a href="#rerun-the-critique-tool-1" id="toc-rerun-the-critique-tool-1" class="nav-link" data-scroll-target="#rerun-the-critique-tool-1"><span class="header-section-number">11.2.6</span> Rerun the <code>Critique</code> tool</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/both_sexes.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./both_sexes.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Extend to both sexes</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./both_sexes.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-both-sexes" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Extend to both sexes</span></span></h1>
+<h1 class="title"><span id="sec-both-sexes" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span></h1>
 </div>
 
 
@@ -261,8 +299,523 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Generally, as was the case for our initial critique, we would proceed by inspecting warnings from the Experiment node, first.</p>
+<ol type="1">
+<li>Click on the yellow Warning icon, on the <strong>Experiment</strong> node to bring up the critique warnings (<a href="#fig-sex-effects-1" class="quarto-xref">Figure&nbsp;<span>11.1</span></a>)</li>
+</ol>
+<div id="fig-sex-effects-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-1.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: EDA critique warning output indicating issues with the <strong>Experiment</strong> node, including that only one sex has been specified in the experiment.
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Click on the <strong>See further detail</strong> link to bring up information about this warning (<a href="#fig-sex-effects-2" class="quarto-xref">Figure&nbsp;<span>11.2</span></a>)</li>
+</ol>
+<div id="fig-sex-effects-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-2.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.2: The EDA tool provides helpful information about why the warning about using only a single sex should be attended to, and detailed guidance about how to modify the design to include both sexes.
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Close the help popup window, and click on the <code>OK</code> button to dismiss the dialog box.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sex and Gender
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We are taking the definitions of these words to mean:</p>
+<ul>
+<li><strong>Sex</strong>: a set of biological attributes in humans and animals that are associated with physical and physiological features including chromosomes, gene expression, hormone function and reproductive/sexual anatomy</li>
+<li><strong>Gender</strong>: the socially constructed roles, behaviours and identities of female, male and gender-diverse people</li>
+</ul>
+<blockquote class="blockquote">
+<p>If our research designs do not take sex and gender into account, the evidence we generate may be incomplete or simply incorrect; we risk not only doing harm (such as extrapolating findings based on male samples to females), but also missing critical opportunities to improve health (for example, not detecting the benefits of an intervention in a subgroup of men). <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>When we described the initial design of this experiment (<a href="workshop_experiment.html" class="quarto-xref"><span>Chapter 5</span></a>), we stated that we were not going to consider the effect of subject sex on drug efficacy:</p>
+<blockquote class="blockquote">
+<p>Mice will be randomly assigned to receive either drug A or vehicle only without regard to the sex of the animal.</p>
+</blockquote>
+<p>And, when we laid out our beliefs about the experiment, we were more explicit, noting that:</p>
+<ul>
+<li>We are not testing for the effect of sex on drug performance as an experimental <em>variable of interest</em></li>
+<li>We are also not monitoring for the effect of sex on drug performance as a <em>nuisance factor</em></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>However, as experimenters, we do not necessarily get the final say in whether we use one sex or both sexes.</strong></p>
+</div>
+</div>
+<section id="expectations-about-sex-in-experimental-design." class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="expectations-about-sex-in-experimental-design."><span class="header-section-number">11.1</span> Expectations about sex in experimental design.</h2>
+<p>As part of a community-wide drive including funders, researchers, and authoritative bodies, to explicitly consider diversity in research design, there is an increased emphasis on ensuring that research includes all groups that have the potential to benefit from its findings. This is particularly a concern of the Medical Research Council (MRC), which funds medical research in the UK. Failure to account for sex in experimental design may lead to a study not being funded.</p>
+<ul>
+<li><a href="https://www.ukri.org/who-we-are/mrc/our-policies-and-standards/embedding-diversity-in-research-design/">MRC’s “Embedding diversity in research design”</a></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This applies to all animal, cell, tissue, and human participant research.</p>
+<p>Categories to be considered include sex, gender, ethnicity, age, socio-economic status, and disability.</p>
+</div>
+</div>
+<p>Of particular importance in animal studies is the requirement for both sexes to be used in experimental design.</p>
+<ul>
+<li><a href="https://www.ukri.org/councils/mrc/guidance-for-applicants/policies-and-guidance-for-researchers/sex-in-experimental-design/">MRC’s “Sex in experimental design”</a></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+MRC Policy on Sex in Experimental Design
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>MRC requires applicants to embed diversity in the design of their studies (see MRC’s policy on embedding diversity in research design). This includes the requirement for both sexes to be used in the experimental design of grant applications involving animals, and human and animal tissues and cells, unless there is a strong justification for not doing so.</p>
+<p>We also expect applications to include information about the sex of the animals used in experiments, as well as the sex of studied tissues and cells. If you don’t know the sex of the cells and tissues you use, you should plan to determine it as part of your research.</p>
+<p><strong>Use of both sexes is the default</strong></p>
+</div>
+</div>
+<p>It is still possible to obtain funding from the MRC for single-sex studies, but <strong>only where there is strong justification for doing so.</strong> There are a number of possible justifications, including:</p>
+<ul>
+<li>where there are acutely scarce resources (for example, human tissue samples of rare diseases)</li>
+<li>research into the mechanisms of purely molecular interactions (for example, when investigating protein-protein interactions)</li>
+<li>single-sex mechanisms or diseases (for example, ovarian cancer)</li>
+<li>logistical or ethical considerations with robust justification.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Unacceptable justifications
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Attempted justifications for single-sex designs that the MRC considers to be insufficient include:</p>
+<ul>
+<li>female variability (in most cases)</li>
+<li>prior work was performed in only one sex</li>
+<li>a lack of evidence of sex having an effect</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Another thing no-one tells you
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As noted in <a href="critique1.html" class="quarto-xref"><span>Chapter 10</span></a>, even experienced scientists with many publications and long track records of research funding may never have received any formal training in experimental design. This can lead to entrenched and outdated ideas being propagated, such as that it is not necessary to use both sexes in an experiment because it was previously shown that there is no effect due to sex <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p><strong>Ultimately, as a researcher you are responsible for the rigour and ethics of your own actions.</strong> It is always advisable to consult with funding bodies and specialists in research ethics, rather than trust the word of senior scientists alone.</p>
+</div>
+</div>
+</div>
+<section id="common-statistical-misunderstandings" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="common-statistical-misunderstandings"><span class="header-section-number">11.1.1</span> Common statistical misunderstandings</h3>
+<p>It is still possible to hear scientists argue that they should not use both sexes in their experimental design, because it would double the number of animals required, and this would go against the 3Rs principles. A 2021 study also found:</p>
+<blockquote class="blockquote">
+<p>Using a list of […] published articles […] we examined reports of sex differences and non-differences across nine biological disciplines. Sex differences were claimed in the majority of the 147 articles we analyzed; however, statistical evidence supporting those differences was often missing. For example, when a sex-specific effect of a manipulation was claimed, authors usually had not tested statistically whether females and males responded differently.</p>
+</blockquote>
+<p>and called for further efforts to “train researchers how to test for and report sex differences in order to promote rigour and reproducibility in biomedical research” (<span class="citation" data-cites="Garcia-Sifuentes2021-pa">Garcia-Sifuentes and Maney (<a href="references.html#ref-Garcia-Sifuentes2021-pa" role="doc-biblioref">2021</a>)</span>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Yet another thing no-one tells you
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In addition to experimental design, it is possible that even experienced scientists with many publications and long track records of research funding may never have received any formal training in statistics. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Again, <strong>as a researcher you are responsible for the rigour and ethics of your own actions.</strong> It is always advisable to consult with statisticians, rather than trust the word of senior scientists alone.</p>
+</div>
+</div>
+</div>
+<p>Changing the design of an experiment from single-sex to two sexes typically does not require an increase in the number of individuals studied. It can often be achieved by running the same experiment but changing half the animals to the opposite sex (e.g.&nbsp;a study designed with 8 males becomes a study with 4 males and 4 females), and analysing the results using ANOVA instead of a <em>t</em>-test.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Monitoring sex differences
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>One reason the common misunderstanding that animal numbers need to be doubled arises is because researchers don’t immediately realise that sex can be considered as a <em>blocking factor</em> (also known as a <em>nuisance variable</em>), rather than a <em>main effect</em> of study.</p>
+<p>This is important because, when we estimate the count of sample size needed by power calculation, we are considering the number of individuals required to establish a result <em>only for main effects</em>. <strong>We do not need to power experiments for a statistical difference in nuisance variables.</strong> Consequently, if the <em>main effects</em> (<em>independent variables of interest</em>, in EDA) remain the same, the number of individuals required to power the experiment remains the same.</p>
+<p>Considering sex as a <em>blocking factor</em> in this way is known as <strong>“monitoring for a difference in sex.”</strong> We do not have differences between sexes as a focus of our study, but we would like to be in a position to notice, if there is a large difference between the sexes.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="modify-the-experimental-design" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="modify-the-experimental-design"><span class="header-section-number">11.2</span> Modify the experimental design</h2>
+<p>Our experiment is looking at glucose concentration in plasma, so there is not a reasonable justification to exclude female mice from the design. In order to update our experimental design to accommodate both sexes, we need to do two things:</p>
+<ol type="1">
+<li>Add an <strong>Animal characteristics</strong> node, so that we have one Animal characteristics node for male mice, and one for female mice</li>
+<li>Add a <strong>Nuisance variable</strong> node representing the sex of individual subjects, linking this to our <strong>Allocation</strong> node, to indicate that we will account for sex in the allocation to experimental groups, and to our <strong>Analysis</strong> node, indicating that we will use sex as an explantory factor in our statistical analysis.</li>
+</ol>
+<section id="add-an-animal-characteristic-node-for-female-mice" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="add-an-animal-characteristic-node-for-female-mice"><span class="header-section-number">11.2.1</span> Add an Animal characteristic node for female mice</h3>
+<ol type="1">
+<li>Click on the grey box in the <strong>Experiment</strong> node icon panel, to create a new <strong>Animal characteristics</strong> node (<a href="#fig-sex-effects-3" class="quarto-xref">Figure&nbsp;<span>11.3</span></a>)</li>
+</ol>
+<div id="fig-sex-effects-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-3.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.3: Add a second Animal characteristics node by clicking on the grey box icon next to the Experiment node.
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Click on the Node properties icon of the new Animal characteristics node, rename the <strong>label</strong> field to “female mice”, change the <strong>species</strong> field to “mouse”, and change the <strong>sex</strong> field to “female” (<a href="#fig-sex-effects-4" class="quarto-xref">Figure&nbsp;<span>11.4</span></a>). Click on <code>Close</code> to dismiss the dialogue box.</li>
+</ol>
+<div id="fig-sex-effects-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-4.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.4: Add a label, specifying sex and species for the experimental subjects, in the Node properties dialogue.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="rerun-the-critique-tool" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="rerun-the-critique-tool"><span class="header-section-number">11.2.2</span> Rerun the <code>Critique</code> tool</h3>
+<ol type="1">
+<li>Use the <code>Tools</code> menu and click on <code>Tools -&gt; Critique</code></li>
+<li>Read the critique output, then click on the <code>OK</code> button to close.</li>
+</ol>
+<div id="fig-sex-effects-5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-5.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.5: EDA critique output indicating no errors, 19 warnings, and two advice messages associated with our design.
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Click on the yellow Warning icon, on the <strong>Experiment</strong> node to read the critique warnings (<a href="#fig-sex-effects-6" class="quarto-xref">Figure&nbsp;<span>11.6</span></a>). Note that the warning about using only one sex is no longer present. Click on <strong>See further detail</strong> next to the “Other sources of variability…” warning, to note that EDA warns us that the diagram does not include nuisance variables. Close the help window, and click <code>OK</code> to dismiss the dialogue box.</li>
+</ol>
+<div id="fig-sex-effects-6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-6.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.6: Experiment node warning text, which no longer shows a warning about using only one sex. Note that it does still raise a warning about not includin g other sources of variability, such as sex, as <em>nuisance variables</em>.
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click on the new blue Advice icon, on the <strong>Experiment</strong> node to bring up the popup help window (<a href="#fig-sex-effects-7" class="quarto-xref">Figure&nbsp;<span>11.7</span></a>). Note that this advises us to use sex as a variable in both the randomisation and the analysis for this experiment, then close the help window.</li>
+</ol>
+<div id="fig-sex-effects-7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-7.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.7: Experiment node advice text, suggesting we use sex as a factor in our experimental group allocation, and in our statistical analysis.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="add-sex-as-a-nuisance-variable" class="level3" data-number="11.2.3">
+<h3 data-number="11.2.3" class="anchored" data-anchor-id="add-sex-as-a-nuisance-variable"><span class="header-section-number">11.2.3</span> Add sex as a Nuisance variable</h3>
+<ol type="1">
+<li>Drag a <strong>Nuisance variable</strong> node from the sidebar on the left, onto the canvas, and rename it as “Sex” (<a href="#fig-sex-effects-8" class="quarto-xref">Figure&nbsp;<span>11.8</span></a>).</li>
+</ol>
+<div id="fig-sex-effects-8" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-8.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.8: Addition of a Nuisance variable node to represent the sex of an individual experimental subject.
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Use the green lozenge icon in the Nuisance variable icon panel to create two new <strong>Variable category</strong> nodes. Label one as “male” and the other as “female” (<a href="#fig-sex-effects-9" class="quarto-xref">Figure&nbsp;<span>11.9</span></a>)</li>
+</ol>
+<div id="fig-sex-effects-9" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-9.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.9: A Nuisance variable node representing the sex of an individual experimental subject, with two categories, “male” and “female”.
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Click on the Node properties icon on the Nuisance variable, and: set <strong>continuous or categorical</strong> to “categorical, ordinal, nominal, or binary” (sex is a categorical variable); set <strong>how is variable accounted for</strong> to “blocked” (this is how we are choosing to mitigate the effect); and set <strong>allocation of experimental units to experimental categories</strong> to “units randomised to categories via Mendelian inheritance” (this reflects that we, as experimenters, are not deciding whether animals are male or female) (<a href="#fig-sex-effects-9a" class="quarto-xref">Figure&nbsp;<span>11.10</span></a>). Click on <code>Close</code> to dismiss the dialogue box.</li>
+</ol>
+<div id="fig-sex-effects-9a" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-9a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-9a.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-9a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.10: Node property settings for the Sex nuisance variable, reflecting the nature of the variable, and how we are using it to assign randomly to experimental groups as part of blocking.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="link-sex-to-analysis-as-a-blocking-factor" class="level3" data-number="11.2.4">
+<h3 data-number="11.2.4" class="anchored" data-anchor-id="link-sex-to-analysis-as-a-blocking-factor"><span class="header-section-number">11.2.4</span> Link sex to analysis as a blocking factor</h3>
+<p>Blocking factors describe subgroups of experimental results, divided by any source of variability or condition that might influence the measured outcome. Clearly, sex is one such factor (the response of an individual animal may vary depending on whether the animal is male or female), but we should always take care to identify and mitigate for any such sources of variability, in the way we conduct our experiments. Some possible blocking factors might include:</p>
+<ul>
+<li>the cage or room that individuals are housed in (there may be differences between locales that influence outcome)</li>
+<li>the time of day that measurements are made (animals may be diurnal, and respond differently in the morning and evening)</li>
+<li>the experimenter or handler’s identity (an inexperienced handler may cause stress in animals, and an experienced handler might not, affecting the subject’s response)</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is the responsibility of the researchers to identify any factors that might influence the study, and to mitigate for their effects.</p>
+<p>If we are able to mitigate the effects of nuisance variables, either statistically or by revising the conduct or design of the experiment, then we are more likely to detect the true effect of the variable we are interested in.</p>
+</div>
+</div>
+<ol type="1">
+<li>Click on the arrow in the Nuisance variable icon panel, and drag it onto the <strong>Analysis</strong> node, to link them (<a href="#fig-sex-effects-10" class="quarto-xref">Figure&nbsp;<span>11.11</span></a>). To begin with, this arrow is red, to indicate that we have not specified the kind of relationship between this variable and the analysis.</li>
+</ol>
+<div id="fig-sex-effects-10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-10.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.11: Initial linking of the Sex nuisance variable to the Analysis node.
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Click on the arrow, and hover the mouse pointer over the red spanner icon, to see the context menu. This offers options for the kind of relationship that the nuisance variable might have with the analysis (<a href="#fig-sex-effects-11" class="quarto-xref">Figure&nbsp;<span>11.12</span></a>).</li>
+</ol>
+<div id="fig-sex-effects-11" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-11.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.12: Context menu for the arrow linking the Sex nuisance variable to the Analysis node. This offers three kinds of relationship: “blocking factor”, “covariate”, and “causes variation.”
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Click on “is blocking factor for” in the context menu, to set the relationship. The arrow will change format from red, to grey dashes (<a href="#fig-sex-effects-12" class="quarto-xref">Figure&nbsp;<span>11.13</span></a>).</li>
+</ol>
+<div id="fig-sex-effects-12" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-12.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.13: The arrow linking the Sex nuisance variable to the Analysis node, after being set as a “blocking factor”.
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Use the circles on the “is blocking factor for” linking arrow to reroute the arrow around the <strong>Outcome measure</strong> node, to improve readability (<a href="#fig-sex-effects-13" class="quarto-xref">Figure&nbsp;<span>11.14</span></a>).</li>
+</ol>
+<div id="fig-sex-effects-13" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-13.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.14: The “blocking factor” arrow can be reshaped by clicking on it and dragging it into a new shape. This can improve the layout of your diagram.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="link-sex-to-subject-allocation" class="level3" data-number="11.2.5">
+<h3 data-number="11.2.5" class="anchored" data-anchor-id="link-sex-to-subject-allocation"><span class="header-section-number">11.2.5</span> Link sex to subject allocation</h3>
+<p>For a valid experimental design we must include blocking factors in the randomisation process of adding subjects to experimental groups. This ensures that each individual has an equal chance of receiving each treatment allocated to the block. We need to make sure that this is accounted for in the diagram.</p>
+<p>In the context of this experiment, we need to ensure that equal numbers of males and females are assigned to the <em>Control</em> (vehicle only) and <em>Treatment</em> (vehicle plus drug A) groups. This is referred to as “randomisation within blocks”: males and females are equally likely to be assigned to either the <em>Control</em> or <em>Treatment</em> groups.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will need to modify the stated randomisation strategy, to account for how we are randomising individuals to groups, to reflect that we are randomising within blocks.</p>
+</div>
+</div>
+<ol type="1">
+<li>Click on the arrow in the Nuisance variable icon panel, and drag it onto the <strong>Allocation</strong> node, to link them (<a href="#fig-sex-effects-14" class="quarto-xref">Figure&nbsp;<span>11.15</span></a>). As before,to begin with, this arrow is red, to indicate that we have not specified the kind of relationship between this variable and the allocation process.</li>
+</ol>
+<div id="fig-sex-effects-14" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-14.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.15: Initial linking of the Sex nuisance variable to the Allocation node.
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Click on the arrow, and hover the mouse pointer over the red spanner icon, to see the context menu. This offers options for the kind of relationship that the nuisance variable might have with the allocation process (<a href="#fig-sex-effects-15" class="quarto-xref">Figure&nbsp;<span>11.16</span></a>).</li>
+</ol>
+<div id="fig-sex-effects-15" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-15.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.16: Context menu for the arrow linking the Sex nuisance variable to the Allocation node. This offers two kinds of relationship: “blocking factor” and “randomised by”
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Click on “is blocking factor for” in the context menu, to set the relationship. Like before, the arrow will change format from red, to grey dashes (<a href="#fig-sex-effects-16" class="quarto-xref">Figure&nbsp;<span>11.17</span></a>).</li>
+</ol>
+<div id="fig-sex-effects-16" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-16.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.17: The arrow linking the Sex nuisance variable to the Allocation node, after being set as a “blocking factor”.
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Use the circles on the “is blocking factor for” linking arrow to reroute the arrow around the “Treatment” Group node, to improve readability (<a href="#fig-sex-effects-17" class="quarto-xref">Figure&nbsp;<span>11.18</span></a>).</li>
+</ol>
+<div id="fig-sex-effects-17" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-17.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.18: The “blocking factor” arrow can be reshaped by clicking on it and dragging it into a new shape. This can improve the layout of your diagram.
+</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Click on the <strong>Allocation</strong> node Node properties icon to bring up the dialogue box. Change the <strong>randomisation strategy</strong> field to “randomisation within blocks”, and click on <code>Close</code> to dismiss the dialogue box.</li>
+</ol>
+<div id="fig-sex-effects-18" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-18.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.19: The randomisation strategy field in the Allocation node should be set to “randomisation within blocks”.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="rerun-the-critique-tool-1" class="level3" data-number="11.2.6">
+<h3 data-number="11.2.6" class="anchored" data-anchor-id="rerun-the-critique-tool-1"><span class="header-section-number">11.2.6</span> Rerun the <code>Critique</code> tool</h3>
+<ol type="1">
+<li>Use the <code>Tools</code> menu and click on <code>Tools -&gt; Critique</code></li>
+<li>Read the critique output, then click on the <code>OK</code> button to close.</li>
+</ol>
+<div id="fig-sex-effects-19" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sex-effects-19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sex-effects-19.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sex-effects-19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.20: EDA critique output indicating no errors, 18 warnings, and one advice message associated with our design.
+</figcaption>
+</figure>
+</div>
+<p>No errors are reported, so we can now move on to ask EDA for suggestions around statistical analysis.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Garcia-Sifuentes2021-pa" class="csl-entry" role="listitem">
+Garcia-Sifuentes, Yesenia, and Donna L Maney. 2021. <span>“Reporting and Misreporting of Sex Differences in the Biological Sciences.”</span> <em>Elife</em> 10 (November).
+</div>
+<div id="ref-Vorland2021-wx" class="csl-entry" role="listitem">
+Vorland, Colby J. 2021. <span>“Sex Difference Analyses Under Scrutiny.”</span> <em>Elife</em> 10 (November).
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>(What a Difference Sex and Gender Make: A Gender, Sex and Health Research Casebook Canadian Institutes of Health Research, ISBN: 978-1-100-19250-5)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A moment’s thought should reassure you that if it is believed there is no effect due to sex, then there is no statistical disadvantage to including both sexes in the experiment. Further reflection might suggest that if the treatment under study needs to be adminstered to determine its effectiveness at all, then it is curious to believe that we should already know enough about its efficacy in different sexes to assert that there is no difference.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>This is not a new development. Methodological weaknesses in published experiments have been an ongoing concern for decades (<span class="citation" data-cites="Vorland2021-wx">Vorland (<a href="references.html#ref-Vorland2021-wx" role="doc-biblioref">2021</a>)</span>).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -705,7 +1258,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/both_sexes.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/both_sexes.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
