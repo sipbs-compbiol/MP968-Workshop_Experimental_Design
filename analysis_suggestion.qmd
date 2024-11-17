@@ -1,2 +1,79 @@
 # Obtain an Analysis Suggestion {#sec-analysis-suggestion}
 
+EDA provides an **Analysis Suggestion** tool that is able to recommend statistical tests compatible with the design of your experiment. It is able to do this because the diagramming and critique process essentially asks the same questions a biostatistician would ask you, when helping you design your experiment.
+
+::: {.callout-warning}
+The EDA analysis suggestion tool is not infallible. It is designed to provide advice suitable for most common, relatively simple, experimental designs. If your experimental design is complex, it may advise that you consult a statistician for advice.
+
+The EDA analysis tool will suggest approaches that are compatible with your design, but it may only suggest one of many possible or acceptable analyses, and not necessarily the _best_ one.
+:::
+
+In this part of the workshop, we will use this tool to get a suggestion from EDA for how to analyse data from the experiment.
+
+## Run the Analysis Suggestion Tool
+
+1. Click on the `Tools -> Analysis Suggestion` menu option (@fig-analysis-1) to start the tool running, to analyse your design.
+
+![The EDA design assistant `Tools` menu, showing the `Analysis Suggestion` option.](assets/images/analysis-1.png){#fig-analysis-1 width=80%}
+
+::: {.callout-tip}:::
+You can use the question mark icon to get help for the Analysis Suggestion tool.
+:::
+
+::: {.callout-important}
+The critique involves running analysis on a remote machine, and may take a couple of minutes, so please be patient.
+:::
+
+2. Note the Task Completed message. This should issue no warnings, and a single analysis suggestion for this experiment (@fig-analysis-2, @fig-analysis-3)
+
+![For this experiment, the Analysis Suggestion tool returns a single suggestion, and no warnings.](assets/images/analysis-2.png){#fig-analysis-2 width=80%}
+
+::: {.column-margin}
+
+![The Analysis node, showing the blue Analysis Suggestion icon](assets/images/analysis-3.png){#fig-analysis-3 width=80%}
+
+:::
+
+3. Click on the Analysis Suggestion icon, on the Analysis node, to see the pop-up window describing the analysis suggestion, with a justification for the choice (@fig-analysis-4).
+
+![The analysis recommendation provided for this experiment is that one method compatible with the design is to use one-way ANOVA with blocking factors.](assets/images/analysis-4.png){#fig-analysis-4 width=80%}
+
+![The final EDA diagram for the workshop experiment.](assets/images/eda-diagram-final.png){#fig-eda-diagram-final width=80%}
+
+The `Analysis Suggestion` tool has recommended a **one-way ANOVA with blocking factor(s)** and we could now proceed to estimating sample sizes that would give us a desired level of statistical power.
+
+## Interpreting the suggestions
+
+The Analysis Suggestion tool will recommend an approach consistent with the design and information provided, but it may not be completely comprehensive, and the advice might not be exactly right for your situation. The Analysis Suggestion tool does attempt to describe how you should approach the analysis carefully. For example, with this design the result repeats the assumptions it makes about the design and notes:
+
+> If this description is not accurate, please check your diagram and verify that all nodes are connected properly, all variables and variable categories are indicated and tagged to the relevant interventions or measurements and the information provided in the properties of each node is accurate; then critique it again.
+
+::: {.callout-important}
+The design tool is not a mind-reader and can only work with the information provided. If that information is incorrect or not accurate about your design, then the suggestion may be incorrect.
+:::
+
+The recommendation goes on to list some caveats:
+
+> Statistical analysis methods compatible with this design include the one-way ANOVA with blocking factor(s).
+
+::: {.callout-note}
+The tool notes that this is only one method compatible with the design, but there are others (including two-way ANOVA, and regression models); just because they are not recommended does not mean they are not appropriate.
+:::
+
+> The ANOVA approach assumes that the data satisfies the parametric assumptions […] If you have reasons to think the data are not normally distributed, […] consider transforming the data.
+
+::: {.callout-warning}
+It is the researcher's responsibility to ensure that the data collected meet the assumptions of the statistical methods employed. The EDA tool cannot predict what data will be collected.
+:::
+
+> Note that a one-way ANOVA can answer the question: is there an overall difference between the groups; they do not provide information on which individual groups differ. To identify where any differences lie, it may be necessary to carry out a post-hoc test. Note that in this case the sample size might have to increase and the experiment should be powered to detect differences in the pairwise comparisons.
+
+::: {.callout-warning}
+It is the researcher's responsibility to ensure that the experiment is correctly powered for the comparisons they wish to perform, and that the statistical test is appropriate. For two categories, the one-way ANOVA should require the same sample size as a t-test, for the same statistical power. But if the design and questions become complex, it is usually best to consult a statistician.
+:::
+
+> Please note that an experiment with a single variable of interest might not make the most efficient use of the data. Consider using a factorial design.
+
+::: {.callout-tip}
+The EDA tool cannot guess how many other experiments you might want to run, and is trying to be helpful by reminding you to consider this study in the broader scope of your research. A factorial design might make more efficient use of the data collected, and require the use of fewer experimental subjects for the same statistical confidence, if there are multiple factors of interest that could affect the outcome. 
+:::
