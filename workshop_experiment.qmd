@@ -75,7 +75,7 @@ The important consequence of this is that we can argue that - before we _interve
 
 When we have finished our design, the resulting diagram will look like that in @fig-eda-diagram-final.
 
-![The final EDA diagram, incorporating all elements of the experimental design described on this page.](){#fig-eda-diagram-final width=80%}
+![The final EDA diagram, incorporating all elements of the experimental design described on this page.](assets/images/eda-diagram-final.png){#fig-eda-diagram-final width=80%}
 
 We will use this diagram to get some feedback from the EDA about improvements to the design, and our choice of statistical methods.
 
