@@ -1,0 +1,124 @@
+# Estimate Sample Size {@sec-sample-size}
+
+Our final design diagram is complete, with no critique errors, and an analysis suggestion of **one-way ANOVA with blocking factor(s)**. We can now use the EDA's `Sample Size Calculation` tool to estimate the required number of individuals per group, to achive a certain level of statistical power.
+
+::: {.callout-important}
+In order to be able to estimate a suitable sample size, the tool needs the researcher to provide realistic values for:
+
+1. The **effect size** that the researcher wishes to detect in the comparison. This might be the size of effect considered "clinically relevant", or assumed to be comparable to some previous treatment.
+2. The **variability** of the outcome measure being compared. Depending on how the analysis is being performed, this might be the average standard deviation across all measurements, or the expected variation (standard deviation) in the measured difference. These values typically come from previous experiments.
+3. The **significance level** of the hypothesis test, representing the threshold at which the null hypothesis would be discarded [^1].
+4. The desired **power** of the experiment, i.e. the probability with which, if there is an effect of at least the stated _effect size_ to be found, it will reach the stated _significance level_ [^2].
+5. The **sidedness** of the test. Generally, if the experiment aims to test for a _difference_ but the direction of the difference is not known (the treatment may increase or decrease the size of a tumour, say), a _two-sided_ test would be used. But if the direction of the desired effect _is_ known (e.g. we wish to detect whether a treatment _decreases_ the size of a tumour) a _one-sided_ test should be used [^3].
+:::
+
+[^1]: Note that discarding the null hypothesis is not typically confirmatory of any specific alternative hypothesis.
+
+[^2]: Suppose the _effect size_ is 0.5, and the _significance level_ is 0.05. An experiment with _power_ of 0.8 would detect a true effect size of 0.5, at $P \leq 0.05$ in approximately 80 out of every 100 times the experiment was run, assuming all statistical test assumptions are met.
+
+[^3]: One-sided tests offer greater statistical power, for the same sample size, if the expected direction of change is known.
+
+::: {.callout-tip}
+The EDA site has an extensive introduction to the concepts supporting power calculations.
+
+- [Group and sample size advice](https://eda.nc3rs.org.uk/experimental-design-group)
+- [Deciding sample size when the power calculation is not straightforward](https://nc3rs.org.uk/3rs-resources/how-decide-your-sample-size-when-power-calculation-not-straightforward)
+:::
+
+::: {.callout-note collapse="true"}
+## Something else no-one tells you
+
+As noted in @sec-critique-1 and @sec-both-sexes, even experienced scientists with many publications and long track records of research funding may never have received any formal training in experimental design or statistics. As a consequence they can propagate poor or suboptimal advice that may not be correct. As noted by Simon Bate on the [NC3Rs site](https://nc3rs.org.uk/3rs-resources/how-decide-your-sample-size-when-power-calculation-not-straightforward#in-my-field-of-research,-we-have-always-used-n=6.-why-do-i-need-to-do-a-power-calculation-at-all?):
+
+> I often hear “we always use n=6” or “the other researchers use n=6, so shall we”. Needless to say, this is not a recommended approach. You cannot simply copy someone else’s sample sizes; you need to assess the variability of data generated in your lab, under your experimental conditions and using your protocols. Even if your supervisor or manager says “use n=6”, make sure you question them and check it is suitable!
+
+**Ultimately, as a researcher you are responsible for the rigour and ethics of your own actions.** It is always advisable to consult with a statistician, rather than trust the word of senior scientists alone.
+
+Don't be this guy (@fig-sample-size-0).
+
+::: {#fig-sample-size-0 width=80%}
+
+{{< video https://www.youtube.com/watch?v=PbODigCZqL8 >}}
+
+How not to collaborate with a biostatistician, by JavaMama926.
+:::
+
+:::
+
+## Run the Sample Size Calculation Tool
+ 
+1. Click on `Tools -> Sample Size Calculation` in the menu bar (@fig-sample-size-1) to bring up the Power Calculation dialogue box (@fig-sample-size-2).
+
+::: {.column-margin}
+
+![The EDA design tool menu, showing the location of the Sample Size Calculation tool.](assets/images/sample-size-1.png){#fig-sample-size-1 width=80%}
+
+:::
+
+![The EDA Sample Size Calculation tool dialogue box. By default fields for an unpaired _t_-test are shown](assets/images/sample-size-2.png){#fig-sample-size-2 width=80%}
+
+2. Use the NC3Rs [EDA decision tree](https://eda.nc3rs.org.uk/experimental-design-group#choosingpowercalculation) to choose the appropriate power calculation (@fig-sample-size-3).
+
+::: {.column-margin}
+
+![The EDA decision tree for choosing the appropriate power calculation.](assets/images/eda_decision_tree.jpg){#fig-sample-size-3 width=80%}
+
+:::
+
+::: {.callout-tip collapse="true"}
+## Using the decision tree
+
+Starting at the top of the tree, we are asked a series of questions, as we progress through the flowchart:
+
+1. Are you planning on analysing your data with a parametric analysis?
+
+Yes we are, since ANOVA is a parametric analysis.
+
+2. Does each animal receive multiple treatments, acting as its own control?
+
+No. Each animal receives a single treatment and there are separate control and treatment groups.
+
+3. Does your experiment only involve two groups.
+
+Technically, this is true. We are interested in a single main comparison involving two groups (control and treatment). We have a further two groups _male_ and _female_ as a blocking factor but, because this is only a blocking factor and not a main comparison, we ignore sex for the purposes of the power calculation.
+:::
+
+The decision tree leads us to the box containing the advice to **Use power calculation for an unpaired _t_-test, with variability as the average standard deviation of the outcome measurement being made**.
+
+3. Ensure the power calculation dialogue for the unpaired _t_-test is selected (as in @fig-sample-size-2).
+
+4. Decide on an expected effect size that is biologically relevant. For the purpose of this workshop, let's assume that we need to see _a decrease in blood glucose of at least 2mM/L_. Enter the value 2 into the **Effect size** field.
+
+5. Decide on an expected variability in the outcome measure. This is usually determined from previous studies, but here we will assume that variability is 1mM/L, for the sake of the workshop. Enter the value 1 into the **Variability** field.
+
+6. Decide on a significance level for your statistical hypothesis test. This is under researcher control, and we will keep it at 0.05 for the purpose of the workshop.
+
+7. Decide on a suitable _power_ (probability of avoiding a false negative error) for the statistical test. This is under researcher control, and power values of 0.8-0.9 are usually acceptable to funders. We will keep this value at 0.9 for the purpose of the workshop.
+
+8. Decide whether this will be a one- or two-sided test. As we have specified that we are expecting to see a _decrease_ in blood glucose for a positive outcome, a one-sided _t_-test is appropriate and will give increased power for the same number of experimental subjects. Set the **One or two-sided test** field to 1 [^4] (@fig-sample-size-4).
+
+[^4]: The choice depends on our null hypothesis. If our null hypothesis is "drug A has no effect" we should use a two-sided _t_-test. If our null hypothesis is "drug A does not reduce blood glucose" we should use a one-sided _t_-test. The choice of null hypothesis is under researcher control.
+
+![The EDA Sample Size Calculation tool dialogue box, populated with values for our power calculation.](assets/images/sample-size-4.png){#fig-sample-size-4 width=80%}
+
+9. Click on the `Calculate N per group` button to have the Sample Size Calculation tool return an estimated sample size for the desired power (@fig-sample-size-5).
+
+![The EDA Sample Size Calculation tool returns an estimated sample size of six individuals per group, given our input choices.](assets/images/sample-size-5.png){#fig-sample-size-5 width=80%}
+10. Populate the "Control" Group node with the recommended number of experimental units, using the Node properties dialogue box. Enter the number of experimental units, the number of animals, and add a justification for the choice of sample size (@fig-sample-size-6). Click on `Close` to dismiss the dialogue.
+
+![The Node properties settings for the "Control" Group node, including the estimated sample size, and enough information to enable reproduction of the power calculation.](assets/images/sample-size-6.png){#fig-sample-size-6 width=80%}
+
+11. Populate the "Treatment" Group node with the recommended number of experimental units, using the Node properties dialogue box. Enter the number of experimental units, the number of animals, and add a justification for the choice of sample size.Click on `Close` to dismiss the dialogue.
+
+## Rename and Save the Diagram
+
+1. Change the name of the diagram by clicking on the text `Untitled Diagram` at the top, to bring up a dialogue box (@fig-sample-size-7). Rename the diagram as "MP968_Workshop", and click the `OK` button.
+
+::: {.column-margin}
+
+![Rename the diagram using the tool's dialog box.](assets/images/sample-size-7.png){#fig-sample-size-7 width=80%}
+:::
+
+2. Save the experiment by clicking on the `Save` (floppy disk) icon at the top left of the tool (@fig-sample-size-8).
+
+![Click on the floppy disk icon to save the design to your experiments at EDA.](assets/images/sample-size-8.png){#fig-sample-size-8 width=80%}
