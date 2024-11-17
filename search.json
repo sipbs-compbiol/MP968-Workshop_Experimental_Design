@@ -494,6 +494,50 @@
     ]
   },
   {
+    "objectID": "sample_size.html",
+    "href": "sample_size.html",
+    "title": "13  Estimate Sample Size",
+    "section": "",
+    "text": "13.1 Run the Sample Size Calculation Tool\nThe decision tree leads us to the box containing the advice to Use power calculation for an unpaired t-test, with variability as the average standard deviation of the outcome measurement being made.\n10. Populate the “Control” Group node with the recommended number of experimental units, using the Node properties dialogue box. Enter the number of experimental units, the number of animals, and add a justification for the choice of sample size (Figure 13.6). Click on Close to dismiss the dialogue.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Estimate Sample Size</span>"
+    ]
+  },
+  {
+    "objectID": "sample_size.html#run-the-sample-size-calculation-tool",
+    "href": "sample_size.html#run-the-sample-size-calculation-tool",
+    "title": "13  Estimate Sample Size",
+    "section": "",
+    "text": "Click on Tools -&gt; Sample Size Calculation in the menu bar (Figure 13.2) to bring up the Power Calculation dialogue box (Figure 13.3).\n\n\n\n\n\n\n\n\n\nFigure 13.2: The EDA design tool menu, showing the location of the Sample Size Calculation tool.\n\n\n\n\n\n\n\n\n\nFigure 13.3: The EDA Sample Size Calculation tool dialogue box. By default fields for an unpaired t-test are shown\n\n\n\n\nUse the NC3Rs EDA decision tree to choose the appropriate power calculation (Figure 13.4).\n\n\n\n\n\n\n\n\n\nFigure 13.4: The EDA decision tree for choosing the appropriate power calculation.\n\n\n\n\n\n\n\n\n\nUsing the decision tree\n\n\n\n\n\nStarting at the top of the tree, we are asked a series of questions, as we progress through the flowchart:\n\nAre you planning on analysing your data with a parametric analysis?\n\nYes we are, since ANOVA is a parametric analysis.\n\nDoes each animal receive multiple treatments, acting as its own control?\n\nNo. Each animal receives a single treatment and there are separate control and treatment groups.\n\nDoes your experiment only involve two groups.\n\nTechnically, this is true. We are interested in a single main comparison involving two groups (control and treatment). We have a further two groups male and female as a blocking factor but, because this is only a blocking factor and not a main comparison, we ignore sex for the purposes of the power calculation.\n\n\n\n\n\nEnsure the power calculation dialogue for the unpaired t-test is selected (as in Figure 13.3).\nDecide on an expected effect size that is biologically relevant. For the purpose of this workshop, let’s assume that we need to see a decrease in blood glucose of at least 2mM/L. Enter the value 2 into the Effect size field.\nDecide on an expected variability in the outcome measure. This is usually determined from previous studies, but here we will assume that variability is 1mM/L, for the sake of the workshop. Enter the value 1 into the Variability field.\nDecide on a significance level for your statistical hypothesis test. This is under researcher control, and we will keep it at 0.05 for the purpose of the workshop.\nDecide on a suitable power (probability of avoiding a false negative error) for the statistical test. This is under researcher control, and power values of 0.8-0.9 are usually acceptable to funders. We will keep this value at 0.9 for the purpose of the workshop.\nDecide whether this will be a one- or two-sided test. As we have specified that we are expecting to see a decrease in blood glucose for a positive outcome, a one-sided t-test is appropriate and will give increased power for the same number of experimental subjects. Set the One or two-sided test field to 1 4 (Figure 13.5).\n\n\n\n\n\n\n\nFigure 13.5: The EDA Sample Size Calculation tool dialogue box, populated with values for our power calculation.\n\n\n\n\nClick on the Calculate N per group button to have the Sample Size Calculation tool return an estimated sample size for the desired power (?fig-sample-size-5).\n\n\n\n\n\n\n\n\nFigure 13.6: The Node properties settings for the “Control” Group node, including the estimated sample size, and enough information to enable reproduction of the power calculation.\n\n\n\n\nPopulate the “Treatment” Group node with the recommended number of experimental units, using the Node properties dialogue box. Enter the number of experimental units, the number of animals, and add a justification for the choice of sample size.Click on Close to dismiss the dialogue.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Estimate Sample Size</span>"
+    ]
+  },
+  {
+    "objectID": "sample_size.html#rename-and-save-the-diagram",
+    "href": "sample_size.html#rename-and-save-the-diagram",
+    "title": "13  Estimate Sample Size",
+    "section": "13.2 Rename and Save the Diagram",
+    "text": "13.2 Rename and Save the Diagram\n\nChange the name of the diagram by clicking on the text Untitled Diagram at the top, to bring up a dialogue box (Figure 13.7). Rename the diagram as “MP968_Workshop”, and click the OK button.\n\n\n\n\n\n\n\n\n\nFigure 13.7: Rename the diagram using the tool’s dialog box.\n\n\n\n\nSave the experiment by clicking on the Save (floppy disk) icon at the top left of the tool (Figure 13.8).\n\n\n\n\n\n\n\nFigure 13.8: Click on the floppy disk icon to save the design to your experiments at EDA.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Estimate Sample Size</span>"
+    ]
+  },
+  {
+    "objectID": "sample_size.html#footnotes",
+    "href": "sample_size.html#footnotes",
+    "title": "13  Estimate Sample Size",
+    "section": "",
+    "text": "Note that discarding the null hypothesis is not typically confirmatory of any specific alternative hypothesis.↩︎\nSuppose the effect size is 0.5, and the significance level is 0.05. An experiment with power of 0.8 would detect a true effect size of 0.5, at \\(P \\leq 0.05\\) in approximately 80 out of every 100 times the experiment was run, assuming all statistical test assumptions are met.↩︎\nOne-sided tests offer greater statistical power, for the same sample size, if the expected direction of change is known.↩︎\nThe choice depends on our null hypothesis. If our null hypothesis is “drug A has no effect” we should use a two-sided t-test. If our null hypothesis is “drug A does not reduce blood glucose” we should use a one-sided t-test. The choice of null hypothesis is under researcher control.↩︎",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Estimate Sample Size</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",

@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leighton Pritchard">
-<meta name="dcterms.date" content="2026-01-11">
 
-<title>MP968: Experimental Design Workshop</title>
+<title>13&nbsp; Estimate Sample Size – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./analysis_suggestion.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,10 +71,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -83,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface to the {{&lt; var ay &gt;}} presentation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./sample_size.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -118,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface to the 2024-25 presentation</span></a>
   </div>
 </li>
@@ -231,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sample_size.html" class="sidebar-item-text sidebar-link">
+  <a href="./sample_size.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></span></a>
   </div>
 </li>
@@ -253,35 +282,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface-to-the-presentation" id="toc-preface-to-the-presentation" class="nav-link active" data-scroll-target="#preface-to-the-presentation">Preface to the 2024-25 presentation</a></li>
+  <li><a href="#run-the-sample-size-calculation-tool" id="toc-run-the-sample-size-calculation-tool" class="nav-link active" data-scroll-target="#run-the-sample-size-calculation-tool"><span class="header-section-number">13.1</span> Run the Sample Size Calculation Tool</a></li>
+  <li><a href="#rename-and-save-the-diagram" id="toc-rename-and-save-the-diagram" class="nav-link" data-scroll-target="#rename-and-save-the-diagram"><span class="header-section-number">13.2</span> Rename and Save the Diagram</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/sample_size.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./sample_size.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">MP968: Experimental Design Workshop</h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Leighton Pritchard </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 11, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -291,13 +309,223 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Our final design diagram is complete, with no critique errors, and an analysis suggestion of <strong>one-way ANOVA with blocking factor(s)</strong>. We can now use the EDA’s <code>Sample Size Calculation</code> tool to estimate the required number of individuals per group, to achive a certain level of statistical power.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In order to be able to estimate a suitable sample size, the tool needs the researcher to provide realistic values for:</p>
+<ol type="1">
+<li>The <strong>effect size</strong> that the researcher wishes to detect in the comparison. This might be the size of effect considered “clinically relevant”, or assumed to be comparable to some previous treatment.</li>
+<li>The <strong>variability</strong> of the outcome measure being compared. Depending on how the analysis is being performed, this might be the average standard deviation across all measurements, or the expected variation (standard deviation) in the measured difference. These values typically come from previous experiments.</li>
+<li>The <strong>significance level</strong> of the hypothesis test, representing the threshold at which the null hypothesis would be discarded <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
+<li>The desired <strong>power</strong> of the experiment, i.e.&nbsp;the probability with which, if there is an effect of at least the stated <em>effect size</em> to be found, it will reach the stated <em>significance level</em> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</li>
+<li>The <strong>sidedness</strong> of the test. Generally, if the experiment aims to test for a <em>difference</em> but the direction of the difference is not known (the treatment may increase or decrease the size of a tumour, say), a <em>two-sided</em> test would be used. But if the direction of the desired effect <em>is</em> known (e.g.&nbsp;we wish to detect whether a treatment <em>decreases</em> the size of a tumour) a <em>one-sided</em> test should be used <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The EDA site has an extensive introduction to the concepts supporting power calculations.</p>
+<ul>
+<li><a href="https://eda.nc3rs.org.uk/experimental-design-group">Group and sample size advice</a></li>
+<li><a href="https://nc3rs.org.uk/3rs-resources/how-decide-your-sample-size-when-power-calculation-not-straightforward">Deciding sample size when the power calculation is not straightforward</a></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Something else no-one tells you
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As noted in <a href="critique1.html" class="quarto-xref"><span>Chapter 10</span></a> and <a href="both_sexes.html" class="quarto-xref"><span>Chapter 11</span></a>, even experienced scientists with many publications and long track records of research funding may never have received any formal training in experimental design or statistics. As a consequence they can propagate poor or suboptimal advice that may not be correct. As noted by Simon Bate on the <a href="https://nc3rs.org.uk/3rs-resources/how-decide-your-sample-size-when-power-calculation-not-straightforward#in-my-field-of-research,-we-have-always-used-n=6.-why-do-i-need-to-do-a-power-calculation-at-all?">NC3Rs site</a>:</p>
+<blockquote class="blockquote">
+<p>I often hear “we always use n=6” or “the other researchers use n=6, so shall we”. Needless to say, this is not a recommended approach. You cannot simply copy someone else’s sample sizes; you need to assess the variability of data generated in your lab, under your experimental conditions and using your protocols. Even if your supervisor or manager says “use n=6”, make sure you question them and check it is suitable!</p>
+</blockquote>
+<p><strong>Ultimately, as a researcher you are responsible for the rigour and ethics of your own actions.</strong> It is always advisable to consult with a statistician, rather than trust the word of senior scientists alone.</p>
+<p>Don’t be this guy (<a href="#fig-sample-size-0" class="quarto-xref">Figure&nbsp;<span>13.1</span></a>).</p>
+<div id="fig-sample-size-0" class="quarto-float quarto-figure quarto-figure-center anchored" width="80%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sample-size-0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/PbODigCZqL8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.1: How not to collaborate with a biostatistician, by JavaMama926.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="run-the-sample-size-calculation-tool" class="level2 page-columns page-full" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="run-the-sample-size-calculation-tool"><span class="header-section-number">13.1</span> Run the Sample Size Calculation Tool</h2>
+<ol type="1">
+<li>Click on <code>Tools -&gt; Sample Size Calculation</code> in the menu bar (<a href="#fig-sample-size-1" class="quarto-xref">Figure&nbsp;<span>13.2</span></a>) to bring up the Power Calculation dialogue box (<a href="#fig-sample-size-2" class="quarto-xref">Figure&nbsp;<span>13.3</span></a>).</li>
+</ol>
 
-<section id="preface-to-the-presentation" class="level1 unnumbered">
-<h1 class="unnumbered">Preface to the 2024-25 presentation</h1><p><img src="sipbs_compbio_800.png" title="MP968: Experimental Design Workshop" class="quarto-cover-image img-fluid"></p>
-<p>Welcome to the 2024-25 edition of online supporting material for the MP968 workshop in Experimental Design.</p>
-<p>This is the first presentation of this material in this form, and we would be very grateful to hear feedback <a href="leighton.pritchard@strath.ac.uk">by email</a> or through the <a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues">GitHub repository Issues page</a>.</p>
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-sample-size-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sample-size-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sample-size-1.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.2: The EDA design tool menu, showing the location of the Sample Size Calculation tool.
+</figcaption>
+</figure>
+</div>
+</div></div><div id="fig-sample-size-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sample-size-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sample-size-2.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.3: The EDA Sample Size Calculation tool dialogue box. By default fields for an unpaired <em>t</em>-test are shown
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Use the NC3Rs <a href="https://eda.nc3rs.org.uk/experimental-design-group#choosingpowercalculation">EDA decision tree</a> to choose the appropriate power calculation (<a href="#fig-sample-size-3" class="quarto-xref">Figure&nbsp;<span>13.4</span></a>).</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-sample-size-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sample-size-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/eda_decision_tree.jpg" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.4: The EDA decision tree for choosing the appropriate power calculation.
+</figcaption>
+</figure>
+</div>
+</div></div><div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Using the decision tree
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Starting at the top of the tree, we are asked a series of questions, as we progress through the flowchart:</p>
+<ol type="1">
+<li>Are you planning on analysing your data with a parametric analysis?</li>
+</ol>
+<p>Yes we are, since ANOVA is a parametric analysis.</p>
+<ol start="2" type="1">
+<li>Does each animal receive multiple treatments, acting as its own control?</li>
+</ol>
+<p>No.&nbsp;Each animal receives a single treatment and there are separate control and treatment groups.</p>
+<ol start="3" type="1">
+<li>Does your experiment only involve two groups.</li>
+</ol>
+<p>Technically, this is true. We are interested in a single main comparison involving two groups (control and treatment). We have a further two groups <em>male</em> and <em>female</em> as a blocking factor but, because this is only a blocking factor and not a main comparison, we ignore sex for the purposes of the power calculation.</p>
+</div>
+</div>
+</div>
+<p>The decision tree leads us to the box containing the advice to <strong>Use power calculation for an unpaired <em>t</em>-test, with variability as the average standard deviation of the outcome measurement being made</strong>.</p>
+<ol start="3" type="1">
+<li><p>Ensure the power calculation dialogue for the unpaired <em>t</em>-test is selected (as in <a href="#fig-sample-size-2" class="quarto-xref">Figure&nbsp;<span>13.3</span></a>).</p></li>
+<li><p>Decide on an expected effect size that is biologically relevant. For the purpose of this workshop, let’s assume that we need to see <em>a decrease in blood glucose of at least 2mM/L</em>. Enter the value 2 into the <strong>Effect size</strong> field.</p></li>
+<li><p>Decide on an expected variability in the outcome measure. This is usually determined from previous studies, but here we will assume that variability is 1mM/L, for the sake of the workshop. Enter the value 1 into the <strong>Variability</strong> field.</p></li>
+<li><p>Decide on a significance level for your statistical hypothesis test. This is under researcher control, and we will keep it at 0.05 for the purpose of the workshop.</p></li>
+<li><p>Decide on a suitable <em>power</em> (probability of avoiding a false negative error) for the statistical test. This is under researcher control, and power values of 0.8-0.9 are usually acceptable to funders. We will keep this value at 0.9 for the purpose of the workshop.</p></li>
+<li><p>Decide whether this will be a one- or two-sided test. As we have specified that we are expecting to see a <em>decrease</em> in blood glucose for a positive outcome, a one-sided <em>t</em>-test is appropriate and will give increased power for the same number of experimental subjects. Set the <strong>One or two-sided test</strong> field to 1 <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (<a href="#fig-sample-size-4" class="quarto-xref">Figure&nbsp;<span>13.5</span></a>).</p></li>
+</ol>
+<div id="fig-sample-size-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sample-size-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sample-size-4.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.5: The EDA Sample Size Calculation tool dialogue box, populated with values for our power calculation.
+</figcaption>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>Click on the <code>Calculate N per group</code> button to have the Sample Size Calculation tool return an estimated sample size for the desired power (<span class="quarto-unresolved-ref">?fig-sample-size-5</span>).</li>
+</ol>
+<p><img src="assets/images/sample-size-5.png" id="fig-sample-size-5" class="img-fluid" style="width:80.0%" alt="The EDA Sample Size Calculation tool returns an estimated sample size of six individuals per group, given our input choices."> 10. Populate the “Control” Group node with the recommended number of experimental units, using the Node properties dialogue box. Enter the number of experimental units, the number of animals, and add a justification for the choice of sample size (<a href="#fig-sample-size-6" class="quarto-xref">Figure&nbsp;<span>13.6</span></a>). Click on <code>Close</code> to dismiss the dialogue.</p>
+<div id="fig-sample-size-6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sample-size-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sample-size-6.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.6: The Node properties settings for the “Control” Group node, including the estimated sample size, and enough information to enable reproduction of the power calculation.
+</figcaption>
+</figure>
+</div>
+<ol start="11" type="1">
+<li>Populate the “Treatment” Group node with the recommended number of experimental units, using the Node properties dialogue box. Enter the number of experimental units, the number of animals, and add a justification for the choice of sample size.Click on <code>Close</code> to dismiss the dialogue.</li>
+</ol>
+</section>
+<section id="rename-and-save-the-diagram" class="level2 page-columns page-full" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="rename-and-save-the-diagram"><span class="header-section-number">13.2</span> Rename and Save the Diagram</h2>
+<ol type="1">
+<li>Change the name of the diagram by clicking on the text <code>Untitled Diagram</code> at the top, to bring up a dialogue box (<a href="#fig-sample-size-7" class="quarto-xref">Figure&nbsp;<span>13.7</span></a>). Rename the diagram as “MP968_Workshop”, and click the <code>OK</code> button.</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-sample-size-7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sample-size-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sample-size-7.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.7: Rename the diagram using the tool’s dialog box.
+</figcaption>
+</figure>
+</div>
+</div></div><ol start="2" type="1">
+<li>Save the experiment by clicking on the <code>Save</code> (floppy disk) icon at the top left of the tool (<a href="#fig-sample-size-8" class="quarto-xref">Figure&nbsp;<span>13.8</span></a>).</li>
+</ol>
+<div id="fig-sample-size-8" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sample-size-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/sample-size-8.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.8: Click on the floppy disk icon to save the design to your experiments at EDA.
+</figcaption>
+</figure>
+</div>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Note that discarding the null hypothesis is not typically confirmatory of any specific alternative hypothesis.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Suppose the <em>effect size</em> is 0.5, and the <em>significance level</em> is 0.05. An experiment with <em>power</em> of 0.8 would detect a true effect size of 0.5, at <span class="math inline">\(P \leq 0.05\)</span> in approximately 80 out of every 100 times the experiment was run, assuming all statistical test assumptions are met.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>One-sided tests offer greater statistical power, for the same sample size, if the expected direction of change is known.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>The choice depends on our null hypothesis. If our null hypothesis is “drug A has no effect” we should use a two-sided <em>t</em>-test. If our null hypothesis is “drug A does not reduce blood glucose” we should use a one-sided <em>t</em>-test. The choice of null hypothesis is under researcher control.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -723,10 +951,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./analysis_suggestion.html" class="pagination-link" aria-label="Obtain an Analysis Suggestion">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Obtain an Analysis Suggestion</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text">Introduction</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -738,7 +969,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/sample_size.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
