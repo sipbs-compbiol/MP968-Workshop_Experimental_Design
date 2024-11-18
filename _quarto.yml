@@ -47,6 +47,10 @@ book:
       chapters: 
         - wet_earth.qmd
     
+    - part: power.qmd
+      chapters:
+        - g_power.qmd
+    
     - part: nc3rs-eda.qmd
       chapters: 
         - eda_account.qmd
