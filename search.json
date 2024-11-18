@@ -588,46 +588,6 @@
     ]
   },
   {
-    "objectID": "power.html",
-    "href": "power.html",
-    "title": "Power Calculations and Sample Size",
-    "section": "",
-    "text": "Power and sample size\nThe relationship between power and sample size arises because there are two ways for us to improve the chance that our experiment tells us that there is some effect, if there really is some effect (i.e. to increase the power of an experiment - see above):\nOnce we have settled on the structure of our experiment and made as many modifications as we can to reduce the amount of variability (such as including appropriate controls, and randomising/blocking our experiment), the remaining factor under our control, as researchers, is the number of experimental units.\nSupposing we have decided upon an acceptable threshold for statistical significance, and an acceptable probability that the experiment tells us there is no meaningful effect when there is, in fact, a real meaningful effect. We may then be concerned with the cost of conducting the experiment.\nWe should therefore use sample size calculations to ensure that a study is neither under- nor over-powered for the stated purpose of the research.",
-    "crumbs": [
-      "Power Calculations and Sample Size"
-    ]
-  },
-  {
-    "objectID": "power.html#power-and-sample-size",
-    "href": "power.html#power-and-sample-size",
-    "title": "Power Calculations and Sample Size",
-    "section": "",
-    "text": "NC3Rs EDA guide to sample size calculations\n\n\n\nReduce variability/noise in the experimental design\nIncrease the number of experimental units\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThe primary cost of an experiment involving animals is ethical, and measured in the potential for animal suffering. The financial cost is a secondary consideration.\nAs stated in the NC3Rs EDA guide,\n\nUnder-powered in vivo experiments waste time and resources, lead to unnecessary animal suffering and result in erroneous biological conclusions.\n\nSample size is never large enough but, similarly, over-powered experiments in which more animals than necessary are used to establish a result also lead to unnecessary animal suffering and are unethical.",
-    "crumbs": [
-      "Power Calculations and Sample Size"
-    ]
-  },
-  {
-    "objectID": "power.html#practical-consequences-of-statistical-power",
-    "href": "power.html#practical-consequences-of-statistical-power",
-    "title": "Power Calculations and Sample Size",
-    "section": "Practical consequences of statistical power",
-    "text": "Practical consequences of statistical power\nThe consideration of statistical power for an experiment leads to some general conclusions about what we should vary to improve our chances, as researchers, of seeing a statistically significant result when there is a real effect of suitable size, and also to conclusions about what kinds of results we are likely to find in the literature.\n\nIt is better to double the effect size than to double sample size\nThe standard error of estimation decreases with the square of sample size 1. So, if we double our sample size we should expect, approximately, a \\(\\sqrt{2} = 1.4\\times\\) reduction in standard error. But if we double the effect size then the actual difference we are trying to measure is \\(2\\times\\) as large.\n\n\n\n\n\n\nTip\n\n\n\nThere are several ways to maximise effect size, including:\n\nsetting doses as low as ethically possible in the control group, and as high as ethically possible in the treeatment group.\nchoosing individuals that are especially likely to respond to the treatment\n\n\n\nDesigning an experiment with the aim of increasing effect size can be difficult. When treatments are set to extreme values it can make interpolation of the results to more realistic levels doubtful. If a highly sensitive set of individuals is used, then the results may not generalise across a wider population.\nIt is for the researcher to decide and justify whether conclusive effects on a subgroup are preferred to inconclusive but more generalisable results.\n\n\nThe winner’s curse\n\n\nPublished results tend to be positive, and overestimates\nDue to the effects of the “winner’s curse,” and well-intentioned designs that attempt to maximise effect size, it is likely that actual effects are smaller in a general population than in any specific study. Also, due to the systematic bias that “positive” results tend to be published where “negative” results do not, publication typically biases towards “statistically significant” results whose measured effect sizes, as seen from the “winner’s curse,” are likely to be larger than would be seen in the general population.",
-    "crumbs": [
-      "Power Calculations and Sample Size"
-    ]
-  },
-  {
-    "objectID": "power.html#footnotes",
-    "href": "power.html#footnotes",
-    "title": "Power Calculations and Sample Size",
-    "section": "",
-    "text": "As you will remember from GCSE/Standard Grade↩︎",
-    "crumbs": [
-      "Power Calculations and Sample Size"
-    ]
-  },
-  {
     "objectID": "nc3rs-eda.html",
     "href": "nc3rs-eda.html",
     "title": "NC3Rs EDA",
@@ -645,6 +605,66 @@
     "text": "Figure 2: Landing page of the NC3Rs EDA website\n\n\n\n\nGetting Started\nTo start using the EDA, you need to have an account at the NC3Rs site (Figure 2). The rest of the pages in this workshop chapter will walk you through the process of setting up an account and designing an experiment.",
     "crumbs": [
       "NC3Rs EDA"
+    ]
+  },
+  {
+    "objectID": "power.html",
+    "href": "power.html",
+    "title": "Power Calculations and Sample Size",
+    "section": "",
+    "text": "Underpowered studies\nWe sometimes refer to studies as being “low-powered” or “underpowered.” This means that the expected effect size is small in relation to the variation (e.g. standard error) of the measurement. Low power in studies might result from having too few experimental units (e.g. individual subjects), or from measurements having relatively high variability due to the effect of noisy nuisance variables.\nUnderpowered studies may not give a statistically significant result even when a relatively large effect is found in the experiment. Worse still, because a very large effect may be required to reach statistical significance, such a result is likely to be a statistical outlier and not reflect the true effect size.\nFigure 1: When effect size is small compared to the standard error of the measurement, statistical power is low, and the study is underpowered. In this figure, the null hypothesis is that there is no effect. The real effect size is assumed to be 2% of the size of the control, and estimates are assumed to have the same standard error as the control experiment. The curve represents the distribution of possible estimates of effect size as a Normal distribution with \\(\\mu=2\\%, \\sigma=10\\%\\). Statistical significance is unlikely to be achieved but, if it is achieved, it is misleading, as there is a reasonable chance (39%) that the significant result will be in the wrong direction and, in any case, the magnitude of the effect size will be greatly overestimated. (Adapted from Figure 16.1 in Gelman et al. “Regression and Other Stories”)",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
+    "objectID": "power.html#underpowered-studies",
+    "href": "power.html#underpowered-studies",
+    "title": "Power Calculations and Sample Size",
+    "section": "",
+    "text": "Important\n\n\n\nEven experienced scientists with many publications and long track records of research funding may never have received any formal training in experimental design or statistics. You will sometimes hear claims being made along the lines of:\n\n“if the effects are large enough to be seen in a small study they must be real large effects”\n\nUnfortunately, this is not true. “Statistically significant” results from underpowered studies are highly likely to be exaggerated, and maybe even suggest that the effect acts in the wrong direction! (Figure 1)\n\n\n\n\n\n\n\n\n\nStrategies to increase statistical power\n\n\n\nThere are three broad strategies available to us, as researchers, to increase the statistical power of an experiment:\n\nReduce the variability in the experiment\n\n\nthis typically means controlling for nuisance effects that cause variation in experimental units, or improving the way we measure outcome variables\n\n\nIncrease the number of experimental units\n\n\nwhen we increase the number of experimental units, we reduce the uncertainty in our estimate of error of the mean\n\n\nIncrease the effect size",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
+    "objectID": "power.html#effect-size",
+    "href": "power.html#effect-size",
+    "title": "Power Calculations and Sample Size",
+    "section": "Effect size",
+    "text": "Effect size\nA significant challenge for power calculation in experimental design is knowing what effect size to assume. This is usually the target of the study and not known ahead of time.\nA number of strategies for choosing an effect size are possible, including:\n\ntrying a range of values consistent with previously-published literature\nchoose a size of effect that would be of some practical interest (e.g. we would only consider a treatment if it increased survival time by at least 20%)\n\n\n\n\n\n\n\nTip\n\n\n\nFor reasons we will discuss below, it can be unwise to base one’s estimate of effect size on the result of a single noisy study.",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
+    "objectID": "power.html#power-and-sample-size",
+    "href": "power.html#power-and-sample-size",
+    "title": "Power Calculations and Sample Size",
+    "section": "Power and sample size",
+    "text": "Power and sample size\n\nNC3Rs EDA guide to sample size calculations\n\nOnce we have settled on the structure of our experiment and made as many modifications as we can to reduce the effect of sources of variability that we can manage (such as including appropriate controls, and randomising/blocking our experimental design), one remaining factor under our control, as researchers, is the number of experimental units.\nSuppose that we have decided upon an acceptable threshold for statistical significance, and an acceptable power (i.e. probability that the experiment tells us there is no meaningful effect when there is, in fact, a real meaningful effect). We may then be concerned with the cost of conducting the experiment.\n\n\n\n\n\n\nImportant\n\n\n\nThe primary cost of an experiment involving animals is ethical, and measured in the potential for animal suffering. The financial cost is a secondary consideration. Funders will typically fund the experiment most likely to give robust useful results in an ethical manner, not the cheapest experiment possible.\nAs stated in the NC3Rs EDA guide,\n\nUnder-powered in vivo experiments waste time and resources, lead to unnecessary animal suffering and result in erroneous biological conclusions.\n\nSimilarly, over-powered experiments in which more animals than necessary are used to establish a result also lead to unnecessary animal suffering and are unethical.\n\n\nWe should therefore use sample size calculations to ensure that a study is neither under- nor over-powered for the stated purpose of the research.",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
+    "objectID": "power.html#practical-consequences-of-statistical-power",
+    "href": "power.html#practical-consequences-of-statistical-power",
+    "title": "Power Calculations and Sample Size",
+    "section": "Practical consequences of statistical power",
+    "text": "Practical consequences of statistical power\nConsidering statistical power for an experiment suggests some general approaches to improve our chances, as researchers, of seeing a statistically significant result when there is a real effect of suitable size. It also has implications about what kinds of results we are likely to find in the literature, and how we should interpret them.\n\nIt is generally better to double the effect size than to double sample size\nThe standard error of estimation decreases with the square of sample size 1. So, if we double our sample size we should expect, approximately, a \\(\\sqrt{2} = 1.4\\times\\) reduction in standard error. But if we are able to double the effect size then the actual difference we are trying to measure would be \\(2\\times\\) as large, and this will have a greater effect on the power of the experiment.\n\n\n\n\n\n\nTip\n\n\n\nThere are several ways to maximise effect size, including:\n\nsetting doses as low as ethically possible in the control group, and as high as ethically possible in the treeatment group.\nchoosing individuals that are especially likely to respond to the treatment\n\n\n\nDesigning an experiment with the aim of increasing effect size can be difficult, and lead to other issues. When treatments are set to extreme values it can make the interpretation of the results when treatments are applied at more realistic levels doubtful. If a highly sensitive set of individuals is used, then the results may not generalise across the wider population.\nIt is for the researcher to decide and justify whether conclusive effects on a subgroup are preferred to inconclusive but more generalisable results.\n\n\nThe Winner’s Curse\nThere is a concept in economics called the “Winner’s Curse” in which the winning bidder of an auction is likely to have overpaid with respect to the value of the item being auctioned.\nFigure 1 demonstrates that, by focusing on “statistically significant” results, we generate a systematically biased, overoptimistic picture of the world. In Figure 1, we have results corresponding to a study where the true effect size could not realistically be more than 2%, but is estimated with a standard error of 10%. The curve shows the distribution of experimental estimates we would expect, shading in green those areas where the result is at least \\(1.96\\sigma\\) from the null hypothesis, i.e. “statistically significant.”\n\n\n\n\n\n\nWarning\n\n\n\nUsing the properties of the Normal distribution we can calculate that 5.4% of the estimates will be considered to be “statistically significant”, and that 39% of the time the “statistically significant” difference will be a reduction in effect - a change in the wrong direction!\n\n\nWe can say, without performing any experiment, that a study with these properties has essentially no chance of providing useful information.\n\n\nPublished results tend to be positive, and overestimates\nDue to the effects of the “winner’s curse,” and well-intentioned designs that attempt to maximise effect size, it is likely that actual effects are smaller in a general population than in any specific study.\nAlso, due to the systematic bias that “positive” (i.e. “statistically significant”) results tend to be published when “negative” (i.e. “not significant”) results are not, publication typically biases towards “statistically significant” results whose measured effect sizes, as seen from the “winner’s curse,” are likely to be larger than would be seen in the general population.",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
+    "objectID": "power.html#footnotes",
+    "href": "power.html#footnotes",
+    "title": "Power Calculations and Sample Size",
+    "section": "",
+    "text": "As you will remember from GCSE/Standard Grade mathematics↩︎",
+    "crumbs": [
+      "Power Calculations and Sample Size"
     ]
   }
 ]

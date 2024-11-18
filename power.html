@@ -299,11 +299,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#power-and-sample-size" id="toc-power-and-sample-size" class="nav-link active" data-scroll-target="#power-and-sample-size">Power and sample size</a></li>
+  <li><a href="#underpowered-studies" id="toc-underpowered-studies" class="nav-link active" data-scroll-target="#underpowered-studies">Underpowered studies</a></li>
+  <li><a href="#effect-size" id="toc-effect-size" class="nav-link" data-scroll-target="#effect-size">Effect size</a></li>
+  <li><a href="#power-and-sample-size" id="toc-power-and-sample-size" class="nav-link" data-scroll-target="#power-and-sample-size">Power and sample size</a></li>
   <li><a href="#practical-consequences-of-statistical-power" id="toc-practical-consequences-of-statistical-power" class="nav-link" data-scroll-target="#practical-consequences-of-statistical-power">Practical consequences of statistical power</a>
   <ul class="collapse">
-  <li><a href="#it-is-better-to-double-the-effect-size-than-to-double-sample-size" id="toc-it-is-better-to-double-the-effect-size-than-to-double-sample-size" class="nav-link" data-scroll-target="#it-is-better-to-double-the-effect-size-than-to-double-sample-size">It is better to double the effect size than to double sample size</a></li>
-  <li><a href="#the-winners-curse" id="toc-the-winners-curse" class="nav-link" data-scroll-target="#the-winners-curse">The winner’s curse</a></li>
+  <li><a href="#it-is-generally-better-to-double-the-effect-size-than-to-double-sample-size" id="toc-it-is-generally-better-to-double-the-effect-size-than-to-double-sample-size" class="nav-link" data-scroll-target="#it-is-generally-better-to-double-the-effect-size-than-to-double-sample-size">It is generally better to double the effect size than to double sample size</a></li>
+  <li><a href="#the-winners-curse" id="toc-the-winners-curse" class="nav-link" data-scroll-target="#the-winners-curse">The Winner’s Curse</a></li>
   <li><a href="#published-results-tend-to-be-positive-and-overestimates" id="toc-published-results-tend-to-be-positive-and-overestimates" class="nav-link" data-scroll-target="#published-results-tend-to-be-positive-and-overestimates">Published results tend to be positive, and overestimates</a></li>
   </ul></li>
   </ul>
@@ -348,15 +350,63 @@ Suppose your experiment is calculated to have 80% (0.8) power…
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The estimated power of the experiment is incomplete by itself. We need also to declare the “statistical significance” that has been decided on for the experiment, and the effect size we consider to be meaningful.</p>
+<p>The estimated power of an experiment is an incomplete description, by itself. We need also to declare the “statistical significance” threshold that has been decided on for the experiment, and the effect size we consider to be meaningful.</p>
 <p>If we had decided that <span class="math inline">\(P=0.05\)</span> was a suitable threshold for statistical significance, and that a change in blood glucose concentration of 2mM/L in response to administration of some drug was meaningful, we would say instead:</p>
 <p><strong>The experiment has 80% (0.8) power at <span class="math inline">\(\alpha = 0.05\)</span></strong> (the same thing as <span class="math inline">\(P = 0.05\)</span>)<strong>, for an effect size of 2mM/L.</strong></p>
 <p>But what does this mean?</p>
 <p>Suppose that the drug works, and really does change the blood glucose concentration by 2mM/L. If you ran the experiment 50 times, with a power of 80% you would expect a statisticially significant <em>positive</em> result (i.e.&nbsp;the meaningful change is detected and statistically supported) in 40 of the experiments. You would expect that in 10 of the experiments the measured change would <strong>not</strong> be considered to be statistically significant.</p>
 </div>
 </div>
-<p>We sometimes informally refer to studies as being “low-powered” or “underpowered.” Such studies may not give a <em>statistically significant</em> result even when a relatively large effect is found in the experiment. Worse still, because a very large effect may be required to reach statistical significance, such a result is likely to be a <em>statistical outlier</em> and not reflect the true effect size. Low power in studies might result from having too few experimental units (e.g.&nbsp;individuals), or from the measurements having relatively high <em>variability</em>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The choice of what makes a result significant, and what degree of statistical power is acceptable, is under researcher control, but might also be stated by a potential funder.</p>
+<p>Typical values you might see include “80% power at 5% significance,” but there is <em>no gold standard</em> and choices should be made to suit the situation appropriately. Funding agencies typically insist that a study has at least an 80% chance of delivering a statistically significant result.</p>
+</div>
+</div>
+<section id="underpowered-studies" class="level2">
+<h2 class="anchored" data-anchor-id="underpowered-studies">Underpowered studies</h2>
+<p>We sometimes refer to studies as being “low-powered” or “underpowered.” This means that the expected effect size is small in relation to the variation (e.g.&nbsp;standard error) of the measurement. Low power in studies might result from having too few experimental units (e.g.&nbsp;individual subjects), or from measurements having relatively high <em>variability</em> due to the effect of noisy nuisance variables.</p>
+<p>Underpowered studies may not give a <em>statistically significant</em> result even when a relatively large effect is found in the experiment. Worse still, because a very large effect may be required to reach statistical significance, such a result is likely to be a <em>statistical outlier</em> and not reflect the true effect size.</p>
 <div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Even experienced scientists with many publications and long track records of research funding may never have received any formal training in experimental design or statistics. You will sometimes hear claims being made along the lines of:</p>
+<blockquote class="blockquote">
+<p>“if the effects are large enough to be seen in a small study they must be real large effects”</p>
+</blockquote>
+<p>Unfortunately, this is not true. <strong>“Statistically significant” results from underpowered studies are highly likely to be exaggerated, and maybe even suggest that the effect acts in the wrong direction!</strong> (<a href="#fig-s-m-errors" class="quarto-xref">Figure&nbsp;<span>1</span></a>)</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-s-m-errors" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-s-m-errors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="power_files/figure-html/fig-s-m-errors-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-s-m-errors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <strong>When effect size is small compared to the standard error of the measurement, statistical power is low, and the study is underpowered.</strong> In this figure, the null hypothesis is that there is no effect. The real effect size is assumed to be 2% of the size of the control, and estimates are assumed to have the same standard error as the control experiment. The curve represents the distribution of possible estimates of effect size as a Normal distribution with <span class="math inline">\(\mu=2\%, \sigma=10\%\)</span>. Statistical significance is unlikely to be achieved but, if it is achieved, it is misleading, as there is a reasonable chance (39%) that the significant result will be in the wrong direction and, in any case, the magnitude of the effect size will be greatly overestimated. (Adapted from Figure 16.1 in Gelman <em>et al.</em> “Regression and Other Stories”)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -382,37 +432,38 @@ Strategies to increase statistical power
 <ol start="3" type="1">
 <li>Increase the effect size</li>
 </ol>
-<ul>
-<li></li>
-</ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
+</section>
+<section id="effect-size" class="level2">
+<h2 class="anchored" data-anchor-id="effect-size">Effect size</h2>
+<p>A significant challenge for power calculation in experimental design is knowing what effect size to assume. This is usually the target of the study and not known ahead of time.</p>
+<p>A number of strategies for choosing an effect size are possible, including:</p>
+<ol type="1">
+<li>trying a range of values consistent with previously-published literature</li>
+<li>choose a size of effect that would be of some practical interest (e.g.&nbsp;we would only consider a treatment if it increased survival time by at least 20%)</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The choice of what makes a result significant, and what degree of statistical power is acceptable, is under researcher control, but might also be stated by a potential funder.</p>
-<p>Typical values you might see include “80% power at 5% significance,” but there is <em>no gold standard</em> and choices should be made to suit the situation appropriately. Funding agencies typically insist that a study has at least an 80% chance of delivering a statistically significant result.</p>
+<p>For reasons we will discuss below, it can be unwise to base one’s estimate of effect size on the result of a single noisy study.</p>
 </div>
 </div>
+</section>
 <section id="power-and-sample-size" class="level2">
 <h2 class="anchored" data-anchor-id="power-and-sample-size">Power and sample size</h2>
 <ul>
 <li><a href="https://eda.nc3rs.org.uk/experimental-design-group">NC3Rs EDA guide to sample size calculations</a></li>
 </ul>
-<p>The relationship between power and sample size arises because there are two ways for us to improve the chance that our experiment tells us that there is some effect, if there really is some effect (i.e.&nbsp;to increase the power of an experiment - see above):</p>
-<ol type="1">
-<li>Reduce variability/noise in the experimental design</li>
-<li>Increase the number of experimental units</li>
-</ol>
-<p>Once we have settled on the structure of our experiment and made as many modifications as we can to reduce the amount of variability (such as including appropriate controls, and randomising/blocking our experiment), the remaining factor under our control, as researchers, is the number of experimental units.</p>
-<p>Supposing we have decided upon an acceptable threshold for statistical significance, and an acceptable probability that the experiment tells us there is no meaningful effect when there is, in fact, a real meaningful effect. We may then be concerned with the cost of conducting the experiment.</p>
+<p>Once we have settled on the structure of our experiment and made as many modifications as we can to reduce the effect of sources of variability that we can manage (such as including appropriate controls, and randomising/blocking our experimental design), one remaining factor under our control, as researchers, is the number of experimental units.</p>
+<p>Suppose that we have decided upon an acceptable threshold for statistical significance, and an acceptable power (i.e.&nbsp;probability that the experiment tells us there is no meaningful effect when there is, in fact, a real meaningful effect). We may then be concerned with the cost of conducting the experiment.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -423,22 +474,22 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The primary cost of an experiment involving animals is <strong>ethical</strong>, and measured in the potential for animal suffering. The financial cost is a secondary consideration.</p>
+<p>The primary cost of an experiment involving animals is <strong>ethical</strong>, and measured in the potential for animal suffering. The financial cost is a secondary consideration. Funders will typically fund the experiment most likely to give robust useful results in an ethical manner, not the cheapest experiment possible.</p>
 <p>As stated in the NC3Rs EDA guide,</p>
 <blockquote class="blockquote">
 <p><strong>Under-powered <em>in vivo</em> experiments waste time and resources, lead to unnecessary animal suffering and result in erroneous biological conclusions.</strong></p>
 </blockquote>
-<p>Sample size is never large enough but, similarly, over-powered experiments in which more animals than necessary are used to establish a result also lead to unnecessary animal suffering and are unethical.</p>
+<p>Similarly, over-powered experiments in which more animals than necessary are used to establish a result also lead to unnecessary animal suffering and are unethical.</p>
 </div>
 </div>
 <p>We should therefore use sample size calculations to ensure that a study is neither under- nor over-powered for the stated purpose of the research.</p>
 </section>
 <section id="practical-consequences-of-statistical-power" class="level2">
 <h2 class="anchored" data-anchor-id="practical-consequences-of-statistical-power">Practical consequences of statistical power</h2>
-<p>The consideration of statistical power for an experiment leads to some general conclusions about what we should vary to improve our chances, as researchers, of seeing a statistically significant result when there is a real effect of suitable size, and also to conclusions about what kinds of results we are likely to find in the literature.</p>
-<section id="it-is-better-to-double-the-effect-size-than-to-double-sample-size" class="level3">
-<h3 class="anchored" data-anchor-id="it-is-better-to-double-the-effect-size-than-to-double-sample-size">It is better to double the effect size than to double sample size</h3>
-<p>The standard error of estimation decreases with the square of sample size <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. So, if we double our sample size we should expect, approximately, a <span class="math inline">\(\sqrt{2} = 1.4\times\)</span> reduction in standard error. But if we double the effect size then the actual difference we are trying to measure is <span class="math inline">\(2\times\)</span> as large.</p>
+<p>Considering statistical power for an experiment suggests some general approaches to improve our chances, as researchers, of seeing a statistically significant result when there is a real effect of suitable size. It also has implications about what kinds of results we are likely to find in the literature, and how we should interpret them.</p>
+<section id="it-is-generally-better-to-double-the-effect-size-than-to-double-sample-size" class="level3">
+<h3 class="anchored" data-anchor-id="it-is-generally-better-to-double-the-effect-size-than-to-double-sample-size">It is generally better to double the effect size than to double sample size</h3>
+<p>The standard error of estimation decreases with the square of sample size <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. So, if we double our sample size we should expect, approximately, a <span class="math inline">\(\sqrt{2} = 1.4\times\)</span> reduction in standard error. But if we are able to double the effect size then the actual difference we are trying to measure would be <span class="math inline">\(2\times\)</span> as large, and this will have a greater effect on the power of the experiment.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -456,15 +507,32 @@ Tip
 </ul>
 </div>
 </div>
-<p>Designing an experiment with the aim of increasing effect size can be difficult. When treatments are set to extreme values it can make interpolation of the results to more realistic levels doubtful. If a highly sensitive set of individuals is used, then the results may not generalise across a wider population.</p>
+<p>Designing an experiment with the aim of increasing effect size can be difficult, and lead to other issues. When treatments are set to extreme values it can make the interpretation of the results when treatments are applied at more realistic levels doubtful. If a highly sensitive set of individuals is used, then the results may not generalise across the wider population.</p>
 <p><strong>It is for the researcher to decide and justify whether conclusive effects on a subgroup are preferred to inconclusive but more generalisable results.</strong></p>
 </section>
 <section id="the-winners-curse" class="level3">
-<h3 class="anchored" data-anchor-id="the-winners-curse">The winner’s curse</h3>
+<h3 class="anchored" data-anchor-id="the-winners-curse">The Winner’s Curse</h3>
+<p>There is a concept in economics called the “Winner’s Curse” in which the winning bidder of an auction is likely to have overpaid with respect to the value of the item being auctioned.</p>
+<p><a href="#fig-s-m-errors" class="quarto-xref">Figure&nbsp;<span>1</span></a> demonstrates that, by focusing on “statistically significant” results, we generate a systematically biased, overoptimistic picture of the world. In <a href="#fig-s-m-errors" class="quarto-xref">Figure&nbsp;<span>1</span></a>, we have results corresponding to a study where the true effect size could not realistically be more than 2%, but is estimated with a standard error of 10%. The curve shows the distribution of experimental estimates we would expect, shading in green those areas where the result is at least <span class="math inline">\(1.96\sigma\)</span> from the null hypothesis, i.e.&nbsp;“statistically significant.”</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the properties of the Normal distribution we can calculate that 5.4% of the estimates will be considered to be “statistically significant”, and that 39% of the time the “statistically significant” difference will be a reduction in effect - a change in the wrong direction!</p>
+</div>
+</div>
+<p><strong>We can say, without performing any experiment, that a study with these properties has essentially no chance of providing useful information.</strong></p>
 </section>
 <section id="published-results-tend-to-be-positive-and-overestimates" class="level3">
 <h3 class="anchored" data-anchor-id="published-results-tend-to-be-positive-and-overestimates">Published results tend to be positive, and overestimates</h3>
-<p>Due to the effects of the “winner’s curse,” and well-intentioned designs that attempt to maximise effect size, it is likely that actual effects are smaller in a general population than in any specific study. Also, due to the systematic bias that “positive” results tend to be published where “negative” results do not, publication typically biases towards “statistically significant” results whose measured effect sizes, as seen from the “winner’s curse,” are likely to be larger than would be seen in the general population.</p>
+<p>Due to the effects of the “winner’s curse,” and well-intentioned designs that attempt to maximise effect size, it is likely that actual effects are smaller in a general population than in any specific study.</p>
+<p>Also, due to the systematic bias that “positive” (i.e.&nbsp;“statistically significant”) results tend to be published when “negative” (i.e.&nbsp;“not significant”) results are not, publication typically biases towards “statistically significant” results whose measured effect sizes, as seen from the “winner’s curse,” are likely to be larger than would be seen in the general population.</p>
 
 
 </section>
@@ -472,7 +540,7 @@ Tip
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>As you will remember from <a href="https://www.bbc.co.uk/bitesize/guides/zcjv4wx/revision/2">GCSE/Standard Grade</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>As you will remember from <a href="https://www.bbc.co.uk/bitesize/guides/zcjv4wx/revision/2">GCSE/Standard Grade mathematics</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
