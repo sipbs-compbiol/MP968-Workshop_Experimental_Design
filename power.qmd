@@ -23,6 +23,8 @@ But what does this mean?
 Suppose that the drug works, and really does change the blood glucose concentration by 2mM/L. If you ran the experiment 50 times, with a power of 80% you would expect a statisticially significant _positive_ result (i.e. the meaningful change is detected and statistically supported) in 40 of the experiments. You would expect that in 10 of the experiments the measured change would **not** be considered to be statistically significant.
 :::
 
+## "Underpowered studies"
+
 We sometimes informally refer to studies as being "low-powered" or "underpowered." Such studies may not give a _statistically significant_ result even when a relatively large effect is found in the experiment. Worse still, because a very large effect may be required to reach statistical significance, such a result is likely to be a _statistical outlier_ and not reflect the true effect size. Low power in studies might result from having too few experimental units (e.g. individuals), or from the measurements having relatively high _variability_.
 
 ::: {.callout-important}
@@ -35,7 +37,6 @@ There are three broad strategies available to us, as researchers, to increase th
 2. Increase the number of experimental units
   - when we increase the number of experimental units, we _reduce the uncertainty in our estimate of error of the mean_
 3. Increase the effect size
-  - 
 :::
 
 ::: {.callout-warning}
@@ -43,6 +44,20 @@ The choice of what makes a result significant, and what degree of statistical po
 
 Typical values you might see include "80% power at 5% significance," but there is _no gold standard_ and choices should be made to suit the situation appropriately. Funding agencies typically insist that a study has at least an 80% chance of delivering a statistically significant result.
 :::
+
+## Effect size
+
+A significant challenge for power calculation in experimental design is knowing what effect size to assume. This is usually the target of the study and not known ahead of time.
+
+A number of strategies for choosing an effect size are possible, including:
+
+1. trying a range of values consistent with previously-published literature
+2. choose a size of effect that would be of some practical interest (e.g. we would only consider a treatment if it increased survival time by at least 20%)
+
+::: {.callout-tip}
+For reasons we will discuss below, it can be unwise to base one's estimate of effect size on the result of a single noisy study (including preliminary studies).
+:::
+
 
 ## Power and sample size
 
@@ -73,7 +88,7 @@ We should therefore use sample size calculations to ensure that a study is neith
 
 The consideration of statistical power for an experiment leads to some general conclusions about what we should vary to improve our chances, as researchers, of seeing a statistically significant result when there is a real effect of suitable size, and also to conclusions about what kinds of results we are likely to find in the literature.
 
-### It is better to double the effect size than to double sample size
+### It is generally better to double the effect size than to double sample size
 
 The standard error of estimation decreases with the square of sample size [^1]. So, if we double our sample size we should expect, approximately, a $\sqrt{2} = 1.4\times$ reduction in standard error. But if we double the effect size then the actual difference we are trying to measure is $2\times$ as large.
 
