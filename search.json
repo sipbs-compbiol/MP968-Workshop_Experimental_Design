@@ -588,6 +588,46 @@
     ]
   },
   {
+    "objectID": "power.html",
+    "href": "power.html",
+    "title": "Power Calculations and Sample Size",
+    "section": "",
+    "text": "Power and sample size\nThe relationship between power and sample size arises because there are two ways for us to improve the chance that our experiment tells us that there is some effect, if there really is some effect (i.e. to increase the power of an experiment - see above):\nOnce we have settled on the structure of our experiment and made as many modifications as we can to reduce the amount of variability (such as including appropriate controls, and randomising/blocking our experiment), the remaining factor under our control, as researchers, is the number of experimental units.\nSupposing we have decided upon an acceptable threshold for statistical significance, and an acceptable probability that the experiment tells us there is no meaningful effect when there is, in fact, a real meaningful effect. We may then be concerned with the cost of conducting the experiment.\nWe should therefore use sample size calculations to ensure that a study is neither under- nor over-powered for the stated purpose of the research.",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
+    "objectID": "power.html#power-and-sample-size",
+    "href": "power.html#power-and-sample-size",
+    "title": "Power Calculations and Sample Size",
+    "section": "",
+    "text": "NC3Rs EDA guide to sample size calculations\n\n\n\nReduce variability/noise in the experimental design\nIncrease the number of experimental units\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThe primary cost of an experiment involving animals is ethical, and measured in the potential for animal suffering. The financial cost is a secondary consideration.\nAs stated in the NC3Rs EDA guide,\n\nUnder-powered in vivo experiments waste time and resources, lead to unnecessary animal suffering and result in erroneous biological conclusions.\n\nSample size is never large enough but, similarly, over-powered experiments in which more animals than necessary are used to establish a result also lead to unnecessary animal suffering and are unethical.",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
+    "objectID": "power.html#practical-consequences-of-statistical-power",
+    "href": "power.html#practical-consequences-of-statistical-power",
+    "title": "Power Calculations and Sample Size",
+    "section": "Practical consequences of statistical power",
+    "text": "Practical consequences of statistical power\nThe consideration of statistical power for an experiment leads to some general conclusions about what we should vary to improve our chances, as researchers, of seeing a statistically significant result when there is a real effect of suitable size, and also to conclusions about what kinds of results we are likely to find in the literature.\n\nIt is better to double the effect size than to double sample size\nThe standard error of estimation decreases with the square of sample size 1. So, if we double our sample size we should expect, approximately, a \\(\\sqrt{2} = 1.4\\times\\) reduction in standard error. But if we double the effect size then the actual difference we are trying to measure is \\(2\\times\\) as large.\n\n\n\n\n\n\nTip\n\n\n\nThere are several ways to maximise effect size, including:\n\nsetting doses as low as ethically possible in the control group, and as high as ethically possible in the treeatment group.\nchoosing individuals that are especially likely to respond to the treatment\n\n\n\nDesigning an experiment with the aim of increasing effect size can be difficult. When treatments are set to extreme values it can make interpolation of the results to more realistic levels doubtful. If a highly sensitive set of individuals is used, then the results may not generalise across a wider population.\nIt is for the researcher to decide and justify whether conclusive effects on a subgroup are preferred to inconclusive but more generalisable results.\n\n\nThe winner’s curse\n\n\nPublished results tend to be positive, and overestimates\nDue to the effects of the “winner’s curse,” and well-intentioned designs that attempt to maximise effect size, it is likely that actual effects are smaller in a general population than in any specific study. Also, due to the systematic bias that “positive” results tend to be published where “negative” results do not, publication typically biases towards “statistically significant” results whose measured effect sizes, as seen from the “winner’s curse,” are likely to be larger than would be seen in the general population.",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
+    "objectID": "power.html#footnotes",
+    "href": "power.html#footnotes",
+    "title": "Power Calculations and Sample Size",
+    "section": "",
+    "text": "As you will remember from GCSE/Standard Grade↩︎",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
     "objectID": "nc3rs-eda.html",
     "href": "nc3rs-eda.html",
     "title": "NC3Rs EDA",

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>Power Calculations – MP968: Experimental Design Workshop</title>
+<title>Power Calculations and Sample Size – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./power.html">Power Calculations</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./power.html">Power Calculations and Sample Size</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -169,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./power.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Power Calculations</span></a>
+ <span class="menu-text">Power Calculations and Sample Size</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -265,15 +294,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#power-and-sample-size" id="toc-power-and-sample-size" class="nav-link active" data-scroll-target="#power-and-sample-size">Power and sample size</a></li>
+  <li><a href="#practical-consequences-of-statistical-power" id="toc-practical-consequences-of-statistical-power" class="nav-link" data-scroll-target="#practical-consequences-of-statistical-power">Practical consequences of statistical power</a>
+  <ul class="collapse">
+  <li><a href="#it-is-better-to-double-the-effect-size-than-to-double-sample-size" id="toc-it-is-better-to-double-the-effect-size-than-to-double-sample-size" class="nav-link" data-scroll-target="#it-is-better-to-double-the-effect-size-than-to-double-sample-size">It is better to double the effect size than to double sample size</a></li>
+  <li><a href="#the-winners-curse" id="toc-the-winners-curse" class="nav-link" data-scroll-target="#the-winners-curse">The winner’s curse</a></li>
+  <li><a href="#published-results-tend-to-be-positive-and-overestimates" id="toc-published-results-tend-to-be-positive-and-overestimates" class="nav-link" data-scroll-target="#published-results-tend-to-be-positive-and-overestimates">Published results tend to be positive, and overestimates</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/power.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-power-calculations" class="quarto-section-identifier">Power Calculations</span></h1>
+<h1 class="title"><span id="sec-power-calculations" class="quarto-section-identifier">Power Calculations and Sample Size</span></h1>
 </div>
 
 
@@ -290,8 +331,150 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><strong>Statistical power</strong> is the probability, <em>before a study is performed</em>, that a particular comparison will achieve “statistical significance” at some predetermined level.</p>
+<p>More precisely, statistical power is the <em>probability that the study will not return a “Type II error”, i.e.&nbsp;a false negative result</em>.</p>
+<p>To make a power calculation, we need to make some assumptions (or, if you prefer, “propose hypotheses”) about the future behaviour of data that has not yet been collected:</p>
+<ol type="1">
+<li>The desired <strong>effect size</strong> (e.g.&nbsp;a change in a value that is biologically meaningful, or a minimum level at which a change of value is recognised to be a change in the system)</li>
+<li>The variation we expect to see in the measured outcomes (e.g.&nbsp;as a standard deviation)</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suppose your experiment is calculated to have 80% (0.8) power…
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The estimated power of the experiment is incomplete by itself. We need also to declare the “statistical significance” that has been decided on for the experiment, and the effect size we consider to be meaningful.</p>
+<p>If we had decided that <span class="math inline">\(P=0.05\)</span> was a suitable threshold for statistical significance, and that a change in blood glucose concentration of 2mM/L in response to administration of some drug was meaningful, we would say instead:</p>
+<p><strong>The experiment has 80% (0.8) power at <span class="math inline">\(\alpha = 0.05\)</span></strong> (the same thing as <span class="math inline">\(P = 0.05\)</span>)<strong>, for an effect size of 2mM/L.</strong></p>
+<p>But what does this mean?</p>
+<p>Suppose that the drug works, and really does change the blood glucose concentration by 2mM/L. If you ran the experiment 50 times, with a power of 80% you would expect a statisticially significant <em>positive</em> result (i.e.&nbsp;the meaningful change is detected and statistically supported) in 40 of the experiments. You would expect that in 10 of the experiments the measured change would <strong>not</strong> be considered to be statistically significant.</p>
+</div>
+</div>
+<p>We sometimes informally refer to studies as being “low-powered” or “underpowered.” Such studies may not give a <em>statistically significant</em> result even when a relatively large effect is found in the experiment. Worse still, because a very large effect may be required to reach statistical significance, such a result is likely to be a <em>statistical outlier</em> and not reflect the true effect size. Low power in studies might result from having too few experimental units (e.g.&nbsp;individuals), or from the measurements having relatively high <em>variability</em>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Strategies to increase statistical power
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are three broad strategies available to us, as researchers, to increase the statistical power of an experiment:</p>
+<ol type="1">
+<li>Reduce the variability in the experiment</li>
+</ol>
+<ul>
+<li>this typically means controlling for nuisance effects that cause variation in experimental units, or improving the way we measure outcome variables</li>
+</ul>
+<ol start="2" type="1">
+<li>Increase the number of experimental units</li>
+</ol>
+<ul>
+<li>when we increase the number of experimental units, we <em>reduce the uncertainty in our estimate of error of the mean</em></li>
+</ul>
+<ol start="3" type="1">
+<li>Increase the effect size</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The choice of what makes a result significant, and what degree of statistical power is acceptable, is under researcher control, but might also be stated by a potential funder.</p>
+<p>Typical values you might see include “80% power at 5% significance,” but there is <em>no gold standard</em> and choices should be made to suit the situation appropriately. Funding agencies typically insist that a study has at least an 80% chance of delivering a statistically significant result.</p>
+</div>
+</div>
+<section id="power-and-sample-size" class="level2">
+<h2 class="anchored" data-anchor-id="power-and-sample-size">Power and sample size</h2>
+<ul>
+<li><a href="https://eda.nc3rs.org.uk/experimental-design-group">NC3Rs EDA guide to sample size calculations</a></li>
+</ul>
+<p>The relationship between power and sample size arises because there are two ways for us to improve the chance that our experiment tells us that there is some effect, if there really is some effect (i.e.&nbsp;to increase the power of an experiment - see above):</p>
+<ol type="1">
+<li>Reduce variability/noise in the experimental design</li>
+<li>Increase the number of experimental units</li>
+</ol>
+<p>Once we have settled on the structure of our experiment and made as many modifications as we can to reduce the amount of variability (such as including appropriate controls, and randomising/blocking our experiment), the remaining factor under our control, as researchers, is the number of experimental units.</p>
+<p>Supposing we have decided upon an acceptable threshold for statistical significance, and an acceptable probability that the experiment tells us there is no meaningful effect when there is, in fact, a real meaningful effect. We may then be concerned with the cost of conducting the experiment.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The primary cost of an experiment involving animals is <strong>ethical</strong>, and measured in the potential for animal suffering. The financial cost is a secondary consideration.</p>
+<p>As stated in the NC3Rs EDA guide,</p>
+<blockquote class="blockquote">
+<p><strong>Under-powered <em>in vivo</em> experiments waste time and resources, lead to unnecessary animal suffering and result in erroneous biological conclusions.</strong></p>
+</blockquote>
+<p>Sample size is never large enough but, similarly, over-powered experiments in which more animals than necessary are used to establish a result also lead to unnecessary animal suffering and are unethical.</p>
+</div>
+</div>
+<p>We should therefore use sample size calculations to ensure that a study is neither under- nor over-powered for the stated purpose of the research.</p>
+</section>
+<section id="practical-consequences-of-statistical-power" class="level2">
+<h2 class="anchored" data-anchor-id="practical-consequences-of-statistical-power">Practical consequences of statistical power</h2>
+<p>The consideration of statistical power for an experiment leads to some general conclusions about what we should vary to improve our chances, as researchers, of seeing a statistically significant result when there is a real effect of suitable size, and also to conclusions about what kinds of results we are likely to find in the literature.</p>
+<section id="it-is-better-to-double-the-effect-size-than-to-double-sample-size" class="level3">
+<h3 class="anchored" data-anchor-id="it-is-better-to-double-the-effect-size-than-to-double-sample-size">It is better to double the effect size than to double sample size</h3>
+<p>The standard error of estimation decreases with the square of sample size <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. So, if we double our sample size we should expect, approximately, a <span class="math inline">\(\sqrt{2} = 1.4\times\)</span> reduction in standard error. But if we double the effect size then the actual difference we are trying to measure is <span class="math inline">\(2\times\)</span> as large.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are several ways to maximise effect size, including:</p>
+<ul>
+<li>setting doses as low as ethically possible in the control group, and as high as ethically possible in the treeatment group.</li>
+<li>choosing individuals that are especially likely to respond to the treatment</li>
+</ul>
+</div>
+</div>
+<p>Designing an experiment with the aim of increasing effect size can be difficult. When treatments are set to extreme values it can make interpolation of the results to more realistic levels doubtful. If a highly sensitive set of individuals is used, then the results may not generalise across a wider population.</p>
+<p><strong>It is for the researcher to decide and justify whether conclusive effects on a subgroup are preferred to inconclusive but more generalisable results.</strong></p>
+</section>
+<section id="the-winners-curse" class="level3">
+<h3 class="anchored" data-anchor-id="the-winners-curse">The winner’s curse</h3>
+</section>
+<section id="published-results-tend-to-be-positive-and-overestimates" class="level3">
+<h3 class="anchored" data-anchor-id="published-results-tend-to-be-positive-and-overestimates">Published results tend to be positive, and overestimates</h3>
+<p>Due to the effects of the “winner’s curse,” and well-intentioned designs that attempt to maximise effect size, it is likely that actual effects are smaller in a general population than in any specific study. Also, due to the systematic bias that “positive” results tend to be published where “negative” results do not, publication typically biases towards “statistically significant” results whose measured effect sizes, as seen from the “winner’s curse,” are likely to be larger than would be seen in the general population.</p>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>As you will remember from <a href="https://www.bbc.co.uk/bitesize/guides/zcjv4wx/revision/2">GCSE/Standard Grade</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -734,7 +917,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/power.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/power.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
