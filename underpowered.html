@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>10&nbsp; Create a New Diagram – MP968: Experimental Design Workshop</title>
+<title>5&nbsp; Underpowered Studies – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./add_experiment_node.html" rel="next">
-<link href="./workshop_experiment.html" rel="prev">
+<link href="./effect_sizes.html" rel="next">
+<link href="./power_considerations.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./create_new_diagram.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./power.html">Power Calculations and Sample Size</a></li><li class="breadcrumb-item"><a href="./underpowered.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -185,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./underpowered.html" class="sidebar-item-text sidebar-link">
+  <a href="./underpowered.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></span></a>
   </div>
 </li>
@@ -226,7 +255,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_new_diagram.html" class="sidebar-item-text sidebar-link active">
+  <a href="./create_new_diagram.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></a>
   </div>
 </li>
@@ -291,21 +320,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#create-a-new-diagram" id="toc-create-a-new-diagram" class="nav-link active" data-scroll-target="#create-a-new-diagram"><span class="header-section-number">10.1</span> Create a new diagram</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/create_new_diagram.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./create_new_diagram.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./power.html">Power Calculations and Sample Size</a></li><li class="breadcrumb-item"><a href="./underpowered.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-create-new-diagram" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></h1>
+<h1 class="title"><span id="sec-underpowered" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></span></h1>
 </div>
 
 
@@ -322,44 +345,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To create a new EDA diagram, first ensure that you are <a href="./eda_account.html">signed in</a> to your account (<a href="eda_account.html" class="quarto-xref"><span>Chapter 8</span></a>), and navigate to the <a href="https://eda.nc3rs.org.uk/eda/landing"><code>Dashboard</code></a> page (<a href="#fig-nc3rs-eda-dashboard-1" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>).</p>
-<div id="fig-nc3rs-eda-dashboard-1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-nc3rs-eda-dashboard-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/nc3rs-dashboard.png" class="img-fluid figure-img" style="width:80.0%">
+<p>We sometimes refer to studies as being “low-powered” or “underpowered.” What we mean by this is that the expected effect size is small in relation to the variation (e.g.&nbsp;standard error) of the measurement. Low power in studies might result from any number of reasons, such as the experiment involving too few experimental units (e.g.&nbsp;individual subjects), or from measurements having relatively high <em>variability</em> due to the effect of noisy nuisance variables.</p>
+<p>Underpowered studies may not give a <em>statistically significant</em> result even when a relatively large effect is found in the experiment. Worse still, because a very large effect may be required to reach statistical significance, any “positive” result (rejecting the null hypothesis) is likely to be a <em>statistical outlier</em> and not reflect the true effect size.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-dashboard-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.1: NC3Rs EDA <code>Dashboard</code> page.
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Even experienced scientists with many publications and long track records of research funding may never have received any formal training in experimental design or statistics. You will sometimes hear claims being made along the lines of:</p>
+<blockquote class="blockquote">
+<p>“if the effects are large enough to be seen in a small study they must be real large effects”</p>
+</blockquote>
+<p><strong>Unfortunately, this is not true.</strong> “Statistically significant” results from underpowered studies are highly likely to be exaggerated, and maybe even suggest that the effect acts in the wrong direction! (<a href="#fig-s-m-errors" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>)</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-s-m-errors" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-s-m-errors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="underpowered_files/figure-html/fig-s-m-errors-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-s-m-errors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: <strong>When effect size is small compared to the standard error of the measurement, statistical power is low, and the study is underpowered.</strong> In this figure, the null hypothesis is that there is no effect (orange dashed line). The real effect size of the intervention under study is assumed to be 2% of the size of the control (the purple solid line), and estimates are assumed to have the same standard error as the control experiment. The black curve represents the distribution of possible estimates of effect size as a Normal distribution with <span class="math inline">\(\mu=2\%, \sigma=10\%\)</span>. The shape of the curve shows that statistical significance is unlikely to be achieved (we would need a 19% effect size, with this level of variation) but, if it is achieved, it is misleading, as there is a reasonable chance (39%) that the significant result will be in the wrong direction and, in any case, the magnitude of the effect size will be greatly overestimated. (Adapted from Figure 16.1 in Gelman <em>et al.</em> “Regression and Other Stories”)
 </figcaption>
 </figure>
 </div>
-<section id="create-a-new-diagram" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="create-a-new-diagram"><span class="header-section-number">10.1</span> Create a new diagram</h2>
-<p>Click on the blue <code>New Diagram</code> button (<a href="#fig-nc3rs-eda-new-diagram-button" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>). This will take you to a blank “Untitled diagram” canvas, where we will start to construct our experiment (<a href="#fig-nc3rs-eda-blank-canvas" class="quarto-xref">Figure&nbsp;<span>10.3</span></a>).</p>
-<div id="fig-nc3rs-eda-new-diagram-button" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-nc3rs-eda-new-diagram-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/nc3rs-eda-new-diagram-button.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-new-diagram-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.2: The <code>New Diagram</code> button. Click on this to start preparing a new diagram
-</figcaption>
-</figure>
 </div>
-<div id="fig-nc3rs-eda-blank-canvas" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-nc3rs-eda-blank-canvas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/nc3rs-eda-blank-canvas.png" class="img-fluid figure-img" style="width:80.0%">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-blank-canvas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.3: The “Untitled diagram” blank NC3Rs EDA canvas. The large white space is where the experimental design diagram will be built. The sidebar on the left shows a list of <em>node</em> types that can be added to the design. The menu bar at the top allows you to save the experiment in a number of formats, and use tools to carry out analysis of your design.
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+Strategies to increase statistical power
 </div>
-<p>We can start to build our experimental design by adding an <em>Experiment node</em>.</p>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are three broad strategies available to us, as researchers, to increase the statistical power of an experiment:</p>
+<ol type="1">
+<li>Reduce the variability in the experiment</li>
+</ol>
+<ul>
+<li>this typically means controlling for nuisance effects that cause variation in experimental units, or improving the way we measure outcome variables</li>
+</ul>
+<ol start="2" type="1">
+<li>Increase the number of experimental units</li>
+</ol>
+<ul>
+<li>when we increase the number of experimental units, we <em>reduce the uncertainty in our estimate of error of the mean</em></li>
+</ul>
+<ol start="3" type="1">
+<li>Increase the effect size</li>
+</ol>
+<ul>
+<li>this might not always be under researcher control but might be modulated by, say, changing the concentration of an administered drug</li>
+</ul>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -784,13 +835,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./workshop_experiment.html" class="pagination-link" aria-label="The Workshop Experiment">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The Workshop Experiment</span></span>
+      <a href="./power_considerations.html" class="pagination-link" aria-label="Statistical Power Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./add_experiment_node.html" class="pagination-link" aria-label="Add an Experiment Node">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./effect_sizes.html" class="pagination-link" aria-label="Effect Sizes">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Sizes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -802,7 +853,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/create_new_diagram.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/underpowered.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

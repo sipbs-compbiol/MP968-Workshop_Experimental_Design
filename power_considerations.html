@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>10&nbsp; Create a New Diagram – MP968: Experimental Design Workshop</title>
+<title>4&nbsp; Statistical Power Analysis – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,8 +51,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./add_experiment_node.html" rel="next">
-<link href="./workshop_experiment.html" rel="prev">
+<link href="./underpowered.html" rel="next">
+<link href="./power.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,6 +91,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./create_new_diagram.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./power.html">Power Calculations and Sample Size</a></li><li class="breadcrumb-item"><a href="./power_considerations.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -179,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./power_considerations.html" class="sidebar-item-text sidebar-link">
+  <a href="./power_considerations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></span></a>
   </div>
 </li>
@@ -226,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_new_diagram.html" class="sidebar-item-text sidebar-link active">
+  <a href="./create_new_diagram.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></a>
   </div>
 </li>
@@ -296,16 +345,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#create-a-new-diagram" id="toc-create-a-new-diagram" class="nav-link active" data-scroll-target="#create-a-new-diagram"><span class="header-section-number">10.1</span> Create a new diagram</a></li>
+  <li><a href="#describing-the-predicted-power-of-an-experiment" id="toc-describing-the-predicted-power-of-an-experiment" class="nav-link active" data-scroll-target="#describing-the-predicted-power-of-an-experiment"><span class="header-section-number">4.1</span> Describing the predicted power of an experiment</a></li>
+  <li><a href="#interpreting-the-predicted-power-of-an-experiment" id="toc-interpreting-the-predicted-power-of-an-experiment" class="nav-link" data-scroll-target="#interpreting-the-predicted-power-of-an-experiment"><span class="header-section-number">4.2</span> Interpreting the predicted power of an experiment</a></li>
+  <li><a href="#how-likely-is-it-that-the-drug-works" id="toc-how-likely-is-it-that-the-drug-works" class="nav-link" data-scroll-target="#how-likely-is-it-that-the-drug-works"><span class="header-section-number">4.3</span> How likely is it that the drug works?</a>
+  <ul class="collapse">
+  <li><a href="#interpreting-bayes-factors" id="toc-interpreting-bayes-factors" class="nav-link" data-scroll-target="#interpreting-bayes-factors"><span class="header-section-number">4.3.1</span> Interpreting Bayes Factors</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/create_new_diagram.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/power_considerations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./create_new_diagram.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./power.html">Power Calculations and Sample Size</a></li><li class="breadcrumb-item"><a href="./power_considerations.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-create-new-diagram" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></h1>
 </div>
 
 
@@ -322,43 +376,203 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To create a new EDA diagram, first ensure that you are <a href="./eda_account.html">signed in</a> to your account (<a href="eda_account.html" class="quarto-xref"><span>Chapter 8</span></a>), and navigate to the <a href="https://eda.nc3rs.org.uk/eda/landing"><code>Dashboard</code></a> page (<a href="#fig-nc3rs-eda-dashboard-1" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>).</p>
-<div id="fig-nc3rs-eda-dashboard-1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-nc3rs-eda-dashboard-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/nc3rs-dashboard.png" class="img-fluid figure-img" style="width:80.0%">
+<p>The goal of experimental design is <strong>not</strong> to attain statistical significance with some (high) level of probability. The point of designing an experiment and conducting power analysis is to have a sense, both <em>before</em> and <em>after</em> data have been collected, of what can reasonably be learned from the statistical analysis.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-dashboard-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.1: NC3Rs EDA <code>Dashboard</code> page.
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+Statistical Power
 </div>
-<section id="create-a-new-diagram" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="create-a-new-diagram"><span class="header-section-number">10.1</span> Create a new diagram</h2>
-<p>Click on the blue <code>New Diagram</code> button (<a href="#fig-nc3rs-eda-new-diagram-button" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>). This will take you to a blank “Untitled diagram” canvas, where we will start to construct our experiment (<a href="#fig-nc3rs-eda-blank-canvas" class="quarto-xref">Figure&nbsp;<span>10.3</span></a>).</p>
-<div id="fig-nc3rs-eda-new-diagram-button" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-nc3rs-eda-new-diagram-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/nc3rs-eda-new-diagram-button.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-new-diagram-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.2: The <code>New Diagram</code> button. Click on this to start preparing a new diagram
-</figcaption>
-</figure>
+<div class="callout-body-container callout-body">
+<p><strong>Statistical power</strong> is the probability, <em>before a study is performed</em>, that a particular comparison will achieve “statistical significance” at some predetermined level.</p>
+<p>More precisely, <strong>statistical power is the probability that the study will not return a false negative result, known in statistics jargon as a “Type II error”</strong>.</p>
 </div>
-<div id="fig-nc3rs-eda-blank-canvas" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-nc3rs-eda-blank-canvas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/nc3rs-eda-blank-canvas.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-blank-canvas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.3: The “Untitled diagram” blank NC3Rs EDA canvas. The large white space is where the experimental design diagram will be built. The sidebar on the left shows a list of <em>node</em> types that can be added to the design. The menu bar at the top allows you to save the experiment in a number of formats, and use tools to carry out analysis of your design.
-</figcaption>
-</figure>
+<p>So, suppose we design an experiment to have 80% (0.8) power…</p>
+<section id="describing-the-predicted-power-of-an-experiment" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="describing-the-predicted-power-of-an-experiment"><span class="header-section-number">4.1</span> Describing the predicted power of an experiment</h2>
+<blockquote class="blockquote">
+<p>“The experiment has 80% (0.8) power.”</p>
+</blockquote>
+<p>Stating the estimated power of an experiment just as a “percentage power” (i.e.&nbsp;the probability of a false negative result) is not enough, by itself. We need also to declare two important values that could reasonably differ, for an experiment with the same statistical power:</p>
+<ol type="1">
+<li>the <strong>“statistical significance” threshold</strong> (i.e.&nbsp;P-value) that has been decided on for the experiment</li>
+<li>the <strong>effect size</strong> we are aiming to detect</li>
+</ol>
+<p>If we had decided that <span class="math inline">\(P=0.05\)</span> was a suitable threshold for statistical significance, and that a change in blood glucose concentration of 2mM/L in response to administration of some drug was meaningful, we could say instead:</p>
+<blockquote class="blockquote">
+<p>“The experiment has 80% (0.8) power at <span class="math inline">\(\alpha = 0.05\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, for an effect size of 2mM/L.”</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>We can start to build our experimental design by adding an <em>Experiment node</em>.</p>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The choice of what makes a result significant, and what degree of statistical power is acceptable, is under researcher control, but <strong>might also be required by a potential funder</strong>. Funding agencies might insist, for example, that a study has at least an 80% chance of delivering a statistically significant result.</p>
+<p>Typical values you might see in the literature include “80% power at 5% significance,” but there is <em>no gold standard</em> and choices should be made to suit the situation appropriately.</p>
+</div>
+</div>
+</section>
+<section id="interpreting-the-predicted-power-of-an-experiment" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="interpreting-the-predicted-power-of-an-experiment"><span class="header-section-number">4.2</span> Interpreting the predicted power of an experiment</h2>
+<p>Suppose that we’re conducting an experiment, and administering a drug we hope will reduce blood glucose concentrations. We have designed an experiment such that the predicted power can be written as:</p>
+<blockquote class="blockquote">
+<p>“The experiment has 80% (0.8) power at <span class="math inline">\(\alpha = 0.05\)</span>, for an effect size of 2mM/L.”</p>
+</blockquote>
+<p>At this point, we don’t know whether the drug really works or not. We haven’t done the experiment. So let’s consider our options:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The drug doesn’t work <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Assume that the drug has no effect. Our statistical test has <span class="math inline">\(\alpha = 0.05\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, which implies that we expect to <em>reject the null hypothesis</em> (e.g.&nbsp;that the drug has “no effect”) <strong>incorrectly</strong> 5% of the time.</p>
+<p>So, if we ran the experiment 100 times using a drug that really had no effect, we would expect the result to appear as though the drug was effective <strong>five times</strong>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The drug works
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Our experiment has predicted power of 0.8 (<span class="math inline">\(\beta = 1 - \textrm{power} = 1 - 0.8 = 0.2\)</span><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>), which implies that we expect to <em>accept the null hypothesis</em> (e.g.&nbsp;that the drug has “no effect”) <strong>incorrectly</strong> 20% of the time.</p>
+<p>So, if we ran the experiment 100 times using a drug that really does work, we would expect the result to appear as though the drug was effective <strong>80 times</strong><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+</div>
+</div>
+</section>
+<section id="how-likely-is-it-that-the-drug-works" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="how-likely-is-it-that-the-drug-works"><span class="header-section-number">4.3</span> How likely is it that the drug works?</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Our experiment does not actually tell us whether the drug works.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p>Our experiment provides a result (“the drug does/does not appear to work”) and our choices of <em>statistical significance</em> and the <em>power</em> of the experiment tells us how confident we should be in believing that outcome.</p>
+<p>We have two possibilities (models/hypotheses):</p>
+<ol type="1">
+<li>The drug works</li>
+<li>The drug does not work</li>
+</ol>
+<p>And there are two experimental outcomes:</p>
+<ol type="1">
+<li>The drug appears to work (<em>positive outcome</em>; null hypothesis rejected)</li>
+<li>The drug does not appear to work (<em>negative outcome</em>; null hypothesis not rejected)</li>
+</ol>
+<p>Knowing these possibilities, we can calculate a <strong>Bayes factor</strong> to help us interpret how strongly the evidence supports an assertion that the drug is effective in reducing blood glucose level.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The experiment gave a positive result
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a <em>positive</em> experimental outcome (i.e.&nbsp;the result suggests the drug is effective), we can calculate:</p>
+<ol type="1">
+<li><span class="math inline">\(Pr(\textrm{positive outcome}|\textrm{drug works})\)</span> - the probability that we see a positive result, if the drug works; this is our <em>power</em>: 0.8</li>
+<li><span class="math inline">\(Pr(\textrm{positive outcome}|\textrm{drug does not work})\)</span> - the probability that we see a positive result, if the drug does not work; this is our <em>false positive rate</em>: <span class="math inline">\(\alpha = 0.05\)</span></li>
+</ol>
+<p>Calculating the Bayes factor, <span class="math inline">\(K\)</span>:</p>
+<p><span class="math inline">\(K = \frac{Pr(\textrm{positive outcome}|\textrm{drug works})}{Pr(\textrm{positive outcome}|\textrm{drug does not work})} = 0.8 / 0.05 = 16\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The experiment gave a negative result
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a <em>negative</em> experimental outcome (i.e.&nbsp;the result suggests the drug is not effective), we can calculate:</p>
+<ol type="1">
+<li><span class="math inline">\(Pr(\textrm{negative outcome}|\textrm{drug works})\)</span> - the probability that we see a negative result, if the drug works; this is our <em>false negative rate</em>: <span class="math inline">\(\beta = 1 - \textrm{power} = 0.2\)</span></li>
+<li><span class="math inline">\(Pr(\textrm{negative outcome}|\textrm{drug does not work})\)</span> - the probability that we see a negative result, if the drug does not work; this is <span class="math inline">\(1 - \alpha\)</span>: 0.95</li>
+</ol>
+<p>Calculating the Bayes factor, <span class="math inline">\(K\)</span>:</p>
+<p><span class="math inline">\(K = \frac{Pr(\textrm{negative outcome}|\textrm{drug works})}{Pr(\textrm{negative outcome}|\textrm{drug does not work})} = 0.2 / 0.95 = 0.21\)</span></p>
+</div>
+</div>
+<section id="interpreting-bayes-factors" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="interpreting-bayes-factors"><span class="header-section-number">4.3.1</span> Interpreting Bayes Factors</h3>
+<p>A value of <span class="math inline">\(K &gt; 1\)</span> here means that the hypothesis that the drug works is more strongly supported by the data; a value of <span class="math inline">\(K &lt; 1\)</span> means that the hypothesis that the drug <em>doesn’t</em> work is more strongly supported.</p>
+<p>In general, a value of <span class="math inline">\(K &gt; 10\)</span> is considered to be <em>strong</em> evidence in favour of a hypothesis (<span class="citation" data-cites="Kass1995-hs">Kass and Raftery (<a href="references.html#ref-Kass1995-hs" role="doc-biblioref">1995</a>)</span>).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What our experiment can tell us:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>A positive outcome implies <span class="math inline">\(K = 16\)</span>, which is greater than 10, so the experiment <em>strongly</em> supports that the drug <em>is</em> effective.</li>
+<li>A negative outcome implies <span class="math inline">\(K = 0.21\)</span>, which is less than 1, so the experiment supports the conclusion that the drug <em>is not</em> effective.</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If an experiment is designed with 80% power and <span class="math inline">\(\alpha = 0.05\)</span>, a positive result delivers <strong>strong</strong> evidence to reject the null hypothesis.</p>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Kass1995-hs" class="csl-entry" role="listitem">
+Kass, Robert E, and Adrian E Raftery. 1995. <span>“Bayes Factors.”</span> <em>J. Am. Stat. Assoc.</em> 90 (430): 773–95.
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This is the same thing as <span class="math inline">\(P = 0.05\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Ashcroft <em>et al.</em> (<a href="https://youtu.be/g7T0ad3jdRw?si=_K6UBd1AMomupu2h">1997</a>)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><span class="math inline">\(\alpha\)</span>, aka the P-value threshold, is what we set as our <strong>acceptable false positive rate (type I error)</strong>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><span class="math inline">\(\beta\)</span> is what we set as our <strong>acceptable false negative rate (type II error)</strong><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Though note that we would expect the result to appear as though the drug was <em>ineffective</em> 20 times.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -784,13 +998,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./workshop_experiment.html" class="pagination-link" aria-label="The Workshop Experiment">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The Workshop Experiment</span></span>
+      <a href="./power.html" class="pagination-link" aria-label="Power Calculations and Sample Size">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Power Calculations and Sample Size</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./add_experiment_node.html" class="pagination-link" aria-label="Add an Experiment Node">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./underpowered.html" class="pagination-link" aria-label="Underpowered Studies">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -802,7 +1016,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/create_new_diagram.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/power_considerations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
