@@ -10,6 +10,26 @@
     ]
   },
   {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Learning Objectives\nAfter this workshop, students should be able to…",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "intro.html#learning-objectives",
+    "href": "intro.html#learning-objectives",
+    "title": "Introduction",
+    "section": "",
+    "text": "Understand and explain the relationship between measurements, statistics, and experimental design.\nUnderstand and explain that statistical models are devices that process data to produce estimates that support scientific insight.\nUnderstand how assumptions and expectations about the factors influencing an experiment can be translated into an effective experimental design.\nUse g*Power to estimate a group size for a statistical test.\nUse the NC3Rs Experimental Design Assistant to lay out and analyse a simple experiment, and export the design information.\n\n\n\n\n\n\n\nWhat this workshop is\n\n\n\nThis workshop is an introduction to…\n\nthe way your data collection is subject to factors that affect all measurements\nhow the biological or physical process you are studying affects the data you collect\nmaking assumptions about causal factors in your data explicit\nusing experimental design to improve data collection, exclude influences you are not scientifically interested in, and minimise the number of experimental subjects required to test a model\nhow to use the NC3Rs Experimental Design Assistant (EDA) to lay out and analyse an experimental design\n\n\n\n\n\n\n\n\n\nWhat this workshop is not\n\n\n\n\nYet another introduction to t-tests, means, and standard deviations\nA guide to how you should design or analyse any specific experiment\nAdvocacy for any particular statistical method, software, or tool\nAn exhaustive presentation of statistics or training in statistical methodology",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
     "objectID": "problem.html",
     "href": "problem.html",
     "title": "1  The Problem With Statistics",
@@ -585,26 +605,6 @@
     "text": "Online Materials\n\nNC3Rs EDA Demonstration\nNC3Rs EDA User Support\nStatistical Rethinking YouTube Playlist\n\nRichard McElreath’s online lecture materials for his Statistical Rethinking course.",
     "crumbs": [
       "Further Reading"
-    ]
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "Learning Objectives\nAfter this workshop, students should be able to…",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "intro.html#learning-objectives",
-    "href": "intro.html#learning-objectives",
-    "title": "Introduction",
-    "section": "",
-    "text": "Understand and explain the relationship between measurements, statistics, and experimental design.\nUnderstand and explain that statistical models are devices that process data to produce estimates that support scientific insight.\nUnderstand how assumptions and expectations about the factors influencing an experiment can be translated into an effective experimental design.\nUse g*Power to estimate a group size for a statistical test.\nUse the NC3Rs Experimental Design Assistant to lay out and analyse a simple experiment, and export the design information.\n\n\n\n\n\n\n\nWhat this workshop is\n\n\n\nThis workshop is an introduction to…\n\nthe way your data collection is subject to factors that affect all measurements\nhow the biological or physical process you are studying affects the data you collect\nmaking assumptions about causal factors in your data explicit\nusing experimental design to improve data collection, exclude influences you are not scientifically interested in, and minimise the number of experimental subjects required to test a model\nhow to use the NC3Rs Experimental Design Assistant (EDA) to lay out and analyse an experimental design\n\n\n\n\n\n\n\n\n\nWhat this workshop is not\n\n\n\n\nYet another introduction to t-tests, means, and standard deviations\nA guide to how you should design or analyse any specific experiment\nAdvocacy for any particular statistical method, software, or tool\nAn exhaustive presentation of statistics or training in statistical methodology",
-    "crumbs": [
-      "Introduction"
     ]
   },
   {
