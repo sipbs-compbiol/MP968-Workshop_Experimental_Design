@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -260,6 +280,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./further_reading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further Reading</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -299,8 +325,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The <a href="https://nc3rs.org.uk">NC3Rs</a> is a BBSRC and MRC-funded UK-based scientific organisation that works to help the research community to <strong>replace</strong>, <strong>refine</strong>, and <strong>reduce</strong> (the <a href="https://www.gov.uk/government/collections/animals-in-science-regulation-unit">3Rs</a>) the use of animals in research and testing. They fund 3Rs research, train early career researchers, and provide services, information, and resources to the scientific community, animal care staff, and vets.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<p><a href="https://nc3rs.org.uk">NC3Rs</a> is a BBSRC and MRC-funded UK-based scientific organisation that works to help the research community to <strong>replace</strong>, <strong>refine</strong>, and <strong>reduce</strong> (the <a href="https://www.gov.uk/government/collections/animals-in-science-regulation-unit">3Rs</a>) the use of animals in research and testing. They fund 3Rs research, train early career researchers, and provide services, information, and resources to the scientific community, animal care staff, and vets.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -310,7 +336,7 @@ Experimental Design Assistant
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Most importantly for this workshop, the NC3Rs provides the <code>Experimental Design Assistant (EDA)</code>, an online tool that helps researchers design robust experiments. The researcher builds their experiment as an annotated <a href="./dags.html">DAG</a>, which the EDA analyses and provides bespoke feedback, including suggestions of suitable statistical approaches. The EDA also produces helpful visualisations of the experimental design, which can be shared with others and in publications, for transparency and clear communication.</p>
+<p>Most importantly for this workshop, the NC3Rs provides the <code>Experimental Design Assistant (EDA)</code>, an online tool that helps researchers design robust experiments. The researcher builds their experiment as an annotated <a href="./dags.html">graph representation</a>, which the EDA tool can analyse, and on which it can provide bespoke feedback, including suggestions of suitable statistical approaches. The EDA also produces helpful visualisations of the experimental design, which can be shared with others and in publications, for transparency and clear communication.</p>
 <p><strong>We will be using the EDA to design an experiment, in this workshop.</strong></p>
 </div>
 </div>
@@ -332,7 +358,7 @@ Figure&nbsp;1: NC3Rs website <a href="https://nc3rs.org.uk/who-we-are">“Who We
 </div>
 </div></div><section id="the-experimental-design-assistant-eda" class="level2">
 <h2 class="anchored" data-anchor-id="the-experimental-design-assistant-eda">The Experimental Design Assistant (EDA)</h2>
-<p>The EDA is a web application that can be used in any modern browseer. It is intended to help researchers improve the design of animal experiments by making it simple to describe their experiment graphically and in detail, by creating a <a href="./dags.html">directed, acyclic graph (DAG)</a>. Once created, the graph can be analysed by the tool to make suggestions of suitable statistical analyses, and to identify potential issues with the current design.</p>
+<p>The EDA is a web application that can be used in any modern browser. It is intended to help researchers improve the design of animal experiments by making it simple to describe their experiment graphically and in detail, by creating a <a href="./dags.html">graphical representation of the experiment</a>, annotated with essential experimental detail. Once created, the graph can be analysed by the tool to make suggestions of suitable statistical analyses, and to identify potential issues with the current design (<span class="citation" data-cites="Karp2021-lc">Karp and Fry (<a href="references.html#ref-Karp2021-lc" role="doc-biblioref">2021</a>)</span>).</p>
 <p>The tool also provides a number of functions that aid with <em>randomisation</em> and <em>blinding</em> in an experiment, and to help with calculating sample sizes for experimental groups, on the basis of power calculations. To some extent, the EDA system plays the role of a biostatistician, identifying features of the experimental design, and prompting the researcher to include information about their design, in the same way a statistician might.</p>
 <p>The EDA is a powerful communication tool, allowing researchers rapidly to lay out an unambiguous experimental design, to be shared with other researchers, used in grant and licence applications, or in publications, as publication-quality illustrations.</p>
 <div id="fig-nc3rs-eda-landing" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -345,11 +371,29 @@ Figure&nbsp;2: Landing page of the <a href="https://eda.nc3rs.org.uk/">NC3Rs EDA
 </figcaption>
 </figure>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="citation" data-cites="Karp2021-lc">Karp and Fry (<a href="references.html#ref-Karp2021-lc" role="doc-biblioref">2021</a>)</span> paper is an excellent resource to understand how the EDA can be used to describe and analyse several kinds of experimental design (e.g.&nbsp;completely randomised, cross-over, repeat measures, and hierarchical nested designs).</p>
+</div>
+</div>
 <section id="getting-started" class="level3">
 <h3 class="anchored" data-anchor-id="getting-started">Getting Started</h3>
 <p>To start using the EDA, you need to have an account at the NC3Rs site (<a href="#fig-nc3rs-eda-landing" class="quarto-xref">Figure&nbsp;<span>2</span></a>). The rest of the pages in this workshop chapter will walk you through the process of setting up an account and designing an experiment.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Karp2021-lc" class="csl-entry" role="listitem">
+Karp, Natasha A, and Derek Fry. 2021. <span>“What Is the Optimum Design for My Animal Experiment?”</span> <em>BMJ Open Sci.</em> 5 (1): e100126.
+</div>
+</div>
 </section>
 </section>
 

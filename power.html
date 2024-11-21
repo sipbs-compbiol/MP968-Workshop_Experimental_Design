@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -289,6 +309,12 @@ window.Quarto = {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./further_reading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further Reading</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -480,6 +506,9 @@ Important
 <p><strong>Under-powered <em>in vivo</em> experiments waste time and resources, lead to unnecessary animal suffering and result in erroneous biological conclusions.</strong></p>
 </blockquote>
 <p>Similarly, over-powered experiments in which more animals than necessary are used to establish a result also lead to unnecessary animal suffering and are unethical.</p>
+<blockquote class="blockquote">
+<p>Ethically, when working with animals we need to conduct a harm–benefit analysis to ensure the animal use is justified for the scientific gain. Experiments should be robust, not use more or fewer animals than necessary, and truly add to the knowledge base of science. (<span class="citation" data-cites="Karp2021-lc">Karp and Fry (<a href="references.html#ref-Karp2021-lc" role="doc-biblioref">2021</a>)</span>).</p>
+</blockquote>
 </div>
 </div>
 <p>We should therefore use sample size calculations to ensure that a study is neither under- nor over-powered for the stated purpose of the research.</p>
@@ -535,6 +564,11 @@ Warning
 <p>Also, due to the systematic bias that “positive” (i.e.&nbsp;“statistically significant”) results tend to be published when “negative” (i.e.&nbsp;“not significant”) results are not, publication typically biases towards “statistically significant” results whose measured effect sizes, as seen from the “winner’s curse,” are likely to be larger than would be seen in the general population.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Karp2021-lc" class="csl-entry" role="listitem">
+Karp, Natasha A, and Derek Fry. 2021. <span>“What Is the Optimum Design for My Animal Experiment?”</span> <em>BMJ Open Sci.</em> 5 (1): e100126.
+</div>
+</div>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
