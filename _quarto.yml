@@ -36,7 +36,7 @@ book:
   # [E] CHAPTERS AND SECTIONS
   chapters:
     - index.qmd
-    - part: intro.qmd
+    - intro.qmd
 
     - part: cause_and_effect.qmd
       chapters:
