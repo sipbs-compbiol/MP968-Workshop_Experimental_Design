@@ -46,9 +46,9 @@ book:
     - part: measurement.qmd
       chapters: 
         - wet_earth.qmd
-    
+        
     - part: power.qmd
-      chapters:
+      chapters: 
         - g_power.qmd
     
     - part: nc3rs-eda.qmd
@@ -65,7 +65,7 @@ book:
         - sample_size.qmd
     
     - references.qmd
-#    - additional_reading.qmd
+    - further_reading.qmd
 
 # Location of BibTeX format reference file; may not need to be changed
 bibliography: references.bib

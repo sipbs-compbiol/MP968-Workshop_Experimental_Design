@@ -1,0 +1,26 @@
+# Further Reading {#sec-further-reading .unnumbered}
+
+## Popular Science
+
+- Goldacre, B. _I Think You'll Find It's A Bit More Complicated Than That_, Fourth Estate (8 Oct. 2015) ISBN-10: 9780007505142, ISBN-13: 978-0007505142
+  - A very readable and funny popular science account, drawn from Goldacre's newspaper column _Bad Science_, of the use and misuse of statistics in research.
+
+## Textbooks
+
+- Bate, S. T. & Clark, R. A, _The Design and Statistical Analysis of Animal Experiments_, Cambridge University Press (13 Mar. 2014), ISBN-10: 1107690943, ISBN-13: 978-1107690943
+  - Arguably _the_ reference work for any researcher involved with designing animal experiments.
+- Gelman A., Hill J. & Vehtari, _Regression and Other Stories_, Cambridge University Press (23 July 2020), ISBN-10: 1107676517, ISBN-13: 978-1107676510
+  - An extremely practical book about how to use regression methods to solve real problems in research.
+- Holmes, S. & Huber, W. _Modern Statistics for Modern Biology_, Cambridge University Press (28 Feb. 2019), ISBN-10: 1108705294, ISBN-13: 978-1108705295
+  - Possibly the definitive guide to the use and application of modern computational statistics from a biological perspective.
+- McElreath, R. _Statistical Rethinking_, Chapman and Hall/CRC (16 Mar. 2020), ISBN-10: 036713991X, ISBN-13: 978-0367139919 
+  - My favourite introduction to statistical thinking, that gets to the heart of using statistics as a tool to aid understanding your research.
+- Pearl, J. _Causal Inference in Statistics: A Primer_ Wiley (19 Feb. 2016), ISBN-10L 1119186846, ISBN-13: 978-1119186847
+  - An approachable introduction to understanding where we can, and cannot, infer causality from data analysis.
+  
+## Online Materials
+
+- NC3Rs EDA [Demonstration](https://eda.nc3rs.org.uk/overview-demonstration)
+- NC3Rs EDA [User Support](https://eda.nc3rs.org.uk/guide)
+- _Statistical Rethinking_ [YouTube Playlist](https://www.youtube.com/watch?v=FdnMWdICdRs&list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus)
+  - Richard McElreath's online lecture materials for his _Statistical Rethinking_ course.
