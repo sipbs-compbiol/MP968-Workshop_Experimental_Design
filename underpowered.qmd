@@ -1,0 +1,103 @@
+# Underpowered Studies {#sec-underpowered}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+# Package imports
+library(ggplot2)
+```
+
+We sometimes refer to studies as being "low-powered" or "underpowered." What we mean by this is that the expected effect size is small in relation to the variation (e.g. standard error) of the measurement. Low power in studies might result from any number of reasons, such as the experiment involving too few experimental units (e.g. individual subjects), or from measurements having relatively high _variability_ due to the effect of noisy nuisance variables.
+
+Underpowered studies may not give a _statistically significant_ result even when a relatively large effect is found in the experiment. Worse still, because a very large effect may be required to reach statistical significance, any "positive" result (rejecting the null hypothesis) is likely to be a _statistical outlier_ and not reflect the true effect size. 
+
+::: {.callout-important}
+Even experienced scientists with many publications and long track records of research funding may never have received any formal training in experimental design or statistics. You will sometimes hear claims being made along the lines of:
+
+> "if the effects are large enough to be seen in a small study they must be real large effects”
+
+**Unfortunately, this is not true.** "Statistically significant" results from underpowered studies are highly likely to be exaggerated, and maybe even suggest that the effect acts in the wrong direction! (@fig-s-m-errors)
+:::
+
+```{r echo=FALSE}
+#| label: fig-s-m-errors
+#| fig-cap: __When effect size is small compared to the standard error of the measurement, statistical power is low, and the study is underpowered.__ In this figure, the null hypothesis is that there is no effect (orange dashed line). The real effect size of the intervention under study is assumed to be 2% of the size of the control (the purple solid line), and estimates are assumed to have the same standard error as the control experiment. The black curve represents the distribution of possible estimates of effect size as a Normal distribution with $\mu=2\%, \sigma=10\%$. The shape of the curve shows that statistical significance is unlikely to be achieved (we would need a 19% effect size, with this level of variation) but, if it is achieved, it is misleading, as there is a reasonable chance (39%) that the significant result will be in the wrong direction and, in any case, the magnitude of the effect size will be greatly overestimated. (Adapted from Figure 16.1 in Gelman _et al._ "Regression and Other Stories")
+
+mu = 2   # effect
+sd = 10  # std dev of null and effect
+thresh = 19.6  # t-test critical value for 5% two-tailed
+distn = dnorm
+
+distn_left_limit <- function(x, mean=0, sd=1) {
+    y <- distn(x, mean, sd)
+    y[x > -thresh] <- NA
+    return(y)
+}
+
+distn_right_limit <- function(x, mean=0, sd=1) {
+    y <- distn(x, mean, sd)
+    y[x < thresh] <- NA
+    return(y)
+}
+
+
+p <- ggplot(data = data.frame(x = c(-30, 30)), aes(x)) +
+  stat_function(fun = distn, n = 101, args = list(mean = mu, sd = sd)) +
+  xlab("Estimated effect size") +
+  ylab("") +
+  scale_y_continuous(breaks = NULL) 
+p = p + annotate("segment",                                          # show the null hypothesis (no effect)
+                 x=0, xend=0, y=0, yend=distn(0, mu, sd) * 1.2,                       # as a dotted line
+                 colour="darkorange1", linewidth=1, linetype="dashed")
+p = p + annotate("text",                                             
+                 x=c(0),
+                 y=c(distn(0, mu, sd) * 1.25),
+                 colour="darkorange3",
+                 label=c("null hypothesis: 0% effect"))
+p = p + annotate("segment",                                          # show the effect size
+                 x=2, xend=2, y=0, yend=distn(mu, mu, sd),                       # as a solid line
+                 colour="purple", linewidth=1, linetype="solid")
+p = p + annotate("text",                                             
+                 x=2,
+                 y=0.042,
+                 colour="purple",
+                 label="real effect size: 2%")
+p = p + stat_function(fun = distn_right_limit, n = 101, args = list(mean = mu, sd = sd),
+                      geom = "area", fill = "darkolivegreen3", alpha = 0.2)
+p = p + annotate("segment",                                          # show the effect size
+                 x=thresh, xend=thresh, y=0, yend=distn(thresh, mu, sd),                       # as a solid line
+                 colour="darkolivegreen3", linewidth=1, linetype="solid")
+p = p + stat_function(fun = distn_left_limit, n = 101, args = list(mean = mu, sd = sd),
+                      geom = "area", fill = "darkolivegreen3", alpha = 0.2)
+p = p + annotate("text",                                             
+                 x=thresh,
+                 y=distn(thresh, mu, sd) * 1.5,
+                 colour="darkolivegreen",
+                 label="Estimate is statistically significant,\n but too large")
+p = p + annotate("segment",                                          # show the effect size
+                 x=-thresh, xend=-thresh, y=0, yend=distn(-thresh, mu, sd),                       # as a solid line
+                 colour="darkolivegreen3", linewidth=1, linetype="solid")                 
+p = p + annotate("text",                                             
+                 x=-thresh,
+                 y=distn(-thresh, mu, sd) * 1.7,
+                 colour="darkolivegreen",
+                 label="Estimate is statistically significant,\n but too large and in the wrong direction")
+p = p + xlim(-40, 40) 
+p = p + scale_x_continuous(breaks = c(-30, -20, -10, 0, 10, 20, 30),
+                           labels = c("-30%", "-20%", "-10%", "0%", "10%", "20%", "30%")) 
+p = p + theme_minimal()
+p
+```
+
+::: {.callout-tip}
+## Strategies to increase statistical power
+
+There are three broad strategies available to us, as researchers, to increase the statistical power of an experiment:
+
+1. Reduce the variability in the experiment
+  - this typically means controlling for nuisance effects that cause variation in experimental units, or improving the way we measure outcome variables
+2. Increase the number of experimental units
+  - when we increase the number of experimental units, we _reduce the uncertainty in our estimate of error of the mean_
+3. Increase the effect size
+  - this might not always be under researcher control but might be modulated by, say, changing the concentration of an administered drug
+:::

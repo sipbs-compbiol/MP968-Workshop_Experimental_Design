@@ -1,0 +1,129 @@
+# Statistical Power Analysis
+
+The goal of experimental design is **not** to attain statistical significance with some (high) level of probability. The point of designing an experiment and conducting power analysis is to have a sense, both _before_ and _after_ data have been collected, of what can reasonably be learned from the statistical analysis.
+
+::: {.callout-note}
+## Statistical Power
+
+**Statistical power** is the probability, _before a study is performed_, that a particular comparison will achieve "statistical significance" at some predetermined level.
+
+More precisely, **statistical power is the probability that the study will not return a false negative result, known in statistics jargon as a "Type II error"**.
+:::
+
+So, suppose we design an experiment to have 80% (0.8) power… 
+
+## Describing the predicted power of an experiment
+
+> "The experiment has 80% (0.8) power."
+
+Stating the estimated power of an experiment just as a "percentage power" (i.e. the probability of a false negative result) is not enough, by itself. We need also to declare two important values that could reasonably differ, for an experiment with the same statistical power:
+
+1. the **"statistical significance" threshold** (i.e. P-value) that has been decided on for the experiment
+2. the **effect size** we are aiming to detect
+
+If we had decided that $P=0.05$ was a suitable threshold for statistical significance, and that a change in blood glucose concentration of 2mM/L in response to administration of some drug was meaningful, we could say instead: 
+
+> "The experiment has 80% (0.8) power at $\alpha = 0.05$[^1], for an effect size of 2mM/L."
+
+[^1]: This is the same thing as $P = 0.05$.
+
+::: {.callout-note}
+The choice of what makes a result significant, and what degree of statistical power is acceptable, is under researcher control, but **might also be required by a potential funder**. Funding agencies might insist, for example, that a study has at least an 80% chance of delivering a statistically significant result.
+
+Typical values you might see in the literature include "80% power at 5% significance," but there is _no gold standard_ and choices should be made to suit the situation appropriately. 
+:::
+
+## Interpreting the predicted power of an experiment
+
+Suppose that we're conducting an experiment, and administering a drug we hope will reduce blood glucose concentrations. We have designed an experiment such that the predicted power can be written as:
+
+> "The experiment has 80% (0.8) power at $\alpha = 0.05$, for an effect size of 2mM/L."
+
+At this point, we don't know whether the drug really works or not. We haven't done the experiment. So let's consider our options:
+
+::: {.callout-important}
+## The drug doesn't work [^2]
+
+[^2]: Ashcroft _et al._ ([1997](https://youtu.be/g7T0ad3jdRw?si=_K6UBd1AMomupu2h))
+
+Assume that the drug has no effect. Our statistical test has $\alpha = 0.05$[^3], which implies that we expect to _reject the null hypothesis_ (e.g. that the drug has "no effect") **incorrectly** 5% of the time.
+
+So, if we ran the experiment 100 times using a drug that really had no effect, we would expect the result to appear as though the drug was effective **five times**.
+
+[^3]: $\alpha$, aka the P-value threshold, is what we set as our **acceptable false positive rate (type I error)**.
+:::
+
+::: {.callout-tip}
+## The drug works
+
+Our experiment has predicted power of 0.8 ($\beta = 1 - \textrm{power} = 1 - 0.8 = 0.2$[^4]), which implies that we expect to _accept the null hypothesis_ (e.g. that the drug has "no effect") **incorrectly** 20% of the time.
+
+[^4]: $\beta$ is what we set as our **acceptable false negative rate (type II error)**
+
+So, if we ran the experiment 100 times using a drug that really does work, we would expect the result to appear as though the drug was effective **80 times**[^5].
+
+[^5]: Though note that we would expect the result to appear as though the drug was _ineffective_ 20 times.
+:::
+
+## How likely is it that the drug works?
+
+::: {.callout-warning}
+## Our experiment does not actually tell us whether the drug works.
+:::
+
+Our experiment provides a result ("the drug does/does not appear to work") and our choices of _statistical significance_ and the _power_ of the experiment tells us how confident we should be in believing that outcome. 
+
+We have two possibilities (models/hypotheses):
+
+1. The drug works
+2. The drug does not work
+
+And there are two experimental outcomes:
+
+1. The drug appears to work (_positive outcome_; null hypothesis rejected)
+2. The drug does not appear to work (_negative outcome_; null hypothesis not rejected)
+
+Knowing these possibilities, we can calculate a **Bayes factor** to help us interpret how strongly the evidence supports an assertion that the drug is effective in reducing blood glucose level.
+
+::: {.callout-tip}
+## The experiment gave a positive result
+
+For a _positive_ experimental outcome (i.e. the result suggests the drug is effective), we can calculate:
+
+1. $Pr(\textrm{positive outcome}|\textrm{drug works})$ - the probability that we see a positive result, if the drug works; this is our _power_: 0.8
+2. $Pr(\textrm{positive outcome}|\textrm{drug does not work})$ - the probability that we see a positive result, if the drug does not work;  this is our _false positive rate_: $\alpha = 0.05$
+
+Calculating the Bayes factor, $K$:
+
+$K = \frac{Pr(\textrm{positive outcome}|\textrm{drug works})}{Pr(\textrm{positive outcome}|\textrm{drug does not work})} = 0.8 / 0.05 = 16$
+:::
+
+::: {.callout-important}
+## The experiment gave a negative result
+
+For a _negative_ experimental outcome (i.e. the result suggests the drug is not effective), we can calculate:
+
+1. $Pr(\textrm{negative outcome}|\textrm{drug works})$ - the probability that we see a negative result, if the drug works; this is our _false negative rate_: $\beta = 1 - \textrm{power} = 0.2$
+2. $Pr(\textrm{negative outcome}|\textrm{drug does not work})$ - the probability that we see a negative result, if the drug does not work; this is $1 - \alpha$: 0.95
+
+Calculating the Bayes factor, $K$:
+
+$K = \frac{Pr(\textrm{negative outcome}|\textrm{drug works})}{Pr(\textrm{negative outcome}|\textrm{drug does not work})} = 0.2 / 0.95 = 0.21$
+:::
+
+### Interpreting Bayes Factors
+
+A value of $K > 1$ here means that the hypothesis that the drug works is more strongly supported by the data; a value of $K < 1$ means that the hypothesis that the drug _doesn't_ work is more strongly supported.
+
+In general, a value of $K > 10$ is considered to be _strong_ evidence in favour of a hypothesis (@Kass1995-hs).
+
+::: {.callout-tip}
+## What our experiment can tell us:
+
+1. A positive outcome implies $K = 16$, which is greater than 10, so the experiment _strongly_ supports that the drug _is_ effective.
+2. A negative outcome implies $K = 0.21$, which is less than 1, so the experiment supports the conclusion that the drug _is not_ effective.
+:::
+
+::: {.callout-note}
+If an experiment is designed with 80% power and $\alpha = 0.05$, a positive result delivers **strong** evidence to reject the null hypothesis.
+:::

@@ -49,6 +49,9 @@ book:
         
     - part: power.qmd
       chapters: 
+        - power_considerations.qmd
+        - underpowered.qmd
+        - effect_sizes.qmd
         - g_power.qmd
     
     - part: nc3rs-eda.qmd

@@ -1,0 +1,75 @@
+# Effect Sizes {#sec-effect-sizes}
+
+A significant challenge for power calculation in experimental design is knowing what effect size to assume. This is usually the target of the study and not known ahead of time.
+
+A number of strategies for choosing an effect size are possible, including:
+
+1. trying a range of values consistent with previously-published literature
+2. choose a size of effect that would be of some practical interest (e.g. we would only consider a treatment to be effective if it increased survival time by at least 20%)
+
+::: {.callout-tip}
+For reasons we will discuss below, it can be unwise to base one's estimate of effect size on the result of a single noisy study (whether published or not).
+:::
+
+## Power and sample size
+
+- [NC3Rs EDA guide to sample size calculations](https://eda.nc3rs.org.uk/experimental-design-group)
+
+Once we have settled on the structure of our experiment and made as many modifications as we can to reduce the effect of sources of variability that we can manage (such as including appropriate controls, and randomising/blocking our experimental design), one remaining factor under our control, as researchers, is the number of experimental units.
+
+Suppose that we have decided upon an acceptable threshold for statistical significance, and an acceptable statistical power. We may then also be concerned with the _cost_, or _value_[^2] of conducting the experiment.
+
+[^2]: Also a cost, but additionally taking into account the gains made by performing the experiment, in terms of scientific understanding.
+
+::: {.callout-important}
+The primary cost of an experiment involving animals is **ethical**, and measured in the potential for animal suffering. The financial cost is a secondary consideration. Funders will typically fund, and ethics bodies approve, the experiment most likely to give robust and useful results in an ethical manner, not the cheapest experiment possible.
+
+As stated in the NC3Rs EDA guide,
+
+> **Under-powered _in vivo_ experiments waste time and resources, lead to unnecessary animal suffering and result in erroneous biological conclusions.**
+
+Similarly, over-powered experiments in which more animals than necessary are used to establish a result also lead to unnecessary animal suffering and are unethical.
+
+> Ethically, when working with animals we need to conduct a harm–benefit analysis to ensure the animal use is justified for the scientific gain. Experiments should be robust, not use more or fewer animals than necessary, and truly add to the knowledge base of science. (@Karp2021-lc).
+:::
+
+**We should therefore use sample size calculations, based on our statistical power calculations, to ensure that a study is neither under- nor over-powered for the stated purpose of the research.**
+
+## Practical consequences of statistical power
+
+Considering statistical power for an experiment suggests some general approaches to improve our chances, as researchers, of seeing a statistically significant result when there is a real effect of suitable size. It also has implications about what kinds of results we are likely to find in the literature, and how we should interpret them.
+
+### It is generally better to double the effect size than to double sample size
+
+The standard error of estimation decreases with the _square root_ of sample size [^1]. So, if we double our sample size we should expect, approximately, a $\sqrt{2} = 1.4\times$ reduction in standard error. But if we are able to double the effect size then the actual difference we are trying to measure would be $2\times$ as large, and this will have a greater effect on the power of the experiment.
+
+[^1]: As you will remember from [GCSE/Standard Grade mathematics](https://www.bbc.co.uk/bitesize/guides/zcjv4wx/revision/2)
+
+::: {.callout-tip}
+There are several ways to maximise effect size, including:
+
+- setting doses as low as ethically possible in the control group, and as high as ethically possible in the treeatment group.
+- choosing individuals that are especially likely to respond to the treatment
+:::
+
+Designing an experiment with the aim of increasing effect size can be difficult, and lead to other issues. When drug concentrations are set to extreme values it can make the interpretation of the results when drugs are delivered at more realistic therapeutic levels doubtful. If a highly sensitive set of individuals is used in teh experiment, then the results may again not generalise well across the wider population. 
+
+**It is for the researcher to decide and justify whether conclusive effects on a subgroup are preferred to inconclusive but more generalisable results.**
+
+### The Winner's Curse
+
+There is a concept in economics called the "Winner's Curse" in which the winning bidder of an auction is likely to have overpaid with respect to the value of the item being auctioned.
+
+@fig-s-m-errors demonstrates that, **by focusing on "statistically significant" results, we generate a systematically biased, overoptimistic picture of the world**. In @fig-s-m-errors, we have results corresponding to a study where the true effect size could not realistically be more than 2%, but is estimated with a standard error of 10%. The curve shows the distribution of experimental estimates we would expect, shading in green those areas where the result is at least $1.96\sigma$ from the null hypothesis, i.e. "statistically significant."
+
+::: {.callout-warning}
+Using the properties of the Normal distribution we can calculate that 5.4% of the estimates in @fig-s-m-errors will be considered to be "statistically significant", and that 39% of those "statistically significant" differences correspond to a reduction in effect - a change in the wrong direction!
+:::
+
+**We can say, without performing any experiment, that an underpowered study like that in @fig-s-m-errors has essentially no chance of providing useful information.**
+
+### Published results tend to be positive, and overestimates
+
+Due to the effects of the "winner's curse," and well-intentioned designs that attempt to maximise effect size, it is likely that actual effects of any treatment are smaller in a general population than in any specific study. 
+
+Also, due to the systematic bias that "positive" (i.e. "statistically significant") results tend to be published when "negative" (i.e. "not significant") results are not, publication typically biases towards "statistically significant" results whose measured effect sizes, as seen from the "winner's curse," are likely to be larger than would be seen in the general population.
