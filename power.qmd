@@ -164,6 +164,8 @@ As stated in the NC3Rs EDA guide,
 > **Under-powered _in vivo_ experiments waste time and resources, lead to unnecessary animal suffering and result in erroneous biological conclusions.**
 
 Similarly, over-powered experiments in which more animals than necessary are used to establish a result also lead to unnecessary animal suffering and are unethical.
+
+> Ethically, when working with animals we need to conduct a harm–benefit analysis to ensure the animal use is justified for the scientific gain. Experiments should be robust, not use more or fewer animals than necessary, and truly add to the knowledge base of science. (@Karp2021-lc).
 :::
 
 We should therefore use sample size calculations to ensure that a study is neither under- nor over-powered for the stated purpose of the research.

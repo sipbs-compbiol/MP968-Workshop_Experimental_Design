@@ -73,9 +73,20 @@ The important consequence of this is that we can argue that - before we _interve
 
 ## The EDA Diagram
 
-When we have finished our design, the resulting diagram will look like that in @fig-eda-diagram-final.
+An EDA diagram can be thought of as describing three aspects of an experiment (@fig-eda-diagram-sections)
+
+- **experiment detail** (grey nodes): Information about the experimental units and subjects, such as sex and genotype
+- **practical steps** (blue and purple nodes): actions that will be taken during the experiment, including pooling and experimental group allocation, surgical or pharmaceutical interventions, and outcome measurements
+- **the analysis plan** (green and red nodes): components of a statistical analysis (i.e. _explanatory_, _independent_, and _nuisance_ variables, and _covariates_), and the analysis itself
+
+![EDA diagrams are composed of **nodes** (shapes) and **links** (arrows). The nodes represent aspects of an experiment and the links represent the relationships between nodes. An EDA diagram describes three elements of an experimental design: experiment detail (grey nodes), practical steps (blue and purple nodes), and the analysis plan (green and red nodes). Nodes can be annotated with additional information. This image, reproduced from @Karp2021-lc, describes a two-group completely randomised design.](assets/images/nc3rs-eda-sections.png){#fig-eda-diagram-sections width=80%}
+
+::: {.callout-tip}
+
+When we have finished our design for the experiment in this workshop, the resulting diagram will look like that in @fig-eda-diagram-final.
 
 ![The final EDA diagram, incorporating all elements of the experimental design described on this page.](assets/images/eda-diagram-final.png){#fig-eda-diagram-final width=80%}
 
 We will use this diagram to get some feedback from the EDA about improvements to the design, and our choice of statistical methods.
 
+:::

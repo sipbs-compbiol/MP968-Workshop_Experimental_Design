@@ -1,11 +1,11 @@
 # NC3Rs EDA {#sec-nc3rs-eda}
 
-The [NC3Rs](https://nc3rs.org.uk) is a BBSRC and MRC-funded UK-based scientific organisation that works to help the research community to **replace**, **refine**, and **reduce** (the [3Rs](https://www.gov.uk/government/collections/animals-in-science-regulation-unit)) the use of animals in research and testing. They fund 3Rs research, train early career researchers, and provide services, information, and resources to the scientific community, animal care staff, and vets.
+[NC3Rs](https://nc3rs.org.uk) is a BBSRC and MRC-funded UK-based scientific organisation that works to help the research community to **replace**, **refine**, and **reduce** (the [3Rs](https://www.gov.uk/government/collections/animals-in-science-regulation-unit)) the use of animals in research and testing. They fund 3Rs research, train early career researchers, and provide services, information, and resources to the scientific community, animal care staff, and vets.
 
-::: {.callout-warning}
+::: {.callout-tip}
 ## Experimental Design Assistant
 
-Most importantly for this workshop, the NC3Rs provides the `Experimental Design Assistant (EDA)`, an online tool that helps researchers design robust experiments. The researcher builds their experiment as an annotated [DAG](dags.qmd), which the EDA analyses and provides bespoke feedback, including suggestions of suitable statistical approaches. The EDA also produces helpful visualisations of the experimental design, which can be shared with others and in publications, for transparency and clear communication.
+Most importantly for this workshop, the NC3Rs provides the `Experimental Design Assistant (EDA)`, an online tool that helps researchers design robust experiments. The researcher builds their experiment as an annotated [graph representation](dags.qmd), which the EDA tool can analyse, and on which it can provide bespoke feedback, including suggestions of suitable statistical approaches. The EDA also produces helpful visualisations of the experimental design, which can be shared with others and in publications, for transparency and clear communication.
 
 **We will be using the EDA to design an experiment, in this workshop.**
 :::
@@ -21,13 +21,17 @@ Most importantly for this workshop, the NC3Rs provides the `Experimental Design 
 
 ## The Experimental Design Assistant (EDA)
 
-The EDA is a web application that can be used in any modern browseer. It is intended to help researchers improve the design of animal experiments by making it simple to describe their experiment graphically and in detail, by creating a [directed, acyclic graph (DAG)](dags.qmd). Once created, the graph can be analysed by the tool to make suggestions of suitable statistical analyses, and to identify potential issues with the current design.
+The EDA is a web application that can be used in any modern browser. It is intended to help researchers improve the design of animal experiments by making it simple to describe their experiment graphically and in detail, by creating a [graphical representation of the experiment](dags.qmd), annotated with essential experimental detail. Once created, the graph can be analysed by the tool to make suggestions of suitable statistical analyses, and to identify potential issues with the current design (@Karp2021-lc).
 
 The tool also provides a number of functions that aid with _randomisation_ and _blinding_ in an experiment, and to help with calculating sample sizes for experimental groups, on the basis of power calculations. To some extent, the EDA system plays the role of a biostatistician, identifying features of the experimental design, and prompting the researcher to include information about their design, in the same way a statistician might.
 
 The EDA is a powerful communication tool, allowing researchers rapidly to lay out an unambiguous experimental design, to be shared with other researchers, used in grant and licence applications, or in publications, as publication-quality illustrations.
 
 ![Landing page of the [NC3Rs EDA website](https://eda.nc3rs.org.uk/)](assets/images/nc3rs-eda-landing.png){#fig-nc3rs-eda-landing width=80%}
+
+::: {.callout-note}
+The @Karp2021-lc paper is an excellent resource to understand how the EDA can be used to describe and analyse several kinds of experimental design (e.g. completely randomised, cross-over, repeat measures, and hierarchical nested designs).
+:::
 
 ### Getting Started
 
