@@ -26,7 +26,7 @@ Statistical models are only devices that process data to provide estimates. To u
 
 ## What is a causal model?
 
-A causal model is a system where if we change only one variable we will modify some variables in the model. The variable we change is called a _cause_ and the variables that respond suffer the _effects_.
+A causal model is a system where if we change one variable in the model, we will also modify some variables in the model. The variable we change is called a _cause_ and the variables that respond suffer the _effects_.
 
 ::: {.callout-warning}
 ## Correlation does not imply causation {#sec-correlation-causation}

@@ -42,15 +42,15 @@ book:
         - disclaimer.qmd
         - objectives.qmd
 
+    - part: measurement.qmd
+      chapters: 
+        - wet_earth.qmd
+
     - part: cause_and_effect.qmd
       chapters:
         - problem.qmd
         - dags.qmd
 
-    - part: measurement.qmd
-      chapters: 
-        - wet_earth.qmd
-        
     - part: power.qmd
       chapters: 
         - power_considerations.qmd
