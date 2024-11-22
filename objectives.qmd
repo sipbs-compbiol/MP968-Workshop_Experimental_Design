@@ -1,0 +1,31 @@
+# Learning Objectives {#sec-objectives}
+
+After this workshop, students should be able to…
+
+1. Understand and explain the relationship between measurements, statistics, and experimental design.
+2. Understand and explain that statistical models are devices that process data to produce estimates that support scientific insight.
+3. Understand how assumptions and expectations about the factors influencing an experiment can be translated into an effective experimental design.
+4. Use `g*Power` to estimate a group size for a statistical test.
+5. Use the NC3Rs Experimental Design Assistant to lay out and analyse a simple experiment, and export the design information.
+
+::: {.callout-tip}
+## What this workshop is
+
+This workshop is an introduction to…
+
+1. the way your data collection is subject to factors that affect all measurements
+2. how the biological or physical process you are studying affects the data you collect
+3. making assumptions about causal factors in your data explicit
+4. using experimental design to improve data collection, exclude influences you are not scientifically interested in, and minimise the number of experimental subjects required to test a model
+5. how to use the NC3Rs Experimental Design Assistant (EDA) to lay out and analyse an experimental design
+:::
+
+
+::: {.callout-warning}
+## What this workshop is not
+
+1. Yet another introduction to _t_-tests, means, and standard deviations
+2. A guide to how you should design or analyse any specific experiment
+3. Advocacy for any particular statistical method, software, or tool
+4. An exhaustive presentation of statistics or training in statistical methodology
+:::
