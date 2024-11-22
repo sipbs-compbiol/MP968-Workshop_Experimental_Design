@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>9&nbsp; Using G*Power – MP968: Experimental Design Workshop</title>
+<title>1&nbsp; Disclaimer – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./nc3rs-eda.html" rel="next">
-<link href="./effect_sizes.html" rel="prev">
+<link href="./objectives.html" rel="next">
+<link href="./intro.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./power.html">Power Calculations and Sample Size</a></li><li class="breadcrumb-item"><a href="./g_power.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Using G*Power</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./disclaimer.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Disclaimer</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./disclaimer.html" class="sidebar-item-text sidebar-link">
+  <a href="./disclaimer.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Disclaimer</span></span></a>
   </div>
 </li>
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./g_power.html" class="sidebar-item-text sidebar-link active">
+  <a href="./g_power.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Using G*Power</span></span></a>
   </div>
 </li>
@@ -314,9 +314,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./power.html">Power Calculations and Sample Size</a></li><li class="breadcrumb-item"><a href="./g_power.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Using G*Power</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./disclaimer.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Disclaimer</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-gpower" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Using G*Power</span></span></h1>
+<h1 class="title"><span id="sec-disclaimer" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Disclaimer</span></span></h1>
 </div>
 
 
@@ -333,6 +333,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Disclaimer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The workshop is, effectively, a very short statistics primer for people who would rather not be doing statistics. What I think you’d prefer to be doing is carrying out experiments and researching the effectiveness of drug treatments or formulations, or measuring some kind of effect on complex biological systems.</p>
+<p>I think that what you really want to do is collect data about your system, then connect the data you collect with scientific models (which may or may not be mathematical) that might explain whether your drug is effective, if your new formulation improves drug availability, or some other clever thing with great potential to improve society.</p>
+<p>The way we connect the data you collect with those scientific models is by using a branch of Applied Mathematics called Statistics. But this workshop is not about “learning Statistics” as a topic. Instead we’ll be thinking about the use of Statistics as a way to understand and process data collected by scientific investigations, and how what we understand about the science - and <strong>especially how we express this understanding through the design of our experiments</strong> - motivates and guides statistical reasoning.</p>
+<p>This topic is part of a very large field and discipline but we do not have much time together, so this workshop takes a particular line through the material which tries to illustrate how make statistics serve the science and help you start to develop an intuition about how statistics and experimental design work together, not to teach you statistical methods. The approach we’re taking involves some simulation and analysis using the <code>R</code> language, for the sake of the workshop. It’s very effective and I recommend it, but other statistical approaches, tools, and software that we don’t touch upon at all may be appropriate or necessary for your experiments and their analysis. We do not have time to cover everything here, but there is an <a href="./further_reading.html">additional reading list</a> that you should explore for useful knowledge if your goal is to be a professional scientist.</p>
+<p><strong>And, if in doubt, consult a statistician.</strong></p>
+</div>
+</div>
 
 
 
@@ -759,13 +776,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./effect_sizes.html" class="pagination-link" aria-label="Effect Sizes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Effect Sizes</span></span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./nc3rs-eda.html" class="pagination-link" aria-label="NC3Rs EDA">
-        <span class="nav-page-text">NC3Rs EDA</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./objectives.html" class="pagination-link" aria-label="Learning Objectives">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Learning Objectives</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -777,7 +794,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/g_power.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/disclaimer.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
