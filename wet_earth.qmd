@@ -4,28 +4,90 @@
 
 Suppose you want to measure the proportion of the Earth's surface that is water. How would you go about it, practically? Maybe you could…
 
-- pour the water off into a large measuring cylinder. But there isn't a container big enough.
-- take some time out of your studies and walk around the globe with a tape measure to find the cumulative distance around the edge of all the oceans, then calculate the area. **But you can't measure the length of a coastline**. Due to the [Coastline Paradox](https://en.wikipedia.org/wiki/Coastline_paradox), coastlines have no well-defined length.
+- pour the water off into a large measuring cylinder.
+  - (But there isn't a container big enough)
+- take some time out of your studies and walk around the globe with a tape measure to find the cumulative distance around the edge of all the oceans, then calculate the area. 
+  - (**But you can't measure the length of a coastline**. Due to the [Coastline Paradox](https://en.wikipedia.org/wiki/Coastline_paradox), coastlines have no well-defined length)
 
 ::: {.column-margin}
 
 ![The Earth, hanging in space, with a faucet inserted so that we can drain the oceans and measure their volume.](assets/images/earth_faucet.jpg){#fig-earth-faucet width=80%}
 :::
 
-So, if we can't find a way to absolutely, precisely measure it, we must instead _estimate_ the proportion of the Earth's surface that is water.
+So, if we can't find a way to absolutely, precisely measure the proportion of the Earth's surface that is water, we must instead _estimate_ it.
 
 ::: {.callout-note}
-## It's an analogy
+## This is an analogy
 
-This situation is not really that far removed from making an experimental measurement. 
+It's possible to question the practical use of this experiment, but the situation is not really that far removed from making any experimental measurement. 
 
-There may be a value you'd like to measure accurately, like the concentration of a drug in a patient's blood. But how exact can your measurement really be?
+There may be a value of something in the "real world" you'd like to measure accurately, like the concentration of a glucose in a patient's blood. But how exact can your measurement really be?
 
-- Is the concentration of the drug uniform throughout the bloodstream?
+- Is the concentration of glucose uniform throughout the bloodstream?
+- Is the small amount of sample you take representative of the entire bloodstream?
 - Does the way you process the sample make any change, however small, to the concentration?
-- Is the machine you use to measure the concentration accurately calibrated and absolutely precise?
-- Are you considering concentration in one patient, or several patients? How much does variation from patient to patient matter?
+- Is the machine you use to measure the concentration accurately calibrated and absolutely precise? Or does it make an estimate?
+- Are you considering glucose concentration in one patient, or several patients? How much does variation from patient to patient matter?
+- If you are measuring acrosss several individuals, then how representative of the total population was your choice of individuals?
 
 There are many influences on experimental measurements that can mean they are, in fact, _estimates_, rather than the true value we hope to measure.
 :::
 
+::: {.callout-important collapse="true"}
+## Some foreshadowing
+
+The questions above, particularly those concerning whether the sample you take, or the individuals you sample from, are truly representative of a greater whole, imply something important that we will deal with shortly:
+
+**You cannot avoid (statistical) modelling.**
+
+The way that you assume your small blood sample represents the full bloodstream is a _model_. The way that you assume your small group of experimental subjects represents a larger population of possible similar experimental subjects is a _model_.
+
+If you are using animal _models_ of human biology, the clue is in the name: your assumptions of how representative they are of humans is a _model_.
+
+It's as well that we are always aware and, wherever appropriate, explicit that we are using (statistical) models.
+:::
+
+## Making an estimate
+
+Suppose we have a globe that represents the Earth (@fig-globe). Now if we spin it up in the air and catch it, then look at the spot where our right index finger lands, that finger will either be on land (L) or on water (W).
+
+::: {.column-margin}
+![An inflatable globe: our experimental subject.](assets/images/globe.jpg){#fig-globe}
+:::
+
+If we do this many times, we will gradually build up a set of data points that are water (W) or land (L). We can use this dataset to estimate the proportion of the globe that is covered in water.
+
+::: {.callout-note}
+This might seem a frivolous example, but there are direct analogues of the kinds of experiments you will hopefully go on to perform in your future careers:
+
+- the inflatable globe is a _model_ taking the place of the real "population" we want to make inferences about
+  - in what ways is the globe a good, or bad, _model_?
+  - is any single call of "land" or "water" an estimate or an absolute measurement?
+- this process shares a sampling structure, and an inferential structure, with many scientific problems
+  - what other scientific questions might be answered in a similar way?
+:::
+
+So, let's throw the inflatable globe up in the air ten times, and see where our finger lands (@fig-globe-toss). This will be our dataset.
+
+::: {#fig-globe-toss width=80%}
+
+{{< video assets/movies/globe_toss.mp4 >}}
+
+An example outcome of tossing the inflatable globe ten times. There are four lands (L), and six waters (W). Video extracted from [_Statistical Rethinking_ Lecture 02](https://youtu.be/R1vcdhPBlXA?si=4Ydf2n6vaxuLN7-Z) (Richard McElreath).
+:::
+
+## An experimental result
+
+::: {.callout-tip}
+## The Dataset
+
+Our intial dataset for estimating how much of the globe is covered in water is:
+
+> `L W L L W W W L W W`
+
+Four lands (L) and six waters (W)
+:::
+
+We might naïvely decide that, because we have six waters (W) and four lands (L), our dataset implies an estimate of the proportion of the Earth's surface that is water of **60%** (there are six waters, and ten measurements). But in the next chpater, we're going to consider this experiment in a bit more detail[^1], and see how our prior expectations, and the number of measurements we make, relate to the precision of our estimate, and our beliefs about the uncertainty in the measurement.
+
+[^1]: And also in the context of Bayesian Statistics
