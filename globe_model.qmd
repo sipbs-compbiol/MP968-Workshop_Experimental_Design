@@ -1,0 +1,110 @@
+# Modelling the Experiment {#sec-model-earth}
+
+Before designing any experiment it is useful to think conceptually about what you **know** (or _believe_) about the way that the samples you will take and measure are produced by the system under study. This is primarily a _scientific_ description of the experiment, not a statistical one.
+
+::: {.callout-tip}
+Experimental design is the incorporation of the knowledge and expertise you have into a system that explains how the measured results are influenced by the experimental factors under your control[^1]. 
+:::
+
+[^1]: This is essentially saying that you are incorporating what you understand of _cause_ and _effect_ into the way the experiment works. We will return to the ideas cause and effect, shortly.
+
+## Variables in this experiment
+
+Variables in an experiment include those things that you can observe and are expected to influence the measured outcomes of that experiment. These might be under your control (such as drug concentrations), or outside your control, but potentially influential (e.g. the sex of the subject, the technician working on that day, and so on).
+
+Variables can also represent things that you _cannot_ observe, but want to **estimate**. For our example experiment here that would be _the proportion of the Earth's surface that is water_. But in a "real" experiment this might be "the effect of the administered drug on blood glucose concentration." We can't measure that directly, the same way we can't measure the proportion of the globe's surface that is water, but we can _estimate_ it with our experiment.
+
+Variables can be measured outcomes of an experiment. Here, our counts of the number of times our index fingers land on water (W) or land (L) are variables we will use in our _estimate_ of the proportion of water on the Earth's surface.
+
+::: {.callout-note collapse="true"}
+## Some statistical jargon
+
+The variable we want to estimate is called the **estimand**. Here it is the proportion of the Earth's surface that is water, but it might be something like "the reduction in blood glucose concentration" in a "real" experiment.
+
+Variables under the experimenter's control, where we want to investigate the _effect_ of the variable on the _estimand_ are called **independent variables**.
+
+Variables whose values are expected to change when we modify an _independent variable_ are called **dependent variables**.
+
+Variables that may affect the _dependent variables_, but which we are not investigating directly are called **nuisance variables**. We may need to _control_ for the influence of these variables, in our experimental design.
+:::
+
+### $p$: The proportion of the Earth's surface that is water - our _estimand_
+
+The thing we want to estimate, our _estimand_, is a variable representing the proportion of the globe that is covered with water. We'll assign this the letter $p$ (for _proportion_). We cannot directly observe this value[^2]. We can only measure it indirectly.
+
+[^2]: This is similar to the situation where we estimate the effect of a drug (in a general population) by observing it indirectly in a sample drawn from that population.
+
+### $W$: The number of times our index finger lands on water - a measured outcome
+
+This is the count of the number of times our index finger lands on water. We are observing this directly and assign it the letter $W$ (for _water_).
+
+### $L$: The number of times our index finger lands on land - a measured outcome
+
+This is the count of the number of times our index finger lands on land. We are observing this directly and assign it the letter $L$ (for _land_).
+
+### $N$: The total number of times we toss the globe - an _independent variable_
+
+The number of times we throw the globe and make a measurement is entirely under our control, and influences the measured outcomes of the experiment. The more times we toss the globe, the larger we expect $W$ and $L$ to get. We assign this variable the letter $N$ (for _number_), and it is the _independent variable_ in our experiment.
+
+## How do variables influence one another?
+
+As we've just stated, the number of tosses of the globe $N$ influences the number of times we see water $W$ or land $L$ because the more times we toss the globe, the larger $W$ and $L$ can be (and this is _independent_ of the actual proportion of water to land). The influence of $N$ on $W$ and $L$ can be described as in @fig-n-influence. 
+
+::: {.callout-note}
+The arrows in @fig-n-influence represent a _causal influence_ of $N$ on $W$ and $L$ because by varying $N$ we can induce changes in $W$ and/or $L$. 
+
+But, no matter what we do to change $W$ or $L$ (such as faking our data, or miscounting) this does not change $N$.
+
+The arrows represent the consequence of _intervening_ on the experiment by changing $N$.
+:::
+
+::: {.column-margin}
+
+![$N$ influences $W$ and $L$. The variables $N$, $W$, and $L$ are shown as _nodes_ in this _graph_. The arrows linking $N$ to $W$ and $L$ are _edges_ in the graph, showing that the direction of influence is that $N$ influences $W$ and $L$. This represents the intuitive belief that changing the number of times we toss the globe affects the counts in $W$ and $L$.](assets/images/n_influence.png){#fig-n-influence width=80%}
+
+:::
+
+Similarly, the variable $p$ influences $W$ and $L$ (@fig-p-influence) because if there's more water on the Earth's surface $W$ will be larger, and if there's less water then $L$ will be larger. 
+
+
+We can't vary $p$ in practice, but we can imaging creating a new continent in the middle of the Atlantic, say, and thus decreasing the proportion of the Earth's surface that is water. That would be an _intervention_ on the experiment that we can consider but not implement. We could _predict_ the consequence of making a change even if we can't make that change in practice.
+
+::: {.callout-note}
+Again, the arrows in @fig-p-influence represent a _causal influence_ of $p$ on $W$ and $L$ because - in principle - by varying $p$ we can induce changes in $W$ and/or $L$. 
+
+Again, no matter what we do to change $W$ or $L$ (such as faking our data, or miscounting) this does not change $p$.
+
+The arrows represent the consequence of _intervening_ on the experiment by changing $p$ (not that we can actually do this, in practice).
+:::
+
+::: {.column-margin}
+
+![$p$ and $N$ influence $W$ and $L$. We add the variable $p$ as a new node to @fig-n-influence (colouring it red to indicate it is an _estimand_). Arrows linking $p$ to $W$ and $L$ are again _edges_ in the graph, showing that the direction of influence is that $p$ influences $W$ and $L$. This represents the intuitive belief that changing the amount of land or water at the surface of the Earth affects the counts in $W$ and $L$.](assets/images/p_influence.png){#fig-p-influence width=80%}
+
+:::
+
+## What the graph tells us
+
+The graph in @fig-p-influence represents our scientific knowledge about the system. It shows that we understand:
+
+- The actual proportion of water $p$ on the surface of the Earth affects our measured values $W$ and $L$
+- The number of times we make a measurement (spin the globe) $N$ affects our measured values $W$ and $L$
+
+::: {.callout-important}
+## What the graph does not tell us
+
+The graph does not tell us exactly _how_ either $p$ or $N$ affect the values of $W$ and $L$.
+
+However, in this simple system, the nature of the relationships is intuitive:
+
+- every time we toss the globe we take a new measurement and increase either $W$ or $L$ by one
+- the actual proportion of water on the globe's surface should be reflected in the relative counts of $W$ and $L$
+:::
+
+::: {.callout-tip}
+It is good practice, for every experiment that you do, to draw out what you understand about the _causal relationships_ in the experiment.
+
+Drawing these graphs can help you understand your experiments better, and develop effective experimental designs. Considering these structures can identify good (and bad) controls for your experiments.
+:::
+
+Now that we have considered the _causal structure_ of our model, we can start to analyse the data from @fig-globe-toss.
