@@ -1,0 +1,120 @@
+# Tetrahedron Earth {#sec-globe-analysis}
+
+We're going to analyse our data statistically, in a way that I hope will give some intuition about the relationship between the quantity being measured (for us, $p$, the proportion ofthe Earth's surface that is water), the observed measurements ($W$ and $L$, the counts of "water" and "land"), and the number of measurements we take.
+
+To do this, we're going to use a _Bayesian_ statistical approach, rather than kinds of approaches you might be more used to (_t_-tests, ANOVA, linear regression, and the like)[^1].
+
+[^1]: There are Bayesian equivalents of all of these tests, but that's beyond the scope of this workshop.
+
+::: {.column-margin}
+
+![The Earth, projected onto a tetrahedron. Image by [John D. Cook](https://www.johndcook.com/blog/2018/08/22/globe-regular-solids/)](assets/images/world_tetra.png){#fig-world-tetra}
+
+:::
+
+## Our Bayesian approach
+
+_Bayesian Inference_ in scientific data analysis can be quite simple.
+
+::: {.callout-tip}
+## Bayesian data analysis
+
+Bayesian data analysis can be accounted for in two sentences:
+
+- **For each possible explanation of the sample, count all the ways the sample could happen.**
+- **Explanations with more ways to produce the sample are more plausible**
+
+The meaning of this may not be clear at first, but we will work through our data to get an intuition about it.
+:::
+
+Firstly, let's rephrase the description of Bayesian data analysis above, to be specific to our experiment:
+
+- For each **possible proportion of water on the globe**, count all the ways **the observed sample of tosses could happen.**
+- **Proportions** with more ways to produce the sample are more plausible.
+
+### What planets are possible?
+
+::: {.column-margin}
+
+![The five possible sets of faces on **Tetrahedron Earth**: 0%, 25%, 50%, 75%, and 100% water.](assets/images/tetra-possibilities.png){#fig-tetra-possibilities}
+
+:::
+
+There are a _lot_ of possible proportions of water on the globe, between 0 (all land) and 1 (all water). In fact _there are an infinite number of possible proportions!_ But that's a bit much to start with, so let's build up from a set of smaller possibilities. We'll begin by pretending that the Earth is a _tetrahedron_ (@fig-world-tetra)[^2].
+
+[^2]: A regular Platonic solid with four faces.
+
+We'll also pretend that each face of this **Tetrahedron Earth** can _either_ be water or land. So there are five possibilities in total:
+
+1. All four faces are land (0% water)
+2. Three faces are land, one is water (25% water)
+3. Two faces are land, two are water (50% water)
+4. One face is land, three are water (75% water)
+5. All four faces are water (100% water)
+
+and we represent these in @fig-tetra-possibilities.
+
+### The most plausible planet (small sample)
+
+Now suppose that we've made the first three observations in our sampling from @sec-wet-earth: `L`, `W`, `L` (@fig-three-observations), for two "land" (`L`) and one "water" (`W`). We want to calculate how many ways we could have seen this outcome (two `L` and one `W`), for each of the possible proportions in @fig-tetra-possibilities.
+
+::: {.column-margin}
+
+![The first three observations: `L`, `W`, `L`.](assets/images/three-observations.png){#fig-three-observations}
+
+:::
+
+::: {.callout-tip}
+## The outcomes, with 25% water
+
+We'll demonstrate the way the calculation works for a single possibility: where **Tetrahedron Earth** has a single "water" face, and three "land" faces. Let's think about each of the observations in turn:
+
+1. The first observation is `L`. There are _three_ "land" faces, so there are **3** ways this result could have been generated.
+2. The second observation is `W`. There is _one_ "water" face, so there is **1** way this result could have been generated, so there are $3 \times 1 = 3$ ways that the first two results (`L`, `W`) could have been generated.
+3. The third observation is `L`. There are _three_ "land" faces, so there are **3** ways this result could have been generated. This means that there are $3 \times 1 \times 3 = 9$ ways that the result sequence `L`, `W`, `L` could have been generated.
+:::
+
+We can repeat this kind of counting procedure to identify the number of ways the outcome `L`, `W`, `L` could have been produced, for each of our five possibilities (@fig-three-obs-calc). When we do so, the 25% water planet can give rise to the data in the greatest number of ways, so is the most plausible explanation of the data, and **we should expect that **Tetrahedron Earth** has one "water" face, and three "land" faces**.
+
+![The number of ways we can obtain the outcome `L`, `W`, `L` for each of the five possibilities of **Tetrahedron Earth**. There are no ways that an "all-water" or "all-land" Earth could produce this outcome: they are completely inconsistent with the evidence. The 25% water possibility can give rise to the observations in nine ways; the 50% water planet in eight ways; and the 75% water planet in 3 ways. The 25% water planet can give rise to the observations in the greatest number of ways, so is the most plausible explanation of the data.](assets/images/three-obs-calc.png){#fig-three-obs-calc width=80%}
+
+::: {.callout-warning}
+## Small sample sizes lead to "noisy" estimates
+
+Although we have identified the most likely possibility for **Tetrahedron Earth** as 25% water because this configuration can generate the data in the greatest number of ways, **this is not the whole story**.
+
+What really matters is not the _largest count_, but the **relative sizes of the counts**. Right now, the 25% water and 50% water planet options have very similar counts. This is due to the small sample size, so there's not a lot of _evidence_ about which of the two options is most likely.
+
+**This is a good feature of statistical analysis.** We don't want our analysis to be overconfident with small samples.
+:::
+
+## The most plausible planet (whole sample)
+
+Let's consider our full set of ten observations: `L` `W` `L` `L` `W` `W` `W` `L` `W` `W`. We can repeat the analysis above, to see what difference having more data makes to the plausibility of each possible **Tetrahedron Earth** (@fig-ten-obs-calc)
+
+![The number of ways we can obtain the ten observations from @sec-wet-earth for each of the five possibilities of **Tetrahedron Earth**. There are no ways that an "all-water" or "all-land" Earth could produce the observations. The 25% water possibility can give rise to the observations in 81 ways; the 50% water planet in 1,024 ways; and the 75% water planet in 729 ways. The 50% water planet can give rise to the observations in the greatest number of ways, so is the most plausible explanation of the data. The availability of more data has changed our assessment of the most plausible planet.](assets/images/ten-obs-calc.png){#fig-ten-obs-calc width=80%}
+
+::: {.callout-important}
+We now have a different most plausible planet. The 50% water version of **Tetrahedron Earth** can generate the sample in 1024 ways, far more than the 25% water planet. With 81 ways of generating the sample, the 25% water planet lags a long way behind the 75% water planet. But the relative counts for 50% water and 75% water are still quite similar (1024 and 729), so there is possibly not enough evidence here to be decisive about which is most plausible.
+
+**There is still uncertainty in our assessment of the most plausible planet.**
+:::
+
+## The most probable planet
+
+In Statistics we tend to deal with probabilities, and it is useful and usual to convert our evaluation of the most plausible explanations from @fig-ten-obs-calc into probabilities, as in @fig-ten-obs-prob.
+
+The _probability_ of an outcome is the proportion of all relevant events that we would expect to have that outcome. For example, a fair coin has two sides: Heads and Tails. There are two possible outcomes, and "Heads" is one of them, so we would expect the outcome "Heads" to occur about $\frac{1}{2} = 0.5 = 50\%$ of the time. In exactly the same way, we simply take the sum of ways our sample can be produced (which is 1834) and, for each possible planet, divide the number of ways it could generate the sample by that total.
+
+![To calculate the probability with which each of the five possible **Tetrahedron Earths** could have generated the sample data, we divide the number of ways they each could have generated the sample by the total number of ways the sample could have been generated (1834). The 50% water planet has a probability of about 56% of being the actual configuration of the planet, given the possibilities.](assets/images/ten-obs-prob.png){#fig-ten-obs-prob width=80%}
+
+::: {.callout-note}
+Another reason for working with probabilities is that the number of ways we can produce large samples becomes enormous and unwieldy to calculate with. Working with probabilities keeps the work manageable on a computer.
+:::
+
+::: {.callout-important}
+Having calculated probabilities for the most likely configuration of **Tetrahedron Earth**, given the data we collected, it appears that there's a 56% probability that it has two water faces, and 40% probability that it has three water faces.
+
+**We are still working with a small sample size, and these two outcomes have similar probabilities.**
+:::
+

@@ -46,6 +46,7 @@ book:
       chapters: 
         - wet_earth.qmd
         - globe_model.qmd
+        - globe_analysis.qmd
 
     - part: cause_and_effect.qmd
       chapters:
