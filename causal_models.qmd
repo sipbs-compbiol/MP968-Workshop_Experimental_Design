@@ -1,0 +1,58 @@
+# Causal Models {#sec-causal-models}
+
+## What is a causal model?
+
+A causal model is a system where if we change one variable in the model, we will also modify some variables in the model. The variable we change is called a _cause_ and the variables that respond suffer the _effects_.
+
+::: {.callout-warning}
+## Correlation does not imply causation {#sec-correlation-causation}
+
+You will probably have **correctly** heard phrases like "_correlation does not imply causation_" in reference to the observation that just because you can identify two values apparently changing together, that doesn't mean that the change in one value _causes_ the other to change. The relationship might be the reverse of what you think (after all, an association between two sets values could run in either direction - the direction is not evident from the data alone), or it may be pure coincidence. There's even a whole website dedicated to such [spurious correlations](https://www.tylervigen.com/spurious-correlations).
+
+It turns out that _causation does not imply correlation_ either, but this is a complex topic that we don't have time to get into in a single workshop about experimental design.
+
+The statment "_correlation does not imply causation_" is often used dismissively to demean the role of statistics, but that's unfair. It _is_ possible to estimate causal effects using statistics, but **all of the information about causal relationships comes from the researcher**. 
+:::
+
+When we talk about _causes_ and _effects_ in the context of a _statistical association_ (such as correlation) it is usually intended to mean one of two things:
+
+1. **The estimate or prediction of the consequences of an intervention**: e.g. if you administer a drug, there is an effect such as reduction in blood glucose concentration. In an experimental context you are often aiming to set up a system where a single intervention of interest (such as administration of a drug) is being made, and the consequences measured.
+2. **The imputation of a missing observation** - where you play "what if?" games by substituting values which you have not directly measured to see what changes in the system might result. You might measure the reduction of blood glucose concentration in response to a drug, and from this be able to calculate the amount of drug that was delivered. In general, this allows us to construct _unobserved counterfactual outcomes_, where we can imagine an outcome (lower blood glucose by 4mM) and work out what dose of drug to give to achieve it.
+
+::: {.callout-tip collapse="true"}
+## A tangible example
+
+If you are aware of, or propose, a _causal relationship_ you are expressing the belief that you can predict the consequences of an intervention.
+
+For example, if you look out of the window and see trees swaying, and there is some wind, you know the two are connected because you intuitively understand that the _wind is causing the trees to sway_, not that the trees are moving and creating the wind. 
+
+But suppose you were an alien from another planet with no knowledge of the Earth, and simply measured windspeed and tree movement. You would find a correlation, but there would be only a _statistical association_. There would be nothing in the data itself to tell you which was the cause and which was the effect. 
+
+But you, a mere Earthling **know** the causal relationship and the nature of the intervention: **wind makes trees sway**. If you climbed into the tree and rocked it, you would not generate wind. But if you measured the amount by which a tree sways, you could make an estimate of the prevailing windspeed. 
+:::
+
+All information about causal relationships comes from **the scientists' understanding of the world** or, more to the point, **their understanding of the experimental system**.
+
+### Your beliefs about the system are the causal model
+
+The assumptions and beliefs you have that cause you to consider setting up your experiment are a kind of causal model. 
+
+::: {.callout-note}
+For instance, if you believe that reaction times get slower when someone has drunk alcohol, then your causal model is that _alcohol consumption_ **causes** _change in reaction times_. 
+:::
+
+You would design your experiment to enable measurements of alcohol consumption and reaction time to be measured, and you might look to find a statistical association. But if you _did_ find a statistical association, your causal interpretation (e.g. that "reaction time slows with increasing alcohol dose") would be the result of your beliefs about the experimental system, not a result of simply running statistical analysis on the dataset.
+
+![Experimental design, causal (statistical) inference, and the (statistical) description of a system all depend on the existence of a well-constructed scientific (causal) model. [Meme](https://github.com/rmcelreath/stat_rethinking_2023) by Richard McElreath, CC0](assets/images/inference_spiderman.jpg){#fig-spiderman-causal width=80%}
+
+## We need to talk about DAGs
+
+A _DAG_ is a _Directed Acyclic Graph_. DAGs are abstract mathematical structures that are extremely useful in many contexts. But, for our purposes, what is important is that they can be used to describe the causal relationships you believe are present in your experimental system. Describing your beliefs as a DAG has advantages:
+
+1. **It is a concise way to express your understanding of the experiment clearly**
+  - It is then easy to visualise and share with others, so they can understand your view of the experiment
+2. **The structure of a DAG can be analysed to suggest an appropriate statistical model**
+  - A DAG's structure can suggest which controls to use in an experiment, and what statistical analysis might be most appropriate
+  - Analysis of the DAG structure can tell you what can (and what _cannot_) be logically decided by the experiment, without having to make additional assumptions
+
+We will introduce DAGs for experimental design in more detail, in the next section.

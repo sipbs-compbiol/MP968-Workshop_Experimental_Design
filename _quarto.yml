@@ -49,6 +49,7 @@ book:
     - part: cause_and_effect.qmd
       chapters:
         - problem.qmd
+        - causal_models.qmd
         - dags.qmd
 
     - part: power.qmd
