@@ -5,9 +5,11 @@ In the first section of material, we are going to think about what it means to m
 ::: {.callout-tip}
 ## Data Context
 
-The example we are using is attempting to measure the proportion of the Earth's surface that is covered by water.
+The example we are using is attempting to answer the question "measure the"What proportion of the Earth's surface is covered by water?"
 
-You probably already have an idea of what proportion that is - about 70%. But…
+You probably already have an idea of what proportion that is - about 70%. But pretend that you don't already know.
+
+Even if you _did_ already know, have you thought about…
 
 - How accurate is that value of 70%?
 - How would you go about measuring the exact surface area?
@@ -18,3 +20,4 @@ Aren't we really _estimating_ the measurement?
 And, if we're making an estimate, then don't we need to try to understand how accurate our estimate might be?
 :::
 
+This section tries to develop some intuition about measurement, probability, and statistics, from considering that question.
