@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>3&nbsp; How Wet Is The Earth? – MP968: Experimental Design Workshop</title>
+<title>4&nbsp; Modelling the Experiment – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./globe_model.html" rel="next">
-<link href="./measurement.html" rel="prev">
+<link href="./cause_and_effect.html" rel="next">
+<link href="./wet_earth.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -43,8 +43,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -85,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./wet_earth.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./globe_model.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -158,13 +185,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wet_earth.html" class="sidebar-item-text sidebar-link active">
+  <a href="./wet_earth.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./globe_model.html" class="sidebar-item-text sidebar-link">
+  <a href="./globe_model.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></a>
   </div>
 </li>
@@ -327,18 +354,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#measuring-something-that-cant-practically-be-measured" id="toc-measuring-something-that-cant-practically-be-measured" class="nav-link active" data-scroll-target="#measuring-something-that-cant-practically-be-measured"><span class="header-section-number">3.1</span> Measuring something that can’t practically be measured</a></li>
-  <li><a href="#making-an-estimate" id="toc-making-an-estimate" class="nav-link" data-scroll-target="#making-an-estimate"><span class="header-section-number">3.2</span> Making an estimate</a></li>
-  <li><a href="#an-experimental-result" id="toc-an-experimental-result" class="nav-link" data-scroll-target="#an-experimental-result"><span class="header-section-number">3.3</span> An experimental result</a></li>
+  <li><a href="#variables-in-this-experiment" id="toc-variables-in-this-experiment" class="nav-link active" data-scroll-target="#variables-in-this-experiment"><span class="header-section-number">4.1</span> Variables in this experiment</a>
+  <ul class="collapse">
+  <li><a href="#p-the-proportion-of-the-earths-surface-that-is-water---our-estimand" id="toc-p-the-proportion-of-the-earths-surface-that-is-water---our-estimand" class="nav-link" data-scroll-target="#p-the-proportion-of-the-earths-surface-that-is-water---our-estimand"><span class="header-section-number">4.1.1</span> <span class="math inline">\(p\)</span>: The proportion of the Earth’s surface that is water - our <em>estimand</em></a></li>
+  <li><a href="#w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome" id="toc-w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome" class="nav-link" data-scroll-target="#w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome"><span class="header-section-number">4.1.2</span> <span class="math inline">\(W\)</span>: The number of times our index finger lands on water - a measured outcome</a></li>
+  <li><a href="#l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome" id="toc-l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome" class="nav-link" data-scroll-target="#l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome"><span class="header-section-number">4.1.3</span> <span class="math inline">\(L\)</span>: The number of times our index finger lands on land - a measured outcome</a></li>
+  <li><a href="#n-the-total-number-of-times-we-toss-the-globe---an-independent-variable" id="toc-n-the-total-number-of-times-we-toss-the-globe---an-independent-variable" class="nav-link" data-scroll-target="#n-the-total-number-of-times-we-toss-the-globe---an-independent-variable"><span class="header-section-number">4.1.4</span> <span class="math inline">\(N\)</span>: The total number of times we toss the globe - an <em>independent variable</em></a></li>
+  </ul></li>
+  <li><a href="#how-do-variables-influence-one-another" id="toc-how-do-variables-influence-one-another" class="nav-link" data-scroll-target="#how-do-variables-influence-one-another"><span class="header-section-number">4.2</span> How do variables influence one another?</a></li>
+  <li><a href="#what-the-graph-tells-us" id="toc-what-the-graph-tells-us" class="nav-link" data-scroll-target="#what-the-graph-tells-us"><span class="header-section-number">4.3</span> What the graph tells us</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/wet_earth.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/globe_model.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./wet_earth.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./globe_model.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-wet-earth" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></h1>
+<h1 class="title"><span id="sec-model-earth" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></h1>
 </div>
 
 
@@ -355,92 +388,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="measuring-something-that-cant-practically-be-measured" class="level2 page-columns page-full" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="measuring-something-that-cant-practically-be-measured"><span class="header-section-number">3.1</span> Measuring something that can’t practically be measured</h2>
-<p>Suppose you want to measure the proportion of the Earth’s surface that is water. How would you go about it, practically? Maybe you could…</p>
-<ul>
-<li>pour the water off into a large measuring cylinder.
-<ul>
-<li>(But there isn’t a container big enough)</li>
-</ul></li>
-<li>take some time out of your studies and walk around the globe with a tape measure to find the cumulative distance around the edge of all the oceans, then calculate the area.
-<ul>
-<li>(<strong>But you can’t measure the length of a coastline</strong>. Due to the <a href="https://en.wikipedia.org/wiki/Coastline_paradox">Coastline Paradox</a>, coastlines have no well-defined length)</li>
-</ul></li>
-</ul>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div id="fig-earth-faucet" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-earth-faucet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/earth_faucet.jpg" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-earth-faucet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: The Earth, hanging in space, with a faucet inserted so that we can drain the oceans and measure their volume.
-</figcaption>
-</figure>
-</div>
-</div></div><p>So, if we can’t find a way to absolutely, precisely measure the proportion of the Earth’s surface that is water, we must instead <em>estimate</em> it.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Before designing any experiment it is useful to think conceptually about what you <strong>know</strong> (or <em>believe</em>) about the way that the samples you will take and measure are produced by the system under study. This is primarily a <em>scientific</em> description of the experiment, not a statistical one.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-This is an analogy
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It’s possible to question the practical use of this experiment, but the situation is not really that far removed from making any experimental measurement.</p>
-<p>There may be a value of something in the “real world” you’d like to measure accurately, like the concentration of a glucose in a patient’s blood. But how exact can your measurement really be?</p>
-<ul>
-<li>Is the concentration of glucose uniform throughout the bloodstream?</li>
-<li>Is the small amount of sample you take representative of the entire bloodstream?</li>
-<li>Does the way you process the sample make any change, however small, to the concentration?</li>
-<li>Is the machine you use to measure the concentration accurately calibrated and absolutely precise? Or does it make an estimate?</li>
-<li>Are you considering glucose concentration in one patient, or several patients? How much does variation from patient to patient matter?</li>
-<li>If you are measuring acrosss several individuals, then how representative of the total population was your choice of individuals?</li>
-</ul>
-<p>There are many influences on experimental measurements that can mean they are, in fact, <em>estimates</em>, rather than the true value we hope to measure.</p>
+<p>Experimental design is the incorporation of the knowledge and expertise you have into a system that explains how the measured results are influenced by the experimental factors under your control<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="variables-in-this-experiment" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="variables-in-this-experiment"><span class="header-section-number">4.1</span> Variables in this experiment</h2>
+<p>Variables in an experiment include those things that you can observe and are expected to influence the measured outcomes of that experiment. These might be under your control (such as drug concentrations), or outside your control, but potentially influential (e.g.&nbsp;the sex of the subject, the technician working on that day, and so on).</p>
+<p>Variables can also represent things that you <em>cannot</em> observe, but want to <strong>estimate</strong>. For our example experiment here that would be <em>the proportion of the Earth’s surface that is water</em>. But in a “real” experiment this might be “the effect of the administered drug on blood glucose concentration.” We can’t measure that directly, the same way we can’t measure the proportion of the globe’s surface that is water, but we can <em>estimate</em> it with our experiment.</p>
+<p>Variables can be measured outcomes of an experiment. Here, our counts of the number of times our index fingers land on water (W) or land (L) are variables we will use in our <em>estimate</em> of the proportion of water on the Earth’s surface.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Some foreshadowing
+Some statistical jargon
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The questions above, particularly those concerning whether the sample you take, or the individuals you sample from, are truly representative of a greater whole, imply something important that we will deal with shortly:</p>
-<p><strong>You cannot avoid (statistical) modelling.</strong></p>
-<p>The way that you assume your small blood sample represents the full bloodstream is a <em>model</em>. The way that you assume your small group of experimental subjects represents a larger population of possible similar experimental subjects is a <em>model</em>.</p>
-<p>If you are using animal <em>models</em> of human biology, the clue is in the name: your assumptions of how representative they are of humans is a <em>model</em>.</p>
-<p>It’s as well that we are always aware and, wherever appropriate, explicit that we are using (statistical) models.</p>
+<p>The variable we want to estimate is called the <strong>estimand</strong>. Here it is the proportion of the Earth’s surface that is water, but it might be something like “the reduction in blood glucose concentration” in a “real” experiment.</p>
+<p>Variables under the experimenter’s control, where we want to investigate the <em>effect</em> of the variable on the <em>estimand</em> are called <strong>independent variables</strong>.</p>
+<p>Variables whose values are expected to change when we modify an <em>independent variable</em> are called <strong>dependent variables</strong>.</p>
+<p>Variables that may affect the <em>dependent variables</em>, but which we are not investigating directly are called <strong>nuisance variables</strong>. We may need to <em>control</em> for the influence of these variables, in our experimental design.</p>
 </div>
 </div>
 </div>
+<section id="p-the-proportion-of-the-earths-surface-that-is-water---our-estimand" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="p-the-proportion-of-the-earths-surface-that-is-water---our-estimand"><span class="header-section-number">4.1.1</span> <span class="math inline">\(p\)</span>: The proportion of the Earth’s surface that is water - our <em>estimand</em></h3>
+<p>The thing we want to estimate, our <em>estimand</em>, is a variable representing the proportion of the globe that is covered with water. We’ll assign this the letter <span class="math inline">\(p\)</span> (for <em>proportion</em>). We cannot directly observe this value<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. We can only measure it indirectly.</p>
 </section>
-<section id="making-an-estimate" class="level2 page-columns page-full" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="making-an-estimate"><span class="header-section-number">3.2</span> Making an estimate</h2>
-<p>Suppose we have a globe that represents the Earth (<a href="#fig-globe" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>). Now if we spin it up in the air and catch it, then look at the spot where our right index finger lands, that finger will either be on land (L) or on water (W).</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div id="fig-globe" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-globe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/globe.jpg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-globe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.2: An inflatable globe: our experimental subject.
-</figcaption>
-</figure>
-</div>
-</div></div><p>If we do this many times, we will gradually build up a set of data points that are water (W) or land (L). We can use this dataset to estimate the proportion of the globe that is covered in water.</p>
+<section id="w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome"><span class="header-section-number">4.1.2</span> <span class="math inline">\(W\)</span>: The number of times our index finger lands on water - a measured outcome</h3>
+<p>This is the count of the number of times our index finger lands on water. We are observing this directly and assign it the letter <span class="math inline">\(W\)</span> (for <em>water</em>).</p>
+</section>
+<section id="l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome"><span class="header-section-number">4.1.3</span> <span class="math inline">\(L\)</span>: The number of times our index finger lands on land - a measured outcome</h3>
+<p>This is the count of the number of times our index finger lands on land. We are observing this directly and assign it the letter <span class="math inline">\(L\)</span> (for <em>land</em>).</p>
+</section>
+<section id="n-the-total-number-of-times-we-toss-the-globe---an-independent-variable" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="n-the-total-number-of-times-we-toss-the-globe---an-independent-variable"><span class="header-section-number">4.1.4</span> <span class="math inline">\(N\)</span>: The total number of times we toss the globe - an <em>independent variable</em></h3>
+<p>The number of times we throw the globe and make a measurement is entirely under our control, and influences the measured outcomes of the experiment. The more times we toss the globe, the larger we expect <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> to get. We assign this variable the letter <span class="math inline">\(N\)</span> (for <em>number</em>), and it is the <em>independent variable</em> in our experiment.</p>
+</section>
+</section>
+<section id="how-do-variables-influence-one-another" class="level2 page-columns page-full" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="how-do-variables-influence-one-another"><span class="header-section-number">4.2</span> How do variables influence one another?</h2>
+<p>As we’ve just stated, the number of tosses of the globe <span class="math inline">\(N\)</span> influences the number of times we see water <span class="math inline">\(W\)</span> or land <span class="math inline">\(L\)</span> because the more times we toss the globe, the larger <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> can be (and this is <em>independent</em> of the actual proportion of water to land). The influence of <span class="math inline">\(N\)</span> on <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> can be described as in <a href="#fig-n-influence" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -451,59 +456,101 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This might seem a frivolous example, but there are direct analogues of the kinds of experiments you will hopefully go on to perform in your future careers:</p>
-<ul>
-<li>the inflatable globe is a <em>model</em> taking the place of the real “population” we want to make inferences about
-<ul>
-<li>in what ways is the globe a good, or bad, <em>model</em>?</li>
-<li>is any single call of “land” or “water” an estimate or an absolute measurement?</li>
-</ul></li>
-<li>this process shares a sampling structure, and an inferential structure, with many scientific problems
-<ul>
-<li>what other scientific questions might be answered in a similar way?</li>
-</ul></li>
-</ul>
+<p>The arrows in <a href="#fig-n-influence" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> represent a <em>causal influence</em> of <span class="math inline">\(N\)</span> on <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> because by varying <span class="math inline">\(N\)</span> we can induce changes in <span class="math inline">\(W\)</span> and/or <span class="math inline">\(L\)</span>.</p>
+<p>But, no matter what we do to change <span class="math inline">\(W\)</span> or <span class="math inline">\(L\)</span> (such as faking our data, or miscounting) this does not change <span class="math inline">\(N\)</span>.</p>
+<p>The arrows represent the consequence of <em>intervening</em> on the experiment by changing <span class="math inline">\(N\)</span>.</p>
 </div>
 </div>
-<p>So, let’s throw the inflatable globe up in the air ten times, and see where our finger lands (<a href="#fig-globe-toss" class="quarto-xref">Figure&nbsp;<span>3.3</span></a>). This will be our dataset.</p>
-<div id="fig-globe-toss" class="quarto-float quarto-figure quarto-figure-center anchored" width="80%">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-n-influence" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-globe-toss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="assets/movies/globe_toss.mp4"></video></div>
+<div aria-describedby="fig-n-influence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/n_influence.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-globe-toss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.3: An example outcome of tossing the inflatable globe ten times. There are four lands (L), and six waters (W). Video extracted from <a href="https://youtu.be/R1vcdhPBlXA?si=4Ydf2n6vaxuLN7-Z"><em>Statistical Rethinking</em> Lecture 02</a> (Richard McElreath).
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-n-influence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: <span class="math inline">\(N\)</span> influences <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>. The variables <span class="math inline">\(N\)</span>, <span class="math inline">\(W\)</span>, and <span class="math inline">\(L\)</span> are shown as <em>nodes</em> in this <em>graph</em>. The arrows linking <span class="math inline">\(N\)</span> to <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> are <em>edges</em> in the graph, showing that the direction of influence is that <span class="math inline">\(N\)</span> influences <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>. This represents the intuitive belief that changing the number of times we toss the globe affects the counts in <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>.
 </figcaption>
 </figure>
 </div>
-</section>
-<section id="an-experimental-result" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="an-experimental-result"><span class="header-section-number">3.3</span> An experimental result</h2>
+</div></div><p>Similarly, the variable <span class="math inline">\(p\)</span> influences <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> (<a href="#fig-p-influence" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>) because if there’s more water on the Earth’s surface <span class="math inline">\(W\)</span> will be larger, and if there’s less water then <span class="math inline">\(L\)</span> will be larger.</p>
+<p>We can’t vary <span class="math inline">\(p\)</span> in practice, but we can imaging creating a new continent in the middle of the Atlantic, say, and thus decreasing the proportion of the Earth’s surface that is water. That would be an <em>intervention</em> on the experiment that we can consider but not implement. We could <em>predict</em> the consequence of making a change even if we can’t make that change in practice.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Again, the arrows in <a href="#fig-p-influence" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> represent a <em>causal influence</em> of <span class="math inline">\(p\)</span> on <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> because - in principle - by varying <span class="math inline">\(p\)</span> we can induce changes in <span class="math inline">\(W\)</span> and/or <span class="math inline">\(L\)</span>.</p>
+<p>Again, no matter what we do to change <span class="math inline">\(W\)</span> or <span class="math inline">\(L\)</span> (such as faking our data, or miscounting) this does not change <span class="math inline">\(p\)</span>.</p>
+<p>The arrows represent the consequence of <em>intervening</em> on the experiment by changing <span class="math inline">\(p\)</span> (not that we can actually do this, in practice).</p>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-p-influence" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-p-influence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/p_influence.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p-influence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: <span class="math inline">\(p\)</span> and <span class="math inline">\(N\)</span> influence <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>. We add the variable <span class="math inline">\(p\)</span> as a new node to <a href="#fig-n-influence" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> (colouring it red to indicate it is an <em>estimand</em>). Arrows linking <span class="math inline">\(p\)</span> to <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> are again <em>edges</em> in the graph, showing that the direction of influence is that <span class="math inline">\(p\)</span> influences <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>. This represents the intuitive belief that changing the amount of land or water at the surface of the Earth affects the counts in <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>.
+</figcaption>
+</figure>
+</div>
+</div></div></section>
+<section id="what-the-graph-tells-us" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="what-the-graph-tells-us"><span class="header-section-number">4.3</span> What the graph tells us</h2>
+<p>The graph in <a href="#fig-p-influence" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> represents our scientific knowledge about the system. It shows that we understand:</p>
+<ul>
+<li>The actual proportion of water <span class="math inline">\(p\)</span> on the surface of the Earth affects our measured values <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span></li>
+<li>The number of times we make a measurement (spin the globe) <span class="math inline">\(N\)</span> affects our measured values <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What the graph does not tell us
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The graph does not tell us exactly <em>how</em> either <span class="math inline">\(p\)</span> or <span class="math inline">\(N\)</span> affect the values of <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>.</p>
+<p>However, in this simple system, the nature of the relationships is intuitive:</p>
+<ul>
+<li>every time we toss the globe we take a new measurement and increase either <span class="math inline">\(W\)</span> or <span class="math inline">\(L\)</span> by one</li>
+<li>the actual proportion of water on the globe’s surface should be reflected in the relative counts of <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span></li>
+</ul>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The Dataset
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Our intial dataset for estimating how much of the globe is covered in water is:</p>
-<blockquote class="blockquote">
-<p><code>L W L L W W W L W W</code></p>
-</blockquote>
-<p>Four lands (L) and six waters (W)</p>
+<p>It is good practice, for every experiment that you do, to draw out what you understand about the <em>causal relationships</em> in the experiment.</p>
+<p>Drawing these graphs can help you understand your experiments better, and develop effective experimental designs. Considering these structures can identify good (and bad) controls for your experiments.</p>
 </div>
 </div>
-<p>We might naïvely decide that, because we have six waters (W) and four lands (L), our dataset implies an estimate of the proportion of the Earth’s surface that is water of <strong>60%</strong> (there are six waters, and ten measurements). But in the next chpater, we’re going to consider this experiment in a bit more detail<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and see how our prior expectations, and the number of measurements we make, relate to the precision of our estimate, and our beliefs about the uncertainty in the measurement.</p>
+<p>Now that we have considered the <em>causal structure</em> of our model, we can start to analyse the data from <a href="wet_earth.html#fig-globe-toss" class="quarto-xref">Figure&nbsp;<span>3.3</span></a>.</p>
 
 
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>And also in the context of Bayesian Statistics<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>This is essentially saying that you are incorporating what you understand of <em>cause</em> and <em>effect</em> into the way the experiment works. We will return to the ideas cause and effect, shortly.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This is similar to the situation where we estimate the effect of a drug (in a general population) by observing it indirectly in a sample drawn from that population.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -930,13 +977,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./measurement.html" class="pagination-link" aria-label="Measurement">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Measurement</span>
+      <a href="./wet_earth.html" class="pagination-link" aria-label="How Wet Is The Earth?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./globe_model.html" class="pagination-link" aria-label="Modelling the Experiment">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cause_and_effect.html" class="pagination-link" aria-label="Cause and Effect">
+        <span class="nav-page-text">Cause and Effect</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -948,13 +995,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/wet_earth.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/globe_model.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
-<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
