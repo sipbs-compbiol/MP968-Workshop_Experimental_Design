@@ -52,7 +52,7 @@ There are several ways to maximise effect size, including:
 - choosing individuals that are especially likely to respond to the treatment
 :::
 
-Designing an experiment with the aim of increasing effect size can be difficult, and lead to other issues. When drug concentrations are set to extreme values it can make the interpretation of the results when drugs are delivered at more realistic therapeutic levels doubtful. If a highly sensitive set of individuals is used in teh experiment, then the results may again not generalise well across the wider population. 
+Designing an experiment with the aim of increasing effect size can be difficult, and lead to other issues. When drug concentrations are set to extreme values it can make the interpretation of the results when drugs are delivered at more realistic therapeutic levels doubtful. If a highly sensitive set of individuals is used in the experiment, then the results may again not generalise well across the wider population. 
 
 **It is for the researcher to decide and justify whether conclusive effects on a subgroup are preferred to inconclusive but more generalisable results.**
 
