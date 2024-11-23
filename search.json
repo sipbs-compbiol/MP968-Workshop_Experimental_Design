@@ -949,7 +949,7 @@
     "href": "templates.html#use-the-template",
     "title": "25  EDA Templates",
     "section": "25.2 Use the template",
-    "text": "25.2 Use the template\n\nClick on the Use this diagram as a template link (on the right of the template page, as in Figure 25.2)\n\nThis opens a new tab in the browser, and populates the design tool with a base starting diagram (Figure 25.3)\n\n\n\n\n\n\nFigure 25.3: The EDA design tool on initial population by a template file. The graph layout and connections are pre-prepared, but all details specific to an experiment remain to be filled in.",
+    "text": "25.2 Use the template\n\nClick on the Use this diagram as a template link (on the right of the template page, as in Figure 25.2)\n\nThis opens a new tab in the browser, and populates the design tool with a base starting diagram (Figure 25.3)\n\n\n\n\n\n\nFigure 25.3: The EDA design tool on initial population by a template file. The graph layout and connections are pre-prepared, but all details specific to the experimenthave been removed from the example, and remain to be filled in by the researcher.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>EDA Templates</span>"
