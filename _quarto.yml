@@ -85,10 +85,11 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    
     code-link: true
     code-fold: true
     code-summary: "Show the code"
-    
+
     author-meta: "Leighton Pritchard"
   
 #  pdf:
