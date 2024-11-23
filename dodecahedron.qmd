@@ -166,5 +166,5 @@ ggplot(distn_hundo, aes(x=proportion, y=probability)) +
 We do see that the estimate of the most likely proportion $p$ is more _precise_, but the relative probability of nearby values is also very similar.
 
 ::: {.callout-important}
-There is a trade-off between the _precision_ of our estimate of the most likely proportion $p$, and our _confidence_ in that estimate being the most likely proportion.
+When changing the number of faces used to represent the Earth, there is a trade-off between the _precision_ of our estimate of the most likely proportion $p$, and our _confidence_ in that estimate being the most likely proportion.
 :::

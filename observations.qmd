@@ -1,0 +1,194 @@
+# How Many Observations? {#sec-observations}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+# Package imports
+library(ggplot2)
+library(kableExtra)
+library(patchwork)
+
+# Set seed for reproducibility
+set.seed(12345)
+
+# Code to compute a posterior distribution given a set of observations
+compute_posterior <- function(sample, faces=4, round_to=3) {
+  W <- sum(sample == "W")  # Waters observed
+  L <- sum(sample == "L")  # Lands observed
+  possibilities = faces + 1  # Number of possible probabilities
+  proportions = seq(0, 1, length.out=possibilities)  # The possibile proportions of water
+  
+  # Calculate the number of ways the sample data could be generated
+  ways <- sapply(proportions, function(q) (q * faces) ^ W * ( (1-q) * faces ) ^ L )
+  
+  # Calculate the posterior distribution
+  posterior <- ways/sum(ways)
+  
+  # Return a data.frame of the possibilities and ways
+  data.frame( proportion=factor(proportions), ways,
+              probability=round(posterior, round_to))
+}
+
+# Code to plot a distribution from our simulations
+plot_distn <- function( obs = c("W", "L", "W"), faces = 100, round_to=5) {
+  # Calculate posterior probabilities for Icosahedron Earth
+  distn <- compute_posterior(obs, faces=faces, round_to=round_to)
+
+  # Show the Tetrahedron Earth distribution as a histogram
+  ggplot(distn, aes(x=proportion, y=probability)) +
+  geom_col(fill="darkolivegreen4") +
+  theme_light() +
+  theme(text = element_text(size=10)) +
+  scale_x_discrete(breaks=seq(0, 1, 0.1))
+}
+```
+
+We're attempting to estimate the proportion of the Earth's surface that is covered with water, $p$. We have decided to run an experiment where we sample random points on the surface of the globe to see whether they are "water" (`W`) or "land" (`L`), and we have been working with a sample of ten observations:
+
+> `L W L L W W W L W W`
+
+By using **Tetrahedron Earth**, **Icosahedron Earth** and some `R` code, we have seen that changing our _model representation_ of the Earth from a shape with four sides to a shape with 20 sides (to a shape with 100 faces), we can make a trade-off between the precision of our estimate of the most likely value of $p$, and the _uncertainty_ we have that it is the most likely possible value.
+
+In this chapter, we are going to see what kind of effect varying the number of observations we make has on our estimated distribution of of $p$.
+
+## Generative Simulation
+
+To allow us to answer this question, we're going to use a technique common in modern experimental design: **Generative Simulation**.
+
+In Generative Simulation, we use our understanding of the system we're studying, as encoded in the diagram in @fig-p-influence. That figure tells us that the observations we make of the counts in $W$ and $L$ are influenced (only) by the value of $p$, and the number of samples we draw.
+
+::: {.callout-note}
+For your own experiments, the relationships between causes, effects, and measurements are likely to be more complex and involved than this example, but the principle is the same:
+
+- Draw a graph describing your understanding of the _causal model_ of the experiment
+- Use this understanding, and your _assumptions_ about how values are related, to create a _generative simulation_
+- Use the generative simulation to understand possible behaviours of your experiment
+
+**This is particularly valuable because you can test candidate analysis techniques, and sample sizes, to aid in the practical design of your experiment, by modifying the simulation.**
+:::
+
+### Simulating replicate experiments
+
+We will write some `R` code (below) to simulate tossing a globe and sampling points on the globe as "water" (`W`) or "land" (`L`).
+
+::: {.callout-important}
+The simulation code allows us to set a "true" underlying value for $p$. In a real experiment, we do not know the actual value of $p$; this code lets us see how well we estimate a "true," known value.
+:::
+
+```{r}
+#| label: tbl-sim-defaults
+#| tbl-cap: Generative simulation of five draws with $p = 0.7$ and making nine observations.
+#| html-table-processing: none
+
+# Simulate tossing a globe, with proportion of surface water p, N times
+# Adapted from Statistical Rethinking by Richard McElreath
+# (https://www.youtube.com/watch?v=R1vcdhPBlXA)
+# By default, the proportion of water is set to 70% (0.7), and we draw nine samples
+simulate <- function( p = 0.7, N = 9 ) {
+  sample(c("W", "L"), size=N, replace=TRUE,  prob=c(p, 1-p))
+}
+
+# Simulate five default draws
+runs = 5
+defaults <- data.frame(run=seq(runs),
+                       draw=replicate(runs, toString(simulate())))
+
+# Show table
+defaults |>
+  kbl(format="html", align="c") |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = F)
+```
+
+@tbl-sim-defaults gives us five different sets of nine observations, for the same underlying proportion of water on the Earth's surface.
+
+### Simulating extreme possibilities
+
+::: {.callout-tip}
+A major advantage of this approach is that we can simulate extreme situations - such as an Earth with no water, or no land (@tbl-sim-extremes) - or any potential combination of values of the influences that we have included in our causal model.
+:::
+
+```{r}
+#| label: tbl-sim-extremes
+#| tbl-cap: Generative simulation of draws from Earths with no water, and no land.
+#| html-table-processing: none
+
+# Simulate five default draws
+runs = c("No water", "No land")
+draws = c(toString(simulate(p=0)),
+          toString(simulate(p=1)))
+extremes <- data.frame(run=runs,
+                       draw=draws)
+
+# Show table
+extremes |>
+  kbl(format="html", align="c") |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = F)
+```
+
+### A range of sample sizes
+
+We can examine the effect of sampling different numbers of points on the globe, using the same code (see below and @tbl-sim-sizes).
+
+```{r}
+#| label: tbl-sim-sizes
+#| tbl-cap: Generative simulation of draws with a range of sample sizes.
+#| html-table-processing: none
+
+# Simulate five default draws
+sample_sizes = c(1, 3, 9, 20)
+draws = lapply(sample_sizes, function(x) toString(simulate(N=x)))
+dfm <- data.frame(sample_size = sample_sizes,
+                  draw=unlist(draws))
+
+# Show table
+dfm |>
+  kbl(format="html", align="c") |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = F)
+```
+
+## What effect does the number of observations have?
+
+Armed with our generative simulation code, we simulate individual experiments with 3, 9, 27, and 100 observations, plotting the results in @fig-var-obs.
+
+
+```{r}
+#| label: fig-var-obs
+#| fig-cap: Posterior distributions of estimates of $p$, the proportion of the globe that is water, from four single runs of sampling with $N$=3, 9, 27, 100, 500, and 1000 observations. In these simulations, the model Earth has 100 faces and the known proportion is $p = 0.7$. As the number of samples increases, the modal estimate centres closer to the true value of $p = 0.7$, and the spread of the distribution narrows.
+
+# Generate plots of posterior distributions, with differing numbers of
+# sample observations for each
+p1 <- plot_distn(simulate(N = 3)) + ggtitle("p = 0.7, N = 3")
+p2 <- plot_distn(simulate(N = 9)) + ggtitle("p = 0.7, N = 9")
+p3 <- plot_distn(simulate(N = 27)) + ggtitle("p = 0.7, N = 27")
+p4 <- plot_distn(simulate(N = 100)) + ggtitle("p = 0.7, N = 100")
+
+# Use patchwork to layout the figures
+p1 + p2 + p3 + p4
+```
+
+We can see visually from @fig-var-obs that varying the number of samples we take has two effects:
+
+1. With only three samples, the most likely estimate for $p$ is some way from the true value of $p = 0.7$. Increasing the number of samples moves the predicted most likely value closer to the true value.
+2. As we increase the number of samples from 9 to 100, the distribution of our estimate remains centred on $p = 0.7$, but the width of the distribution narrows. Within the distributions, the probability of the most likely estimate also increases: we become _more certain_ about our best estimate(s), and the range of plausible estimates gets smaller.
+
+## Summary
+
+::: {.callout-important}
+Sample size is a central concern of experimental design in general.
+
+- Collecting too few observations leads to increased uncertainty in our estimated values
+  - This uncertainty can make it more difficult to achieve a statistically convincing result
+- Collecting too many observations consumes time, resources, and money
+  - Funding and researcher time is limited for experiments
+- **Collecting an optimal number of observations provides statisticaly robust results at a reasonable cost**
+:::
+
+::: {.callout-note}
+Sample size is a particular concern in animal experiments, because there is an additional concern to reduce or eliminate animal suffering.
+
+As is the case for all experiments, we want to choose a sample size that is large enough, so we can estimate quantities accurately enough and with enough precision that our statistical analysis is informative.
+
+**But in addition, we need to choose the _smallest possible_ sample size that allows this,** in order to minimise the _ethical_ cost of the experiment, in terms of animal suffering.
+:::
+
+In the next section, we will discuss how it is possible to calculate an optimal number of observations/experimental units, to ensure robust statistical analysis and minimise ethical and financial costs.

@@ -54,6 +54,7 @@ book:
         - globe_model.qmd
         - globe_analysis.qmd
         - dodecahedron.qmd
+        - observations.qmd
 
     - part: power.qmd
       chapters: 
