@@ -75,6 +75,7 @@ book:
         - both_sexes.qmd
         - analysis_suggestion.qmd
         - sample_size.qmd
+        - communicate.qmd
     
     - references.qmd
     - further_reading.qmd
