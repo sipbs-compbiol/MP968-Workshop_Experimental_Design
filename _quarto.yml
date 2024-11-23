@@ -47,6 +47,7 @@ book:
         - wet_earth.qmd
         - globe_model.qmd
         - globe_analysis.qmd
+        - dodecahedron.qmd
 
     - part: cause_and_effect.qmd
       chapters:
@@ -85,6 +86,8 @@ format:
   html:
     theme: cosmo
     code-link: true
+    code-fold: true
+    code-summary: "Show the code"
     
     author-meta: "Leighton Pritchard"
   
