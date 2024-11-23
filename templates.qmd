@@ -19,4 +19,4 @@ The `Templates` button at the top of the NC3Rs EDA page (@fig-eda-templates-1) l
 
 This opens a new tab in the browser, and populates the design tool with a base starting diagram (@fig-eda-templates-3)
 
-![The EDA design tool on initial population by a template file. The graph layout and connections are pre-prepared, but all details specific to an experiment remain to be filled in.](assets/images/eda-templates-3.png){#fig-eda-templates-3 width=80%}
+![The EDA design tool on initial population by a template file. The graph layout and connections are pre-prepared, but all details specific to the experimenthave been removed from the example, and remain to be filled in by the researcher.](assets/images/eda-templates-3.png){#fig-eda-templates-3 width=80%}
