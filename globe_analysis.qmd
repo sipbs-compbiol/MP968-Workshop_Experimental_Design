@@ -1,6 +1,6 @@
 # Tetrahedron Earth {#sec-globe-analysis}
 
-We're going to analyse our data statistically, in a way that I hope will give some intuition about the relationship between the quantity being measured (for us, $p$, the proportion ofthe Earth's surface that is water), the observed measurements ($W$ and $L$, the counts of "water" and "land"), and the number of measurements we take.
+We're going to analyse our data statistically, in a way that I hope will give some intuition about the relationship between the quantity being estimated (for us, $p$, the proportion ofthe Earth's surface that is water), the observed measurements ($W$ and $L$, the counts of "water" and "land"), and the number of measurements we take.
 
 To do this, we're going to use a _Bayesian_ statistical approach, rather than kinds of approaches you might be more used to (_t_-tests, ANOVA, linear regression, and the like)[^1].
 

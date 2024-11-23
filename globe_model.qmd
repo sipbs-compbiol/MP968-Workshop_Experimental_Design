@@ -90,6 +90,12 @@ The graph in @fig-p-influence represents our scientific knowledge about the syst
 - The actual proportion of water $p$ on the surface of the Earth affects our measured values $W$ and $L$
 - The number of times we make a measurement (spin the globe) $N$ affects our measured values $W$ and $L$
 
+::: {.callout-note}
+There is no arrow linking $W$ to $L$, or $L$ to $W$. This implies that the two measurements do not influence each other: they are _independent_ measurements.
+
+This means that we **assume** that we have the same probability of observation a `W` or an `L`, regardless of what the previous observation was. (This may not be true in all experiments, and your experimental design needs to take that into account, if it is the case).
+:::
+
 ::: {.callout-important}
 ## What the graph does not tell us
 
