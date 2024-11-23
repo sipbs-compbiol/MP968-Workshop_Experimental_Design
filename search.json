@@ -890,6 +890,39 @@
     ]
   },
   {
+    "objectID": "communicate.html",
+    "href": "communicate.html",
+    "title": "24  Communicating the Design",
+    "section": "",
+    "text": "24.1 Generate an Experimental Design Report\nA new tab will open in your browser.\n2a. If a Save File diaogue box appears (Figure 24.2), save the file to an appropriate location. - During the design phase of your own experiments, it makes sense to keep this in a folder with other files relevant to the study\n2b. It is possible that, depending on your web browser’s configuration, the design report may appear in the new tab that was created. If this is the case, save the generated file to an appropriate location. - During the design phase of your own experiments, it makes sense to keep this in a folder with other files relevant to the study",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Communicating the Design</span>"
+    ]
+  },
+  {
+    "objectID": "communicate.html#generate-an-experimental-design-report",
+    "href": "communicate.html#generate-an-experimental-design-report",
+    "title": "24  Communicating the Design",
+    "section": "",
+    "text": "Click on Tools -&gt; Experimental Design Report (Figure 24.1)\n\n\n\n\n\n\n\n\n\nFigure 24.1: The NC3Rs EDA Tools menu, with the Experimental Design Report option highlighted\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nPlease be patient! It takes a little while to generate the design report.\n(You might like to generate the read-only diagram while you are waiting.)\n\n\n\n\n\n\n\n\n\nFigure 24.2: The Save File dialogue box, for saving the generated experimental report\n\n\n\n\n\nClose the new tab that was created.\n\n\n24.1.1 Reading the report\n\n\n\n\n\n\nTip\n\n\n\nAn example Experimental Design Report for this study can be downloaded at the link below.\n\nExperimental Design Report\n\n\n\nThe report provides key information about your experiment, including:\n\nTitle of the EDA diagram\nDate the report was generated\nExperimental objectives\nNumber of experimental groups and sample sizes\nHow subjects are included in, or excluded from the study\nRandomisation and blinding procedures\nOutcome measures\nStatistical methods that will be used\nDetails of experimental animals that will be subjects of the experiment\n\n\n\n\n\n\n\nWarning\n\n\n\nA number of the fields in the report we generate in this workshop are greyed-out, and read Information not provided. These fields were also noted as warnings when we critiqued our diagram.\nWe did not complete these fields not because they should be ignored, but because they are highly specific to each experiment.\nYou should always complete these fields as fully as possible.\n\n\nThe report also details advice that the EDA tool provided to us in its critique of the diagram, and indicates what advice it provided for statistical analysis.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Communicating the Design</span>"
+    ]
+  },
+  {
+    "objectID": "communicate.html#create-a-read-only-diagram",
+    "href": "communicate.html#create-a-read-only-diagram",
+    "title": "24  Communicating the Design",
+    "section": "24.2 Create a read-only diagram",
+    "text": "24.2 Create a read-only diagram\n\nClick on Tools -&gt; Read-only Diagram (Figure 24.3)\n\n\n\n\n\n\n\n\n\nFigure 24.3: The NC3Rs EDA Tools menu, with the Read-only Diagram option highlighted\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis may bring up a dialogue box stating Your diagram must be saved before continuing. Please confim you want to continue. (Figure 24.4)\n\n\n\n\n\n\nFigure 24.4: A warning to save your design, before generating a read-only diagram link\n\n\n\nClick the OK button, to confirm.\n\n\n\nYou will be presented with a dialogue box titled Create a read-only EDA diagram with some useful information (Figure 24.5). Click on the Create new version button.\n\n\n\n\n\n\n\nFigure 24.5: The read-only diagram creation dialogue box.\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThe read-only design link captures the state of your EDA diagram as a snapshot at this moment in time.\nIt is possible to modify your diagram, but this will not update the read-only version of the diagram in the link.\nIf you update your diagram you should always create a new corresponding read-only diagram link, and ensure that any documentation is kept up to date.\nThe dialogue box in Figure 24.5 will inform you if there is already an existing read-only diagram for this EDA.\n\n\n\nWhen the read-only link is created (this may take some time), the dialogue box will update with information about the read-only diagram, including a link and access code (Figure 24.6)\n\n\n\n\n\n\n\nFigure 24.6: Once the read-only diagram is created, you receive a link to the URL, and the access code, which you can share with others so they can see your diagram.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nAn example link and access code to a read-only diagram for this experiment is provided below.\n\nRead-only diagram link (Access code: C7IPD5FA)\n\n\n\nIf you follow the link to your read-only diagram, a new tab should open displaying both the Experimental Design Report, and the design diagram for your study (Figure 24.7)\n\n\n\n\n\n\nFigure 24.7: The read-only diagram opens in a new tab in the browser, showing the design diagram with collapsible side-bars for a legend, and the experimental design report.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Communicating the Design</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",

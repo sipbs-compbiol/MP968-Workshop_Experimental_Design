@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>6&nbsp; Modelling the Experiment – MP968: Experimental Design Workshop</title>
+<title>24&nbsp; Communicating the Design – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./globe_analysis.html" rel="next">
-<link href="./wet_earth.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./sample_size.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,35 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -112,7 +83,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./globe_model.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./communicate.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Communicating the Design</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -214,7 +185,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./globe_model.html" class="sidebar-item-text sidebar-link active">
+  <a href="./globe_model.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></a>
   </div>
 </li>
@@ -344,7 +315,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./communicate.html" class="sidebar-item-text sidebar-link">
+  <a href="./communicate.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Communicating the Design</span></span></a>
   </div>
 </li>
@@ -372,24 +343,20 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#variables-in-this-experiment" id="toc-variables-in-this-experiment" class="nav-link active" data-scroll-target="#variables-in-this-experiment"><span class="header-section-number">6.1</span> Variables in this experiment</a>
+  <li><a href="#generate-an-experimental-design-report" id="toc-generate-an-experimental-design-report" class="nav-link active" data-scroll-target="#generate-an-experimental-design-report"><span class="header-section-number">24.1</span> Generate an Experimental Design Report</a>
   <ul class="collapse">
-  <li><a href="#p-the-proportion-of-the-earths-surface-that-is-water---our-estimand" id="toc-p-the-proportion-of-the-earths-surface-that-is-water---our-estimand" class="nav-link" data-scroll-target="#p-the-proportion-of-the-earths-surface-that-is-water---our-estimand"><span class="header-section-number">6.1.1</span> <span class="math inline">\(p\)</span>: The proportion of the Earth’s surface that is water - our <em>estimand</em></a></li>
-  <li><a href="#w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome" id="toc-w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome" class="nav-link" data-scroll-target="#w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome"><span class="header-section-number">6.1.2</span> <span class="math inline">\(W\)</span>: The number of times our index finger lands on water - a measured outcome</a></li>
-  <li><a href="#l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome" id="toc-l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome" class="nav-link" data-scroll-target="#l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome"><span class="header-section-number">6.1.3</span> <span class="math inline">\(L\)</span>: The number of times our index finger lands on land - a measured outcome</a></li>
-  <li><a href="#n-the-total-number-of-times-we-toss-the-globe---an-independent-variable" id="toc-n-the-total-number-of-times-we-toss-the-globe---an-independent-variable" class="nav-link" data-scroll-target="#n-the-total-number-of-times-we-toss-the-globe---an-independent-variable"><span class="header-section-number">6.1.4</span> <span class="math inline">\(N\)</span>: The total number of times we toss the globe - an <em>independent variable</em></a></li>
+  <li><a href="#reading-the-report" id="toc-reading-the-report" class="nav-link" data-scroll-target="#reading-the-report"><span class="header-section-number">24.1.1</span> Reading the report</a></li>
   </ul></li>
-  <li><a href="#how-do-variables-influence-one-another" id="toc-how-do-variables-influence-one-another" class="nav-link" data-scroll-target="#how-do-variables-influence-one-another"><span class="header-section-number">6.2</span> How do variables influence one another?</a></li>
-  <li><a href="#what-the-graph-tells-us" id="toc-what-the-graph-tells-us" class="nav-link" data-scroll-target="#what-the-graph-tells-us"><span class="header-section-number">6.3</span> What the graph tells us</a></li>
+  <li><a href="#create-a-read-only-diagram" id="toc-create-a-read-only-diagram" class="nav-link" data-scroll-target="#create-a-read-only-diagram"><span class="header-section-number">24.2</span> Create a read-only diagram</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/globe_model.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/communicate.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./globe_model.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./communicate.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Communicating the Design</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-model-earth" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></h1>
+<h1 class="title"><span id="sec-communicate" class="quarto-section-identifier"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Communicating the Design</span></span></h1>
 </div>
 
 
@@ -406,7 +373,97 @@ window.Quarto = {
 </header>
 
 
-<p>Before designing any experiment it is useful to think conceptually about what you <strong>know</strong> (or <em>believe</em>) about the way that the samples you will take and measure are produced by the system under study. This is primarily a <em>scientific</em> description of the experiment, not a statistical one.</p>
+<p>When you have constructed your design and calculated appropriate sample sizes so that the experiment has sufficient power to answer your scientific question, you will need to share this design with others:</p>
+<ol type="1">
+<li><strong>Your colleagues</strong></li>
+</ol>
+<ul>
+<li>you will likely want or need to discuss your design with your colleagues, to ensure that the experiment is achieving your collective scientific goals</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Potential funders</strong></li>
+</ol>
+<ul>
+<li>you will need to demonstrate to your potential funders, in your grant application, that you have properly considered the practical and ethical concerns of the design</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Ethical review, and licencing bodies</strong></li>
+</ol>
+<ul>
+<li>in order for your animal experiment to proceed, it and the researchers will need to be properly licenced; in the UK the experimental design will be assessed at a local Animal Welfare and Ethical Review Board (AWERB), as well as by the Home Office, before a licence will be awarded</li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Reviewers of publications</strong></li>
+</ol>
+<ul>
+<li>when you come to publish your work, reviewers and publishers will want to be reassured that all ethical guidelines were properly followed, and that the experiment was well-designed</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Experimental Design Report
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The NC3Rs EDA tool can generate for you a PDF file “Experimental Design Report” highlighting key features of your eexperimental design. This is intended to be supporting documentation for grant applications, ethical review, and manuscript submissions. The PDF can be provided in two forms, depending on whether file attachments are allowed for the particular purpose:</p>
+<ol type="1">
+<li>As a downloadable PDF file</li>
+<li>As a URL link to an online, read-only diagram of the design</li>
+</ol>
+</div>
+</div>
+<section id="generate-an-experimental-design-report" class="level2 page-columns page-full" data-number="24.1">
+<h2 data-number="24.1" class="anchored" data-anchor-id="generate-an-experimental-design-report"><span class="header-section-number">24.1</span> Generate an Experimental Design Report</h2>
+<ol type="1">
+<li>Click on <code>Tools -&gt; Experimental Design Report</code> (<a href="#fig-eda-share-1" class="quarto-xref">Figure&nbsp;<span>24.1</span></a>)</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-eda-share-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-share-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/eda-share-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-share-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24.1: The NC3Rs EDA <code>Tools</code> menu, with the <code>Experimental Design Report</code> option highlighted
+</figcaption>
+</figure>
+</div>
+</div></div><p>A new tab will open in your browser.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please be patient! It takes a little while to generate the design report.</p>
+<p>(You might like to generate the read-only diagram while you are waiting.)</p>
+</div>
+</div>
+<p>2a. If a <code>Save File</code> diaogue box appears (<a href="#fig-eda-share-2" class="quarto-xref">Figure&nbsp;<span>24.2</span></a>), save the file to an appropriate location. - During the design phase of your own experiments, it makes sense to keep this in a folder with other files relevant to the study</p>
+<div id="fig-eda-share-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-share-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/eda-share-2.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-share-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24.2: The <code>Save File</code> dialogue box, for saving the generated experimental report
+</figcaption>
+</figure>
+</div>
+<p>2b. It is possible that, depending on your web browser’s configuration, the design report may appear in the new tab that was created. If this is the case, save the generated file to an appropriate location. - During the design phase of your own experiments, it makes sense to keep this in a folder with other files relevant to the study</p>
+<ol start="3" type="1">
+<li>Close the new tab that was created.</li>
+</ol>
+<section id="reading-the-report" class="level3" data-number="24.1.1">
+<h3 data-number="24.1.1" class="anchored" data-anchor-id="reading-the-report"><span class="header-section-number">24.1.1</span> Reading the report</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -417,118 +474,60 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Experimental design is the incorporation of the knowledge and expertise you have into a system that explains how the measured results are influenced by the experimental factors under your control<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-</div>
-</div>
-<section id="variables-in-this-experiment" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="variables-in-this-experiment"><span class="header-section-number">6.1</span> Variables in this experiment</h2>
-<p>Variables in an experiment include those things that you can observe and are expected to influence the measured outcomes of that experiment. These might be under your control (such as drug concentrations), or outside your control, but potentially influential (e.g.&nbsp;the sex of the subject, the technician working on that day, and so on).</p>
-<p>Variables can also represent things that you <em>cannot</em> observe, but want to <strong>estimate</strong>. For our example experiment here that would be <em>the proportion of the Earth’s surface that is water</em>. But in a “real” experiment this might be “the effect of the administered drug on blood glucose concentration.” We can’t measure that directly, the same way we can’t measure the proportion of the globe’s surface that is water, but we can <em>estimate</em> it with our experiment.</p>
-<p>Variables can be measured outcomes of an experiment. Here, our counts of the number of times our index fingers land on water (W) or land (L) are variables we will use in our <em>estimate</em> of the proportion of water on the Earth’s surface.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Some statistical jargon
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The variable we want to estimate is called the <strong>estimand</strong>. Here it is the proportion of the Earth’s surface that is water, but it might be something like “the reduction in blood glucose concentration” in a “real” experiment.</p>
-<p>Variables under the experimenter’s control, where we want to investigate the <em>effect</em> of the variable on the <em>estimand</em> are called <strong>independent variables</strong>.</p>
-<p>Variables whose values are expected to change when we modify an <em>independent variable</em> are called <strong>dependent variables</strong>.</p>
-<p>Variables that may affect the <em>dependent variables</em>, but which we are not investigating directly are called <strong>nuisance variables</strong>. We may need to <em>control</em> for the influence of these variables, in our experimental design.</p>
-</div>
-</div>
-</div>
-<section id="p-the-proportion-of-the-earths-surface-that-is-water---our-estimand" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="p-the-proportion-of-the-earths-surface-that-is-water---our-estimand"><span class="header-section-number">6.1.1</span> <span class="math inline">\(p\)</span>: The proportion of the Earth’s surface that is water - our <em>estimand</em></h3>
-<p>The thing we want to estimate, our <em>estimand</em>, is a variable representing the proportion of the globe that is covered with water. We’ll assign this the letter <span class="math inline">\(p\)</span> (for <em>proportion</em>). We cannot directly observe this value<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. We can only measure it indirectly.</p>
-</section>
-<section id="w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="w-the-number-of-times-our-index-finger-lands-on-water---a-measured-outcome"><span class="header-section-number">6.1.2</span> <span class="math inline">\(W\)</span>: The number of times our index finger lands on water - a measured outcome</h3>
-<p>This is the count of the number of times our index finger lands on water. We are observing this directly and assign it the letter <span class="math inline">\(W\)</span> (for <em>water</em>).</p>
-</section>
-<section id="l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="l-the-number-of-times-our-index-finger-lands-on-land---a-measured-outcome"><span class="header-section-number">6.1.3</span> <span class="math inline">\(L\)</span>: The number of times our index finger lands on land - a measured outcome</h3>
-<p>This is the count of the number of times our index finger lands on land. We are observing this directly and assign it the letter <span class="math inline">\(L\)</span> (for <em>land</em>).</p>
-</section>
-<section id="n-the-total-number-of-times-we-toss-the-globe---an-independent-variable" class="level3" data-number="6.1.4">
-<h3 data-number="6.1.4" class="anchored" data-anchor-id="n-the-total-number-of-times-we-toss-the-globe---an-independent-variable"><span class="header-section-number">6.1.4</span> <span class="math inline">\(N\)</span>: The total number of times we toss the globe - an <em>independent variable</em></h3>
-<p>The number of times we throw the globe and make a measurement is entirely under our control, and influences the measured outcomes of the experiment. The more times we toss the globe, the larger we expect <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> to get. We assign this variable the letter <span class="math inline">\(N\)</span> (for <em>number</em>), and it is the <em>independent variable</em> in our experiment.</p>
-</section>
-</section>
-<section id="how-do-variables-influence-one-another" class="level2 page-columns page-full" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="how-do-variables-influence-one-another"><span class="header-section-number">6.2</span> How do variables influence one another?</h2>
-<p>As we’ve just stated, the number of tosses of the globe <span class="math inline">\(N\)</span> influences the number of times we see water <span class="math inline">\(W\)</span> or land <span class="math inline">\(L\)</span> because the more times we toss the globe, the larger <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> can be (and this is <em>independent</em> of the actual proportion of water to land). The influence of <span class="math inline">\(N\)</span> on <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> can be described as in <a href="#fig-n-influence" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The arrows in <a href="#fig-n-influence" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> represent a <em>causal influence</em> of <span class="math inline">\(N\)</span> on <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> because by varying <span class="math inline">\(N\)</span> we can induce changes in <span class="math inline">\(W\)</span> and/or <span class="math inline">\(L\)</span>.</p>
-<p>But, no matter what we do to change <span class="math inline">\(W\)</span> or <span class="math inline">\(L\)</span> (such as faking our data, or miscounting) this does not change <span class="math inline">\(N\)</span>.</p>
-<p>The arrows represent the consequence of <em>intervening</em> on the experiment by changing <span class="math inline">\(N\)</span>.</p>
-</div>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div id="fig-n-influence" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-n-influence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/n_influence.png" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-n-influence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: <span class="math inline">\(N\)</span> influences <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>. The variables <span class="math inline">\(N\)</span>, <span class="math inline">\(W\)</span>, and <span class="math inline">\(L\)</span> are shown as <em>nodes</em> in this <em>graph</em>. The arrows linking <span class="math inline">\(N\)</span> to <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> are <em>edges</em> in the graph, showing that the direction of influence is that <span class="math inline">\(N\)</span> influences <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>. This represents the intuitive belief that changing the number of times we toss the globe affects the counts in <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>.
-</figcaption>
-</figure>
-</div>
-</div></div><p>Similarly, the variable <span class="math inline">\(p\)</span> influences <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> (<a href="#fig-p-influence" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>) because if there’s more water on the Earth’s surface <span class="math inline">\(W\)</span> will be larger, and if there’s less water then <span class="math inline">\(L\)</span> will be larger.</p>
-<p>We can’t vary <span class="math inline">\(p\)</span> in practice, but we can imaging creating a new continent in the middle of the Atlantic, say, and thus decreasing the proportion of the Earth’s surface that is water. That would be an <em>intervention</em> on the experiment that we can consider but not implement. We could <em>predict</em> the consequence of making a change even if we can’t make that change in practice.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Again, the arrows in <a href="#fig-p-influence" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> represent a <em>causal influence</em> of <span class="math inline">\(p\)</span> on <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> because - in principle - by varying <span class="math inline">\(p\)</span> we can induce changes in <span class="math inline">\(W\)</span> and/or <span class="math inline">\(L\)</span>.</p>
-<p>Again, no matter what we do to change <span class="math inline">\(W\)</span> or <span class="math inline">\(L\)</span> (such as faking our data, or miscounting) this does not change <span class="math inline">\(p\)</span>.</p>
-<p>The arrows represent the consequence of <em>intervening</em> on the experiment by changing <span class="math inline">\(p\)</span> (not that we can actually do this, in practice).</p>
-</div>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div id="fig-p-influence" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-p-influence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/p_influence.png" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p-influence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.2: <span class="math inline">\(p\)</span> and <span class="math inline">\(N\)</span> influence <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>. We add the variable <span class="math inline">\(p\)</span> as a new node to <a href="#fig-n-influence" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> (colouring it red to indicate it is an <em>estimand</em>). Arrows linking <span class="math inline">\(p\)</span> to <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span> are again <em>edges</em> in the graph, showing that the direction of influence is that <span class="math inline">\(p\)</span> influences <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>. This represents the intuitive belief that changing the amount of land or water at the surface of the Earth affects the counts in <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>.
-</figcaption>
-</figure>
-</div>
-</div></div></section>
-<section id="what-the-graph-tells-us" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="what-the-graph-tells-us"><span class="header-section-number">6.3</span> What the graph tells us</h2>
-<p>The graph in <a href="#fig-p-influence" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> represents our scientific knowledge about the system. It shows that we understand:</p>
+<p>An example Experimental Design Report for this study can be downloaded at the link below.</p>
 <ul>
-<li>The actual proportion of water <span class="math inline">\(p\)</span> on the surface of the Earth affects our measured values <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span></li>
-<li>The number of times we make a measurement (spin the globe) <span class="math inline">\(N\)</span> affects our measured values <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span></li>
+<li><a href="assets/reports/EDA_Report_MP968_Workshop.pdf">Experimental Design Report</a></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
+</div>
+</div>
+<p>The report provides key information about your experiment, including:</p>
+<ul>
+<li>Title of the EDA diagram</li>
+<li>Date the report was generated</li>
+<li>Experimental objectives</li>
+<li>Number of experimental groups and sample sizes</li>
+<li>How subjects are included in, or excluded from the study</li>
+<li>Randomisation and blinding procedures</li>
+<li>Outcome measures</li>
+<li>Statistical methods that will be used</li>
+<li>Details of experimental animals that will be subjects of the experiment</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A number of the fields in the report we generate in this workshop are greyed-out, and read <code>Information not provided</code>. These fields were also noted as warnings when we critiqued our diagram.</p>
+<p>We did not complete these fields not because they should be ignored, but because they are highly specific to each experiment.</p>
+<p><strong>You should always complete these fields as fully as possible.</strong></p>
+</div>
+</div>
+<p>The report also details advice that the EDA tool provided to us in its critique of the diagram, and indicates what advice it provided for statistical analysis.</p>
+</section>
+</section>
+<section id="create-a-read-only-diagram" class="level2 page-columns page-full" data-number="24.2">
+<h2 data-number="24.2" class="anchored" data-anchor-id="create-a-read-only-diagram"><span class="header-section-number">24.2</span> Create a read-only diagram</h2>
+<ol type="1">
+<li>Click on <code>Tools -&gt; Read-only Diagram</code> (<a href="#fig-eda-share-3" class="quarto-xref">Figure&nbsp;<span>24.3</span></a>)</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-eda-share-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-share-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/eda-share-3.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-share-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24.3: The NC3Rs EDA <code>Tools</code> menu, with the <code>Read-only Diagram</code> option highlighted
+</figcaption>
+</figure>
+</div>
+</div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -538,9 +537,32 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There is no arrow linking <span class="math inline">\(W\)</span> to <span class="math inline">\(L\)</span>, or <span class="math inline">\(L\)</span> to <span class="math inline">\(W\)</span>. This implies that the two measurements do not influence each other: they are <em>independent</em> measurements.</p>
-<p>This means that we <strong>assume</strong> that we have the same probability of observation a <code>W</code> or an <code>L</code>, regardless of what the previous observation was. (This may not be true in all experiments, and your experimental design needs to take that into account, if it is the case).</p>
+<p>This may bring up a dialogue box stating <code>Your diagram must be saved before continuing. Please confim you want to continue.</code> (<a href="#fig-eda-share-4" class="quarto-xref">Figure&nbsp;<span>24.4</span></a>)</p>
+<div id="fig-eda-share-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-share-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/eda-share-4.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-share-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24.4: A warning to save your design, before generating a read-only diagram link
+</figcaption>
+</figure>
+</div>
+<p>Click the <code>OK</code> button, to confirm.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>You will be presented with a dialogue box titled <code>Create a read-only EDA diagram</code> with some useful information (<a href="#fig-eda-share-5" class="quarto-xref">Figure&nbsp;<span>24.5</span></a>). Click on the <code>Create new version</code> button.</li>
+</ol>
+<div id="fig-eda-share-5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-share-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/eda-share-5.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-share-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24.5: The read-only diagram creation dialogue box.
+</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -548,17 +570,28 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What the graph does not tell us
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The graph does not tell us exactly <em>how</em> either <span class="math inline">\(p\)</span> or <span class="math inline">\(N\)</span> affect the values of <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>.</p>
-<p>However, in this simple system, the nature of the relationships is intuitive:</p>
-<ul>
-<li>every time we toss the globe we take a new measurement and increase either <span class="math inline">\(W\)</span> or <span class="math inline">\(L\)</span> by one</li>
-<li>the actual proportion of water on the globe’s surface should be reflected in the relative counts of <span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span></li>
-</ul>
+<p>The read-only design link captures the state of your EDA diagram <strong>as a snapshot at this moment in time.</strong></p>
+<p>It is possible to modify your diagram, but this <strong>will not update the read-only version of the diagram in the link.</strong></p>
+<p><strong>If you update your diagram you should always create a new corresponding read-only diagram link,</strong> and ensure that any documentation is kept up to date.</p>
+<p>The dialogue box in <a href="#fig-eda-share-5" class="quarto-xref">Figure&nbsp;<span>24.5</span></a> will inform you if there is already an existing read-only diagram for this EDA.</p>
 </div>
+</div>
+<ol start="3" type="1">
+<li>When the read-only link is created (this may take some time), the dialogue box will update with information about the read-only diagram, including a link and access code (<a href="#fig-eda-share-6" class="quarto-xref">Figure&nbsp;<span>24.6</span></a>)</li>
+</ol>
+<div id="fig-eda-share-6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-share-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/eda-share-6.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-share-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24.6: Once the read-only diagram is created, you receive a link to the URL, and the access code, which you can share with others so they can see your diagram.
+</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -570,20 +603,25 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It is good practice, for every experiment that you do, to draw out what you understand about the <em>causal relationships</em> in the experiment.</p>
-<p>Drawing these graphs can help you understand your experiments better, and develop effective experimental designs. Considering these structures can identify good (and bad) controls for your experiments.</p>
+<p>An example link and access code to a read-only diagram for this experiment is provided below.</p>
+<ul>
+<li><a href="https://eda.nc3rs.org.uk:443/eda/modelPublicExport/index/5A76E3C151173BAE7A9EA6C0DE07D56E">Read-only diagram link</a> (<strong>Access code: C7IPD5FA</strong>)</li>
+</ul>
 </div>
 </div>
-<p>Now that we have considered the <em>causal structure</em> of our model, we can start to analyse the data from <a href="wet_earth.html#fig-globe-toss" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>.</p>
+<p>If you follow the link to your read-only diagram, a new tab should open displaying both the Experimental Design Report, and the design diagram for your study (<a href="#fig-eda-share-7" class="quarto-xref">Figure&nbsp;<span>24.7</span></a>)</p>
+<div id="fig-eda-share-7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-share-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/eda-share-7.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-share-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24.7: The read-only diagram opens in a new tab in the browser, showing the design diagram with collapsible side-bars for a legend, and the experimental design report.
+</figcaption>
+</figure>
+</div>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>This is essentially saying that you are incorporating what you understand of <em>cause</em> and <em>effect</em> into the way the experiment works. We will return to the ideas cause and effect, shortly.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This is similar to the situation where we estimate the effect of a drug (in a general population) by observing it indirectly in a sample drawn from that population.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1009,13 +1047,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./wet_earth.html" class="pagination-link" aria-label="How Wet Is The Earth?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span>
+      <a href="./sample_size.html" class="pagination-link" aria-label="Estimate Sample Size">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./globe_analysis.html" class="pagination-link" aria-label="Tetrahedron Earth">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1027,7 +1065,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/globe_model.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/communicate.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
