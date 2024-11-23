@@ -42,18 +42,18 @@ book:
         - disclaimer.qmd
         - objectives.qmd
 
+    - part: cause_and_effect.qmd
+      chapters:
+        - problem.qmd
+        - causal_models.qmd
+        # - dags.qmd
+
     - part: measurement.qmd
       chapters: 
         - wet_earth.qmd
         - globe_model.qmd
         - globe_analysis.qmd
         - dodecahedron.qmd
-
-    - part: cause_and_effect.qmd
-      chapters:
-        - problem.qmd
-        - causal_models.qmd
-        - dags.qmd
 
     - part: power.qmd
       chapters: 

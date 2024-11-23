@@ -45,14 +45,3 @@ You would design your experiment to enable measurements of alcohol consumption a
 
 ![Experimental design, causal (statistical) inference, and the (statistical) description of a system all depend on the existence of a well-constructed scientific (causal) model. [Meme](https://github.com/rmcelreath/stat_rethinking_2023) by Richard McElreath, CC0](assets/images/inference_spiderman.jpg){#fig-spiderman-causal width=80%}
 
-## We need to talk about DAGs
-
-A _DAG_ is a _Directed Acyclic Graph_. DAGs are abstract mathematical structures that are extremely useful in many contexts. But, for our purposes, what is important is that they can be used to describe the causal relationships you believe are present in your experimental system. Describing your beliefs as a DAG has advantages:
-
-1. **It is a concise way to express your understanding of the experiment clearly**
-  - It is then easy to visualise and share with others, so they can understand your view of the experiment
-2. **The structure of a DAG can be analysed to suggest an appropriate statistical model**
-  - A DAG's structure can suggest which controls to use in an experiment, and what statistical analysis might be most appropriate
-  - Analysis of the DAG structure can tell you what can (and what _cannot_) be logically decided by the experiment, without having to make additional assumptions
-
-We will introduce DAGs for experimental design in more detail, in the next section.
