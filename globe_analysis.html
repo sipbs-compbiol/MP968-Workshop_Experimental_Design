@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>7&nbsp; An Introduction to Causal Graphs – MP968: Experimental Design Workshop</title>
+<title>7&nbsp; Tetrahedron Earth – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./power.html" rel="next">
-<link href="./causal_models.html" rel="prev">
+<link href="./dodecahedron.html" rel="next">
+<link href="./globe_model.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,10 +71,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -83,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cause_and_effect.html">Cause and Effect</a></li><li class="breadcrumb-item"><a href="./dags.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./globe_analysis.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -147,8 +176,8 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Measurement</span></a>
+            <a href="./cause_and_effect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cause and Effect</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -156,22 +185,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wet_earth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></a>
+  <a href="./problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Problem With Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./globe_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></a>
+  <a href="./causal_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Models</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./cause_and_effect.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cause and Effect</span></a>
+            <a href="./measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measurement</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -179,20 +208,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./problem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Problem With Statistics</span></span></a>
+  <a href="./wet_earth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./causal_models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Causal Models</span></span></a>
+  <a href="./globe_model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dags.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></span></a>
+  <a href="./globe_analysis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dodecahedron.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></span></a>
   </div>
 </li>
       </ul>
@@ -209,25 +244,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./power_considerations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./underpowered.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./effect_sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Effect Sizes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Effect Sizes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./g_power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Using G*Power</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Using G*Power</span></span></a>
   </div>
 </li>
       </ul>
@@ -244,61 +279,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eda_account.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">EDA Account Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">EDA Account Setup</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workshop_experiment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">The Workshop Experiment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Workshop Experiment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./create_new_diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./add_experiment_node.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./group_assignment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Assign Experimental Units</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Assign Experimental Units</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./interventions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Define Interventions and Measurements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Define Interventions and Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./critique1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./both_sexes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./analysis_suggestion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Obtain an Analysis Suggestion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Obtain an Analysis Suggestion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sample_size.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></span></a>
   </div>
 </li>
       </ul>
@@ -320,15 +355,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#a-bayesian-approach" id="toc-a-bayesian-approach" class="nav-link active" data-scroll-target="#a-bayesian-approach"><span class="header-section-number">7.1</span> A Bayesian approach</a>
+  <ul class="collapse">
+  <li><a href="#what-planets-are-possible" id="toc-what-planets-are-possible" class="nav-link" data-scroll-target="#what-planets-are-possible"><span class="header-section-number">7.1.1</span> What planets are possible?</a></li>
+  <li><a href="#the-most-plausible-planet-small-sample" id="toc-the-most-plausible-planet-small-sample" class="nav-link" data-scroll-target="#the-most-plausible-planet-small-sample"><span class="header-section-number">7.1.2</span> The most plausible planet (small sample)</a></li>
+  </ul></li>
+  <li><a href="#the-most-plausible-planet-whole-sample" id="toc-the-most-plausible-planet-whole-sample" class="nav-link" data-scroll-target="#the-most-plausible-planet-whole-sample"><span class="header-section-number">7.2</span> The most plausible planet (whole sample)</a></li>
+  <li><a href="#the-most-probable-planet" id="toc-the-most-probable-planet" class="nav-link" data-scroll-target="#the-most-probable-planet"><span class="header-section-number">7.3</span> The most probable planet</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/globe_analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cause_and_effect.html">Cause and Effect</a></li><li class="breadcrumb-item"><a href="./dags.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./globe_analysis.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-causal-graphs" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">An Introduction to Causal Graphs</span></span></h1>
+<h1 class="title"><span id="sec-globe-analysis" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></span></h1>
 </div>
 
 
@@ -345,8 +392,211 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>We’re going to analyse our data statistically, in a way that I hope will give some intuition about the relationship between the quantity being estimated (for us, <span class="math inline">\(p\)</span>, the proportion ofthe Earth’s surface that is water), the observed measurements (<span class="math inline">\(W\)</span> and <span class="math inline">\(L\)</span>, the counts of “water” and “land”), and the number of measurements we take.</p>
+<p>To do this, we’re going to use a <em>Bayesian</em> statistical approach, rather than kinds of approaches you might be more used to (<em>t</em>-tests, ANOVA, linear regression, and the like)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-world-tetra" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-world-tetra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/world_tetra.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-world-tetra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: The Earth, projected onto a tetrahedron. Image by <a href="https://www.johndcook.com/blog/2018/08/22/globe-regular-solids/">John D. Cook</a>
+</figcaption>
+</figure>
+</div>
+</div></div><section id="a-bayesian-approach" class="level2 page-columns page-full" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="a-bayesian-approach"><span class="header-section-number">7.1</span> A Bayesian approach</h2>
+<p><em>Bayesian Inference</em> in scientific data analysis can be quite simple.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bayesian data analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bayesian data analysis can be accounted for in two sentences:</p>
+<ul>
+<li><strong>For each possible explanation of the sample, count all the ways the sample could happen.</strong></li>
+<li><strong>Explanations with more ways to produce the sample are more plausible</strong></li>
+</ul>
+<p>The meaning of this may not be clear at first, but we will work through our data to get an intuition about it.</p>
+</div>
+</div>
+<p>Firstly, let’s rephrase the description of Bayesian data analysis above, to be specific to our experiment:</p>
+<ul>
+<li>For each <strong>possible proportion of water on the globe</strong>, count all the ways <strong>the observed sample of tosses could happen.</strong></li>
+<li><strong>Proportions</strong> with more ways to produce the sample are more plausible.</li>
+</ul>
+<section id="what-planets-are-possible" class="level3 page-columns page-full" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="what-planets-are-possible"><span class="header-section-number">7.1.1</span> What planets are possible?</h3>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-tetra-possibilities" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tetra-possibilities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/tetra-possibilities.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tetra-possibilities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: The five possible sets of faces on <strong>Tetrahedron Earth</strong>: 0%, 25%, 50%, 75%, and 100% water.
+</figcaption>
+</figure>
+</div>
+</div></div><p>There are a <em>lot</em> of possible proportions of water on the globe, between 0 (all land) and 1 (all water). In fact <em>there are an infinite number of possible proportions!</em> But that’s a bit much to start with, so let’s build up from a set of smaller possibilities. We’ll begin by pretending that the Earth is a <em>tetrahedron</em> (<a href="#fig-world-tetra" class="quarto-xref">Figure&nbsp;<span>7.1</span></a>)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>We’ll also pretend that each face of this <strong>Tetrahedron Earth</strong> can <em>either</em> be water or land. So there are five possibilities in total:</p>
+<ol type="1">
+<li>All four faces are land (0% water)</li>
+<li>Three faces are land, one is water (25% water)</li>
+<li>Two faces are land, two are water (50% water)</li>
+<li>One face is land, three are water (75% water)</li>
+<li>All four faces are water (100% water)</li>
+</ol>
+<p>and we represent these in <a href="#fig-tetra-possibilities" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>.</p>
+</section>
+<section id="the-most-plausible-planet-small-sample" class="level3 page-columns page-full" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="the-most-plausible-planet-small-sample"><span class="header-section-number">7.1.2</span> The most plausible planet (small sample)</h3>
+<p>Now suppose that we’ve made the first three observations in our sampling from <a href="wet_earth.html" class="quarto-xref"><span>Chapter 5</span></a>: <code>L</code>, <code>W</code>, <code>L</code> (<a href="#fig-three-observations" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>), for two “land” (<code>L</code>) and one “water” (<code>W</code>). We want to calculate how many ways we could have seen this outcome (two <code>L</code> and one <code>W</code>), for each of the possible proportions in <a href="#fig-tetra-possibilities" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-three-observations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-three-observations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/three-observations.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three-observations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: The first three observations: <code>L</code>, <code>W</code>, <code>L</code>.
+</figcaption>
+</figure>
+</div>
+</div></div><div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The outcomes, with 25% water
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We’ll demonstrate the way the calculation works for a single possibility: where <strong>Tetrahedron Earth</strong> has a single “water” face, and three “land” faces. Let’s think about each of the observations in turn:</p>
+<ol type="1">
+<li>The first observation is <code>L</code>. There are <em>three</em> “land” faces, so there are <strong>3</strong> ways this result could have been generated.</li>
+<li>The second observation is <code>W</code>. There is <em>one</em> “water” face, so there is <strong>1</strong> way this result could have been generated, so there are <span class="math inline">\(3 \times 1 = 3\)</span> ways that the first two results (<code>L</code>, <code>W</code>) could have been generated.</li>
+<li>The third observation is <code>L</code>. There are <em>three</em> “land” faces, so there are <strong>3</strong> ways this result could have been generated. This means that there are <span class="math inline">\(3 \times 1 \times 3 = 9\)</span> ways that the result sequence <code>L</code>, <code>W</code>, <code>L</code> could have been generated.</li>
+</ol>
+</div>
+</div>
+<p>We can repeat this kind of counting procedure to identify the number of ways the outcome <code>L</code>, <code>W</code>, <code>L</code> could have been produced, for each of our five possibilities (<a href="#fig-three-obs-calc" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>). When we do so, the 25% water planet can give rise to the data in the greatest number of ways, so is the most plausible explanation of the data, and <strong>we should expect that </strong>Tetrahedron Earth** has one “water” face, and three “land” faces**.</p>
+<div id="fig-three-obs-calc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-three-obs-calc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/three-obs-calc.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three-obs-calc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: The number of ways we can obtain the outcome <code>L</code>, <code>W</code>, <code>L</code> for each of the five possibilities of <strong>Tetrahedron Earth</strong>. There are no ways that an “all-water” or “all-land” Earth could produce this outcome: they are completely inconsistent with the evidence. The 25% water possibility can give rise to the observations in nine ways; the 50% water planet in eight ways; and the 75% water planet in 3 ways. The 25% water planet can give rise to the observations in the greatest number of ways, so is the most plausible explanation of the data.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Small sample sizes lead to “noisy” estimates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Although we have identified the most likely possibility for <strong>Tetrahedron Earth</strong> as 25% water because this configuration can generate the data in the greatest number of ways, <strong>this is not the whole story</strong>.</p>
+<p>What really matters is not the <em>largest count</em>, but the <strong>relative sizes of the counts</strong>. Right now, the 25% water and 50% water planet options have very similar counts. This is due to the small sample size, so there’s not a lot of <em>evidence</em> about which of the two options is most likely.</p>
+<p><strong>This is a good feature of statistical analysis.</strong> We don’t want our analysis to be overconfident with small samples.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="the-most-plausible-planet-whole-sample" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="the-most-plausible-planet-whole-sample"><span class="header-section-number">7.2</span> The most plausible planet (whole sample)</h2>
+<p>Let’s consider our full set of ten observations: <code>L</code> <code>W</code> <code>L</code> <code>L</code> <code>W</code> <code>W</code> <code>W</code> <code>L</code> <code>W</code> <code>W</code>. We can repeat the analysis above, to see what difference having more data makes to the plausibility of each possible <strong>Tetrahedron Earth</strong> (<a href="#fig-ten-obs-calc" class="quarto-xref">Figure&nbsp;<span>7.5</span></a>)</p>
+<div id="fig-ten-obs-calc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ten-obs-calc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/ten-obs-calc.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ten-obs-calc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.5: The number of ways we can obtain the ten observations from <a href="wet_earth.html" class="quarto-xref"><span>Chapter 5</span></a> for each of the five possibilities of <strong>Tetrahedron Earth</strong>. There are no ways that an “all-water” or “all-land” Earth could produce the observations. The 25% water possibility can give rise to the observations in 81 ways; the 50% water planet in 1,024 ways; and the 75% water planet in 729 ways. The 50% water planet can give rise to the observations in the greatest number of ways, so is the most plausible explanation of the data. The availability of more data has changed our assessment of the most plausible planet.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We now have a different most plausible planet. The 50% water version of <strong>Tetrahedron Earth</strong> can generate the sample in 1024 ways, far more than the 25% water planet. With 81 ways of generating the sample, the 25% water planet lags a long way behind the 75% water planet. But the relative counts for 50% water and 75% water are still quite similar (1024 and 729), so there is possibly not enough evidence here to be decisive about which is most plausible.</p>
+<p><strong>There is still uncertainty in our assessment of the most plausible planet.</strong></p>
+</div>
+</div>
+</section>
+<section id="the-most-probable-planet" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="the-most-probable-planet"><span class="header-section-number">7.3</span> The most probable planet</h2>
+<p>In Statistics we tend to deal with probabilities, and it is useful and usual to convert our evaluation of the most plausible explanations from <a href="#fig-ten-obs-calc" class="quarto-xref">Figure&nbsp;<span>7.5</span></a> into probabilities, as in <a href="#fig-ten-obs-prob" class="quarto-xref">Figure&nbsp;<span>7.6</span></a>.</p>
+<p>The <em>probability</em> of an outcome is the proportion of all relevant events that we would expect to have that outcome. For example, a fair coin has two sides: Heads and Tails. There are two possible outcomes, and “Heads” is one of them, so we would expect the outcome “Heads” to occur about <span class="math inline">\(\frac{1}{2} = 0.5 = 50\%\)</span> of the time. In exactly the same way, we simply take the sum of ways our sample can be produced (which is 1834) and, for each possible planet, divide the number of ways it could generate the sample by that total.</p>
+<div id="fig-ten-obs-prob" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ten-obs-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/ten-obs-prob.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ten-obs-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.6: To calculate the probability with which each of the five possible <strong>Tetrahedron Earths</strong> could have generated the sample data, we divide the number of ways they each could have generated the sample by the total number of ways the sample could have been generated (1834). The 50% water planet has a probability of about 56% of being the actual configuration of the planet, given the possibilities.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Another reason for working with probabilities is that the number of ways we can produce large samples becomes enormous and unwieldy to calculate with. Working with probabilities keeps the work manageable on a computer.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Having calculated probabilities for the most likely configuration of <strong>Tetrahedron Earth</strong>, given the data we collected, it appears that there’s a 56% probability that it has two water faces, and 40% probability that it has three water faces.</p>
+<p><strong>We are still working with a small sample size, and these two outcomes have similar probabilities.</strong></p>
+</div>
+</div>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>There are Bayesian equivalents of all of these tests, but that’s beyond the scope of this workshop.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A regular Platonic solid with four faces.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -771,13 +1021,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./causal_models.html" class="pagination-link" aria-label="Causal Models">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Causal Models</span></span>
+      <a href="./globe_model.html" class="pagination-link" aria-label="Modelling the Experiment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./power.html" class="pagination-link" aria-label="Power Calculations and Sample Size">
-        <span class="nav-page-text">Power Calculations and Sample Size</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./dodecahedron.html" class="pagination-link" aria-label="Icosahedron Earth">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -789,7 +1039,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/dags.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/globe_analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

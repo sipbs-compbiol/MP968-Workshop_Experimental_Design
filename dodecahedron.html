@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>4&nbsp; Causal Models – MP968: Experimental Design Workshop</title>
+<title>8&nbsp; Icosahedron Earth – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./measurement.html" rel="next">
-<link href="./problem.html" rel="prev">
+<link href="./power.html" rel="next">
+<link href="./globe_analysis.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,11 +104,42 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -83,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cause_and_effect.html">Cause and Effect</a></li><li class="breadcrumb-item"><a href="./causal_models.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Models</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./dodecahedron.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -162,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./causal_models.html" class="sidebar-item-text sidebar-link active">
+  <a href="./causal_models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Models</span></span></a>
   </div>
 </li>
@@ -197,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dodecahedron.html" class="sidebar-item-text sidebar-link">
+  <a href="./dodecahedron.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></span></a>
   </div>
 </li>
@@ -331,19 +396,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-a-causal-model" id="toc-what-is-a-causal-model" class="nav-link active" data-scroll-target="#what-is-a-causal-model"><span class="header-section-number">4.1</span> What is a causal model?</a>
+  <li><a href="#calculating-probabilities" id="toc-calculating-probabilities" class="nav-link active" data-scroll-target="#calculating-probabilities"><span class="header-section-number">8.1</span> Calculating probabilities</a>
   <ul class="collapse">
-  <li><a href="#your-beliefs-about-the-system-are-the-causal-model" id="toc-your-beliefs-about-the-system-are-the-causal-model" class="nav-link" data-scroll-target="#your-beliefs-about-the-system-are-the-causal-model"><span class="header-section-number">4.1.1</span> Your beliefs about the system are the causal model</a></li>
+  <li><a href="#testing-tetrahedron-earth" id="toc-testing-tetrahedron-earth" class="nav-link" data-scroll-target="#testing-tetrahedron-earth"><span class="header-section-number">8.1.1</span> Testing Tetrahedron Earth</a></li>
+  <li><a href="#probabilities-for-icosahedron-earth" id="toc-probabilities-for-icosahedron-earth" class="nav-link" data-scroll-target="#probabilities-for-icosahedron-earth"><span class="header-section-number">8.1.2</span> Probabilities for Icosahedron Earth</a></li>
+  <li><a href="#what-if-we-used-a-larger-number-of-faces" id="toc-what-if-we-used-a-larger-number-of-faces" class="nav-link" data-scroll-target="#what-if-we-used-a-larger-number-of-faces"><span class="header-section-number">8.1.3</span> What if we used a larger number of faces?</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/causal_models.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/dodecahedron.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cause_and_effect.html">Cause and Effect</a></li><li class="breadcrumb-item"><a href="./causal_models.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Models</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measurement.html">Measurement</a></li><li class="breadcrumb-item"><a href="./dodecahedron.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-causal-models" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Models</span></span></h1>
+<h1 class="title"><span id="sec-dodecahedron" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></span></h1>
 </div>
 
 
@@ -360,53 +427,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-is-a-causal-model" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="what-is-a-causal-model"><span class="header-section-number">4.1</span> What is a causal model?</h2>
-<p>A causal model is a system where if we change one variable in the model, we will also modify some variables in the model. The variable we change is called a <em>cause</em> and the variables that respond suffer the <em>effects</em>.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Of course, the Earth isn’t a tetrahedron, but an <a href="https://en.wikipedia.org/wiki/Figure_of_the_Earth">oblate spheroid</a>, and there are an infinite number of points we could measure on its surface, not just four distinct faces. To get closer to this shape, we’re going to change our model from a tetrahedron to another regular Platonic solid: am icosahedron, with 20 faces.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-world-icosa" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-world-icosa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/world_icosa.png" class="img-fluid figure-img">
 </div>
-<div class="callout-title-container flex-fill">
-Correlation does not imply causation
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-world-icosa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: The Earth, projected onto an icosahedron. Image by <a href="https://www.johndcook.com/blog/2018/08/22/globe-regular-solids/">John D. Cook</a>
+</figcaption>
+</figure>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You will probably have <strong>correctly</strong> heard phrases like “<em>correlation does not imply causation</em>” in reference to the observation that just because you can identify two values apparently changing together, that doesn’t mean that the change in one value <em>causes</em> the other to change. The relationship might be the reverse of what you think (after all, an association between two sets values could run in either direction - the direction is not evident from the data alone), or it may be pure coincidence. There’s even a whole website dedicated to such <a href="https://www.tylervigen.com/spurious-correlations">spurious correlations</a>.</p>
-<p>It turns out that <em>causation does not imply correlation</em> either, but this is a complex topic that we don’t have time to get into in a single workshop about experimental design.</p>
-<p>The statment “<em>correlation does not imply causation</em>” is often used dismissively to demean the role of statistics, but that’s unfair. It <em>is</em> possible to estimate causal effects using statistics, but <strong>all of the information about causal relationships comes from the researcher</strong>.</p>
-</div>
-</div>
-<p>When we talk about <em>causes</em> and <em>effects</em> in the context of a <em>statistical association</em> (such as correlation) it is usually intended to mean one of two things:</p>
-<ol type="1">
-<li><strong>The estimate or prediction of the consequences of an intervention</strong>: e.g.&nbsp;if you administer a drug, there is an effect such as reduction in blood glucose concentration. In an experimental context you are often aiming to set up a system where a single intervention of interest (such as administration of a drug) is being made, and the consequences measured.</li>
-<li><strong>The imputation of a missing observation</strong> - where you play “what if?” games by substituting values which you have not directly measured to see what changes in the system might result. You might measure the reduction of blood glucose concentration in response to a drug, and from this be able to calculate the amount of drug that was delivered. In general, this allows us to construct <em>unobserved counterfactual outcomes</em>, where we can imagine an outcome (lower blood glucose by 4mM) and work out what dose of drug to give to achieve it.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-A tangible example
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>If you are aware of, or propose, a <em>causal relationship</em> you are expressing the belief that you can predict the consequences of an intervention.</p>
-<p>For example, if you look out of the window and see trees swaying, and there is some wind, you know the two are connected because you intuitively understand that the <em>wind is causing the trees to sway</em>, not that the trees are moving and creating the wind.</p>
-<p>But suppose you were an alien from another planet with no knowledge of the Earth, and simply measured windspeed and tree movement. You would find a correlation, but there would be only a <em>statistical association</em>. There would be nothing in the data itself to tell you which was the cause and which was the effect.</p>
-<p>But you, a mere Earthling <strong>know</strong> the causal relationship and the nature of the intervention: <strong>wind makes trees sway</strong>. If you climbed into the tree and rocked it, you would not generate wind. But if you measured the amount by which a tree sways, you could make an estimate of the prevailing windspeed.</p>
-</div>
-</div>
-</div>
-<p>All information about causal relationships comes from <strong>the scientists’ understanding of the world</strong> or, more to the point, <strong>their understanding of the experimental system</strong>.</p>
-<section id="your-beliefs-about-the-system-are-the-causal-model" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="your-beliefs-about-the-system-are-the-causal-model"><span class="header-section-number">4.1.1</span> Your beliefs about the system are the causal model</h3>
-<p>The assumptions and beliefs you have that cause you to consider setting up your experiment are a kind of causal model.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+</div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -416,23 +450,269 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For instance, if you believe that reaction times get slower when someone has drunk alcohol, then your causal model is that <em>alcohol consumption</em> <strong>causes</strong> <em>change in reaction times</em>.</p>
+<p>Changing our model of the Earth to <strong>Icosahedron Earth</strong>, with 20 faces, is still artificial. But it will allow us to see the shape of the probability distribution as we change the number of samples we take, more clearly.</p>
 </div>
 </div>
-<p>You would design your experiment to enable measurements of alcohol consumption and reaction time to be measured, and you might look to find a statistical association. But if you <em>did</em> find a statistical association, your causal interpretation (e.g.&nbsp;that “reaction time slows with increasing alcohol dose”) would be the result of your beliefs about the experimental system, not a result of simply running statistical analysis on the dataset.</p>
-<div id="fig-spiderman-causal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="calculating-probabilities" class="level2 page-columns page-full" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="calculating-probabilities"><span class="header-section-number">8.1</span> Calculating probabilities</h2>
+<p>We define that <strong>Icosahedron Earth</strong> has 20 faces, with each face being either “water” (<code>W</code>) or “land (<code>L</code>). This implies that there are 21 possibilities, from”all water,” through “one land, 19 water,” all the way to “all land.” It would take us quite a while to calculate out and show the possibilities explicitly. Happily, being in the age of modern computational statistics we can use <a href="https://www.r-project.org/">the <code>R</code> language</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to do the calculations for us and visualise the result.</p>
+<section id="testing-tetrahedron-earth" class="level3 page-columns page-full" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="testing-tetrahedron-earth"><span class="header-section-number">8.1.1</span> Testing Tetrahedron Earth</h3>
+<p>The code below calculates these probabilities for our observations in <a href="wet_earth.html" class="quarto-xref"><span>Chapter 5</span></a>, on Tetrahedron Earth:</p>
+<blockquote class="blockquote">
+<p><code>L W L L W W W L W W</code></p>
+</blockquote>
+<p>and reproduces the values from <a href="globe_analysis.html#fig-ten-obs-prob" class="quarto-xref">Figure&nbsp;<span>7.6</span></a> in <a href="#tbl-tetra-post" class="quarto-xref">Table&nbsp;<span>8.1</span></a>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Return the posterior distribution of p, the proportion of points (faces) </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># on the planet's surface that are water, given a sample in the form</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># c("W", "L", "W") and a number of faces.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># By default the number of faces is four, representing Tetrahedron Earth.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Adapted from Statistical Rethinking, by Richard McElreath</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># (https://www.youtube.com/watch?v=R1vcdhPBlXA)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>compute_posterior <span class="ot">&lt;-</span> <span class="cf">function</span>(sample, <span class="at">faces=</span><span class="dv">4</span>, <span class="at">round_to=</span><span class="dv">3</span>) {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  W <span class="ot">&lt;-</span> <span class="fu">sum</span>(sample <span class="sc">==</span> <span class="st">"W"</span>)  <span class="co"># Waters observed</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  L <span class="ot">&lt;-</span> <span class="fu">sum</span>(sample <span class="sc">==</span> <span class="st">"L"</span>)  <span class="co"># Lands observed</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  possibilities <span class="ot">=</span> faces <span class="sc">+</span> <span class="dv">1</span>  <span class="co"># Number of possible probabilities</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  proportions <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out=</span>possibilities)  <span class="co"># The possibile proportions of water</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate the number of ways the sample data could be generated</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  ways <span class="ot">&lt;-</span> <span class="fu">sapply</span>(proportions, <span class="cf">function</span>(q) (q <span class="sc">*</span> faces) <span class="sc">^</span> W <span class="sc">*</span> ( (<span class="dv">1</span><span class="sc">-</span>q) <span class="sc">*</span> faces ) <span class="sc">^</span> L )</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate the posterior distribution</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  posterior <span class="ot">&lt;-</span> ways<span class="sc">/</span><span class="fu">sum</span>(ways)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Return a data.frame of the possibilities and ways</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>( <span class="at">proportion=</span><span class="fu">factor</span>(proportions), ways,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>              <span class="at">probability=</span><span class="fu">round</span>(posterior, round_to))</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># The observations we have already made</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>observations <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L"</span>, <span class="st">"W"</span>, <span class="st">"L"</span>, <span class="st">"L"</span>, <span class="st">"W"</span>, <span class="st">"W"</span>, <span class="st">"W"</span>, <span class="st">"L"</span>, <span class="st">"W"</span>, <span class="st">"W"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the resulting distribution</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>distn_tetra <span class="ot">&lt;-</span> <span class="fu">compute_posterior</span>(observations, <span class="dv">4</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabulate the result</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>distn_tetra <span class="sc">|&gt;</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">format=</span><span class="st">"html"</span>, <span class="at">align=</span><span class="st">"c"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>), <span class="at">full_width =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-tetra-post" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tetra-post-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.1: For Tetrahedron Earth, each possibile proportion of surface water, the corresponding ways the observed outcome could be generated, and the <em>posterior probability</em> that the Tetrahedron Earth we sampled from has that proportion of surface water.
+</figcaption>
+<div aria-describedby="tbl-tetra-post-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:center;"> proportion </th>
+   <th style="text-align:center;"> ways </th>
+   <th style="text-align:center;"> probability </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 0.000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0.25 </td>
+   <td style="text-align:center;"> 81 </td>
+   <td style="text-align:center;"> 0.044 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0.5 </td>
+   <td style="text-align:center;"> 1024 </td>
+   <td style="text-align:center;"> 0.558 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0.75 </td>
+   <td style="text-align:center;"> 729 </td>
+   <td style="text-align:center;"> 0.397 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 0.000 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>As we are using modern computational statistics in <code>R</code>, we can also visualise the distribution using the code below, in <a href="#fig-tetra-post" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>.</p>
+<div class="cell page-columns page-full">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the Tetrahedron Earth distribution as a histogram</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(distn_tetra, <span class="fu">aes</span>(<span class="at">x=</span>proportion, <span class="at">y=</span>probability)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"darkolivegreen4"</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div id="fig-tetra-post" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-spiderman-causal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/inference_spiderman.jpg" class="img-fluid figure-img" style="width:80.0%">
+<div aria-describedby="fig-tetra-post-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="dodecahedron_files/figure-html/fig-tetra-post-1.png" class="img-fluid figure-img" width="576">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spiderman-causal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Experimental design, causal (statistical) inference, and the (statistical) description of a system all depend on the existence of a well-constructed scientific (causal) model. <a href="https://github.com/rmcelreath/stat_rethinking_2023">Meme</a> by Richard McElreath, CC0
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tetra-post-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: A histogram of the probabilities that each possible form of Tetrahedron Earth could have produced the observed sequence of observations.
 </figcaption>
 </figure>
+</div>
+</div></div></div>
+<p>We can see visually and intuitively in <a href="#fig-tetra-post" class="quarto-xref">Figure&nbsp;<span>8.2</span></a> that the <em>posterior probability distribution</em> skews to the right, and there is not much to choose between the 50% and 75% water planets.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Our analysis here, as is the case for traditional <em>frequentist</em> analysis, does not give us a single point value as output to tell us “this form of <strong>Tetrahedron Earth</strong> is the one that generate the observed sample data. It gives us a <em>probability distribution</em> that we then must interpret.</p>
+<p>You are probably used to interpreting the outputs of <em>t</em>-tests and similar statistical analyses in terms of whether a probability is greater or less than some threshold value. It is important to recognise that this probability comes from a <em>distribution</em> of possibilities as well. The difference here is that we are making that distribution explicit, and not applying a threshold.</p>
+</div>
+</div>
+</section>
+<section id="probabilities-for-icosahedron-earth" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="probabilities-for-icosahedron-earth"><span class="header-section-number">8.1.2</span> Probabilities for Icosahedron Earth</h3>
+<p>We wrote the code above to calculate <em>posterior probabilities</em> in <code>R</code>, and so we can reuse the code to investigate circumstances different to Tetrahedron Earth. Specifically, we are interested to know what happens if we have a “more realistic” (but still highly artificial) model: <strong>Icosahedron Earth</strong>, with 20 faces that are either “water” or “land”. We can calculate this using the code below.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate posterior probabilities for Icosahedron Earth</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>distn_icosa <span class="ot">&lt;-</span> <span class="fu">compute_posterior</span>(observations, <span class="at">faces=</span><span class="dv">20</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the Tetrahedron Earth distribution as a histogram</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(distn_icosa, <span class="fu">aes</span>(<span class="at">x=</span>proportion, <span class="at">y=</span>probability)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"darkolivegreen4"</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-icosa-post" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-icosa-post-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="dodecahedron_files/figure-html/fig-icosa-post-1.png" class="img-fluid figure-img" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-icosa-post-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.3: A histogram of the probabilities that each possible form of Icosahedron Earth (with 20 faces) could have produced the observed sequence of observations.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Visually we can now see that the distribution is much <em>smoother</em> and starts to resemble the <em>parametric probability distributions</em> you might already be familiar with.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interpreting the distribution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The distribution in <a href="#fig-icosa-post" class="quarto-xref">Figure&nbsp;<span>8.3</span></a> is much more informative than that in <a href="#fig-tetra-post" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>. The overall shape of the probability distribution is clearer, and we can see it looks like a skewed bell shape, with a <em>modal</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> value of 0.6, implying that the most likely surface water distribution is 60% of the surface of <strong>Icosahedron Earth</strong>.</p>
+<p>We can also see that the bulk of the estimates lie between 0.45 and 0.75, suggesting that the analysis is most <em>confident</em> that the true distribution lies somewhere between these values<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>We haven’t increased the number of samples we have taken or values we have observed</strong></p>
+<p>We have only made our <em>model Earth</em> more representative of the “real” situation of an oblate spheroid Earth.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Although the estimate of the most likely value for <span class="math inline">\(p\)</span> has become more precise, the <em>y</em>-axis tells us that the <strong>probability of any specific value of <span class="math inline">\(p\)</span> being the “true” value has fallen</strong>, and the relative probability of nearby possible values for <span class="math inline">\(p\)</span> is very similar.</p>
+</div>
+</div>
+</section>
+<section id="what-if-we-used-a-larger-number-of-faces" class="level3" data-number="8.1.3">
+<h3 data-number="8.1.3" class="anchored" data-anchor-id="what-if-we-used-a-larger-number-of-faces"><span class="header-section-number">8.1.3</span> What if we used a larger number of faces?</h3>
+<p>We might think that if we continue to increase the level of detail in our model, we will keep increasing the precision of our estimate. We can see what the distribution would look like for a model Earth with 100 faces, using the code below.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate posterior probabilities for Icosahedron Earth</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>distn_hundo <span class="ot">&lt;-</span> <span class="fu">compute_posterior</span>(observations, <span class="at">faces=</span><span class="dv">100</span>, <span class="at">round_to=</span><span class="dv">5</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the Tetrahedron Earth distribution as a histogram</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(distn_hundo, <span class="fu">aes</span>(<span class="at">x=</span>proportion, <span class="at">y=</span>probability)) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"darkolivegreen4"</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-100-post" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-100-post-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="dodecahedron_files/figure-html/fig-100-post-1.png" class="img-fluid figure-img" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-100-post-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.4: A histogram of the posterior probabilities, using an Earth with 100 faces.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We do see that the estimate of the most likely proportion <span class="math inline">\(p\)</span> is more <em>precise</em>, but the relative probability of nearby values is also very similar.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a trade-off between the <em>precision</em> of our estimate of the most likely proportion <span class="math inline">\(p\)</span>, and our <em>confidence</em> in that estimate being the most likely proportion.</p>
+</div>
 </div>
 
 
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This entire online book is written in the <code>R</code> language. It’s rather powerful and flexible.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Most common<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>This leads to the concept of <em>confidence intervals</em> and <em>credibility intervals</em>, which we don’t have time to cover.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -858,13 +1138,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./problem.html" class="pagination-link" aria-label="The Problem With Statistics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Problem With Statistics</span></span>
+      <a href="./globe_analysis.html" class="pagination-link" aria-label="Tetrahedron Earth">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./measurement.html" class="pagination-link" aria-label="Measurement">
-        <span class="nav-page-text">Measurement</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./power.html" class="pagination-link" aria-label="Power Calculations and Sample Size">
+        <span class="nav-page-text">Power Calculations and Sample Size</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -876,7 +1156,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/causal_models.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/dodecahedron.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
