@@ -78,8 +78,7 @@ book:
         - communicate.qmd
         - templates.qmd
         
-    - part: summary.qmd
-    
+    - summary.qmd
     - references.qmd
     - further_reading.qmd
 
