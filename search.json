@@ -923,6 +923,39 @@
     ]
   },
   {
+    "objectID": "templates.html",
+    "href": "templates.html",
+    "title": "25  EDA Templates",
+    "section": "",
+    "text": "25.1 Find a template",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>EDA Templates</span>"
+    ]
+  },
+  {
+    "objectID": "templates.html#find-a-template",
+    "href": "templates.html#find-a-template",
+    "title": "25  EDA Templates",
+    "section": "",
+    "text": "Click on the Templates button (Figure 25.1)\nCLick on the next template arrow at the top right of the template page until you reach Template 4, Example 4 - Effect of exercise on neuronal density (Figure 25.2)\n\n\n\n\n\n\n\nFigure 25.2: Each template page shows the starting diagram, and presents a short list of the key features of the template. A written account of the experiment is provided at the bottom of the page, which can be used as a guide when describing your own experiment for funding bodies, and in publication Methods sections.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>EDA Templates</span>"
+    ]
+  },
+  {
+    "objectID": "templates.html#use-the-template",
+    "href": "templates.html#use-the-template",
+    "title": "25  EDA Templates",
+    "section": "25.2 Use the template",
+    "text": "25.2 Use the template\n\nClick on the Use this diagram as a template link (on the right of the template page, as in Figure 25.2)\n\nThis opens a new tab in the browser, and populates the design tool with a base starting diagram (Figure 25.3)\n\n\n\n\n\n\nFigure 25.3: The EDA design tool on initial population by a template file. The graph layout and connections are pre-prepared, but all details specific to an experiment remain to be filled in.",
+    "crumbs": [
+      "NC3Rs EDA",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>EDA Templates</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",
