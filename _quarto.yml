@@ -76,6 +76,7 @@ book:
         - analysis_suggestion.qmd
         - sample_size.qmd
         - communicate.qmd
+        - templates.qmd
     
     - references.qmd
     - further_reading.qmd

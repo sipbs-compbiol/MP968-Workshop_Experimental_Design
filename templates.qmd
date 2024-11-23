@@ -1,0 +1,22 @@
+# EDA Templates {#sec-templates}
+
+It can take quite a bit of work to create a new EDA diagram from scratch, especially for complex experiments.
+
+The `Templates` button at the top of the NC3Rs EDA page (@fig-eda-templates-1) links to some template diagrams with common basic experimental designs, that you can customise for your own purposes. Some of these templates are listed below.
+
+![The top-level links on the NC3Rs EDA design page. The `Templates` button links to usable templates for common experimental designs.](assets/images/eda-templates-1.png){#fig-eda-templates-1 width=80%}
+
+## Find a template
+
+1. Click on the `Templates` button (@fig-eda-templates-1)
+2. CLick on the `next template` arrow at the top right of the template page until you reach **Template 4**, `Example 4 - Effect of exercise on neuronal density` (@fig-eda-templates-2)
+
+![Each template page shows the starting diagram, and presents a short list of the key features of the template. A written account of the experiment is provided at the bottom of the page, which can be used as a guide when describing your own experiment for funding bodies, and in publication Methods sections.](assets/images/eda-templates-2.png){#fig-eda-templates-2 width=80%}
+
+## Use the template
+
+1. Click on the `Use this diagram as a template` link (on the right of the template page, as in @fig-eda-templates-2)
+
+This opens a new tab in the browser, and populates the design tool with a base starting diagram (@fig-eda-templates-3)
+
+![The EDA design tool on initial population by a template file. The graph layout and connections are pre-prepared, but all details specific to an experiment remain to be filled in.](assets/images/eda-templates-3.png){#fig-eda-templates-3 width=80%}
