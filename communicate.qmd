@@ -51,9 +51,11 @@ Please be patient! It takes a little while to generate the design report.
 ### Reading the report
 
 ::: {.callout-tip}
-An example Experimental Design Report for this study can be downloaded at the link below.
+An example Experimental Design Report for this study can be downloaded at the link, or read in the embedded version below.
 
 - [Experimental Design Report](assets/reports/EDA_Report_MP968_Workshop.pdf)
+
+{{< pdf assets/reports/EDA_Report_MP968_Workshop.pdf width=100% height=400 >}}
 :::
 
 The report provides key information about your experiment, including:
@@ -77,6 +79,8 @@ We did not complete these fields not because they should be ignored, but because
 :::
 
 The report also details advice that the EDA tool provided to us in its critique of the diagram, and indicates what advice it provided for statistical analysis.
+
+Finally, the report includes a copy of the diagram you created.
 
 ## Create a read-only diagram
 
