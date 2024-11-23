@@ -12,7 +12,7 @@ To do this, we're going to use a _Bayesian_ statistical approach, rather than ki
 
 :::
 
-## Our Bayesian approach
+## A Bayesian approach
 
 _Bayesian Inference_ in scientific data analysis can be quite simple.
 
