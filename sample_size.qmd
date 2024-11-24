@@ -1,6 +1,8 @@
 # Estimate Sample Size {@sec-sample-size}
 
-Our final design diagram is complete, with no critique errors, and an analysis suggestion of **one-way ANOVA with blocking factor(s)**. We can now use the EDA's `Sample Size Calculation` tool to estimate the required number of individuals per group, to achive a certain level of statistical power.
+Our final design diagram is complete, with no critique errors, and an analysis suggestion of **one-way ANOVA with blocking factor(s)**. We can now use the EDA's `Sample Size Calculation` tool to estimate the required number of individuals per group, to achive a certain level of statistical power[^5].
+
+[^5]: The sample size calculator in NC3Rs EDA is adequate for many experiments, but you may encounter more complex designs that are beyond its capabilities. In those cases you might use a tool like `G*Power` (see @sec-gpower).
 
 ::: {.callout-important}
 In order to be able to estimate a suitable sample size, the tool needs the researcher to provide realistic values for:

@@ -1,2 +1,164 @@
 # Using G*Power {#sec-gpower}
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+# Package imports
+library(ggplot2)
+library(kableExtra)
+
+# Set seed for reproducibility
+set.seed(12345)
+```
+
+I hope by now you are convinced by the argument that _a priori_[^1] power analysis is an important part of designing experiments, and in the design of experiments where there are ethical considerations governing the numbers of experimental subjects, such as those using animals, in particular.
+
+[^1]: Before the experiment takes place.
+
+Unfortunately, power analysis is frequently overlooked by many scientists in their own experimental designs. The oversight is sometimes deliberate, and justified by arguments along the lines of "power analyses are too complex to perform"[^2] (@Mayr2007-ev) Happily, there are widely-available software packages that make power calculations more accessible for all researchers.
+
+[^2]: Although it could be noted that, if the _power analysis_ is too complex for the researcher, we should be open to the possibility that the _experiment_ is too complex for the researcher.
+
+In this chapter, we will walk through a calculation of power analysis using the widely-available and easy to use package `G*Power`(@Faul2007-le).
+
+::: {.callout-note}
+`G*Power` is a powerful software tool that can compute power calculations for a very wide range of statistical analyses, and several _types_ of power calculation, including:
+
+- **_a priori_ power calculation**: conducted before the experiment is performed
+- **_post-hoc_ power calculation**: conducted **after** the experiment is performed - I would _strongly discourage_ the use of _post hoc_ power calculations.
+- **sensitivity**: if the sample size is known, calculates for a given _desired staistical power_ what effect size would be required to achieve that statistical power
+
+It is beyond the scope of this workshop to consider all the possible circumstances that `G*Power` can accommodate, and our goal here is to introduce you to the basic functionality of the program.
+:::
+
+## Useful links
+
+- [`G*Power` home page](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower); download `G*Power` from this site
+- [`G*Power` manual](https://www.psychologie.hhu.de/fileadmin/redaktion/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/gpower/GPowerManual.pdf)
+
+## `G*Power` Walkthrough: one-sample _t_-test
+
+In this walkthrough we will consider a simple statistical analysis to determine whether the average weight of ten mice is statistically different from 25g. 
+
+### Preliminary questions and assumptions
+
+This is about as simple a case as we might want to consider, but we still need to answer some questions before we start:
+
+::: {.callout-warning collapse="true"}
+## What statistical test do we want to perform?
+
+- We know that mean values of samples from populations tend to follow a Normal distribution, so this suggests **a _t_-test** is appropriate.
+- We are testing the mean of a sample against a single hypothesised central value, so this is **a _one-sample_ _t_-test**.
+- As we want to know if the sample mean is different from that single stated value, we require **a _two-tailed test_**.
+:::
+
+::: {.callout-warning collapse="true"}
+## What do we want to know from the analysis?
+
+- We want to **determine an appropriate sample size** for our experiment
+:::
+
+
+::: {.callout-warning collapse="true"}
+## What kind of power analysis do we want to carry out?
+
+- As we want to know a good sample size for our experiment, before the experiment is conducted, this is **an _a priori_ power calculation**. 
+:::
+
+::: {.callout-warning collapse="true"}
+## What statistical power do we want?
+
+- We will use a standard funder's requirements of 80% power at a $P < 0.05$ threshold for statistical significance.
+  - i.e. $\alpha = 0.05, \beta = 0.2, 1 - \beta = 0.8$
+:::
+
+::: {.callout-warning collapse="true"}
+## What is the expected effect size, and expected variation in the sample?
+
+- We will assume that a 10% difference in weight from the target 25g is meaningful, for an **effect size of 2.5g**.
+- We will assume that the weight of individuals in the sample has a **standard deviation of about 1.25g**
+  - i.e. $\sigma = 1.25$
+:::
+
+### Walkthrough
+
+1. Open the `G*Power` application, to see the default settings (@fig-gp-1).
+
+![The opening view of `G*Power`. This presents three panels: at the top is a space where output will be shown; in the middle, we can select the _kind_ of statistical analysis we want to perform (`Test family`, `Statistical test`), and the kind of power analysis we'd like to carry out (`Type of power analysis`); below this is a set of fields where we can enter parameters for the power calculation, and where results will be displayed.](assets/images/gp-1.png){#fig-gp-1 width=80%}
+
+2. Set the appropriate values for the statistical analysis we want to perform: **one-sample, two-tailed _t_-test** (@fig-gp-2).
+
+![The appropriate `G*Power` settings for our analysis. The `Test family` was already set to `t tests`, but we had to change (i) the `Statistical test` option to `Means: Difference from constant (one sample case)`, (ii) `Type of power analysis` to `A priori: Compute required sample size - given $\alpha$, power, and effect size`, and `Tail(s)` to be `Two`.](assets/images/gp-2.png){#fig-gp-2 width=80%}
+
+3. Set input parameters for statistical power and significance. We have chosen a statistical significance threshold of $\alpha = 0.05$ and power as $1 - \beta = 0.8$, and can enter these values directly (@fig-gp-3). 
+
+![The `Input Parameters` pane of `G*Power` with appropriate values set for statistical power and significance.](assets/images/gp-3.png){#fig-gp-3 width=80%}
+
+4. We still have to enter the effect size in the `Input Parameters`. `G*Power` expects something called **Cohen's _d_**, not the absolute effect size of 2.5g - so we must calculate this. Click on the `Determine` button to open the effect size drawer and enter appropriate values for `Mean H0`[^3], `Mean H1`[^4], and `$\sigma err prob`[^5], then click `Calculate and transfer to main window` (@fig-gp-4).
+
+[^3]: This is the null hypothesis - for us, the null hypothesis is that there is no difference between the mean of our sample and the constant value of 25g, so set this to be `25`.
+[^4]: This is the expected mean of the _alternative hypothesis_. Our assumed effect size of 2.5g implies that this expected mean is 27.5g.
+[^5]: This is the estimate of the _standard deviation of the population_. Our estimate is that this is 1.25g.
+
+::: {.callout-important collapse="true"}
+## Cohen's _d_
+
+Cohen's _d_ is an _effect size index_, which is a way of turning the expected means and variations from comparisons at very different quantitative scales into a single comparable value. To calculate _d_, we use the equation:
+
+$d = \frac{\mu - \mu_0}{\sigma}$
+
+where
+
+- $\mu$ is the mean of the null hypothesis
+- $\mu_0$ is the mean of the alternate hypothesis
+- $\sigma$ is the estimate fo the (unknown) standard deviation in the population
+:::
+
+![The `G*Power` effect size window with our hypothesised mean values, and standard deviation, reporting a Cohen's _d_ for this comparison of 2. The `Calculate and transfer to main window` button has been pressed, which populates the `Effect size d` field of the `Input parameters` pane.](assets/images/gp-4.png){#fig-gp-4 width=80%}
+
+5. Click the `Calculate` button to obtain the results of the power calculation (@fig-gp-5).
+
+![The results of the power calculation. The predicted sample size is provided in the `Output parameters` pane, and a graphical representation of the likely statistical outcomes given the input parameters is shown in the topmost pane. Clicking on `Protocol of power analyses` provides a summary of the power calculation settings.](assets/images/gp-5.png){#fig-gp-5 width=80%}
+
+6. Click on the `X-Y plot for a range of values` button. This will bring up a new `Power Plot` window, automatically populated with the settings from our analysis (@fig-gp-6).
+
+![A blank `Power Plot` window, autopopulated with values from our power analysis.](assets/images/gp-6.png){#fig-gp-6 width=80%}
+
+7. Click on the `Draw plot` button to obtain a graph showing how required sample size varies with desired power, with our analysis settings (@fig-gp-7).
+
+![The `Power Plot` window, showing how sample size varies with desired power, for our chosen settings.](assets/images/gp-7.png){#fig-gp-7 width=80%}
+
+8. You can save the graph as a `.pdf` file as shown below, by choosing `File -> Save x-y plot` from the top menu (@fig-gp-8).
+
+::: {.column-margin}
+
+![The `File -> Save x-y plot` option to save the `Power Plot` graph.](assets/images/gp-8.png){#fig-gp-8 width=80%}
+
+:::
+
+{{< pdf assets/papers/gp-9.pdf width=100% height=400 >}}
+
+### Interpreting the output
+
+The results indicate that we need a sample size of at least $N = 5$ experimental units to ensure a power $1 - \beta \geq 0.8$, with $\alpha = 0.05$.
+
+::: {.callout-important}
+The _actual_ power achieved with this sample size $N = 5$ is $1 - \beta = 0.9088849$, which is higher than that requested. We can use the `Power Plot` graph output to investigate how the predicted power of the experiment would change if we modified the sample size $N$.
+:::
+
+## Manual and Tutorial
+
+::: {.callout-note collapse="true"}
+## G*Power Manual
+The current manual is found at [this link](https://www.psychologie.hhu.de/fileadmin/redaktion/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/gpower/GPowerManual.pdf).
+
+{{< pdf assets/papers/GPowerManual.pdf width=100% height=400 >}}
+:::
+
+::: {.callout-note collapse="true"}
+## G*Power Tutorial
+
+This tutorial is published as @Mayr2007-ev.
+
+{{< pdf assets/papers/GPowerShortTutorial.pdf width=100% height=400 >}}
+:::
