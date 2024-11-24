@@ -1,2 +1,46 @@
 # Summary {#sec-summary .unnumbered}
 
+We have covered a lot of ground in this workshop, and I hope you have enjoyed working through the material.
+
+Our primary goal was to help you learn how to use the [NC3Rs EDA](https://eda.nc3rs.org.uk/) tool to **visualise the design of your experiment**, to get feedback about **improving or refining the experimental design**, and how to use it to **obtain advice about statistical analyses and sample sizes**.
+
+To get to that point, we had to review or introduce a number of concepts and ideas.
+
+::: {.callout-important}
+## Your beliefs and assumptions about cause and effect, and experimental design
+
+In @sec-problem and @sec-causal-models we considered the fundamental issue that **the data you collect does not contain information about causes and effects**. Specifically, we discussed how **your beliefs and assumptions about an experiment are the causal model for that experiment**, and that your experimental design reflects those beliefs.
+:::
+
+::: {.callout-note}
+## How sample size affects the values we estimate in an experiment
+
+Next we used a toy example of estimating the proportion of the Earth's surface that is covered with water to explore some of the details about **measuring and estimating values in an experiment**, which are important to consider.
+
+- In @sec-wet-earth we discussed how **the values we collect in an experiment lead to _estimates_ of "true" values** (such as the average effect of administering a drug)
+- In @sec-model-earth we **built a causal graph to explain our beliefs about what variables affect our experimental measurements**, as is good practice in experimental design
+- Then, in @sec-globe-analysis we **worked through calculations using a model system**, to understand how our experimental measurements _estimate_ the "true" value of the system we are working with.
+- We expanded our analysis in @sec-dodecahedron using the `R` language, and a more complex model system, to see that **for the same experimental data, our choice of model affects our conclusions**. We also noted that **our experimental estimate is a distribution, not a single point**, and there is a necessary trade-off between the precision of our estimate, and our confidence in that value being exactly accurate.
+- Finally, in @sec-observations, we worked through a _generative simulation_ of our experiment (which is good practice!), and saw how **the number of experimental units affects the precision and confidence we can have in our estimated value**.
+:::
+  
+::: {.callout-warning}
+## Power calculations describe what can be learned from statistical analysis of an experiment
+
+We worked through the definition of statistical power and how to calculate it, and discussed some of the implications for how we interpret our experiments.
+
+- In @sec-power-considerations we defined statistical power, and how **statistical power tells us what conclusions can reasonably be drawn from statistical analysis** of an experiment.
+- We looked in more detail at experimental results where our estimates have large variance in @sec-underpowered. These **_underpowered experiments_ lead to uninformative results and misleading conclusions**.
+- We next discussed some practical issues around the choice of a target effect size, in @sec-effect-sizes, noting that **it is usually better to design your experiment to increase effect size than to increase sample size**.
+- Finally in @sec-gpower we worked through a practical example of **how to estimate sample size for a desired statistical power**, using the `G*Power` software.
+:::
+
+::: {.callout-tip}
+## The NC3Rs EDA can help us design better experiments
+
+Finally, we worked through the complete design, critique, and analysis of an experiment using the NC3Rs EDA tool, including how to share the resulting design with others.
+:::
+
+## Final Notes
+
+Experimental design is a large and diverse field, and to become competent in experimental design takes time, and requires practice (which also involves making mistakes, at times). It requires some knowledge and understanding of statistics, applied mathematics, and a detailed understanding of the scientific field that you are working in. No single workshop can tell you everything you need to know about experimental design - in fact, as researchers we never stop learning about experimental design - but there are excellent resources available to help you, whatever stage of your career you are at. Please do use the [Further Reading](further_reading.qmd) section as a jumping-off point to learn more as you continue your journey as a scientist.
