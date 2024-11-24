@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -71,10 +91,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -330,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -350,11 +399,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#useful-links" id="toc-useful-links" class="nav-link active" data-scroll-target="#useful-links"><span class="header-section-number">13.1</span> Useful links</a></li>
+  <li><a href="#gpower-walkthrough-one-sample-t-test" id="toc-gpower-walkthrough-one-sample-t-test" class="nav-link" data-scroll-target="#gpower-walkthrough-one-sample-t-test"><span class="header-section-number">13.2</span> <code>G*Power</code> Walkthrough: one-sample <em>t</em>-test</a>
+  <ul class="collapse">
+  <li><a href="#preliminary-questions-and-assumptions" id="toc-preliminary-questions-and-assumptions" class="nav-link" data-scroll-target="#preliminary-questions-and-assumptions"><span class="header-section-number">13.2.1</span> Preliminary questions and assumptions</a></li>
+  <li><a href="#walkthrough" id="toc-walkthrough" class="nav-link" data-scroll-target="#walkthrough"><span class="header-section-number">13.2.2</span> Walkthrough</a></li>
+  <li><a href="#interpreting-the-output" id="toc-interpreting-the-output" class="nav-link" data-scroll-target="#interpreting-the-output"><span class="header-section-number">13.2.3</span> Interpreting the output</a></li>
+  </ul></li>
+  <li><a href="#manual-and-tutorial" id="toc-manual-and-tutorial" class="nav-link" data-scroll-target="#manual-and-tutorial"><span class="header-section-number">13.3</span> Manual and Tutorial</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/g_power.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./power.html">Power Calculations and Sample Size</a></li><li class="breadcrumb-item"><a href="./g_power.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Using G*Power</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -375,8 +437,349 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>I hope by now you are convinced by the argument that <em>a priori</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> power analysis is an important part of designing experiments, and in the design of experiments where there are ethical considerations governing the numbers of experimental subjects, such as those using animals, in particular.</p>
+<p>Unfortunately, power analysis is frequently overlooked by many scientists in their own experimental designs. The oversight is sometimes deliberate, and justified by arguments along the lines of “power analyses are too complex to perform”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (<span class="citation" data-cites="Mayr2007-ev">Mayr et al. (<a href="references.html#ref-Mayr2007-ev" role="doc-biblioref">2007</a>)</span>) Happily, there are widely-available software packages that make power calculations more accessible for all researchers.</p>
+<p>In this chapter, we will walk through a calculation of power analysis using the widely-available and easy to use package <code>G*Power</code>(<span class="citation" data-cites="Faul2007-le">Faul et al. (<a href="references.html#ref-Faul2007-le" role="doc-biblioref">2007</a>)</span>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>G*Power</code> is a powerful software tool that can compute power calculations for a very wide range of statistical analyses, and several <em>types</em> of power calculation, including:</p>
+<ul>
+<li><strong><em>a priori</em> power calculation</strong>: conducted before the experiment is performed</li>
+<li><strong><em>post-hoc</em> power calculation</strong>: conducted <strong>after</strong> the experiment is performed - I would <em>strongly discourage</em> the use of <em>post hoc</em> power calculations.</li>
+<li><strong>sensitivity</strong>: if the sample size is known, calculates for a given <em>desired staistical power</em> what effect size would be required to achieve that statistical power</li>
+</ul>
+<p>It is beyond the scope of this workshop to consider all the possible circumstances that <code>G*Power</code> can accommodate, and our goal here is to introduce you to the basic functionality of the program.</p>
+</div>
+</div>
+<section id="useful-links" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="useful-links"><span class="header-section-number">13.1</span> Useful links</h2>
+<ul>
+<li><a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower"><code>G*Power</code> home page</a>; download <code>G*Power</code> from this site</li>
+<li><a href="https://www.psychologie.hhu.de/fileadmin/redaktion/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/gpower/GPowerManual.pdf"><code>G*Power</code> manual</a></li>
+</ul>
+</section>
+<section id="gpower-walkthrough-one-sample-t-test" class="level2 page-columns page-full" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="gpower-walkthrough-one-sample-t-test"><span class="header-section-number">13.2</span> <code>G*Power</code> Walkthrough: one-sample <em>t</em>-test</h2>
+<p>In this walkthrough we will consider a simple statistical analysis to determine whether the average weight of ten mice is statistically different from 25g.</p>
+<section id="preliminary-questions-and-assumptions" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="preliminary-questions-and-assumptions"><span class="header-section-number">13.2.1</span> Preliminary questions and assumptions</h3>
+<p>This is about as simple a case as we might want to consider, but we still need to answer some questions before we start:</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What statistical test do we want to perform?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>We know that mean values of samples from populations tend to follow a Normal distribution, so this suggests <strong>a <em>t</em>-test</strong> is appropriate.</li>
+<li>We are testing the mean of a sample against a single hypothesised central value, so this is <strong>a <em>one-sample</em> <em>t</em>-test</strong>.</li>
+<li>As we want to know if the sample mean is different from that single stated value, we require <strong>a <em>two-tailed test</em></strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What do we want to know from the analysis?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>We want to <strong>determine an appropriate sample size</strong> for our experiment</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What kind of power analysis do we want to carry out?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>As we want to know a good sample size for our experiment, before the experiment is conducted, this is <strong>an <em>a priori</em> power calculation</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What statistical power do we want?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>We will use a standard funder’s requirements of 80% power at a <span class="math inline">\(P &lt; 0.05\)</span> threshold for statistical significance.
+<ul>
+<li>i.e.&nbsp;<span class="math inline">\(\alpha = 0.05, \beta = 0.2, 1 - \beta = 0.8\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is the expected effect size, and expected variation in the sample?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>We will assume that a 10% difference in weight from the target 25g is meaningful, for an <strong>effect size of 2.5g</strong>.</li>
+<li>We will assume that the weight of individuals in the sample has a <strong>standard deviation of about 1.25g</strong>
+<ul>
+<li>i.e.&nbsp;<span class="math inline">\(\sigma = 1.25\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="walkthrough" class="level3 page-columns page-full" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="walkthrough"><span class="header-section-number">13.2.2</span> Walkthrough</h3>
+<ol type="1">
+<li>Open the <code>G*Power</code> application, to see the default settings (<a href="#fig-gp-1" class="quarto-xref">Figure&nbsp;<span>13.1</span></a>).</li>
+</ol>
+<div id="fig-gp-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gp-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/gp-1.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gp-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.1: The opening view of <code>G*Power</code>. This presents three panels: at the top is a space where output will be shown; in the middle, we can select the <em>kind</em> of statistical analysis we want to perform (<code>Test family</code>, <code>Statistical test</code>), and the kind of power analysis we’d like to carry out (<code>Type of power analysis</code>); below this is a set of fields where we can enter parameters for the power calculation, and where results will be displayed.
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Set the appropriate values for the statistical analysis we want to perform: <strong>one-sample, two-tailed <em>t</em>-test</strong> (<a href="#fig-gp-2" class="quarto-xref">Figure&nbsp;<span>13.2</span></a>).</li>
+</ol>
+<div id="fig-gp-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gp-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/gp-2.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gp-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.2: The appropriate <code>G*Power</code> settings for our analysis. The <code>Test family</code> was already set to <code>t tests</code>, but we had to change (i) the <code>Statistical test</code> option to <code>Means: Difference from constant (one sample case)</code>, (ii) <code>Type of power analysis</code> to <code>A priori: Compute required sample size - given $\alpha$, power, and effect size</code>, and <code>Tail(s)</code> to be <code>Two</code>.
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Set input parameters for statistical power and significance. We have chosen a statistical significance threshold of <span class="math inline">\(\alpha = 0.05\)</span> and power as <span class="math inline">\(1 - \beta = 0.8\)</span>, and can enter these values directly (<a href="#fig-gp-3" class="quarto-xref">Figure&nbsp;<span>13.3</span></a>).</li>
+</ol>
+<div id="fig-gp-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gp-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/gp-3.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gp-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.3: The <code>Input Parameters</code> pane of <code>G*Power</code> with appropriate values set for statistical power and significance.
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>We still have to enter the effect size in the <code>Input Parameters</code>. <code>G*Power</code> expects something called <strong>Cohen’s <em>d</em></strong>, not the absolute effect size of 2.5g - so we must calculate this. Click on the <code>Determine</code> button to open the effect size drawer and enter appropriate values for <code>Mean H0</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, <code>Mean H1</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, and <code>$\sigma err prob</code><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, then click <code>Calculate and transfer to main window</code> (<a href="#fig-gp-4" class="quarto-xref">Figure&nbsp;<span>13.4</span></a>).</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cohen’s <em>d</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Cohen’s <em>d</em> is an <em>effect size index</em>, which is a way of turning the expected means and variations from comparisons at very different quantitative scales into a single comparable value. To calculate <em>d</em>, we use the equation:</p>
+<p><span class="math inline">\(d = \frac{\mu - \mu_0}{\sigma}\)</span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\mu\)</span> is the mean of the null hypothesis</li>
+<li><span class="math inline">\(\mu_0\)</span> is the mean of the alternate hypothesis</li>
+<li><span class="math inline">\(\sigma\)</span> is the estimate fo the (unknown) standard deviation in the population</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="fig-gp-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gp-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/gp-4.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gp-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.4: The <code>G*Power</code> effect size window with our hypothesised mean values, and standard deviation, reporting a Cohen’s <em>d</em> for this comparison of 2. The <code>Calculate and transfer to main window</code> button has been pressed, which populates the <code>Effect size d</code> field of the <code>Input parameters</code> pane.
+</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Click the <code>Calculate</code> button to obtain the results of the power calculation (<a href="#fig-gp-5" class="quarto-xref">Figure&nbsp;<span>13.5</span></a>).</li>
+</ol>
+<div id="fig-gp-5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gp-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/gp-5.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gp-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.5: The results of the power calculation. The predicted sample size is provided in the <code>Output parameters</code> pane, and a graphical representation of the likely statistical outcomes given the input parameters is shown in the topmost pane. Clicking on <code>Protocol of power analyses</code> provides a summary of the power calculation settings.
+</figcaption>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Click on the <code>X-Y plot for a range of values</code> button. This will bring up a new <code>Power Plot</code> window, automatically populated with the settings from our analysis (<a href="#fig-gp-6" class="quarto-xref">Figure&nbsp;<span>13.6</span></a>).</li>
+</ol>
+<div id="fig-gp-6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gp-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/gp-6.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gp-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.6: A blank <code>Power Plot</code> window, autopopulated with values from our power analysis.
+</figcaption>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Click on the <code>Draw plot</code> button to obtain a graph showing how required sample size varies with desired power, with our analysis settings (<a href="#fig-gp-7" class="quarto-xref">Figure&nbsp;<span>13.7</span></a>).</li>
+</ol>
+<div id="fig-gp-7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gp-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/gp-7.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gp-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.7: The <code>Power Plot</code> window, showing how sample size varies with desired power, for our chosen settings.
+</figcaption>
+</figure>
+</div>
+<ol start="8" type="1">
+<li>You can save the graph as a <code>.pdf</code> file as shown below, by choosing <code>File -&gt; Save x-y plot</code> from the top menu (<a href="#fig-gp-8" class="quarto-xref">Figure&nbsp;<span>13.8</span></a>).</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-gp-8" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gp-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/gp-8.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gp-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.8: The <code>File -&gt; Save x-y plot</code> option to save the <code>Power Plot</code> graph.
+</figcaption>
+</figure>
+</div>
+</div></div><p><object data="assets/papers/gp-9.pdf" type="application/pdf" width="100%" height="400"><a href="assets/papers/gp-9.pdf" download="">Download PDF file.</a></object></p>
+</section>
+<section id="interpreting-the-output" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="interpreting-the-output"><span class="header-section-number">13.2.3</span> Interpreting the output</h3>
+<p>The results indicate that we need a sample size of at least <span class="math inline">\(N = 5\)</span> experimental units to ensure a power <span class="math inline">\(1 - \beta \geq 0.8\)</span>, with <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <em>actual</em> power achieved with this sample size <span class="math inline">\(N = 5\)</span> is <span class="math inline">\(1 - \beta = 0.9088849\)</span>, which is higher than that requested. We can use the <code>Power Plot</code> graph output to investigate how the predicted power of the experiment would change if we modified the sample size <span class="math inline">\(N\)</span>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="manual-and-tutorial" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="manual-and-tutorial"><span class="header-section-number">13.3</span> Manual and Tutorial</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+G*Power Manual
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The current manual is found at <a href="https://www.psychologie.hhu.de/fileadmin/redaktion/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/gpower/GPowerManual.pdf">this link</a>.</p>
+<p><object data="assets/papers/GPowerManual.pdf" type="application/pdf" width="100%" height="400"><a href="assets/papers/GPowerManual.pdf" download="">Download PDF file.</a></object></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+G*Power Tutorial
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This tutorial is published as <span class="citation" data-cites="Mayr2007-ev">Mayr et al. (<a href="references.html#ref-Mayr2007-ev" role="doc-biblioref">2007</a>)</span>.</p>
+<p><object data="assets/papers/GPowerShortTutorial.pdf" type="application/pdf" width="100%" height="400"><a href="assets/papers/GPowerShortTutorial.pdf" download="">Download PDF file.</a></object></p>
+</div>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Faul2007-le" class="csl-entry" role="listitem">
+Faul, Franz, Edgar Erdfelder, Albert-Georg Lang, and Axel Buchner. 2007. <span>“<span>G*Power</span> 3: A Flexible Statistical Power Analysis Program for the Social, Behavioral, and Biomedical Sciences.”</span> <em>Behav. Res. Methods</em> 39 (2): 175–91.
+</div>
+<div id="ref-Mayr2007-ev" class="csl-entry" role="listitem">
+Mayr, Susanne, Edgar Erdfelder, Axel Buchner, and Franz Faul. 2007. <span>“A Short Tutorial of <span>GPower</span>.”</span> <em>Tutor. Quant. Methods Psychol.</em> 3 (2): 51–59.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Before the experiment takes place.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Although it could be noted that, if the <em>power analysis</em> is too complex for the researcher, we should be open to the possibility that the <em>experiment</em> is too complex for the researcher.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>This is the null hypothesis - for us, the null hypothesis is that there is no difference between the mean of our sample and the constant value of 25g, so set this to be <code>25</code>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This is the expected mean of the <em>alternative hypothesis</em>. Our assumed effect size of 2.5g implies that this expected mean is 27.5g.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>This is the estimate of the <em>standard deviation of the population</em>. Our estimate is that this is 1.25g.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -819,7 +1222,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/g_power.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/g_power.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

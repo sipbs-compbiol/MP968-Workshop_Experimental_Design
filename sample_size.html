@@ -359,7 +359,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -411,7 +411,7 @@ window.Quarto = {
 </header>
 
 
-<p>Our final design diagram is complete, with no critique errors, and an analysis suggestion of <strong>one-way ANOVA with blocking factor(s)</strong>. We can now use the EDA’s <code>Sample Size Calculation</code> tool to estimate the required number of individuals per group, to achive a certain level of statistical power.</p>
+<p>Our final design diagram is complete, with no critique errors, and an analysis suggestion of <strong>one-way ANOVA with blocking factor(s)</strong>. We can now use the EDA’s <code>Sample Size Calculation</code> tool to estimate the required number of individuals per group, to achive a certain level of statistical power<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -426,9 +426,9 @@ Important
 <ol type="1">
 <li>The <strong>effect size</strong> that the researcher wishes to detect in the comparison. This might be the size of effect considered “clinically relevant”, or assumed to be comparable to some previous treatment.</li>
 <li>The <strong>variability</strong> of the outcome measure being compared. Depending on how the analysis is being performed, this might be the average standard deviation across all measurements, or the expected variation (standard deviation) in the measured difference. These values typically come from previous experiments.</li>
-<li>The <strong>significance level</strong> of the hypothesis test, representing the threshold at which the null hypothesis would be discarded <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
-<li>The desired <strong>power</strong> of the experiment, i.e.&nbsp;the probability with which, if there is an effect of at least the stated <em>effect size</em> to be found, it will reach the stated <em>significance level</em> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</li>
-<li>The <strong>sidedness</strong> of the test. Generally, if the experiment aims to test for a <em>difference</em> but the direction of the difference is not known (the treatment may increase or decrease the size of a tumour, say), a <em>two-sided</em> test would be used. But if the direction of the desired effect <em>is</em> known (e.g.&nbsp;we wish to detect whether a treatment <em>decreases</em> the size of a tumour) a <em>one-sided</em> test should be used <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</li>
+<li>The <strong>significance level</strong> of the hypothesis test, representing the threshold at which the null hypothesis would be discarded <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</li>
+<li>The desired <strong>power</strong> of the experiment, i.e.&nbsp;the probability with which, if there is an effect of at least the stated <em>effect size</em> to be found, it will reach the stated <em>significance level</em> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</li>
+<li>The <strong>sidedness</strong> of the test. Generally, if the experiment aims to test for a <em>difference</em> but the direction of the difference is not known (the treatment may increase or decrease the size of a tumour, say), a <em>two-sided</em> test would be used. But if the direction of the desired effect <em>is</em> known (e.g.&nbsp;we wish to detect whether a treatment <em>decreases</em> the size of a tumour) a <em>one-sided</em> test should be used <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</li>
 </ol>
 </div>
 </div>
@@ -557,7 +557,7 @@ Using the decision tree
 <li><p>Decide on an expected variability in the outcome measure. This is usually determined from previous studies, but here we will assume that variability is 1mM/L, for the sake of the workshop. Enter the value 1 into the <strong>Variability</strong> field.</p></li>
 <li><p>Decide on a significance level for your statistical hypothesis test. This is under researcher control, and we will keep it at 0.05 for the purpose of the workshop.</p></li>
 <li><p>Decide on a suitable <em>power</em> (probability of avoiding a false negative error) for the statistical test. This is under researcher control, and power values of 0.8-0.9 are usually acceptable to funders. We will keep this value at 0.9 for the purpose of the workshop.</p></li>
-<li><p>Decide whether this will be a one- or two-sided test. As we have specified that we are expecting to see a <em>decrease</em> in blood glucose for a positive outcome, a one-sided <em>t</em>-test is appropriate and will give increased power for the same number of experimental subjects. Set the <strong>One or two-sided test</strong> field to 1 <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (<a href="#fig-sample-size-4" class="quarto-xref">Figure&nbsp;<span>23.5</span></a>).</p></li>
+<li><p>Decide whether this will be a one- or two-sided test. As we have specified that we are expecting to see a <em>decrease</em> in blood glucose for a positive outcome, a one-sided <em>t</em>-test is appropriate and will give increased power for the same number of experimental subjects. Set the <strong>One or two-sided test</strong> field to 1 <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (<a href="#fig-sample-size-4" class="quarto-xref">Figure&nbsp;<span>23.5</span></a>).</p></li>
 </ol>
 <div id="fig-sample-size-4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -623,10 +623,11 @@ Figure&nbsp;23.8: Click on the floppy disk icon to save the design to your exper
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Note that discarding the null hypothesis is not typically confirmatory of any specific alternative hypothesis.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Suppose the <em>effect size</em> is 0.5, and the <em>significance level</em> is 0.05. An experiment with <em>power</em> of 0.8 would detect a true effect size of 0.5, at <span class="math inline">\(P \leq 0.05\)</span> in approximately 80 out of every 100 times the experiment was run, assuming all statistical test assumptions are met.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>One-sided tests offer greater statistical power, for the same sample size, if the expected direction of change is known.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>The choice depends on our null hypothesis. If our null hypothesis is “drug A has no effect” we should use a two-sided <em>t</em>-test. If our null hypothesis is “drug A does not reduce blood glucose” we should use a one-sided <em>t</em>-test. The choice of null hypothesis is under researcher control.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>The sample size calculator in NC3Rs EDA is adequate for many experiments, but you may encounter more complex designs that are beyond its capabilities. In those cases you might use a tool like <code>G*Power</code> (see <a href="g_power.html" class="quarto-xref"><span>Chapter 13</span></a>).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Note that discarding the null hypothesis is not typically confirmatory of any specific alternative hypothesis.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Suppose the <em>effect size</em> is 0.5, and the <em>significance level</em> is 0.05. An experiment with <em>power</em> of 0.8 would detect a true effect size of 0.5, at <span class="math inline">\(P \leq 0.05\)</span> in approximately 80 out of every 100 times the experiment was run, assuming all statistical test assumptions are met.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>One-sided tests offer greater statistical power, for the same sample size, if the expected direction of change is known.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>The choice depends on our null hypothesis. If our null hypothesis is “drug A has no effect” we should use a two-sided <em>t</em>-test. If our null hypothesis is “drug A does not reduce blood glucose” we should use a one-sided <em>t</em>-test. The choice of null hypothesis is under researcher control.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
