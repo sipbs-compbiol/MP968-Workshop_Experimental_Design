@@ -1,4 +1,4 @@
-# Statistical Power Analysis
+# Statistical Power Analysis {#sec-power-considerations}
 
 The goal of experimental design is **not** to attain statistical significance with some (high) level of probability. The point of designing an experiment and conducting power analysis is to have a sense, both _before_ and _after_ data have been collected, of what can reasonably be learned from the statistical analysis.
 
