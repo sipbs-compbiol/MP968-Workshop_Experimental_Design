@@ -16,7 +16,7 @@ Even experienced scientists with many publications and long track records of res
 
 > "if the effects are large enough to be seen in a small study they must be real large effects”
 
-**Unfortunately, this is not true.** "Statistically significant" results from underpowered studies are highly likely to be exaggerated, and maybe even suggest that the effect acts in the wrong direction! (@fig-s-m-errors)
+**Unfortunately, this is not true.** "Statistically significant" results from underpowered studies are [highly likely to be exaggerated](http://www.stat.columbia.edu/~gelman/research/published/power5r.pdf), and maybe even suggest that the effect acts in the wrong direction! (@fig-s-m-errors)
 :::
 
 ```{r echo=FALSE}
