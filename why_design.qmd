@@ -86,6 +86,15 @@ Once a research hypothesis has been devised, _Experimental Design_ is the proces
 
 All measurement is associated with _irreducible error_, experimental subjects come with their own inherent variability, and even the best experimental design often fails to exclude all possible external causes of variation. Statistics is the branch of applied science that allows us to make _probabilistic inferences_ about certainty of measurements and experimental outcomes.
 
+::: { .callout-important title="What should I design my experiment for?"}
+In general, you should design your experiment specifically for:
+
+- your population or subject group (e.g. sex, age, prior history, etc.)
+- your intervention (e.g. drug treatment)
+- your contrast or comparison between groups (e.g. lung capacity, drug concentration, etc.)
+- your outcome (i.e. is there a measurable or clinically relevant effect)
+:::
+
 ::: { .callout-caution }
-But does all published science follow good practice in experimental design and statistics?
+Does all published science follow good practice in experimental design and statistics?
 :::
