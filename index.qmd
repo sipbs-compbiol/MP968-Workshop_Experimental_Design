@@ -2,4 +2,6 @@
 
 Welcome to the {{< var ay >}} edition of online supporting material for the MP968 workshop in Experimental Design.
 
-This is the first presentation of this material in this form, and we would be very grateful to hear feedback [by email]({{< var admin.email >}}) or through the [GitHub repository Issues page]({{< var github.issues >}}).
+This site presents some of the material we will go over in more detail, with interactive examples and walkthroughs of the practical work.
+
+If you encounter problems or would like to tell us what you like and would want to see more of, we would be very grateful to hear feedback [by email]({{< var admin.email >}}) or through the [GitHub repository Issues page]({{< var github.issues >}}).
