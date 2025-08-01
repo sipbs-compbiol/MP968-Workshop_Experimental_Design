@@ -10,6 +10,16 @@
     ]
   },
   {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "This section is intended as a short introduction to the workshop.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
     "objectID": "disclaimer.html",
     "href": "disclaimer.html",
     "title": "1  Disclaimer",
@@ -29,6 +39,16 @@
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Learning Objectives</span>"
+    ]
+  },
+  {
+    "objectID": "cause_and_effect.html",
+    "href": "cause_and_effect.html",
+    "title": "Cause and Effect",
+    "section": "",
+    "text": "In this part of the material, we are going to take a close look at the fundamental issue we care about when performing a scientific experiment: cause and effect. For this we need to be aware of something called Causal Inference, which is a large and separate field of study, but from which we will borrow some key ideas.",
+    "crumbs": [
+      "Cause and Effect"
     ]
   },
   {
@@ -62,6 +82,16 @@
     "crumbs": [
       "Cause and Effect",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Causal Models</span>"
+    ]
+  },
+  {
+    "objectID": "measurement.html",
+    "href": "measurement.html",
+    "title": "Measurement",
+    "section": "",
+    "text": "In this section of material, we are going to think about what it means to measure some kind of value. You’re all scientists and you will have measured things before, so you might think that you should be working with more advanced material - I can sympathise with that. But we’re going to look at measurement in a way that emphasises the role of scientific modelling and explores the idea of an estimate as a distribution of more- or less-likely possibilities rather than a single point value, and how sample size influences the shape and interpretation of that distribution.\n\n\n\n\n\n\nData Context\n\n\n\nThe example we are using is attempting to answer the question What proportion of the Earth’s surface is covered by water?”\nYou probably already have an idea of what proportion that is - about 70%. But pretend that you don’t already know.\nEven if you did already know, have you thought about…\n\nHow accurate is that value of 70%?\nHow would you go about measuring the exact surface area?\n\nAren’t there tides? And coastal erosion? And other things that might affect this?\n\n\nAren’t we really estimating the measurement?\nAnd, if we’re making an estimate, then don’t we need to try to understand how accurate our estimate might be?\n\n\nRather than develop these ideas in formal mathematical notation, this section is trying to develop some intuition about measurement, probability, and statistics.",
+    "crumbs": [
+      "Measurement"
     ]
   },
   {
@@ -124,7 +154,7 @@
     "href": "globe_model.html",
     "title": "6  Modelling the Experiment",
     "section": "",
-    "text": "6.1 Variables in this experiment\nVariables in an experiment include those things that you can observe and are expected to influence the measured outcomes of that experiment. These might be under your control (such as drug concentrations), or outside your control, but potentially influential (e.g. the sex of the subject, the technician working on that day, and so on).\nVariables can also represent things that you cannot observe, but want to estimate. For our example experiment here that would be the proportion of the Earth’s surface that is water. But in a “real” experiment this might be “the effect of the administered drug on blood glucose concentration.” We can’t measure that directly, the same way we can’t measure the proportion of the globe’s surface that is water, but we can estimate it with our experiment.\nVariables can be measured outcomes of an experiment. Here, our counts of the number of times our index fingers land on water (W) or land (L) are variables we will use in our estimate of the proportion of water on the Earth’s surface.",
+    "text": "6.1 Variables in this experiment\nBefore designing any experiment it is useful to think conceptually about what you know (or believe) about the way that the samples you will take and measure are produced by the system under study. This is primarily a scientific description of the experiment, not a statistical one.\nVariables in an experiment include those things that you can observe and are expected to influence the measured outcomes of that experiment. These might be under your control (such as drug concentrations), or outside your control, but potentially influential (e.g. the sex of the subject, the technician working on that day, and so on).\nVariables can also represent things that you cannot observe, but want to estimate. For our example experiment here that would be the proportion of the Earth’s surface that is water. But in a “real” experiment this might be “the effect of the administered drug on blood glucose concentration.” We can’t measure that directly, the same way we can’t measure the proportion of the globe’s surface that is water, but we can estimate it with our experiment.\nVariables can be measured outcomes of an experiment. Here, our counts of the number of times our index fingers land on water (W) or land (L) are variables we will use in our estimate of the proportion of water on the Earth’s surface.",
     "crumbs": [
       "Measurement",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Modelling the Experiment</span>"
@@ -179,7 +209,7 @@
     "href": "globe_analysis.html",
     "title": "7  Tetrahedron Earth",
     "section": "",
-    "text": "7.1 A Bayesian approach\nBayesian Inference in scientific data analysis can be quite simple.\nFirstly, let’s rephrase the description of Bayesian data analysis above, to be specific to our experiment:",
+    "text": "7.1 A Bayesian approach\nWe’re going to analyse our data statistically, in a way that I hope will give some intuition about the relationship between the quantity being estimated (for us, \\(p\\), the proportion ofthe Earth’s surface that is water), the observed measurements (\\(W\\) and \\(L\\), the counts of “water” and “land”), and the number of measurements we take.\nTo do this, we’re going to use a Bayesian statistical approach, rather than kinds of approaches you might be more used to (t-tests, ANOVA, linear regression, and the like)1.\nBayesian Inference in scientific data analysis can be quite simple.\nFirstly, let’s rephrase the description of Bayesian data analysis above, to be specific to our experiment:",
     "crumbs": [
       "Measurement",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Tetrahedron Earth</span>"
@@ -234,7 +264,7 @@
     "href": "dodecahedron.html",
     "title": "8  Icosahedron Earth",
     "section": "",
-    "text": "8.1 Calculating probabilities\nWe define that Icosahedron Earth has 20 faces, with each face being either “water” (W) or “land (L). This implies that there are 21 possibilities, from”all water,” through “one land, 19 water,” all the way to “all land.” It would take us quite a while to calculate out and show the possibilities explicitly. Happily, being in the age of modern computational statistics we can use the R language1 to do the calculations for us and visualise the result.",
+    "text": "8.1 Calculating probabilities\nOf course, the Earth isn’t a tetrahedron, but an oblate spheroid, and there are an infinite number of points we could measure on its surface, not just four distinct faces. To get closer to this shape, we’re going to change our model from a tetrahedron to another regular Platonic solid: am icosahedron, with 20 faces.\nWe define that Icosahedron Earth has 20 faces, with each face being either “water” (W) or “land (L). This implies that there are 21 possibilities, from”all water,” through “one land, 19 water,” all the way to “all land.” It would take us quite a while to calculate out and show the possibilities explicitly. Happily, being in the age of modern computational statistics we can use the R language1 to do the calculations for us and visualise the result.",
     "crumbs": [
       "Measurement",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Icosahedron Earth</span>"
@@ -267,7 +297,7 @@
     "href": "observations.html",
     "title": "9  How Many Observations?",
     "section": "",
-    "text": "9.1 Generative Simulation\nTo allow us to answer this question, we’re going to use a technique common in modern experimental design: Generative Simulation.\nIn Generative Simulation, we use our understanding of the system we’re studying, as encoded in the diagram in Figure 6.2. That figure tells us that the observations we make of the counts in \\(W\\) and \\(L\\) are influenced (only) by the value of \\(p\\), and the number of samples we draw.",
+    "text": "9.1 Generative Simulation\nWe’re attempting to estimate the proportion of the Earth’s surface that is covered with water, \\(p\\). We have decided to run an experiment where we sample random points on the surface of the globe to see whether they are “water” (W) or “land” (L), and we have been working with a sample of ten observations:\nBy using Tetrahedron Earth, Icosahedron Earth and some R code, we have seen that changing our model representation of the Earth from a shape with four sides to a shape with 20 sides (to a shape with 100 faces), we can make a trade-off between the precision of our estimate of the most likely value of \\(p\\), and the uncertainty we have that it is the most likely possible value.\nIn this chapter, we are going to see what kind of effect varying the number of observations we make has on our estimated distribution of of \\(p\\).\nTo allow us to answer this question, we’re going to use a technique common in modern experimental design: Generative Simulation.\nIn Generative Simulation, we use our understanding of the system we’re studying, as encoded in the diagram in Figure 6.2. That figure tells us that the observations we make of the counts in \\(W\\) and \\(L\\) are influenced (only) by the value of \\(p\\), and the number of samples we draw.",
     "crumbs": [
       "Measurement",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>How Many Observations?</span>"
@@ -307,11 +337,21 @@
     ]
   },
   {
+    "objectID": "power.html",
+    "href": "power.html",
+    "title": "Power Calculations and Sample Size",
+    "section": "",
+    "text": "In this section, we will consider the concept of statistical power, and learn how to calculate sample sizes with a widely-used software tool called G*Power\n\n\n\n\n\n\nStatistical Power\n\n\n\nStatistical power is the probability, before a study is performed, that a particular comparison will achieve “statistical significance” at some predetermined level.\nMore precisely, statistical power is the probability that the study will not return a false negative result, known in statistics jargon as a “Type II error”.\n\n\nThere are two decisions we need to make as researchers, if we want to design an experiment to have a certain statistical power:\n\nWhat threshold of statistical significance (p-value, or \\(\\alpha\\)) is appropriate?\nWhat rate of false negative results (“type II errors”) is acceptable to us at that significance level? (i.e. what statistical power do we want?)\n\nThese decisions are in your hands as the researcher although, as we will see, there may be constraints from outside sources, such as funding bodies.\n\n\n\n\n\n\nSample Size\n\n\n\nSample size is the number of experimental units (often, but not always, individuals in this context) used per group in the experiment.\nThe sample size for an experiment involving animals should be informed by a statistical power calculation and chosen such that the experiment is neither underpowered nor overpowered.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThere is no universally applicable sample size. An appropriate sample size should be calculated specifically for each experiment.\n\n\nWe can use power calculations to determine appropriate sample sizes. To do this we also need to make additional assumptions (or, if you prefer, “propose hypotheses”) about the future behaviour of data that has not yet been collected:\n\nThe desired effect size (e.g. a change in a value that is biologically meaningful, or a minimum level at which a change of value is recognised to be a change in the system)\nThe variation we expect to see in the measured outcomes (e.g. as a standard deviation)",
+    "crumbs": [
+      "Power Calculations and Sample Size"
+    ]
+  },
+  {
     "objectID": "power_considerations.html",
     "href": "power_considerations.html",
     "title": "10  Statistical Power Analysis",
     "section": "",
-    "text": "10.1 Describing the predicted power of an experiment\nStating the estimated power of an experiment just as a “percentage power” (i.e. the probability of a false negative result) is not enough, by itself. We need also to declare two important values that could reasonably differ, for an experiment with the same statistical power:\nIf we had decided that \\(P=0.05\\) was a suitable threshold for statistical significance, and that a change in blood glucose concentration of 2mM/L in response to administration of some drug was meaningful, we could say instead:",
+    "text": "10.1 Describing the predicted power of an experiment\nThe goal of experimental design is not to attain statistical significance with some (high) level of probability. The point of designing an experiment and conducting power analysis is to have a sense, both before and after data have been collected, of what can reasonably be learned from the statistical analysis.\nSo, suppose we design an experiment to have 80% (0.8) power…\nStating the estimated power of an experiment just as a “percentage power” (i.e. the probability of a false negative result) is not enough, by itself. We need also to declare two important values that could reasonably differ, for an experiment with the same statistical power:\nIf we had decided that \\(P=0.05\\) was a suitable threshold for statistical significance, and that a change in blood glucose concentration of 2mM/L in response to administration of some drug was meaningful, we could say instead:",
     "crumbs": [
       "Power Calculations and Sample Size",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Statistical Power Analysis</span>"
@@ -377,7 +417,7 @@
     "href": "effect_sizes.html",
     "title": "12  Effect Sizes",
     "section": "",
-    "text": "12.1 Power and sample size\nOnce we have settled on the structure of our experiment and made as many modifications as we can to reduce the effect of sources of variability that we can manage (such as including appropriate controls, and randomising/blocking our experimental design), one remaining factor under our control, as researchers, is the number of experimental units.\nSuppose that we have decided upon an acceptable threshold for statistical significance, and an acceptable statistical power. We may then also be concerned with the cost, or value1 of conducting the experiment.\nWe should therefore use sample size calculations, based on our statistical power calculations, to ensure that a study is neither under- nor over-powered for the stated purpose of the research.",
+    "text": "12.1 Power and sample size\nA significant challenge for power calculation in experimental design is knowing what effect size to assume. This is usually the target of the study and not known ahead of time.\nA number of strategies for choosing an effect size are possible, including:\nOnce we have settled on the structure of our experiment and made as many modifications as we can to reduce the effect of sources of variability that we can manage (such as including appropriate controls, and randomising/blocking our experimental design), one remaining factor under our control, as researchers, is the number of experimental units.\nSuppose that we have decided upon an acceptable threshold for statistical significance, and an acceptable statistical power. We may then also be concerned with the cost, or value1 of conducting the experiment.\nWe should therefore use sample size calculations, based on our statistical power calculations, to ensure that a study is neither under- nor over-powered for the stated purpose of the research.",
     "crumbs": [
       "Power Calculations and Sample Size",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Effect Sizes</span>"
@@ -421,7 +461,7 @@
     "href": "g_power.html",
     "title": "13  Using G*Power",
     "section": "",
-    "text": "13.1 Useful links",
+    "text": "13.1 Useful links\nI hope by now you are convinced by the argument that a priori1 power analysis is an important part of designing experiments, and in the design of experiments where there are ethical considerations governing the numbers of experimental subjects, such as those using animals, in particular.\nUnfortunately, power analysis is frequently overlooked by many scientists in their own experimental designs. The oversight is sometimes deliberate, and justified by arguments along the lines of “power analyses are too complex to perform”2 (Mayr et al. (2007)) Happily, there are widely-available software packages that make power calculations more accessible for all researchers.\nIn this chapter, we will walk through a calculation of power analysis using the widely-available and easy to use package G*Power(Faul et al. (2007)).",
     "crumbs": [
       "Power Calculations and Sample Size",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Using G*Power</span>"
@@ -472,11 +512,31 @@
     ]
   },
   {
+    "objectID": "nc3rs-eda.html",
+    "href": "nc3rs-eda.html",
+    "title": "NC3Rs EDA",
+    "section": "",
+    "text": "The Experimental Design Assistant (EDA)\nNC3Rs is a BBSRC and MRC-funded UK-based scientific organisation that works to help the research community to replace, refine, and reduce (the 3Rs) the use of animals in research and testing. They fund 3Rs research, train early career researchers, and provide services, information, and resources to the scientific community, animal care staff, and vets.\nThe EDA is a web application that can be used in any modern browser. It is intended to help researchers improve the design of animal experiments by making it simple to describe their experiment graphically and in detail, by creating a graphical representation of the experiment, annotated with essential experimental detail. Once created, the graph can be analysed by the tool to make suggestions of suitable statistical analyses, and to identify potential issues with the current design (Karp and Fry (2021)).\nThe tool also provides a number of functions that aid with randomisation and blinding in an experiment, and to help with calculating sample sizes for experimental groups, on the basis of power calculations. To some extent, the EDA system plays the role of a biostatistician, identifying features of the experimental design, and prompting the researcher to include information about their design, in the same way a statistician might.\nThe EDA is a powerful communication tool, allowing researchers rapidly to lay out an unambiguous experimental design, to be shared with other researchers, used in grant and licence applications, or in publications, as publication-quality illustrations.",
+    "crumbs": [
+      "NC3Rs EDA"
+    ]
+  },
+  {
+    "objectID": "nc3rs-eda.html#the-experimental-design-assistant-eda",
+    "href": "nc3rs-eda.html#the-experimental-design-assistant-eda",
+    "title": "NC3Rs EDA",
+    "section": "",
+    "text": "Figure 2: Landing page of the NC3Rs EDA website\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe Karp and Fry (2021) paper is an excellent resource to understand how the EDA can be used to describe and analyse several kinds of experimental design (e.g. completely randomised, cross-over, repeat measures, and hierarchical nested designs).\n\n\n\nGetting Started\nTo start using the EDA, you need to have an account at the NC3Rs site (Figure 2). The rest of the pages in this workshop chapter will walk you through the process of setting up an account and designing an experiment.\n\n\n\n\nKarp, Natasha A, and Derek Fry. 2021. “What Is the Optimum Design for My Animal Experiment?” BMJ Open Sci. 5 (1): e100126.",
+    "crumbs": [
+      "NC3Rs EDA"
+    ]
+  },
+  {
     "objectID": "eda_account.html",
     "href": "eda_account.html",
     "title": "14  EDA Account Setup",
     "section": "",
-    "text": "14.1 Setting up an account",
+    "text": "14.1 Setting up an account\nThis page will walk you through the process of setting up an account, so that you can use the NC3Rs EDA web application.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>EDA Account Setup</span>"
@@ -509,7 +569,7 @@
     "href": "workshop_experiment.html",
     "title": "15  The Workshop Experiment",
     "section": "",
-    "text": "15.1 The experimental description\nWe can describe our experiment in the usual way we’d approach writing a grant application (or, in the past tense, a Methods section) as something like:\nThis is a concise and accurate description of the experiment but, as is good practice, we will begin by laying out what we understand about the experiment that is relevant to the design.\nIt seems like we understand what we want to study, and how to control for outside influences that aren’t of direct interest, so this is enough information to begin constructing an EDA diagram describing the experiment.",
+    "text": "15.1 The experimental description\nIn this workshop we are going to build an EDA diagram from scratch to represent a simple experiment with the aim to test for the effect of novel drug on glucose levels in the plasma of diabetic mice.\nWe can describe our experiment in the usual way we’d approach writing a grant application (or, in the past tense, a Methods section) as something like:\nThis is a concise and accurate description of the experiment but, as is good practice, we will begin by laying out what we understand about the experiment that is relevant to the design.\nIt seems like we understand what we want to study, and how to control for outside influences that aren’t of direct interest, so this is enough information to begin constructing an EDA diagram describing the experiment.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>The Workshop Experiment</span>"
@@ -553,7 +613,7 @@
     "href": "create_new_diagram.html",
     "title": "16  Create a New Diagram",
     "section": "",
-    "text": "16.1 Create a new diagram\nClick on the blue New Diagram button (Figure 16.2). This will take you to a blank “Untitled diagram” canvas, where we will start to construct our experiment (Figure 16.3).\nWe can start to build our experimental design by adding an Experiment node.",
+    "text": "16.1 Create a new diagram\nTo create a new EDA diagram, first ensure that you are signed in to your account (Chapter 14), and navigate to the Dashboard page (Figure 16.1).\nClick on the blue New Diagram button (Figure 16.2). This will take you to a blank “Untitled diagram” canvas, where we will start to construct our experiment (Figure 16.3).\nWe can start to build our experimental design by adding an Experiment node.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Create a New Diagram</span>"
@@ -575,7 +635,7 @@
     "href": "add_experiment_node.html",
     "title": "17  Add an Experiment Node",
     "section": "",
-    "text": "17.1 Getting Help",
+    "text": "17.1 Getting Help\nThe first node we will add to our design is an Experiment node.\nThe Experiment node provides destails about the experimental hypotheses, and the effect of interest. It can contain a number of annotated properties, important to the experiment, including:\nand so on.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Add an Experiment Node</span>"
@@ -619,7 +679,7 @@
     "href": "group_assignment.html",
     "title": "18  Assign Experimental Units",
     "section": "",
-    "text": "18.1 Create the experimental subject group structure",
+    "text": "18.1 Create the experimental subject group structure\nAssignment of individuals to appropriate groups is an essential part of experimental design. The NC3Rs EDA provides two nodes to help us describe how this assignment is performed in an experiment:\nWe will carry out this process for our experimental design:",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Assign Experimental Units</span>"
@@ -652,7 +712,7 @@
     "href": "interventions.html",
     "title": "19  Define Interventions and Measurements",
     "section": "",
-    "text": "19.1 Create the experimental intervention structure",
+    "text": "19.1 Create the experimental intervention structure\nWe learned in Chapter 3 that when we perform an experiment we are interested in understanding causes, in terms of the causal model of our experimental system. We also learned that the definitions of cause and effect in a study come from us, as investigators. We set up our experiments with specific causal influences and outcomes in mind, and try to estimate the amount of the influence due to each cause. Or rationale for the causal relationships underlying this experiment is described in Chapter 15.\nWe identified two pharmacological interventions:\nIn our EDA these will each represented by a different Pharmacological intervention node, linked to the Group node that provides the individuals for that part of the experiment.\nAs the same measurement (plasma glucose level) is made for all individuals, we define a single Measurement node.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Define Interventions and Measurements</span>"
@@ -707,7 +767,7 @@
     "href": "critique1.html",
     "title": "20  Critique the Experiment",
     "section": "",
-    "text": "20.1 Run the Critique tool\nWhen the critique has finished, you will see a pop-up dialogue box describing the results of the analysis.",
+    "text": "20.1 Run the Critique tool\nEDA provides a number of tools to help us, as researchers, improve our experimental designs and make them more rigourous. Some of these, such as the Critique tool, embody rules and principles that would be applied by a competent statistician, if you brought one in to advise on your experiment. Using these tools can save you time, and be useful as a training aid so that we can see and understand elements of good and bad experimental design ourselves, with experience.\nIn this section, we will use the EDA Critique tool to get feedback on our basic experimental design.\nWhen the critique has finished, you will see a pop-up dialogue box describing the results of the analysis.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Critique the Experiment</span>"
@@ -828,7 +888,7 @@
     "href": "both_sexes.html",
     "title": "21  Monitor for Sex Effects",
     "section": "",
-    "text": "21.1 Expectations about sex in experimental design.\nAs part of a community-wide drive including funders, researchers, and authoritative bodies, to explicitly consider diversity in research design, there is an increased emphasis on ensuring that research includes all groups that have the potential to benefit from its findings. This is particularly a concern of the Medical Research Council (MRC), which funds medical research in the UK. Failure to account for sex in experimental design may lead to a study not being funded.\nOf particular importance in animal studies is the requirement for both sexes to be used in experimental design.\nIt is still possible to obtain funding from the MRC for single-sex studies, but only where there is strong justification for doing so. There are a number of possible justifications, including:",
+    "text": "21.1 Expectations about sex in experimental design.\nGenerally, as was the case for our initial critique, we would proceed by inspecting warnings from the Experiment node, first.\nWhen we described the initial design of this experiment (Chapter 15), we stated that we were not going to consider the effect of subject sex on drug efficacy:\nAnd, when we laid out our beliefs about the experiment, we were more explicit, noting that:\nAs part of a community-wide drive including funders, researchers, and authoritative bodies, to explicitly consider diversity in research design, there is an increased emphasis on ensuring that research includes all groups that have the potential to benefit from its findings. This is particularly a concern of the Medical Research Council (MRC), which funds medical research in the UK. Failure to account for sex in experimental design may lead to a study not being funded.\nOf particular importance in animal studies is the requirement for both sexes to be used in experimental design.\nIt is still possible to obtain funding from the MRC for single-sex studies, but only where there is strong justification for doing so. There are a number of possible justifications, including:",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Monitor for Sex Effects</span>"
@@ -872,7 +932,7 @@
     "href": "analysis_suggestion.html",
     "title": "22  Obtain an Analysis Suggestion",
     "section": "",
-    "text": "22.1 Run the Analysis Suggestion Tool\nThe Analysis Suggestion tool has recommended a one-way ANOVA with blocking factor(s) and we could now proceed to estimating sample sizes that would give us a desired level of statistical power.",
+    "text": "22.1 Run the Analysis Suggestion Tool\nEDA provides an Analysis Suggestion tool that is able to recommend statistical tests compatible with the design of your experiment. It is able to do this because the diagramming and critique process essentially asks the same questions a biostatistician would ask you, when helping you design your experiment.\nIn this part of the workshop, we will use this tool to get a suggestion from EDA for how to analyse data from the experiment.\nThe Analysis Suggestion tool has recommended a one-way ANOVA with blocking factor(s) and we could now proceed to estimating sample sizes that would give us a desired level of statistical power.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Obtain an Analysis Suggestion</span>"
@@ -905,7 +965,7 @@
     "href": "sample_size.html",
     "title": "23  Estimate Sample Size",
     "section": "",
-    "text": "23.1 Run the Sample Size Calculation Tool\nThe decision tree leads us to the box containing the advice to Use power calculation for an unpaired t-test, with variability as the average standard deviation of the outcome measurement being made.\n10. Populate the “Control” Group node with the recommended number of experimental units, using the Node properties dialogue box. Enter the number of experimental units, the number of animals, and add a justification for the choice of sample size (Figure 23.6). Click on Close to dismiss the dialogue.",
+    "text": "23.1 Run the Sample Size Calculation Tool\nOur final design diagram is complete, with no critique errors, and an analysis suggestion of one-way ANOVA with blocking factor(s). We can now use the EDA’s Sample Size Calculation tool to estimate the required number of individuals per group, to achive a certain level of statistical power1.\nThe decision tree leads us to the box containing the advice to Use power calculation for an unpaired t-test, with variability as the average standard deviation of the outcome measurement being made.\n10. Populate the “Control” Group node with the recommended number of experimental units, using the Node properties dialogue box. Enter the number of experimental units, the number of animals, and add a justification for the choice of sample size (Figure 23.6). Click on Close to dismiss the dialogue.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Estimate Sample Size</span>"
@@ -949,7 +1009,7 @@
     "href": "communicate.html",
     "title": "24  Communicating the Design",
     "section": "",
-    "text": "24.1 Generate an Experimental Design Report\nA new tab will open in your browser.\n2a. If a Save File diaogue box appears (Figure 24.2), save the file to an appropriate location. - During the design phase of your own experiments, it makes sense to keep this in a folder with other files relevant to the study\n2b. It is possible that, depending on your web browser’s configuration, the design report may appear in the new tab that was created. If this is the case, save the generated file to an appropriate location. - During the design phase of your own experiments, it makes sense to keep this in a folder with other files relevant to the study",
+    "text": "24.1 Generate an Experimental Design Report\nWhen you have constructed your design and calculated appropriate sample sizes so that the experiment has sufficient power to answer your scientific question, you will need to share this design with others:\nA new tab will open in your browser.\n2a. If a Save File diaogue box appears (Figure 24.2), save the file to an appropriate location. - During the design phase of your own experiments, it makes sense to keep this in a folder with other files relevant to the study\n2b. It is possible that, depending on your web browser’s configuration, the design report may appear in the new tab that was created. If this is the case, save the generated file to an appropriate location. - During the design phase of your own experiments, it makes sense to keep this in a folder with other files relevant to the study",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Communicating the Design</span>"
@@ -982,7 +1042,7 @@
     "href": "templates.html",
     "title": "25  EDA Templates",
     "section": "",
-    "text": "25.1 Find a template",
+    "text": "25.1 Find a template\nIt can take quite a bit of work to create a new EDA diagram from scratch, especially for complex experiments.\nThe Templates button at the top of the NC3Rs EDA page (Figure 25.1) links to some template diagrams with common basic experimental designs, that you can customise for your own purposes. Some of these templates are listed below.",
     "crumbs": [
       "NC3Rs EDA",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>EDA Templates</span>"
@@ -1015,7 +1075,7 @@
     "href": "summary.html",
     "title": "Summary",
     "section": "",
-    "text": "Final Notes\nExperimental design is a large and diverse field, and to become competent in experimental design takes time, and requires practice (which also involves making mistakes, at times). It requires some knowledge and understanding of statistics, applied mathematics, and a detailed understanding of the scientific field that you are working in. No single workshop can tell you everything you need to know about experimental design - in fact, as researchers we never stop learning about experimental design - but there are excellent resources available to help you, whatever stage of your career you are at. Please do use the Further Reading section as a jumping-off point to learn more as you continue your journey as a scientist.",
+    "text": "Final Notes\nWe have covered a lot of ground in this workshop, and I hope you have enjoyed working through the material.\nOur primary goal was to help you learn how to use the NC3Rs EDA tool to visualise the design of your experiment, to get feedback about improving or refining the experimental design, and how to use it to obtain advice about statistical analyses and sample sizes.\nTo get to that point, we had to review or introduce a number of concepts and ideas.\nExperimental design is a large and diverse field, and to become competent in experimental design takes time, and requires practice (which also involves making mistakes, at times). It requires some knowledge and understanding of statistics, applied mathematics, and a detailed understanding of the scientific field that you are working in. No single workshop can tell you everything you need to know about experimental design - in fact, as researchers we never stop learning about experimental design - but there are excellent resources available to help you, whatever stage of your career you are at. Please do use the Further Reading section as a jumping-off point to learn more as you continue your journey as a scientist.",
     "crumbs": [
       "Summary"
     ]
@@ -1068,66 +1128,6 @@
     "text": "Online Materials\n\nNC3Rs EDA Demonstration\nNC3Rs EDA User Support\nStatistical Rethinking YouTube Playlist\n\nRichard McElreath’s online lecture materials for his Statistical Rethinking course.",
     "crumbs": [
       "Further Reading"
-    ]
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "This section is intended as a short introduction to the workshop.",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "cause_and_effect.html",
-    "href": "cause_and_effect.html",
-    "title": "Cause and Effect",
-    "section": "",
-    "text": "In this part of the material, we are going to take a close look at the fundamental issue we care about when performing a scientific experiment: cause and effect. For this we need to be aware of something called Causal Inference, which is a large and separate field of study, but from which we will borrow some key ideas.",
-    "crumbs": [
-      "Cause and Effect"
-    ]
-  },
-  {
-    "objectID": "measurement.html",
-    "href": "measurement.html",
-    "title": "Measurement",
-    "section": "",
-    "text": "In this section of material, we are going to think about what it means to measure some kind of value. You’re all scientists and you will have measured things before, so you might think that you should be working with more advanced material - I can sympathise with that. But we’re going to look at measurement in a way that emphasises the role of scientific modelling and explores the idea of an estimate as a distribution of more- or less-likely possibilities rather than a single point value, and how sample size influences the shape and interpretation of that distribution.\n\n\n\n\n\n\nData Context\n\n\n\nThe example we are using is attempting to answer the question What proportion of the Earth’s surface is covered by water?”\nYou probably already have an idea of what proportion that is - about 70%. But pretend that you don’t already know.\nEven if you did already know, have you thought about…\n\nHow accurate is that value of 70%?\nHow would you go about measuring the exact surface area?\n\nAren’t there tides? And coastal erosion? And other things that might affect this?\n\n\nAren’t we really estimating the measurement?\nAnd, if we’re making an estimate, then don’t we need to try to understand how accurate our estimate might be?\n\n\nRather than develop these ideas in formal mathematical notation, this section is trying to develop some intuition about measurement, probability, and statistics.",
-    "crumbs": [
-      "Measurement"
-    ]
-  },
-  {
-    "objectID": "power.html",
-    "href": "power.html",
-    "title": "Power Calculations and Sample Size",
-    "section": "",
-    "text": "In this section, we will consider the concept of statistical power, and learn how to calculate sample sizes with a widely-used software tool called G*Power\n\n\n\n\n\n\nStatistical Power\n\n\n\nStatistical power is the probability, before a study is performed, that a particular comparison will achieve “statistical significance” at some predetermined level.\nMore precisely, statistical power is the probability that the study will not return a false negative result, known in statistics jargon as a “Type II error”.\n\n\nThere are two decisions we need to make as researchers, if we want to design an experiment to have a certain statistical power:\n\nWhat threshold of statistical significance (p-value, or \\(\\alpha\\)) is appropriate?\nWhat rate of false negative results (“type II errors”) is acceptable to us at that significance level? (i.e. what statistical power do we want?)\n\nThese decisions are in your hands as the researcher although, as we will see, there may be constraints from outside sources, such as funding bodies.\n\n\n\n\n\n\nSample Size\n\n\n\nSample size is the number of experimental units (often, but not always, individuals in this context) used per group in the experiment.\nThe sample size for an experiment involving animals should be informed by a statistical power calculation and chosen such that the experiment is neither underpowered nor overpowered.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThere is no universally applicable sample size. An appropriate sample size should be calculated specifically for each experiment.\n\n\nWe can use power calculations to determine appropriate sample sizes. To do this we also need to make additional assumptions (or, if you prefer, “propose hypotheses”) about the future behaviour of data that has not yet been collected:\n\nThe desired effect size (e.g. a change in a value that is biologically meaningful, or a minimum level at which a change of value is recognised to be a change in the system)\nThe variation we expect to see in the measured outcomes (e.g. as a standard deviation)",
-    "crumbs": [
-      "Power Calculations and Sample Size"
-    ]
-  },
-  {
-    "objectID": "nc3rs-eda.html",
-    "href": "nc3rs-eda.html",
-    "title": "NC3Rs EDA",
-    "section": "",
-    "text": "The Experimental Design Assistant (EDA)\nThe EDA is a web application that can be used in any modern browser. It is intended to help researchers improve the design of animal experiments by making it simple to describe their experiment graphically and in detail, by creating a graphical representation of the experiment, annotated with essential experimental detail. Once created, the graph can be analysed by the tool to make suggestions of suitable statistical analyses, and to identify potential issues with the current design (Karp and Fry (2021)).\nThe tool also provides a number of functions that aid with randomisation and blinding in an experiment, and to help with calculating sample sizes for experimental groups, on the basis of power calculations. To some extent, the EDA system plays the role of a biostatistician, identifying features of the experimental design, and prompting the researcher to include information about their design, in the same way a statistician might.\nThe EDA is a powerful communication tool, allowing researchers rapidly to lay out an unambiguous experimental design, to be shared with other researchers, used in grant and licence applications, or in publications, as publication-quality illustrations.",
-    "crumbs": [
-      "NC3Rs EDA"
-    ]
-  },
-  {
-    "objectID": "nc3rs-eda.html#the-experimental-design-assistant-eda",
-    "href": "nc3rs-eda.html#the-experimental-design-assistant-eda",
-    "title": "NC3Rs EDA",
-    "section": "",
-    "text": "Figure 2: Landing page of the NC3Rs EDA website\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe Karp and Fry (2021) paper is an excellent resource to understand how the EDA can be used to describe and analyse several kinds of experimental design (e.g. completely randomised, cross-over, repeat measures, and hierarchical nested designs).\n\n\n\nGetting Started\nTo start using the EDA, you need to have an account at the NC3Rs site (Figure 2). The rest of the pages in this workshop chapter will walk you through the process of setting up an account and designing an experiment.\n\n\n\n\nKarp, Natasha A, and Derek Fry. 2021. “What Is the Optimum Design for My Animal Experiment?” BMJ Open Sci. 5 (1): e100126.",
-    "crumbs": [
-      "NC3Rs EDA"
     ]
   }
 ]
