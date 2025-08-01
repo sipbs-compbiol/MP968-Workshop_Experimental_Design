@@ -1,3 +1,5 @@
 # Introduction {#sec-introduction .unnumbered}
 
-This section is intended as a short introduction to the workshop.
+This MP968 workshop is intended to be delivered interactively. The workshop proper has a short(-ish) presentation as introduction, before working through practical power calculation with the [`G*Power` software](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower) and experimental design with the [NC3Rs Experimental Design Assistant](https://eda.nc3rs.org.uk/).
+
+The material on these pages is supporting material for the workshop providing additional background information, explanation, and interactive examples. It is written so that it should be understandable and useful without having to attend the workshop, and to provide further reading for those who are interested in the methodology and would like to know more.
