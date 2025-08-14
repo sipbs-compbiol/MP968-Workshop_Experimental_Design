@@ -1,4 +1,4 @@
-# Decide Which Variables To Record
+# Variables
 
 At an early stage in your design you should consider what responses will be measured in the experiment. 
 
