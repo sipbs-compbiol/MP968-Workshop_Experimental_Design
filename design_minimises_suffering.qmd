@@ -1,6 +1,6 @@
 # Good Experimental Design Minimises Suffering (And Produces Better Science)
 
-Aside from the question of using animal subjects, we should want all scientific research to be well conducted and well reported. Good experimental design is all part of doing good science, as is clear reporting of our experimental design and the results delivered by the experiment. This requirement is heightened when animal subjects are involved, because of the _moral element_ of the research practice.
+Aside from the question of using animal subjects, we should want all scientific research to be well conducted and well reported. Good experimental design is all part of doing good science, as is clear reporting of our experimental design and the results delivered by the experiment. This requirement is heightened when animal subjects are involved, because of the _ethical element_ of the research practice.
 
 ::: { .callout-important }
 
