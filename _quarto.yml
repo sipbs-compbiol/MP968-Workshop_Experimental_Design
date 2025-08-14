@@ -51,6 +51,7 @@ book:
     - part: experimental_design.qmd
       chapters: 
         - decide_variables.qmd
+        - decide_treatments.qmd
 
     - part: power.qmd
       chapters: 

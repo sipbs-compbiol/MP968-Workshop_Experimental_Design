@@ -1,0 +1,31 @@
+# Treatments and Controls
+
+_Treatments_ are the groups representing distinct interventions that are applied to the subjects in an experiment.
+
+_Controls_ effectively help remove any known or unknown experimental effects when assessing the effects due to the treatment. Controls should be treated in the same way as treatment groups to avoid introducing bias.
+
+The researcher must decide which control groups are required in the experimental design. The choice of control affects which conclusions may be drawn from the experiment.
+
+::: { .callout-caution }
+It is tempting to measure the size of the treatment effect by comparing post-treatment response to a pre-treatment baseline, as this comparison is within the same animal and appears to play the role of a control.
+
+However, this kind of measurement does not control well between groups. Individual animal measurements can be subject to (potentially unaccounted-for) time-related and drift effects. Baseline responses may also vary between groups of animals, and to compare between groups a _difference in difference_ analysis should be performed.
+:::
+
+::: { .callout-caution }
+Introducing too many groups (treatment and controls) but not adjusting the total number of individuals can reduce sample size to a point where the experiment is unlikely to be informative.
+:::
+
+## Negative controls
+
+Negative controls (e.g. no treatment applied) aim to ensure that an unknown variable is not influencing the experimental outcome, and to avoid false positives.
+
+## Vehicle control
+
+Vehicle controls are a form of negative control where, for example, if the active compound is given in solution, the solution (but no active compound) is given to the subject. This allows the researcher to identify the effect of the treatment with respect to the effect of the vehicle.
+
+## Positive control
+
+A positive control may involve giving subjects with the best-in-class treatment. The difference between the compound under study and the best-in-class treatment can then be measured.
+
+This has an advantage in that it can demonstrate that the experiment is successful in terms of being able to detect a known effect.
