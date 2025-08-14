@@ -20,12 +20,65 @@ Introducing too many groups (treatment and controls) but not adjusting the total
 
 Negative controls (e.g. no treatment applied) aim to ensure that an unknown variable is not influencing the experimental outcome, and to avoid false positives.
 
-## Vehicle control
+## Vehicle controls
 
 Vehicle controls are a form of negative control where, for example, if the active compound is given in solution, the solution (but no active compound) is given to the subject. This allows the researcher to identify the effect of the treatment with respect to the effect of the vehicle.
 
-## Positive control
+## Positive controls
 
-A positive control may involve giving subjects with the best-in-class treatment. The difference between the compound under study and the best-in-class treatment can then be measured.
+A positive control involves giving subjects a treatment that is known to have an effect. This is useful in that it can demonstrate that the experiment is successful in terms of being able to detect a known effect (in comparison to a negative control).
 
-This has an advantage in that it can demonstrate that the experiment is successful in terms of being able to detect a known effect.
+## Sham controls
+
+Sham controls are similar to vehicle controls, but they mimic surgical and other physical interventions, without application of the treatment.
+
+## Comparative controls
+
+A comparative control is a form of positive control that may involve giving subjects an alternative or best-in-class treatment. The difference between the compound under study and the alternative/best-in-class treatment can then be measured.
+
+::: { .callout-question }
+:::::{.question}
+Suppose you are running a experiment with animal subjects to test the effect of a novel compound and you find the following:
+
+1. The comparison between the novel compound and the _vehicle control_ is not significant
+2. The comparison between the _positive control_ and the _vehicle control_ is significant
+
+What can you conclude?
+
+::::{.choices}
+
+:::{.choice}
+The experiment could not detect a treatment effect if there was one, but the novel compound does have an effect
+:::  
+
+:::{.choice}
+The experiment could not detect a treatment effect if there was one, and the novel compound has no effect
+:::
+
+:::{.choice .correct-choice}
+The experiment would be able to detect a treatment effect if there was one, but the novel compound has no effect
+:::
+
+:::{.choice}
+The experiment would be able to detect a treatment effect if there was one, and the novel compound has an effect
+:::
+
+:::{.button-clear title="Clear answer" button-class="btn btn-xs"}
+:::
+
+::::
+
+::::{.btn-group}
+:::{.button-hint title="Show hint" button-class="btn btn-xs"}
+The _vehicle control_ tells us whether the novel compound has an effect, and the _positive control_ tells us whether the experiment could detect a treatment effect.
+:::
+
+:::{.button-answer title="Show Answer" button-class="btn btn-xs"}
+The _positive control_ has a significant effect over and above the _vehicle control_ and so the experiment could detect a treatment effect, if there was one.
+
+The lack of significance between the novel compound and the _vehicle control_ implies that there is no effect of the novel compound.
+:::
+::::
+
+:::::
+:::
