@@ -48,6 +48,8 @@ book:
         - design_minimises_suffering.qmd
         - reporting.qmd
 
+    - part: experimental_design.qmd
+
     - part: power.qmd
       chapters: 
         - power_considerations.qmd
