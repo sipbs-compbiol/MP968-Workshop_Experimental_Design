@@ -1,0 +1,38 @@
+# Good Experimental Design Minimises Suffering (And Produces Better Science)
+
+Aside from the question of using animal subjects, we should want all scientific research to be well conducted and well reported. Good experimental design is all part of doing good science, as is clear reporting of our experimental design and the results delivered by the experiment. This requirement is heightened when animal subjects are involved, because of the _moral element_ of the research practice.
+
+::: { .callout-important }
+
+**Experimental design and statistics work together** to deliver sound, meaningful research that moves our collective understanding forward. Considering both of these before conducting research will improve your science, and is arguably essential for good science.
+
+:::
+
+## Experimental Design
+
+Once a research hypothesis has been devised, _Experimental Design_ is the process by which the practical means of answering that question is constructed. The design should aim to exclude extraneous or confounding influences on the experiment such that the causal factors are isolated and measurable, and any difference in outcome as a result of changing those factors can also be measured cleanly.
+
+## Statistics
+
+::: { .callout-caution title="Nature is variable" }
+All measurement is associated with _irreducible error_. Experimental subjects come with their own inherent variability, and even the best experimental design often fails to exclude all possible external causes of variation. 
+
+The kind of generating process (e.g. count data _vs_ averages of length or concentrations) affects how measured values can behave, and the way we use small groups to represent larger populations also influences our measurements.
+:::
+
+Statistics is the branch of applied science that allows us to make _probabilistic inferences_ about certainty of measurements, comparisons and experimental outcomes - even in the face of this natural variation in processes and "noise," and the way we choose small groups to represent populations.
+
+::: { .callout-important title="What should I design my experiment for?"}
+In general, you should design your experiment specifically for:
+
+- your population or subject group (e.g. sex, age, prior history, etc.)
+- your intervention (e.g. drug treatment)
+- your contrast or comparison between groups (e.g. lung capacity, drug concentration, etc.)
+- your outcome (i.e. is there a measurable or clinically relevant effect)
+:::
+
+::: { .callout-question }
+Can you rely on examples from the published literature, or advice from experienced scientists?
+
+Does all published science follow good practice in experimental design and statistics?
+:::

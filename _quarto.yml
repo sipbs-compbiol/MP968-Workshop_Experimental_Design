@@ -43,6 +43,9 @@ book:
         - objectives.qmd
 
     - part: why_design.qmd
+      chapters:
+        - unnecessary_suffering.qmd
+        - design_minimises_suffering.qmd
 
     - part: power.qmd
       chapters: 

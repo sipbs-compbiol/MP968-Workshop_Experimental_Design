@@ -1,0 +1,65 @@
+# We should not cause unnecessary suffering
+
+No-one likes to talk about animal experiments. It's a difficult, emotive topic that crosses many people's moral red lines. But still, animal experiments are sometimes the only practical way to gain essential scientific knowledge. Sometimes those experiments require that animals experience distress, discomfort or pain, or that they are sacrificed or euthanised. Whatever you believe "suffering" means for an animal, our moral premise is that we should not allow that suffering to be in vain.
+
+::: { .callout-warning title="The Moral Axiom" }
+**We should always minimise suffering.**
+
+This might mean **not performing an experiment at all**: it is not always the case that a new piece of knowledge or understanding is _worth_ causing suffering to obtain it. But when it is considered that there _is_ sufficient justification for performing an experiment, we are morally obliged to **minimise the amount of distress or suffering that is caused**.
+:::
+
+It's relatively easy to tell whether an animal is being well-treated, or whether an experiment is necessary. But it's not that easy to tell whether research using animals causes the _right_ (i.e. _least possible_) amount of suffering.
+
+::: { .callout-question }
+:::::{.question}
+Suppose you are running a experiment with animal subjects, where the outcome of the experiment is useful and necessary, and the use of animals is morally justified. **Which of the following choices will cause the _least amount of suffering_?**
+
+::::{.choices}
+
+:::{.choice}
+Using three subjects per group so that a standard deviation can be calculated and a _t_-test performed.
+:::  
+
+:::{.choice .correct-choice}
+Using just enough subjects to establish that the experimental outcome is very likely to be the correct result.
+:::
+
+:::{.choice}
+Using just enough subjects that the experimental outcome is certain to be the correct result.
+:::
+
+:::{.choice}
+Using as many subjects as you have available, because it's convenient.
+:::
+
+:::{.button-clear title="Clear answer" button-class="btn btn-xs"}
+:::
+
+::::
+
+::::{.btn-group}
+:::{.button-hint title="Show hint" button-class="btn btn-xs"}
+What is the purpose of performing the experiment, and how certain do you need to be?
+:::
+
+:::{.button-answer title="Show Answer" button-class="btn btn-xs"}
+We carry out experiments to obtain answers to our scientific hypotheses, but the answers we obtain are rarely if ever 100% certain. We usually aim to obtain answers that are very likely to be correct (think about what a statistical hypothesis test means: that the explanation is _more likely_ or _less likely_ to be the null hypothesis than some alternative), rather than 100% certain.
+
+If we use too few subjects we may still be able to perform a statistical test, but the results of the experiment will be uncertain and may be more likely to be incorrect than correct. **The use of animal subjects in an experiment that is unlikely to give a correct answer (e.g. because too few animals are used) causes unnecessary suffering**.
+
+If we attempt to obtain a 100% certain result we may need to use many more subjects - possibly tens or hundreds more - than are required to obtain a result at (say) 80% certainty. **The use of animal subjects to obtain a level of certainty greater than is needed to answer the question reasonably causes unnecessary suffering**.
+
+If we use the number of subjects that are available, just because it is convenient, then we may not know how likely the experiment is to give us a correct answer. **The use of animal subjects in an experiment where you do not know how likely you are to get a correct answer causes unnecessary suffering**.
+:::
+::::
+
+:::::
+:::
+
+::: { .callout-tip title="The Correct Number of Animal Subjects" collapse="true" }
+The appropriate number of animal subjects to use in an experiment is _always_ the smallest number that - given reasonable assumptions - will satisfactorily give the correct result to the desired level of certainty.
+
+This may sound like a very flexible statement but, **_by convention the usual level of certainty is: "that we have 80% chance of getting the correct yes/no answer for the hypothesis being tested"._**
+
+Note though that the appropriate level of certainty may change depending on the nature of the question being asked.
+:::
