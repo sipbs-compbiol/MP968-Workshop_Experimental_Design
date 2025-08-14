@@ -1,0 +1,63 @@
+# Decide Which Variables To Record
+
+At an early stage in your design you should consider what responses will be measured in the experiment. 
+
+Often the choice is obvious. The response being measured must capture biological effects in a meaningful way (maximising _signal to noise_), while causing the minimal amount of suffering to the subject. There are statistical and ethical considerations to making a choice of response variable.
+
+::: { .callout-caution }
+Continuous variables contain more information and may require fewer subjects to measure a meaningful response, but they often take longer and more resources to measure.
+
+Discrete variables are often simpler to measure but contain less information and so tend to require a larger number of subjects per experimental group to achieve a similarly meaningful response.
+:::
+
+## Continuous variables
+
+Continuous variables are measured on a continuous numerical scale. In principle the response being measured can take any value in a given range.
+
+::: { .callout-tip title="Examples" }
+- body weight
+- survival time
+- concentration of a drug in urine
+- organ weight
+:::
+
+## Discrete variables
+
+Discrete variables are numeric but can only be measured at certain fixed values. These values have direction (i.e. an increasing/decreasing scale), and the interval size between adjacent levels is implicitly the same.
+
+::: { .callout-tip title="Examples" }
+- litter size
+- counts of events in a time window
+- clinical scores
+:::
+
+## Ordinal variables
+
+Ordinal variables are non-numeric vakues on an increasing or decreasing scale, that can only be measured at set values. It is not implied that moving between adjacent levels is the same interval size.
+
+::: { .callout-tip title="Examples" }
+- disease state (mild/moderate/severe)
+- pain scale
+- frequency scale (never/rarely/sometimes/often/always)
+:::
+
+##  Nominal variables
+
+Nominal variables are non-numerical values, but are without any implicit ordering.
+
+::: { .callout-tip title="Examples" }
+- excitability scale (fine/nervous/excited/uncontrollable)
+- genotype
+- sex
+:::
+
+## Binary variables
+
+Binary variables have only two permissible values.
+
+::: { .callout-tip title="Examples" }
+- paw withdrawn from hotplate (yes/no)
+- present/absent
+- disease state (yes/no)
+:::
+

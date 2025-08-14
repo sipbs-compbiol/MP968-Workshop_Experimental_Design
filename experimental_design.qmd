@@ -25,3 +25,6 @@ Good experimental design aims to increase the ratio of _signal_ (the effect you 
 3. **Reducing bias**: We are human and suffer from unconscious biases, such as wanting - subconsciously - to see our research work as we think it should. This can lead to unintentional differences in measurement, if we know which subjects receive treatment and which do not. _Blinding_ and _randomisation_ can help to eliminate such bias
 :::
 
+## A short introduction to experimental design
+
+Over the next few pages, we will remind ourselves of some fundamental concepts and form a framework for identifying and constructing an experimental design.

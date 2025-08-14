@@ -49,6 +49,8 @@ book:
         - reporting.qmd
 
     - part: experimental_design.qmd
+      chapters: 
+        - decide_variables.qmd
 
     - part: power.qmd
       chapters: 

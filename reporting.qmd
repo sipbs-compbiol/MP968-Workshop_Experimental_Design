@@ -46,6 +46,7 @@ Reproducibility and transparency are important components of good scientific rep
 As the review notes:
 
 > Power analysis or other very simple calculations, which are widely used in human clinical trials and are often expected by regulatory authorities in some animal studies, can help to determine an appropriate number of animals to use in an experiment in order to detect a biologically important effect if there is one. This is a scientifically robust and efficient way of determining animal numbers and may ultimately help to prevent animals being used unnecessarily. Many of the studies that did report the number of animals used reported the numbers inconsistently between the methods and results sections. The reason for this is unclear, but this does pose a significant problem when analysing, interpreting and repeating the results. (@Kilkenny2009-cn)
+
 :::
 
 ## The ARRIVE guidelines
