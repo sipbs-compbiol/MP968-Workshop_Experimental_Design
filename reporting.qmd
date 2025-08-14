@@ -48,9 +48,21 @@ As the review notes:
 > Power analysis or other very simple calculations, which are widely used in human clinical trials and are often expected by regulatory authorities in some animal studies, can help to determine an appropriate number of animals to use in an experiment in order to detect a biologically important effect if there is one. This is a scientifically robust and efficient way of determining animal numbers and may ultimately help to prevent animals being used unnecessarily. Many of the studies that did report the number of animals used reported the numbers inconsistently between the methods and results sections. The reason for this is unclear, but this does pose a significant problem when analysing, interpreting and repeating the results. (@Kilkenny2009-cn)
 :::
 
-## What can be done?
+## The ARRIVE guidelines
 
-As @Kilkenny2009-cn notes:
+The authors of that systematic review published a paper the next year (@Kilkenny2010-cp) describing the [ARRIVE guidelines](https://nc3rs.org.uk/our-portfolio/arrive-animal-research-reporting-vivo-experiments) for reporting animal research. This framework was developed to help researchers report their results.
+
+::: { .callout-tip title="ARRIVE guidelines (highlights)" }
+Many journals now routinely request information in the ARRIVE framework, often as electronic supplementary information. The framework covers 20 items including the following:
+
+- 4. **Objectives**: primary and any secondary objectives of the study, or specific hypotheses being tested
+- 6. **Study design**: brief details of the study design, including the number of experimental and control groups, any steps taken to minimise the effects of subjective bias, and the experimental unit
+- 10. **Sample size**: the total number of animals used in each experiment and the number of animals in each experimental group; how the number of animals was decided
+- 13. **Statistical methods**: details of the statistical methods used for each analysis; methods used to assess whether the data met the assumptions of the statistical approach
+- 16. **Outcomes and estimation**: results for each analysis carried out, with a measure of precision (e.g., standard error or confidence interval).
+:::
+
+As @Kilkenny2009-cn note:
 
 > There are many opportunities for the scientific community to improve both the experimental design and the quality of reporting of biomedical research using animals. Serious efforts are needed to improve both the quality of experimental design and the quality of reporting in order to make research articles better suited to the needs of readership. […] **Raising awareness that these problems exist will be the first step in tackling these fundamental issues**.
 
