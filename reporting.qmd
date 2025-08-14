@@ -1,6 +1,6 @@
 # Reporting of Research Using Animals
 
-> For scientific, ethical and economic reasons, experiments involving animals should be appropriately designed, correctly analysed and transparently reported. This increases the scientific validity of the results, and maximises the knowledge gained from each experiment. A minimum amount of relevant information must be included in scientific publications to ensure that the methods and results of a study can be reviewed, analysed and repeated. Omitting essential information can raise scientific and ethical concerns. (@Kilkenny2009-cn)
+> For scientific, ethical and economic reasons, **experiments involving animals should be appropriately designed, correctly analysed and transparently reported**. This increases the scientific validity of the results, and maximises the knowledge gained from each experiment. A minimum amount of relevant information must be included in scientific publications to ensure that the methods and results of a study can be reviewed, analysed and repeated. Omitting essential information can raise scientific and ethical concerns. (@Kilkenny2009-cn)
 
 ::: { .callout-question }
 You might expect that senior, practising scientists with decades of experience in animal research would be experts in statistics, experimental design, and accurate analysis and reporting of their experiments.
@@ -12,29 +12,50 @@ You might expect that senior, practising scientists with decades of experience i
 
 The [National Centre for the Replacement, Refinement, and Reduction of Animals in Research (NC3Rs)](https://nc3rs.org.uk/who-we-are/3rs) was established in 2004 as the UK's national organisation for the [3Rs (Reduction, Replacement, Refinement)](https://caat.jhsph.edu/the-principles-of-humane-experimental-technique/). It works with scientists to replace the use of animals by developing new approaches and technologies or, where use of animals is unavoidable, to reduce the number of animals used in each experiment and to minimise any pain, suffering or distress that the animals may experience.
 
-::: { .callout-warning title="The state of biomedical research using animals in 2009" }
+::: { .callout-warning title="The state of reporting of biomedical research using animals in 2009" }
 
 In 2009, the NC3Rs published a systematic survey (@Kilkenny2009-cn) of the quality of reporting, experimental design, and statistical analysis of recently-published biomedical research using animals. It did not make for pleasant reading.
 
 :::
 
-### Poor practice in biomedical research involving animals
+### Cause for concern in reporting of biomedical research involving animals
 
-> Detailed information was collected from 271 publications, about the objective or hypothesis of the study, the number, sex, age and/or weight of animals used, and experimental and statistical methods. Only 59% of the studies stated the hypothesis or objective of the study and the number and characteristics of the animals used. […]  Most of the papers surveyed did not use randomisation (87%) or blinding (86%), to reduce bias in animal selection and outcome assessment. Only 70% of the publications that used statistical methods described their methods and presented the results with a measure of error or variability. (@Kilkenny2009-cn)
+> Detailed information was collected from 271 publications, about the objective or hypothesis of the study, the number, sex, age and/or weight of animals used, and experimental and statistical methods. **Only 59% of the studies stated the hypothesis** or objective of the study and the number and characteristics of the animals used. […]  **Most of the papers surveyed did not use randomisation (87%) or blinding (86%)**, to reduce bias in animal selection and outcome **assessment. Only 70% of the publications that used statistical methods described their methods** and presented the results with a measure of error or variability. (@Kilkenny2009-cn)
 
 The papers collated by the authors in their study spanned a wide range of biomedical topics including: dietary research; behavioural studies; immunology work; drug and chemical testing; and so on. Some of the problems of basic reporting they found included:
 
-- 35% of the studies (76 papers) **gave different numbers of animals in the Methods and Results sections without explanation**
-- 48 of the studies (18%) **did not explain why they used the number of animals that they did**
+- 35% of the studies **gave different numbers of animals in the Methods and Results sections without explanation**
+- 18% of studies **did not explain why they used the number of animals that they did**
 - 4% of papers **didn't even say how many animals were used**!
 
 Biological experimentation is difficult, and we should hope to design experiments that minimise bias. To do this we use basic statistical techniques like randomisation and "blinding." Of the 271 papers they examined:
 
-- 13% (32 papers) said they used randomisation
-- 14% (38 papers) said they used blinding
+- 12% said they used randomisation
+- 16% said they used blinding
+- 10% of studies didn't say what statistical approach they used
 
 Reproducibility and transparency are important components of good scientific reporting, but:
 
-- Half the studies **did not include the number of animals in each group**, in their tables
-- 30% (81 papers) **did not report their methods**
-- 97% (209 studies) **did not share their raw data**
+- 51% of studies **did not include the number of animals in each group**
+- 30% of papers reporting statistical methods **did not describe their methods**
+- On; **did not share their raw data**
+
+::: { .callout-warning title="Very strong cause for concern" }
+**None of the studies examined explained the sample size (number of animals used in each group) for the experiment.**
+
+As the review notes:
+
+> Power analysis or other very simple calculations, which are widely used in human clinical trials and are often expected by regulatory authorities in some animal studies, can help to determine an appropriate number of animals to use in an experiment in order to detect a biologically important effect if there is one. This is a scientifically robust and efficient way of determining animal numbers and may ultimately help to prevent animals being used unnecessarily. Many of the studies that did report the number of animals used reported the numbers inconsistently between the methods and results sections. The reason for this is unclear, but this does pose a significant problem when analysing, interpreting and repeating the results. (@Kilkenny2009-cn)
+:::
+
+## What can be done?
+
+As @Kilkenny2009-cn notes:
+
+> There are many opportunities for the scientific community to improve both the experimental design and the quality of reporting of biomedical research using animals. Serious efforts are needed to improve both the quality of experimental design and the quality of reporting in order to make research articles better suited to the needs of readership. […] **Raising awareness that these problems exist will be the first step in tackling these fundamental issues**.
+
+::: { .callout-important title="A Vital Step" }
+A key step in tackling these issues is to ensure that the next generation of scientists are aware of what makes for good practice in experimental design and animal research, and that they are not led into poor or inappropriate practices by more senior scientists without a proper grasp of these issues.
+:::
+
+This workshop is designed to give you an introductory foundation in aspects of experimental design - specifically in calculating sample sizes for experiments, and using the NC3Rs Experimental Design Assistant (NC3Rs EDA). We cannot hope to give you a complete statistical grounding in the time available, but we aim to help you avoid some of the mistakes and omissions of those who have gone before you, and improve the the transparency, reproducibility, and reliability of your work, and that scientific publications that come from it.
