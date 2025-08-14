@@ -46,6 +46,7 @@ book:
       chapters:
         - unnecessary_suffering.qmd
         - design_minimises_suffering.qmd
+        - reporting.qmd
 
     - part: power.qmd
       chapters: 
