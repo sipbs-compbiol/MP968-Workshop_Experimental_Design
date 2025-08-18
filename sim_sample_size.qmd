@@ -1,0 +1,153 @@
+---
+title: "Simulating Sample Size"
+filters:
+  - shinylive
+format: 
+  html:
+    css: assets/css/fix_editor.css
+---
+
+
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 1600
+
+library(shiny)
+library(bslib)
+library(ggplot2)
+
+# Workaround for ggplot2 graphics
+if (FALSE) {
+  library(munsell)
+}
+
+# global settings
+figbg = "whitesmoke"
+
+ui <- page_sidebar(
+
+  sidebar = sidebar(
+    title = "Sampling from a population",
+    
+    # Population-level controls
+    sliderInput("n_points",
+                "Population size:",
+                min = 200,
+                max = 500,
+                value = 350),
+    sliderInput("min_max",
+                "Population value range:",
+                min = -1000,
+                max = 1000,
+                value = c(-200, 200)),
+    actionButton("resample", "Generate new population"),
+    
+    # Sample-level controls
+    sliderInput("n_subsamples",
+                "Number of subsamples:",
+                min = 3,
+                max = 1000,
+                value = 10),
+    sliderInput("subsample_size",
+                "Datapoints in each subsample:",
+                min = 3,
+                max = 100,
+                value = 25),
+    actionButton("re_subsample", "Resample from population")    
+  ),
+  
+  plotOutput("plot1"),
+  plotOutput("plot2"),
+)
+
+server <- function(input, output, session) {
+  
+  dist_data = eventReactive(c(input$resample, input$n_points, input$min_max),
+                            data.frame(vals=runif(input$n_points, input$min_max[1], input$min_max[2])),
+                            ignoreNULL=FALSE)
+
+  subsamples = eventReactive(c(input$n_subsamples, input$subsample_size, input$re_subsample,
+                               input$resample, input$n_points, input$min_max),
+                             data.frame(vals=replicate(input$n_subsamples, sample(dist_data()$vals,
+                                                                                  input$subsample_size))),
+                             ignoreNULL=FALSE)  
+  
+  output$plot1 <- renderPlot({
+    n_points = input$n_points
+    data = dist_data()
+    mu = mean(data$vals)
+    std = sd(data$vals)
+    
+    breaks = seq(mu - 3 * std, mu + 3 * std, by=max(1, std/8))      # set up the breakpoints between bars in the histogram
+    
+    ytop = 1.3 * max(density(data$vals)$y)
+    
+    p = ggplot(data, aes(x=vals))                                    # set up the ggplot with data
+    p = p + geom_histogram(aes(y=..density..),                           # add a histogram layer
+                           breaks=breaks,
+                           fill="cornflowerblue")
+    p = p + annotate("segment",                                          # show the mean as a dashed line
+                     x=mu, xend=mu, y=0, yend=0.9 * ytop,
+                     colour="darkorange1", size=1, linetype="dashed")
+    p = p + annotate("segment",                                          # show standard deviations as dotted lines
+                     x=c(mu-2*std, mu-std, mu+std, mu+2*std),
+                     xend=c(mu-2*std, mu-std, mu+std, mu+2*std),
+                     y=c(0), yend=c(0.9 * ytop),
+                     colour="goldenrod", size=1, linetype="dotted")
+    p = p + annotate("text",                                             # annotate the lines
+                     x=c(mu-2*std, mu-std, mu, mu+std, mu+2*std),
+                     y=c(0.95 * ytop),
+                     colour="darkorange3",
+                     label=c("µ - 2σ", "µ - σ", paste("µ=", format(round(mu, 2), nsmall=2)), "µ + σ", "µ + 2σ"))
+    p = p + annotate("text",
+                     x=0, y=0, size=10,
+                     label=paste("TRUE MEAN, µ=", format(round(mu, 2), nsmall=2)))
+    p = p + xlim(-1000, 1000)             # set x-axis limits
+    p = p + xlab("measured variable") + ylab("frequency")                # add axis labels
+    p = p + theme(plot.background = element_rect(fill = figbg,           # colour background
+                                                 color = figbg))
+    p
+  })
+    
+    output$plot2 <- renderPlot({
+      means = data.frame(vals=colMeans(subsamples()))
+      mu = mean(means$vals)
+      std = sd(means$vals)
+      
+      breaks = seq(mu - 3 * std, mu + 3 * std, by=max(1, std/8))      # set up the breakpoints between bars in the histogram
+      ytop = 1.3 * max(density(means$vals)$y)
+      
+      p = ggplot(means, aes(x=vals))                                    # set up the ggplot with data
+      p = p + geom_histogram(aes(y=..density..),                           # add a historgram layer
+                             breaks=breaks,
+                             fill="cornflowerblue")
+      p = p + stat_function(fun=dnorm, args=list(mean=mu, sd=std),          # add a layer with the Normal curve 
+                            geom="line")
+      p = p + annotate("segment",                                          # show the mean as a dashed line
+                       x=mu, xend=mu, y=0, yend=0.9 * ytop,
+                       colour="darkorange1", size=1, linetype="dashed")
+      p = p + annotate("segment",                                          # show standard deviations as dotted lines
+                       x=c(mu-2*std, mu-std, mu+std, mu+2*std),
+                       xend=c(mu-2*std, mu-std, mu+std, mu+2*std),
+                       y=c(0), yend=c(0.9 * ytop),
+                       colour="goldenrod", size=1, linetype="dotted")
+      p = p + annotate("text",                                             # annotate the lines
+                       x=c(mu-2*std, mu-std, mu, mu+std, mu+2*std),
+                       y=c(0.95 * ytop),
+                       colour="darkorange3",
+                       label=c("µ - 2σ", "µ - σ", paste("µ=", format(round(mu, 2), nsmall=2)), "µ + σ", "µ + 2σ"))
+      p = p + annotate("text",
+                       x=mu, y=0, size=10,
+                       label=paste("ESTIMATED MEAN, µ=", format(round(mu, 2), nsmall=2)))
+      p = p + xlim(mu - max(200, 3 * std), mu + max(200, 3 * std))             # set x-axis limits
+      p = p + ylim(0, ytop)
+      p = p + xlab("measured variable") + ylab("frequency")                # add axis labels
+      p = p + theme(plot.background = element_rect(fill = figbg,           # colour background
+                                                   color = figbg))
+      p      
+    })
+}
+
+# Create Shiny app ----
+shinyApp(ui = ui, server = server)
+```
