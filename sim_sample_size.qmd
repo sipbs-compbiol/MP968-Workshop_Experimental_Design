@@ -10,7 +10,7 @@ format:
 
 ```{shinylive-r}
 #| standalone: true
-#| viewerHeight: 1600
+#| viewerHeight: 1000
 
 library(shiny)
 library(bslib)
@@ -21,43 +21,55 @@ if (FALSE) {
   library(munsell)
 }
 
-# global settings
 figbg = "whitesmoke"
 
-ui <- page_sidebar(
-
-  sidebar = sidebar(
-    title = "Sampling from a population",
+ui <- page_navbar(
+  title = "Sampling Simulator",
+  bg = "#5d9732",
+  inverse = TRUE,
+  nav_panel(
+    title = "Population", 
+    
+    p("First page content."),
     
     # Population-level controls
     sliderInput("n_points",
                 "Population size:",
                 min = 200,
                 max = 500,
-                value = 350),
+                value = 350,
+                width = "100%" ),
     sliderInput("min_max",
                 "Population value range:",
                 min = -1000,
                 max = 1000,
-                value = c(-200, 200)),
+                value = c(-200, 200),
+                width = "100%" ),
     actionButton("resample", "Generate new population"),
+    plotOutput("plot1"),
+    ),
+  
+  nav_panel(
+    title = "Sample", 
+    
+    p("Second page content."),
     
     # Sample-level controls
     sliderInput("n_subsamples",
                 "Number of subsamples:",
                 min = 3,
                 max = 1000,
-                value = 10),
+                value = 25,
+                width = "100%" ),
     sliderInput("subsample_size",
                 "Datapoints in each subsample:",
                 min = 3,
                 max = 100,
-                value = 25),
-    actionButton("re_subsample", "Resample from population")    
-  ),
-  
-  plotOutput("plot1"),
-  plotOutput("plot2"),
+                value = 3,
+                width = "100%" ),
+    actionButton("re_subsample", "Resample from population"),
+    plotOutput("plot2"),
+    ),
 )
 
 server <- function(input, output, session) {
@@ -78,27 +90,29 @@ server <- function(input, output, session) {
     mu = mean(data$vals)
     std = sd(data$vals)
     
-    breaks = seq(mu - 3 * std, mu + 3 * std, by=max(1, std/8))      # set up the breakpoints between bars in the histogram
+    # set up the breakpoints between bars in the histogram
+    breaks = seq(mu - 3 * std, mu + 3 * std, by=max(1, std/8))      
     
     ytop = 1.3 * max(density(data$vals)$y)
     
-    p = ggplot(data, aes(x=vals))                                    # set up the ggplot with data
-    p = p + geom_histogram(aes(y=..density..),                           # add a histogram layer
+    p = ggplot(data, aes(x=vals))                             # set up the ggplot with data
+    p = p + geom_histogram(aes(y=..density..),                # add a histogram layer
                            breaks=breaks,
                            fill="cornflowerblue")
-    p = p + annotate("segment",                                          # show the mean as a dashed line
+    p = p + annotate("segment",                               # show the mean as a dashed line
                      x=mu, xend=mu, y=0, yend=0.9 * ytop,
                      colour="darkorange1", size=1, linetype="dashed")
-    p = p + annotate("segment",                                          # show standard deviations as dotted lines
+    p = p + annotate("segment",                               # show standard deviations as dotted lines
                      x=c(mu-2*std, mu-std, mu+std, mu+2*std),
                      xend=c(mu-2*std, mu-std, mu+std, mu+2*std),
                      y=c(0), yend=c(0.9 * ytop),
                      colour="goldenrod", size=1, linetype="dotted")
-    p = p + annotate("text",                                             # annotate the lines
+    p = p + annotate("text",                                  # annotate the lines
                      x=c(mu-2*std, mu-std, mu, mu+std, mu+2*std),
                      y=c(0.95 * ytop),
                      colour="darkorange3",
-                     label=c("µ - 2σ", "µ - σ", paste("µ=", format(round(mu, 2), nsmall=2)), "µ + σ", "µ + 2σ"))
+                     label=c("µ - 2σ", "µ - σ", paste("µ=", format(round(mu, 2), nsmall=2)), 
+                             "µ + σ", "µ + 2σ"))
     p = p + annotate("text",
                      x=0, y=0, size=10,
                      label=paste("TRUE MEAN, µ=", format(round(mu, 2), nsmall=2)))
@@ -114,19 +128,21 @@ server <- function(input, output, session) {
       mu = mean(means$vals)
       std = sd(means$vals)
       
-      breaks = seq(mu - 3 * std, mu + 3 * std, by=max(1, std/8))      # set up the breakpoints between bars in the histogram
+      breaks = seq(mu - 3 * std, mu + 3 * std, 
+                   by=max(1, std/8))      # set up the breakpoints between bars in the histogram
       ytop = 1.3 * max(density(means$vals)$y)
       
       p = ggplot(means, aes(x=vals))                                    # set up the ggplot with data
       p = p + geom_histogram(aes(y=..density..),                           # add a historgram layer
                              breaks=breaks,
                              fill="cornflowerblue")
-      p = p + stat_function(fun=dnorm, args=list(mean=mu, sd=std),          # add a layer with the Normal curve 
+      p = p + stat_function(fun=dnorm, 
+                            args=list(mean=mu, sd=std),     # add a layer with the Normal curve 
                             geom="line")
-      p = p + annotate("segment",                                          # show the mean as a dashed line
+      p = p + annotate("segment",                           # show the mean as a dashed line
                        x=mu, xend=mu, y=0, yend=0.9 * ytop,
                        colour="darkorange1", size=1, linetype="dashed")
-      p = p + annotate("segment",                                          # show standard deviations as dotted lines
+      p = p + annotate("segment",                           # show standard deviations as dotted lines
                        x=c(mu-2*std, mu-std, mu+std, mu+2*std),
                        xend=c(mu-2*std, mu-std, mu+std, mu+2*std),
                        y=c(0), yend=c(0.9 * ytop),
@@ -135,7 +151,8 @@ server <- function(input, output, session) {
                        x=c(mu-2*std, mu-std, mu, mu+std, mu+2*std),
                        y=c(0.95 * ytop),
                        colour="darkorange3",
-                       label=c("µ - 2σ", "µ - σ", paste("µ=", format(round(mu, 2), nsmall=2)), "µ + σ", "µ + 2σ"))
+                       label=c("µ - 2σ", "µ - σ", paste("µ=", format(round(mu, 2), nsmall=2)), 
+                               "µ + σ", "µ + 2σ"))
       p = p + annotate("text",
                        x=mu, y=0, size=10,
                        label=paste("ESTIMATED MEAN, µ=", format(round(mu, 2), nsmall=2)))
