@@ -8,7 +8,7 @@ No-one likes to talk about animal experiments. It's a difficult, emotive topic t
 This might mean **not performing an experiment at all**: it is not always the case that a new piece of knowledge or understanding is _worth_ causing suffering to obtain it. But when it is considered that there _is_ sufficient justification for performing an experiment, we are ethically obliged to **minimise the amount of distress or suffering that is caused**.
 :::
 
-It's relatively easy to tell whether an animal is being well-treated, or whether an experiment is necessary. But it's not that easy to tell whether research using animals causes an _acceptable_ (i.e. _least possible_) amount of suffering.
+It's relatively easy to tell whether an animal is being well-treated, or whether an experiment is necessary. But it's not that easy to tell whether research using animals causes an _acceptable_ (i.e. _the least possible_) amount of suffering.
 
 ::: { .callout-question }
 :::::{.question}
@@ -59,7 +59,9 @@ If we use the number of subjects that are available, just because it is convenie
 ::: { .callout-tip title="The Appropriate Number of Animal Subjects" collapse="true" }
 The appropriate number of animal subjects to use in an experiment is _always_ the smallest number that - given reasonable assumptions - will satisfactorily give the correct result to the desired level of certainty.
 
-This may sound like a very flexible statement but, **_by convention the usual level of certainty is: "that we have 80% chance of getting the correct yes/no answer for the hypothesis being tested"._**
+This may sound like a very flexible statement. What assumptions are reasonable? What is an appropriate level of certainty?
+
+We'll consider these questions again later but for now, just know that **_by convention_ the usual level of certainty is: "we have an 80% chance of getting the correct true/false answer for the hypothesis being tested"._**
 
 Note though that the appropriate level of certainty may change depending on the nature of the question being asked.
 :::
