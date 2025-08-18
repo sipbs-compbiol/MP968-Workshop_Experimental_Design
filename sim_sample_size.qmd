@@ -1,5 +1,5 @@
 ---
-title: "Simulating Sample Size"
+title: "Sampling From A Population"
 filters:
   - shinylive
 format: 
@@ -7,10 +7,30 @@ format:
     css: assets/css/fix_editor.css
 ---
 
+When making an experimental measurement, we often take a single measurement from each of a number of subjects in a _group_, where each member of the group shares some characteristics that we think are important. We might measure each member only once, as for the data values in the callout below.
+
+::: { .callout-tip title="Single measurements of individual group members" }
+- body weight
+- survival time
+- organ weight
+- litter size
+:::
+
+In an experimental context, a _group_ of individuals is taken to represent the expected behaviour of a larger set (possibly _all_) individuals which share those characteristics, which we call a **population**.
+
+::: { .callout-question }
+**How representative of a population should we expect a sample to be?**
+
+What factors influence how representative a sample is of the larger population?
+:::
+
+## Simulation
+
+::: {#fig-simulator}
 
 ```{shinylive-r}
 #| standalone: true
-#| viewerHeight: 1000
+#| viewerHeight: 1100
 
 library(shiny)
 library(bslib)
@@ -30,9 +50,13 @@ ui <- page_navbar(
   nav_panel(
     title = "Population", 
     
-    p("First page content."),
+    p("The live plot below shows a frequency histogram (blue) of values in a random, uniformly-distributed population.",
+      "The thick dashed line represents the true mean of the population, and the dotted lines represent the mean +/- one and two standard deviations"),
+    p("The sliders below the plot control the number and range of values.",
+      "The `Generate new population` button will generate a new random population."),
     
     # Population-level controls
+    plotOutput("plot1"),
     sliderInput("n_points",
                 "Population size:",
                 min = 200,
@@ -46,15 +70,18 @@ ui <- page_navbar(
                 value = c(-200, 200),
                 width = "100%" ),
     actionButton("resample", "Generate new population"),
-    plotOutput("plot1"),
     ),
   
   nav_panel(
     title = "Sample", 
     
-    p("Second page content."),
+    p("The live plot below shows a frequency histogram (blue) of samples taken from the simulated population.",
+      "The thick dashed line represents the true mean of the population, and the dotted lines represent the mean +/- one and two standard deviations"),
+    p("The sliders below the plot control the number of datapoints in a sample, and the number of samples taken.",
+      "The `Resample from population` button will generate a new set of random samples from the population."),
     
     # Sample-level controls
+    plotOutput("plot2"),
     sliderInput("n_subsamples",
                 "Number of subsamples:",
                 min = 3,
@@ -68,7 +95,6 @@ ui <- page_navbar(
                 value = 3,
                 width = "100%" ),
     actionButton("re_subsample", "Resample from population"),
-    plotOutput("plot2"),
     ),
 )
 
@@ -100,19 +126,24 @@ server <- function(input, output, session) {
                            breaks=breaks,
                            fill="cornflowerblue")
     p = p + annotate("segment",                               # show the mean as a dashed line
-                     x=mu, xend=mu, y=0, yend=0.9 * ytop,
+                     x=mu, xend=mu, y=0, yend=0.8 * ytop,
                      colour="darkorange1", size=1, linetype="dashed")
     p = p + annotate("segment",                               # show standard deviations as dotted lines
                      x=c(mu-2*std, mu-std, mu+std, mu+2*std),
                      xend=c(mu-2*std, mu-std, mu+std, mu+2*std),
-                     y=c(0), yend=c(0.9 * ytop),
+                     y=c(0), 
+                     yend=c(0.70 * ytop, 0.75 * ytop, 0.85 * ytop, 0.90 * ytop),
                      colour="goldenrod", size=1, linetype="dotted")
     p = p + annotate("text",                                  # annotate the lines
                      x=c(mu-2*std, mu-std, mu, mu+std, mu+2*std),
-                     y=c(0.95 * ytop),
+                     y=c(0.75 * ytop, 0.80 * ytop, 0.85 * ytop, 0.90 * ytop, 0.95 * ytop),
                      colour="darkorange3",
-                     label=c("µ - 2σ", "µ - σ", paste("µ=", format(round(mu, 2), nsmall=2)), 
-                             "µ + σ", "µ + 2σ"))
+                     label=c(paste("µ - 2σ=", format(round(mu - 2*std, 2), nsmall=2)),
+                             "µ - σ", 
+                             paste("µ=", format(round(mu, 2), nsmall=2)), 
+                             "µ + σ", 
+                             paste("µ + 2σ=", format(round(mu + 2*std, 2), nsmall=2))
+                             ))
     p = p + annotate("text",
                      x=0, y=0, size=10,
                      label=paste("TRUE MEAN, µ=", format(round(mu, 2), nsmall=2)))
@@ -140,19 +171,24 @@ server <- function(input, output, session) {
                             args=list(mean=mu, sd=std),     # add a layer with the Normal curve 
                             geom="line")
       p = p + annotate("segment",                           # show the mean as a dashed line
-                       x=mu, xend=mu, y=0, yend=0.9 * ytop,
+                       x=mu, xend=mu, y=0, yend=0.8 * ytop,
                        colour="darkorange1", size=1, linetype="dashed")
       p = p + annotate("segment",                           # show standard deviations as dotted lines
                        x=c(mu-2*std, mu-std, mu+std, mu+2*std),
                        xend=c(mu-2*std, mu-std, mu+std, mu+2*std),
-                       y=c(0), yend=c(0.9 * ytop),
+                       y=c(0), 
+                       yend=c(0.70 * ytop, 0.75 * ytop, 0.85 * ytop, 0.90 * ytop),
                        colour="goldenrod", size=1, linetype="dotted")
       p = p + annotate("text",                                             # annotate the lines
                        x=c(mu-2*std, mu-std, mu, mu+std, mu+2*std),
-                       y=c(0.95 * ytop),
+                       y=c(0.75 * ytop, 0.80 * ytop, 0.85 * ytop, 0.90 * ytop, 0.95 * ytop),
                        colour="darkorange3",
-                       label=c("µ - 2σ", "µ - σ", paste("µ=", format(round(mu, 2), nsmall=2)), 
-                               "µ + σ", "µ + 2σ"))
+                       label=c(paste("µ - 2σ=", format(round(mu - 2*std, 2), nsmall=2)),
+                               "µ - σ", 
+                               paste("µ=", format(round(mu, 2), nsmall=2)), 
+                               "µ + σ", 
+                               paste("µ + 2σ=", format(round(mu + 2*std, 2), nsmall=2))
+                       ))
       p = p + annotate("text",
                        x=mu, y=0, size=10,
                        label=paste("ESTIMATED MEAN, µ=", format(round(mu, 2), nsmall=2)))
@@ -168,3 +204,58 @@ server <- function(input, output, session) {
 # Create Shiny app ----
 shinyApp(ui = ui, server = server)
 ```
+
+Interactive simulation of a population of random values drawn from a uniform distribution, and random sampling from that population.
+
+:::
+
+## Exercise
+
+The _first_ window of the interactive exercise below simulates measured values for a population of individuals, and calculates the **exact** mean of those values.
+
+The _second_ window simulates taking a number of samples (of multiple individuals) from that population, and calculating the mean of each sample 
+
+In this exercise, you will use this simulation to explore how the mean _sample_ values relate to true the mean _population_ value, as you vary the number of individuals in each sample, and the number of samples you take.
+
+### Generate new random populations
+
+1. Read the description in @fig-simulator.
+2. In @fig-simulator, click the `Generate new population` button to see that the histogram and mean value both update, representing a new random population.
+3. Move the `Population size` slider to see how this affects the histogram and reported mean value.
+4. Move the `Population value range` sliders to see how they affect the histogram and reported mean value.
+
+::: { .callout-questions }
+1. Set `Population size` to 500, and the `Population value range` to {-200, +200}. Click the `Generate new population` button a few times. How much variation do you see in the true mean value?
+2. Set `Population size` to 200, and the `Population value range` to {-200, +200}. Click the `Generate new population` button a few times. How much variation do you see in the true mean value?
+3. Set `Population size` to 200, and the `Population value range` to {-1000, +1000}. Click the `Generate new population` button a few times. How much variation do you see in the true mean value?
+4. Set `Population size` to 500, and the `Population value range` to {-1000, +1000}. Click the `Generate new population` button a few times. How much variation do you see in the true mean value?
+5. How does population size affect the stability of the true mean value?
+6. How does the range of variation in values for the population affect the stability of the true mean value?
+:::
+
+### Generate samples from a population
+
+1. In @fig-simulator, set `Population size` to 200 and `Population value range` to {-200, +200}. **Note the true mean of the population**
+2. Click on the menu button in @fig-simulator (three horizontal lines at the top right of the figure).
+3. Click on `Sample` and read the description.
+4. Click on `Resample from population` a few times to see that the histogram, curve, and mean value all update, representing a new random sample from the population.
+
+::: { .callout-questions }
+1. Increase `Number of subsamples` to 500. Click on `Resample from population` a few times. How much variation do you see in the estimated mean value? How close are these values to the true mean of the population? Does the distribution curve change?
+2. Set `Number of subsamples` to 500 and increase `Datapoints in each subsample` to 50. Click on `Resample from population` a few times. How much variation do you see in the estimated mean value? How close are these values to the true mean of the population? Does the distribution curve change?
+3. If you needed to make your _sample estimate_ more precise, and _more representative of the population_, would you be better to increase the number of samples you take, or to increase the number of individual datapoints in each sample?
+:::
+
+## Summary
+
+When making a measurement in an experiment we are often working with _individuals_ as a _sample_ from a larger _population_. We usually assume that the _sample_ is broadly representative of the _population_, and calculate a _mean_ value for the sample as an **_estimate_ of the population mean**.
+Data
+The precision of our _estimate_ varies depending on the number of individuals in our sample, and on the number of samples we take. In general:
+
+1. The more individuals we measure in a sample, the more accurate is the estimate of the population mean.
+2. The more samples we take (holding the number of individuals constant), the more accurate is the estimate of the population mean.
+3. Given a fixed number of individuals, **a better estimate of the population mean can generally be had by sampling fewer groups with more members per group** than sampling more groups wiht fewer members per group.
+
+::: { .callout-tip }
+For example, given 100 individuals, setting `Number of subsamples` to 5 and `Datapoints in each subsample` to 20 in @fig-simulator will typically give a more stable and accurate estimate of the population mean than setting both to 10, or `subsamples` to 20 and `datapoints` to 5.
+:::
