@@ -2,7 +2,7 @@
 
 ::: { .callout-tip title="What this site is for"}
 
-The material on these pages is supporting material for the live workshop. It provides additional background information, explanation, and interactive examples. It is intended to be understandable and useful without having to attend the workshop, and to provide further reading for those who are interested in the methodology and would like to know more.
+The material on these pages is supporting material for the live workshop. It provides additional background information, explanation, and interactive examples. It is intended to be understandable, accessible, and useful without having to attend the workshop, and to provide further reading for those who are interested in the methodology and would like to know more.
 
 :::
 
