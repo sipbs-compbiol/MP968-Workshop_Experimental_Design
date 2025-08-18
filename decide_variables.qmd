@@ -2,7 +2,11 @@
 
 At an early stage in your design you should consider what responses will be measured in the experiment. 
 
-Often the choice is obvious. The response being measured must capture biological effects in a meaningful way (maximising _signal to noise_), while causing the minimal amount of suffering to the subject. There are statistical and ethical considerations to making a choice of response variable.
+Often the choice is obvious. The response being measured must capture biological effects in a meaningful way (maximising _signal to noise_), while causing the minimal amount of suffering to the subject. 
+
+::: { .callout-important }
+There are both statistical and ethical considerations to making a choice of response variable.
+:::
 
 ::: { .callout-caution }
 Continuous variables contain more information and may require fewer subjects to measure a meaningful response, but they often take longer and more resources to measure.
@@ -33,7 +37,7 @@ Discrete variables are numeric but can only be measured at certain fixed values.
 
 ## Ordinal variables
 
-Ordinal variables are non-numeric vakues on an increasing or decreasing scale, that can only be measured at set values. It is not implied that moving between adjacent levels is the same interval size.
+Ordinal variables are non-numeric values on an increasing or decreasing scale, that can only be measured at set values. It is not implied that moving between adjacent levels involves the same interval size (i.e. "small to medium" may be a larger jump than "medium to large").
 
 ::: { .callout-tip title="Examples" }
 - disease state (mild/moderate/severe)
