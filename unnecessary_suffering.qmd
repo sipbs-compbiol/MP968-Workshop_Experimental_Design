@@ -59,9 +59,9 @@ If we use the number of subjects that are available, just because it is convenie
 ::: { .callout-tip title="The Appropriate Number of Animal Subjects" collapse="true" }
 The appropriate number of animal subjects to use in an experiment is _always_ the smallest number that - given reasonable assumptions - will satisfactorily give the correct result to the desired level of certainty.
 
-This may sound like a very flexible statement. What assumptions are reasonable? What is an appropriate level of certainty?
+This may sound like a very flexible statement. _What assumptions are reasonable? What is an appropriate level of certainty?_
 
-We'll consider these questions again later but for now, just know that **_by convention_ the usual level of certainty is: "we have an 80% chance of getting the correct true/false answer for the hypothesis being tested"._**
+We'll consider these questions again later but, for now, just know that **_by convention_ the usual level of certainty is: "we have an 80% chance of getting the correct true/false answer for the hypothesis being tested"._**
 
 Note though that the appropriate level of certainty may change depending on the nature of the question being asked.
 :::
