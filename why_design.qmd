@@ -1,6 +1,6 @@
 # Why Do We Need Experimental Design? {#sec-why-design}
 
-Let's justify why we need to consider experimental design and power calculations at all, but especially in the context of animals in research.
+Let's justify why we need to consider experimental design, sample size, and power calculations at all - but **especially in the context of animals in research**.
 
 ::: { .column-margin }
 ![Twelve Monkeys? Are you sure you need twelve? Why not eight? Or fifteen? (Haven't seen it? It's a strong recommend - [link](https://letterboxd.com/film/twelve-monkeys/).)](assets/images/twelve_monkeys.jpg){#fig-twelve-monkeys}
