@@ -13,6 +13,8 @@ Imports:
     flextable,
     kableExtra,
     patchwork,
+    DT,
+    shiny
 Suggests:
     knitr,
     sessioninfo
