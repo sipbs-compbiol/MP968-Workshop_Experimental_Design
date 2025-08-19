@@ -55,7 +55,6 @@ book:
 
     - part: power.qmd
       chapters: 
-        - sim_sample_size.qmd
         - sampling.qmd
         - power_considerations.qmd
         - underpowered.qmd
