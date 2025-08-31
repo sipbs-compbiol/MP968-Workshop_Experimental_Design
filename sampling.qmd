@@ -25,7 +25,13 @@ if (FALSE) {
 figbg = "whitesmoke"
 ```
 
-In an experiment, we often take a single measurement from each member of a _group_, where all members of the group share some characteristic, like being a common phenotype, or a negative control. Some values we might measure could include:
+::: { .callout-important }
+The distinction between a _sample_ and a _population_ is key to understanding much of statistics.
+
+As is often the case, these words have particular meanings in statistics that differ from everyday use. In statistics we usually extrapolate from a _sample_ to draw inferences about a _population_.
+:::
+
+In an experiment, we often take a single measurement from each member of a _group_, where all members of the group share some characteristic, like being a common phenotype, or a negative control. This group is our **sample**. Values we might measure could include:
 
 ::: { .callout-tip title="Single measurements of individual group members" }
 - body weight
@@ -34,7 +40,22 @@ In an experiment, we often take a single measurement from each member of a _grou
 - litter size
 :::
 
-We assume that our group (i.e. _sample_) of individuals represents all individuals with those characteristics. We call the set of all such individuals a **population**.
+We assume that our group (i.e. our _sample_) of individuals represents all individuals with those characteristics, and so we use the data we collect to draw conclusions about that much larger set of all similar individuals: the **population**.
+
+::: { .callout-caution title="How big is a population?" collapse="true"}
+_Populations_ are typically much larger than samples. In some settings, a population might be a finite size. For instance, when taking a political poll of a country the population size is the number of voters in that country.
+
+In biomedical research, however, we usually **assume** that our population is _infinite_ in size (or at least _effectively infinite_).
+:::
+
+## Random sampling
+
+::: { .callout-important }
+Much of statistics is based on the assumption that samples are **randomly selected** from a population. 
+
+There are many ways in which samples might not be randomly selected (e.g. take the ten largest individuals; use a brood from a single female).
+:::
+
 
 ::: { .callout-question }
 **Should we expect a sample to be exactly representative of the whole population?**
@@ -42,6 +63,12 @@ We assume that our group (i.e. _sample_) of individuals represents all individua
 For instance, will a subgroup of the population always have exactly the same average body weight as the average body weight of the whole population?
 
 What factors might influence how representative a subsample is of the larger population?
+
+::: { .callout-tip title="Answers" collapse="true"}
+- _Sampling error_: by chance the sample you choose may have a higher or lower mean value than that of the population
+- _Selection bias_: if the choice of sample members is not random, individuals with particular values might be prefentially selected and unrepresentative of the population
+- _Experimental bias_: imperfections in experimental design may introduce systematic differences between the sample and the population
+:::
 :::
 
 ## Simulation
@@ -260,7 +287,7 @@ Interactive simulation of a population of random values drawn from a uniform dis
 
 ## Exercise
 
-The _first_ graph in @fig-simulatory simulates measured values for a population of individuals, and calculates the exact _population mean_.
+The _first_ graph in @fig-simulator simulates measured values for a population of individuals, and calculates the exact _population mean_.
 
 The _second_ window simulates taking a number of samples (of multiple individuals) from that population, and calculating a _sample mean_ for each of them. 
 
