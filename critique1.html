@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>20&nbsp; Critique the Experiment – MP968: Experimental Design Workshop</title>
+<title>17&nbsp; Critique the Experiment – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,14 +56,16 @@ div.csl-indent {
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5fd9db47a040b21ac2cac9a0b3b722ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -91,6 +93,107 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<style>
+div.callout-callout-challenge.callout {
+  border-left-color: aquamarine;
+}
+div.callout-callout-challenge.callout-style-default > .callout-header {
+  background-color: rgb(from aquamarine r g b / 13%);
+}
+div.callout-callout-challenge .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-challenge.callout-style-default .callout-icon::before, div.callout-callout-challenge.callout-titled .callout-icon::before {
+  content: '🧑‍🏫';
+  background-image: none;
+}
+div.callout-callout-question.callout {
+  border-left-color: yellow;
+}
+div.callout-callout-question.callout-style-default > .callout-header {
+  background-color: rgb(from yellow r g b / 13%);
+}
+div.callout-callout-question .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-question.callout-style-default .callout-icon::before, div.callout-callout-question.callout-titled .callout-icon::before {
+  content: '🙋';
+  background-image: none;
+}
+div.callout-callout-questions.callout {
+  border-left-color: yellow;
+}
+div.callout-callout-questions.callout-style-default > .callout-header {
+  background-color: rgb(from yellow r g b / 13%);
+}
+div.callout-callout-questions .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-questions.callout-style-default .callout-icon::before, div.callout-callout-questions.callout-titled .callout-icon::before {
+  content: '🙋️';
+  background-image: none;
+}
+div.callout-callout-thumbs-up.callout {
+  border-left-color: #008000;
+}
+div.callout-callout-thumbs-up.callout-style-default > .callout-header {
+  background-color: rgba(0, 128, 0, 0.13);
+}
+div.callout-callout-thumbs-up .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-thumbs-up.callout-style-default .callout-icon::before, div.callout-callout-thumbs-up.callout-titled .callout-icon::before {
+  content: '👍';
+  background-image: none;
+}
+div.callout-callout-microbe.callout {
+  border-left-color: #1E90FF;
+}
+div.callout-callout-microbe.callout-style-default > .callout-header {
+  background-color: rgba(30, 144, 255, 0.13);
+}
+div.callout-callout-microbe .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-microbe.callout-style-default .callout-icon::before, div.callout-callout-microbe.callout-titled .callout-icon::before {
+  content: '🧫';
+  background-image: none;
+}
+div.callout-callout-case-study.callout {
+  border-left-color: #FFA500;
+}
+div.callout-callout-case-study.callout-style-default > .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-callout-case-study .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-case-study.callout-style-default .callout-icon::before, div.callout-callout-case-study.callout-titled .callout-icon::before {
+  content: '🔍';
+  background-image: none;
+}
+div.callout-callout-data.callout {
+  border-left-color: #32CD32;
+}
+div.callout-callout-data.callout-style-default > .callout-header {
+  background-color: rgba(50, 205, 50, 0.13);
+}
+div.callout-callout-data .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-data.callout-style-default .callout-icon::before, div.callout-callout-data.callout-titled .callout-icon::before {
+  content: '📊';
+  background-image: none;
+}
+div.callout-callout-discussion.callout {
+  border-left-color: #BA55D3;
+}
+div.callout-callout-discussion.callout-style-default > .callout-header {
+  background-color: rgba(186, 85, 211, 0.13);
+}
+div.callout-callout-discussion .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-discussion.callout-style-default .callout-icon::before, div.callout-callout-discussion.callout-titled .callout-icon::before {
+  content: '✨';
+  background-image: none;
+}
+div.callout-callout-todo.callout {
+  border-left-color: pink;
+}
+div.callout-callout-todo.callout-style-default > .callout-header {
+  background-color: rgb(from pink r g b / 13%);
+}
+div.callout-callout-todo .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-todo.callout-style-default .callout-icon::before, div.callout-callout-todo.callout-titled .callout-icon::before {
+  content: '📝';
+  background-image: none;
+}
+</style>
 
 
 </head>
@@ -104,7 +207,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./critique1.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./critique1.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -140,7 +243,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface to the 2024-25 presentation</span></a>
+ <span class="menu-text">Preface to the 2025-26 presentation</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -155,21 +258,21 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./disclaimer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Disclaimer</span></span></a>
+ <span class="menu-text">Disclaimer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./objectives.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Learning Objectives</span></span></a>
+ <span class="menu-text">Learning Objectives</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./cause_and_effect.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cause and Effect</span></a>
+            <a href="./why_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why Do We Need Experimental Design?</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -177,22 +280,28 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./problem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Problem With Statistics</span></span></a>
+  <a href="./unnecessary_suffering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">We should not cause unnecessary suffering</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./causal_models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Models</span></span></a>
+  <a href="./design_minimises_suffering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Good Experimental Design Minimises Suffering (And Produces Better Science)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reporting of Research Using Animals</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Measurement</span></a>
+            <a href="./experimental_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Experimental Design</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -200,32 +309,14 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wet_earth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></a>
+  <a href="./decide_variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./globe_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./globe_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./dodecahedron.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./observations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">How Many Observations?</span></span></a>
+  <a href="./decide_treatments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Treatments and Controls</span></span></a>
   </div>
 </li>
       </ul>
@@ -241,26 +332,32 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sampling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling From A Population</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./power_considerations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./underpowered.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./effect_sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Effect Sizes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Effect Sizes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./g_power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Using G*Power</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Using G*Power</span></span></a>
   </div>
 </li>
       </ul>
@@ -277,73 +374,137 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eda_account.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">EDA Account Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">EDA Account Setup</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workshop_experiment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Workshop Experiment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Workshop Experiment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./create_new_diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./add_experiment_node.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./group_assignment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Assign Experimental Units</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Assign Experimental Units</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./interventions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Define Interventions and Measurements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Define Interventions and Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./critique1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./both_sexes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./analysis_suggestion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Obtain an Analysis Suggestion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Obtain an Analysis Suggestion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sample_size.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./communicate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Communicating the Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Communicating the Design</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">EDA Templates</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">EDA Templates</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./cause_and_effect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cause and Effect</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">The Problem With Statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./causal_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Causal Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measurement</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wet_earth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./globe_model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./globe_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dodecahedron.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./observations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">How Many Observations?</span></span></a>
   </div>
 </li>
       </ul>
@@ -376,29 +537,29 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#run-the-critique-tool" id="toc-run-the-critique-tool" class="nav-link active" data-scroll-target="#run-the-critique-tool"><span class="header-section-number">20.1</span> Run the <code>Critique</code> tool</a></li>
-  <li><a href="#read-the-critique-results" id="toc-read-the-critique-results" class="nav-link" data-scroll-target="#read-the-critique-results"><span class="header-section-number">20.2</span> Read the critique results</a></li>
-  <li><a href="#resolve-experiment-node-errors" id="toc-resolve-experiment-node-errors" class="nav-link" data-scroll-target="#resolve-experiment-node-errors"><span class="header-section-number">20.3</span> Resolve Experiment node errors</a>
+  <li><a href="#run-the-critique-tool" id="toc-run-the-critique-tool" class="nav-link active" data-scroll-target="#run-the-critique-tool"><span class="header-section-number">17.1</span> Run the <code>Critique</code> tool</a></li>
+  <li><a href="#read-the-critique-results" id="toc-read-the-critique-results" class="nav-link" data-scroll-target="#read-the-critique-results"><span class="header-section-number">17.2</span> Read the critique results</a></li>
+  <li><a href="#resolve-experiment-node-errors" id="toc-resolve-experiment-node-errors" class="nav-link" data-scroll-target="#resolve-experiment-node-errors"><span class="header-section-number">17.3</span> Resolve Experiment node errors</a>
   <ul class="collapse">
-  <li><a href="#resolve-the-experimental-unit-error" id="toc-resolve-the-experimental-unit-error" class="nav-link" data-scroll-target="#resolve-the-experimental-unit-error"><span class="header-section-number">20.3.1</span> Resolve the “experimental unit” error</a></li>
-  <li><a href="#resolve-the-independent-variable-of-interest-error" id="toc-resolve-the-independent-variable-of-interest-error" class="nav-link" data-scroll-target="#resolve-the-independent-variable-of-interest-error"><span class="header-section-number">20.3.2</span> Resolve the “independent variable of interest” error</a></li>
+  <li><a href="#resolve-the-experimental-unit-error" id="toc-resolve-the-experimental-unit-error" class="nav-link" data-scroll-target="#resolve-the-experimental-unit-error"><span class="header-section-number">17.3.1</span> Resolve the “experimental unit” error</a></li>
+  <li><a href="#resolve-the-independent-variable-of-interest-error" id="toc-resolve-the-independent-variable-of-interest-error" class="nav-link" data-scroll-target="#resolve-the-independent-variable-of-interest-error"><span class="header-section-number">17.3.2</span> Resolve the “independent variable of interest” error</a></li>
   </ul></li>
-  <li><a href="#rerun-the-critique-tool" id="toc-rerun-the-critique-tool" class="nav-link" data-scroll-target="#rerun-the-critique-tool"><span class="header-section-number">20.4</span> Rerun the <code>Critique</code> tool</a></li>
-  <li><a href="#resolve-group-node-errors" id="toc-resolve-group-node-errors" class="nav-link" data-scroll-target="#resolve-group-node-errors"><span class="header-section-number">20.5</span> Resolve Group node errors</a></li>
-  <li><a href="#rerun-the-critique-tool-1" id="toc-rerun-the-critique-tool-1" class="nav-link" data-scroll-target="#rerun-the-critique-tool-1"><span class="header-section-number">20.6</span> Rerun the <code>Critique</code> tool</a></li>
-  <li><a href="#resolve-outcome-measure-node-errors" id="toc-resolve-outcome-measure-node-errors" class="nav-link" data-scroll-target="#resolve-outcome-measure-node-errors"><span class="header-section-number">20.7</span> Resolve Outcome measure node errors</a></li>
-  <li><a href="#rerun-the-critique-tool-2" id="toc-rerun-the-critique-tool-2" class="nav-link" data-scroll-target="#rerun-the-critique-tool-2"><span class="header-section-number">20.8</span> Rerun the <code>Critique</code> tool</a></li>
-  <li><a href="#resolve-independent-variable-of-interest-node-errors" id="toc-resolve-independent-variable-of-interest-node-errors" class="nav-link" data-scroll-target="#resolve-independent-variable-of-interest-node-errors"><span class="header-section-number">20.9</span> Resolve Independent variable of interest node errors</a></li>
-  <li><a href="#rerun-the-critique-tool-3" id="toc-rerun-the-critique-tool-3" class="nav-link" data-scroll-target="#rerun-the-critique-tool-3"><span class="header-section-number">20.10</span> Rerun the <code>Critique</code> tool</a></li>
+  <li><a href="#rerun-the-critique-tool" id="toc-rerun-the-critique-tool" class="nav-link" data-scroll-target="#rerun-the-critique-tool"><span class="header-section-number">17.4</span> Rerun the <code>Critique</code> tool</a></li>
+  <li><a href="#resolve-group-node-errors" id="toc-resolve-group-node-errors" class="nav-link" data-scroll-target="#resolve-group-node-errors"><span class="header-section-number">17.5</span> Resolve Group node errors</a></li>
+  <li><a href="#rerun-the-critique-tool-1" id="toc-rerun-the-critique-tool-1" class="nav-link" data-scroll-target="#rerun-the-critique-tool-1"><span class="header-section-number">17.6</span> Rerun the <code>Critique</code> tool</a></li>
+  <li><a href="#resolve-outcome-measure-node-errors" id="toc-resolve-outcome-measure-node-errors" class="nav-link" data-scroll-target="#resolve-outcome-measure-node-errors"><span class="header-section-number">17.7</span> Resolve Outcome measure node errors</a></li>
+  <li><a href="#rerun-the-critique-tool-2" id="toc-rerun-the-critique-tool-2" class="nav-link" data-scroll-target="#rerun-the-critique-tool-2"><span class="header-section-number">17.8</span> Rerun the <code>Critique</code> tool</a></li>
+  <li><a href="#resolve-independent-variable-of-interest-node-errors" id="toc-resolve-independent-variable-of-interest-node-errors" class="nav-link" data-scroll-target="#resolve-independent-variable-of-interest-node-errors"><span class="header-section-number">17.9</span> Resolve Independent variable of interest node errors</a></li>
+  <li><a href="#rerun-the-critique-tool-3" id="toc-rerun-the-critique-tool-3" class="nav-link" data-scroll-target="#rerun-the-critique-tool-3"><span class="header-section-number">17.10</span> Rerun the <code>Critique</code> tool</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/critique1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./critique1.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./critique1.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-critique-1" class="quarto-section-identifier"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></span></h1>
+<h1 class="title"><span id="sec-critique-1" class="quarto-section-identifier"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></span></h1>
 </div>
 
 
@@ -431,12 +592,12 @@ Warning
 </div>
 <p>In this section, we will use the EDA <code>Critique</code> tool to get feedback on our basic experimental design.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What no-one tells you
+<span class="screen-reader-only">Note</span>What no-one tells you
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -454,10 +615,10 @@ What no-one tells you
 </div>
 </div>
 </div>
-<section id="run-the-critique-tool" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="run-the-critique-tool"><span class="header-section-number">20.1</span> Run the <code>Critique</code> tool</h2>
+<section id="run-the-critique-tool" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="run-the-critique-tool"><span class="header-section-number">17.1</span> Run the <code>Critique</code> tool</h2>
 <ol type="1">
-<li>Use the <code>Tools</code> menu and click on <code>Tools -&gt; Critique</code> (<a href="#fig-critique-1" class="quarto-xref">Figure&nbsp;<span>20.1</span></a>)</li>
+<li>Use the <code>Tools</code> menu and click on <code>Tools -&gt; Critique</code> (<a href="#fig-critique-1" class="quarto-xref">Figure&nbsp;<span>17.1</span></a>)</li>
 </ol>
 <div id="fig-critique-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -465,7 +626,7 @@ What no-one tells you
 <img src="assets/images/nc3rs-eda-critique-1.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.1: EDA, showing the <code>Tools</code> menu and some text from the <code>Critique</code> Help Centre entry
+Figure&nbsp;17.1: EDA, showing the <code>Tools</code> menu and some text from the <code>Critique</code> Help Centre entry
 </figcaption>
 </figure>
 </div>
@@ -484,15 +645,15 @@ Important
 </div>
 <p>When the critique has finished, you will see a pop-up dialogue box describing the results of the analysis.</p>
 </section>
-<section id="read-the-critique-results" class="level2 page-columns page-full" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="read-the-critique-results"><span class="header-section-number">20.2</span> Read the critique results</h2>
+<section id="read-the-critique-results" class="level2 page-columns page-full" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="read-the-critique-results"><span class="header-section-number">17.2</span> Read the critique results</h2>
 <div id="fig-critique-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-critique-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/nc3rs-eda-critique-2.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.2: EDA critique output indicating five errors, 19 warnings, and an advice message associated with our design
+Figure&nbsp;17.2: EDA critique output indicating five errors, 19 warnings, and an advice message associated with our design
 </figcaption>
 </figure>
 </div>
@@ -505,13 +666,13 @@ Figure&nbsp;20.2: EDA critique output indicating five errors, 19 warnings, and a
 <img src="assets/images/oh-noes.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-oh-noes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.3: Our experimental design isn’t as good as we think it is!
+Figure&nbsp;17.3: Our experimental design isn’t as good as we think it is!
 </figcaption>
 </figure>
 </div>
 </div></div><ol type="1">
 <li>Click on the <code>OK</code> button</li>
-<li>Note the locations and kinds of feedback the <code>Critique</code> tool provided (<a href="#fig-critique-3" class="quarto-xref">Figure&nbsp;<span>20.4</span></a>)</li>
+<li>Note the locations and kinds of feedback the <code>Critique</code> tool provided (<a href="#fig-critique-3" class="quarto-xref">Figure&nbsp;<span>17.4</span></a>)</li>
 </ol>
 <div id="fig-critique-3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -519,7 +680,7 @@ Figure&nbsp;20.3: Our experimental design isn’t as good as we think it is!
 <img src="assets/images/nc3rs-eda-critique-3.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.4: The EDA critique output highlights errors with a red box, warnings with an amber box, and advice with a blue box. There are errors in our Experiment node, in the <em>control</em> and <em>treatment</em> Group nodes, and in our Outcome measure node. There are warnings all over the experimental design.
+Figure&nbsp;17.4: The EDA critique output highlights errors with a red box, warnings with an amber box, and advice with a blue box. There are errors in our Experiment node, in the <em>control</em> and <em>treatment</em> Group nodes, and in our Outcome measure node. There are warnings all over the experimental design.
 </figcaption>
 </figure>
 </div>
@@ -529,7 +690,7 @@ Figure&nbsp;20.4: The EDA critique output highlights errors with a red box, warn
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Errors and Warnings: What should we fix?
+<span class="screen-reader-only">Note</span>Errors and Warnings: What should we fix?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -574,10 +735,10 @@ Important
 </div>
 </div>
 </section>
-<section id="resolve-experiment-node-errors" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="resolve-experiment-node-errors"><span class="header-section-number">20.3</span> Resolve Experiment node errors</h2>
+<section id="resolve-experiment-node-errors" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="resolve-experiment-node-errors"><span class="header-section-number">17.3</span> Resolve Experiment node errors</h2>
 <ol type="1">
-<li>Following our advice in the box above, click on the red error box associated with the Experiment node to see the error message (<a href="#fig-critique-4" class="quarto-xref">Figure&nbsp;<span>20.5</span></a>).</li>
+<li>Following our advice in the box above, click on the red error box associated with the Experiment node to see the error message (<a href="#fig-critique-4" class="quarto-xref">Figure&nbsp;<span>17.5</span></a>).</li>
 </ol>
 <div id="fig-critique-4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -585,7 +746,7 @@ Important
 <img src="assets/images/nc3rs-eda-critique-4.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.5: The Experiment node error indicates two problems: our experimental unit is missing, and the independent variable of interest is not specified. These errors would be expected to affect the whole experiment.
+Figure&nbsp;17.5: The Experiment node error indicates two problems: our experimental unit is missing, and the independent variable of interest is not specified. These errors would be expected to affect the whole experiment.
 </figcaption>
 </figure>
 </div>
@@ -602,18 +763,18 @@ Tip
 <p>The bold text in the error dialogue box provides links to help text and advice about resolving each specific error, and what options are available to you.</p>
 </div>
 </div>
-<section id="resolve-the-experimental-unit-error" class="level3" data-number="20.3.1">
-<h3 data-number="20.3.1" class="anchored" data-anchor-id="resolve-the-experimental-unit-error"><span class="header-section-number">20.3.1</span> Resolve the “experimental unit” error</h3>
+<section id="resolve-the-experimental-unit-error" class="level3" data-number="17.3.1">
+<h3 data-number="17.3.1" class="anchored" data-anchor-id="resolve-the-experimental-unit-error"><span class="header-section-number">17.3.1</span> Resolve the “experimental unit” error</h3>
 <ol type="1">
 <li>Click on the <code>OK</code> button to close the dialogue box.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Experimental units
+<span class="screen-reader-only">Note</span>Experimental units
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -626,7 +787,7 @@ Experimental units
 </div>
 </div>
 <ol start="2" type="1">
-<li>Add a new <strong>Experimental unit</strong> node, by clicking on the grey lozenge in the Pool Group node’s icon menu (<a href="#fig-critique-5" class="quarto-xref">Figure&nbsp;<span>20.6</span></a>).</li>
+<li>Add a new <strong>Experimental unit</strong> node, by clicking on the grey lozenge in the Pool Group node’s icon menu (<a href="#fig-critique-5" class="quarto-xref">Figure&nbsp;<span>17.6</span></a>).</li>
 </ol>
 <div id="fig-critique-5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -634,12 +795,12 @@ Experimental units
 <img src="assets/images/nc3rs-eda-critique-5.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.6: The grey lozenge icon in the Group node panel creates a new <strong>Experimental unit</strong> node.
+Figure&nbsp;17.6: The grey lozenge icon in the Group node panel creates a new <strong>Experimental unit</strong> node.
 </figcaption>
 </figure>
 </div>
 <ol start="3" type="1">
-<li>Drag the new node into a clear space, and click on the <code>properties</code> icon to bring up the Node properties pane (<a href="#fig-critique-6" class="quarto-xref">Figure&nbsp;<span>20.7</span></a>).</li>
+<li>Drag the new node into a clear space, and click on the <code>properties</code> icon to bring up the Node properties pane (<a href="#fig-critique-6" class="quarto-xref">Figure&nbsp;<span>17.7</span></a>).</li>
 </ol>
 <div id="fig-critique-6" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -647,12 +808,12 @@ Figure&nbsp;20.6: The grey lozenge icon in the Group node panel creates a new <s
 <img src="assets/images/nc3rs-eda-critique-6.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.7: The <strong>Experimental unit</strong> node field panel
+Figure&nbsp;17.7: The <strong>Experimental unit</strong> node field panel
 </figcaption>
 </figure>
 </div>
 <ol start="4" type="1">
-<li>Rename the node in the <strong>label</strong> field as “Animal” and select “animal” from the <strong>experimental unit is</strong> drop-down (<a href="#fig-critique-7" class="quarto-xref">Figure&nbsp;<span>20.8</span></a>). Then click the <code>Close</code> button.</li>
+<li>Rename the node in the <strong>label</strong> field as “Animal” and select “animal” from the <strong>experimental unit is</strong> drop-down (<a href="#fig-critique-7" class="quarto-xref">Figure&nbsp;<span>17.8</span></a>). Then click the <code>Close</code> button.</li>
 </ol>
 <div id="fig-critique-7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -660,20 +821,20 @@ Figure&nbsp;20.7: The <strong>Experimental unit</strong> node field panel
 <img src="assets/images/nc3rs-eda-critique-7.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.8: Renaming the <strong>Experimental unit</strong> node, and specifying the experimental unit type.
+Figure&nbsp;17.8: Renaming the <strong>Experimental unit</strong> node, and specifying the experimental unit type.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="resolve-the-independent-variable-of-interest-error" class="level3" data-number="20.3.2">
-<h3 data-number="20.3.2" class="anchored" data-anchor-id="resolve-the-independent-variable-of-interest-error"><span class="header-section-number">20.3.2</span> Resolve the “independent variable of interest” error</h3>
+<section id="resolve-the-independent-variable-of-interest-error" class="level3" data-number="17.3.2">
+<h3 data-number="17.3.2" class="anchored" data-anchor-id="resolve-the-independent-variable-of-interest-error"><span class="header-section-number">17.3.2</span> Resolve the “independent variable of interest” error</h3>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Independent variable of interest
+<span class="screen-reader-only">Note</span>Independent variable of interest
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -702,7 +863,7 @@ Important
 </div>
 </div>
 <ol type="1">
-<li>Drag an <strong>Independent variable of interest</strong> node from the sidebar on the left, onto the canvas. Double-click on the node, and rename it as “Drug A” (<a href="#fig-critique-8" class="quarto-xref">Figure&nbsp;<span>20.9</span></a>).</li>
+<li>Drag an <strong>Independent variable of interest</strong> node from the sidebar on the left, onto the canvas. Double-click on the node, and rename it as “Drug A” (<a href="#fig-critique-8" class="quarto-xref">Figure&nbsp;<span>17.9</span></a>).</li>
 </ol>
 <div id="fig-critique-8" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -710,12 +871,12 @@ Important
 <img src="assets/images/nc3rs-eda-critique-8.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.9: A new <strong>Independent variable of interest</strong> node, renamed as “Drug A”. This represents a variable that describes whether drug A was administered or not.
+Figure&nbsp;17.9: A new <strong>Independent variable of interest</strong> node, renamed as “Drug A”. This represents a variable that describes whether drug A was administered or not.
 </figcaption>
 </figure>
 </div>
 <ol start="2" type="1">
-<li>Use the green lozenge icon in the Drug A Independent variable node you just made to create two <strong>Variable category</strong> nodes, linked to the independent variable (<a href="#fig-critique-9" class="quarto-xref">Figure&nbsp;<span>20.10</span></a>).</li>
+<li>Use the green lozenge icon in the Drug A Independent variable node you just made to create two <strong>Variable category</strong> nodes, linked to the independent variable (<a href="#fig-critique-9" class="quarto-xref">Figure&nbsp;<span>17.10</span></a>).</li>
 </ol>
 <div id="fig-critique-9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -723,12 +884,12 @@ Figure&nbsp;20.9: A new <strong>Independent variable of interest</strong> node, 
 <img src="assets/images/nc3rs-eda-critique-9.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.10: Clicking on the green lozenge icon twice creates two new <strong>Variable category</strong> nodes, which describe the categories that the “Drug A” variable may belong to.
+Figure&nbsp;17.10: Clicking on the green lozenge icon twice creates two new <strong>Variable category</strong> nodes, which describe the categories that the “Drug A” variable may belong to.
 </figcaption>
 </figure>
 </div>
 <ol start="3" type="1">
-<li>Rename the Variable category nodes as “vehicle” and “vehicle + drug” (<a href="#fig-critique-10" class="quarto-xref">Figure&nbsp;<span>20.11</span></a>).</li>
+<li>Rename the Variable category nodes as “vehicle” and “vehicle + drug” (<a href="#fig-critique-10" class="quarto-xref">Figure&nbsp;<span>17.11</span></a>).</li>
 </ol>
 <div id="fig-critique-10" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -736,12 +897,12 @@ Figure&nbsp;20.10: Clicking on the green lozenge icon twice creates two new <str
 <img src="assets/images/nc3rs-eda-critique-10.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.11: The <strong>Variable category</strong> nodes are named “vehicle” and “vehicle + drug” to represent the two categories for the “Drug A” variable.
+Figure&nbsp;17.11: The <strong>Variable category</strong> nodes are named “vehicle” and “vehicle + drug” to represent the two categories for the “Drug A” variable.
 </figcaption>
 </figure>
 </div>
 <ol start="4" type="1">
-<li>Link the “Drug A” variable to the <strong>Analysis</strong> node by dragging the <em>arrow</em> icon from the “Drug A” node icon panel onto the Analysis node (<a href="#fig-critique-11" class="quarto-xref">Figure&nbsp;<span>20.12</span></a>). This adds an arrow to the diagram indicating that “Drug A” is a <em>factor of interest</em> for the analysis.</li>
+<li>Link the “Drug A” variable to the <strong>Analysis</strong> node by dragging the <em>arrow</em> icon from the “Drug A” node icon panel onto the Analysis node (<a href="#fig-critique-11" class="quarto-xref">Figure&nbsp;<span>17.12</span></a>). This adds an arrow to the diagram indicating that “Drug A” is a <em>factor of interest</em> for the analysis.</li>
 </ol>
 <div id="fig-critique-11" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -749,21 +910,21 @@ Figure&nbsp;20.11: The <strong>Variable category</strong> nodes are named “veh
 <img src="assets/images/nc3rs-eda-critique-11.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.12: The “Drug A” variable is linked to the Analysis node as a <em>factor of interest</em>.
+Figure&nbsp;17.12: The “Drug A” variable is linked to the Analysis node as a <em>factor of interest</em>.
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="rerun-the-critique-tool" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="rerun-the-critique-tool"><span class="header-section-number">20.4</span> Rerun the <code>Critique</code> tool</h2>
+<section id="rerun-the-critique-tool" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="rerun-the-critique-tool"><span class="header-section-number">17.4</span> Rerun the <code>Critique</code> tool</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The critique-fix-critique cycle
+<span class="screen-reader-only">Tip</span>The critique-fix-critique cycle
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -780,17 +941,17 @@ The critique-fix-critique cycle
 <img src="assets/images/nc3rs-eda-critique-12.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.13: EDA critique output indicating seven errors, 19 warnings, and an advice message associated with our design
+Figure&nbsp;17.13: EDA critique output indicating seven errors, 19 warnings, and an advice message associated with our design
 </figcaption>
 </figure>
 </div>
-<p>The output suggests that we have more errors than before, even though the errors on the Experiment node have been successfully resolved (<a href="#fig-oh-noes" class="quarto-xref">Figure&nbsp;<span>20.3</span></a>).</p>
+<p>The output suggests that we have more errors than before, even though the errors on the Experiment node have been successfully resolved (<a href="#fig-oh-noes" class="quarto-xref">Figure&nbsp;<span>17.3</span></a>).</p>
 </section>
-<section id="resolve-group-node-errors" class="level2 page-columns page-full" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="resolve-group-node-errors"><span class="header-section-number">20.5</span> Resolve Group node errors</h2>
+<section id="resolve-group-node-errors" class="level2 page-columns page-full" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="resolve-group-node-errors"><span class="header-section-number">17.5</span> Resolve Group node errors</h2>
 <ol type="1">
 <li>Click on the <code>OK</code> button to close the critique results.</li>
-<li>Click on the Error icon, on the Control Group node. This brings up a popup warning us that the experimental grous are not differentiated from each other: the EDA tool cannot tell the difference between the two groups (<a href="#fig-critique-13" class="quarto-xref">Figure&nbsp;<span>20.14</span></a>).</li>
+<li>Click on the Error icon, on the Control Group node. This brings up a popup warning us that the experimental grous are not differentiated from each other: the EDA tool cannot tell the difference between the two groups (<a href="#fig-critique-13" class="quarto-xref">Figure&nbsp;<span>17.14</span></a>).</li>
 </ol>
 <div id="fig-critique-13" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -798,7 +959,7 @@ Figure&nbsp;20.13: EDA critique output indicating seven errors, 19 warnings, and
 <img src="assets/images/nc3rs-eda-critique-13.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.14: The design tool tells us that it cannot differentiate between experimental groups
+Figure&nbsp;17.14: The design tool tells us that it cannot differentiate between experimental groups
 </figcaption>
 </figure>
 </div>
@@ -808,7 +969,7 @@ Figure&nbsp;20.14: The design tool tells us that it cannot differentiate between
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Using variable categories as “tags”
+<span class="screen-reader-only">Important</span>Using variable categories as “tags”
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -817,7 +978,7 @@ Using variable categories as “tags”
 </div>
 </div>
 <ol start="3" type="1">
-<li>Select the “vehicle” and “vehicle + drug” nodes by dragging a box around the two green lozenges (<a href="#fig-critique-14" class="quarto-xref">Figure&nbsp;<span>20.15</span></a>).</li>
+<li>Select the “vehicle” and “vehicle + drug” nodes by dragging a box around the two green lozenges (<a href="#fig-critique-14" class="quarto-xref">Figure&nbsp;<span>17.15</span></a>).</li>
 </ol>
 <div id="fig-critique-14" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -825,12 +986,12 @@ Using variable categories as “tags”
 <img src="assets/images/nc3rs-eda-critique-14.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.15: Selecting the two Variable category nodes places a blue box around each node.
+Figure&nbsp;17.15: Selecting the two Variable category nodes places a blue box around each node.
 </figcaption>
 </figure>
 </div>
 <ol start="4" type="1">
-<li>Use the <code>Edit -&gt; Copy</code> and <code>Edit -&gt; Paste</code> menu items (<a href="#fig-critique-15" class="quarto-xref">Figure&nbsp;<span>20.16</span></a>) to create copies of both nodes (<a href="#fig-critique-16" class="quarto-xref">Figure&nbsp;<span>20.17</span></a>).</li>
+<li>Use the <code>Edit -&gt; Copy</code> and <code>Edit -&gt; Paste</code> menu items (<a href="#fig-critique-15" class="quarto-xref">Figure&nbsp;<span>17.16</span></a>) to create copies of both nodes (<a href="#fig-critique-16" class="quarto-xref">Figure&nbsp;<span>17.17</span></a>).</li>
 </ol>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -840,7 +1001,7 @@ Figure&nbsp;20.15: Selecting the two Variable category nodes places a blue box a
 <img src="assets/images/nc3rs-eda-critique-15.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.16: The EDA tool’s <code>Edit</code> menu.
+Figure&nbsp;17.16: The EDA tool’s <code>Edit</code> menu.
 </figcaption>
 </figure>
 </div>
@@ -850,13 +1011,13 @@ Figure&nbsp;20.16: The EDA tool’s <code>Edit</code> menu.
 <img src="assets/images/nc3rs-eda-critique-16.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.17: Copy-pasting the Variable category nodes places them on the canvas, surrounded by red boxes.
+Figure&nbsp;17.17: Copy-pasting the Variable category nodes places them on the canvas, surrounded by red boxes.
 </figcaption>
 </figure>
 </div>
 <ol start="5" type="1">
 <li>Drag the “vehicle” Variable category node onto the “Vehicle only” Pharmacological intervention node (a green box will appear around the Pharmacological intervention node, when it is in place).</li>
-<li>Drag the “vehicle + drug” Variable category node onto the “Vehicle + drug A” Pharmacological intervention node. Both interventions are now tagged with the appropriate variable category (<a href="#fig-critique-17" class="quarto-xref">Figure&nbsp;<span>20.18</span></a>).</li>
+<li>Drag the “vehicle + drug” Variable category node onto the “Vehicle + drug A” Pharmacological intervention node. Both interventions are now tagged with the appropriate variable category (<a href="#fig-critique-17" class="quarto-xref">Figure&nbsp;<span>17.18</span></a>).</li>
 </ol>
 <div id="fig-critique-17" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -864,13 +1025,13 @@ Figure&nbsp;20.17: Copy-pasting the Variable category nodes places them on the c
 <img src="assets/images/nc3rs-eda-critique-17.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.18: The Pharmacological intervention nodes with Variable category tags attached, and their corresponding Group nodes.
+Figure&nbsp;17.18: The Pharmacological intervention nodes with Variable category tags attached, and their corresponding Group nodes.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="rerun-the-critique-tool-1" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="rerun-the-critique-tool-1"><span class="header-section-number">20.6</span> Rerun the <code>Critique</code> tool</h2>
+<section id="rerun-the-critique-tool-1" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="rerun-the-critique-tool-1"><span class="header-section-number">17.6</span> Rerun the <code>Critique</code> tool</h2>
 <ol type="1">
 <li>Use the <code>Tools</code> menu and click on <code>Tools -&gt; Critique</code></li>
 <li>Read the critique output.</li>
@@ -881,14 +1042,14 @@ Figure&nbsp;20.18: The Pharmacological intervention nodes with Variable category
 <img src="assets/images/nc3rs-eda-critique-18.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.19: EDA critique output indicating three errors, 19 warnings, and an advice message associated with our design
+Figure&nbsp;17.19: EDA critique output indicating three errors, 19 warnings, and an advice message associated with our design
 </figcaption>
 </figure>
 </div>
-<p>Everything is not fixed (<a href="#fig-oh-noes" class="quarto-xref">Figure&nbsp;<span>20.3</span></a>), but at least we are reducing the total number of errors.</p>
+<p>Everything is not fixed (<a href="#fig-oh-noes" class="quarto-xref">Figure&nbsp;<span>17.3</span></a>), but at least we are reducing the total number of errors.</p>
 </section>
-<section id="resolve-outcome-measure-node-errors" class="level2" data-number="20.7">
-<h2 data-number="20.7" class="anchored" data-anchor-id="resolve-outcome-measure-node-errors"><span class="header-section-number">20.7</span> Resolve Outcome measure node errors</h2>
+<section id="resolve-outcome-measure-node-errors" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="resolve-outcome-measure-node-errors"><span class="header-section-number">17.7</span> Resolve Outcome measure node errors</h2>
 <ol type="1">
 <li>Close the critique output by clicking on the <code>OK</code> button.</li>
 <li>Click on the Outcome measure node’s Error icon. This brings up a popup warning us that the EDA tool does not know whether the outcome measure is continuous or categorical.</li>
@@ -899,17 +1060,17 @@ Figure&nbsp;20.19: EDA critique output indicating three errors, 19 warnings, and
 <img src="assets/images/nc3rs-eda-critique-19.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.20: The Outcome node error popup explaining that we need to specify whether the measure is continuous or categorical.
+Figure&nbsp;17.20: The Outcome node error popup explaining that we need to specify whether the measure is continuous or categorical.
 </figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Continuous or categorical
+<span class="screen-reader-only">Note</span>Continuous or categorical
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -938,7 +1099,7 @@ Important
 </div>
 </div>
 <ol start="3" type="1">
-<li>Click on the Node properties icon for the “Glucose levels” Outcome measure node and select “continuous or discrete” from the <strong>continuous or categorical</strong> drop-down options, and set the <strong>is primary outcome measure</strong> to “yes” (<a href="#fig-critique-20" class="quarto-xref">Figure&nbsp;<span>20.21</span></a>). Then click on the <code>Close</code> button.</li>
+<li>Click on the Node properties icon for the “Glucose levels” Outcome measure node and select “continuous or discrete” from the <strong>continuous or categorical</strong> drop-down options, and set the <strong>is primary outcome measure</strong> to “yes” (<a href="#fig-critique-20" class="quarto-xref">Figure&nbsp;<span>17.21</span></a>). Then click on the <code>Close</code> button.</li>
 </ol>
 <div id="fig-critique-20" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -946,13 +1107,13 @@ Important
 <img src="assets/images/nc3rs-eda-critique-20.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.21: Node properties for the Outcome measure (“glucose concentration”) indicating that it is a continuous variable, and the primary experimental outcome measure.
+Figure&nbsp;17.21: Node properties for the Outcome measure (“glucose concentration”) indicating that it is a continuous variable, and the primary experimental outcome measure.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="rerun-the-critique-tool-2" class="level2" data-number="20.8">
-<h2 data-number="20.8" class="anchored" data-anchor-id="rerun-the-critique-tool-2"><span class="header-section-number">20.8</span> Rerun the <code>Critique</code> tool</h2>
+<section id="rerun-the-critique-tool-2" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="rerun-the-critique-tool-2"><span class="header-section-number">17.8</span> Rerun the <code>Critique</code> tool</h2>
 <ol type="1">
 <li>Use the <code>Tools</code> menu and click on <code>Tools -&gt; Critique</code></li>
 <li>Read the critique output, then click on the <code>OK</code> button to close.</li>
@@ -963,16 +1124,16 @@ Figure&nbsp;20.21: Node properties for the Outcome measure (“glucose concentra
 <img src="assets/images/nc3rs-eda-critique-21.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.22: EDA critique output indicating two errors, 19 warnings, and an advice message associated with our design
+Figure&nbsp;17.22: EDA critique output indicating two errors, 19 warnings, and an advice message associated with our design
 </figcaption>
 </figure>
 </div>
-<p>All of the errors are <em>still</em> not fixed (<a href="#fig-oh-noes" class="quarto-xref">Figure&nbsp;<span>20.3</span></a>), but we’re nearly there.</p>
+<p>All of the errors are <em>still</em> not fixed (<a href="#fig-oh-noes" class="quarto-xref">Figure&nbsp;<span>17.3</span></a>), but we’re nearly there.</p>
 </section>
-<section id="resolve-independent-variable-of-interest-node-errors" class="level2" data-number="20.9">
-<h2 data-number="20.9" class="anchored" data-anchor-id="resolve-independent-variable-of-interest-node-errors"><span class="header-section-number">20.9</span> Resolve Independent variable of interest node errors</h2>
+<section id="resolve-independent-variable-of-interest-node-errors" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="resolve-independent-variable-of-interest-node-errors"><span class="header-section-number">17.9</span> Resolve Independent variable of interest node errors</h2>
 <ol type="1">
-<li>Click on the Error icon, on the Independent variable of interest node. This brings up a popup explaining what errors EDA finds (<a href="#fig-critique-22" class="quarto-xref">Figure&nbsp;<span>20.23</span></a>).</li>
+<li>Click on the Error icon, on the Independent variable of interest node. This brings up a popup explaining what errors EDA finds (<a href="#fig-critique-22" class="quarto-xref">Figure&nbsp;<span>17.23</span></a>).</li>
 </ol>
 <div id="fig-critique-22" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -980,14 +1141,14 @@ Figure&nbsp;20.22: EDA critique output indicating two errors, 19 warnings, and a
 <img src="assets/images/nc3rs-eda-critique-22.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-22-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.23: The EDA tool finds two kinds of errors with the independent variable of interest: it has not been specified whether the variable is continuous or categorical, nor whether it is a repeated factor.
+Figure&nbsp;17.23: The EDA tool finds two kinds of errors with the independent variable of interest: it has not been specified whether the variable is continuous or categorical, nor whether it is a repeated factor.
 </figcaption>
 </figure>
 </div>
 <ol start="2" type="1">
 <li>Click on the <code>OK</code> button to close the dialogue box.</li>
 <li>Click on the Node properties icon, on the “Drug A” Independent variable node to bring up the Node properties panel.</li>
-<li>Our “Drug A” variable is categorical (the drug is either present or not), and we are taking a single endpoint measurement, so it is not a repeated measure. Set the <strong>continuous or categorical</strong> field to “categorical, ordinal, nominal or binary”, and the <strong>is repeated factor</strong> field to “no” (<a href="#fig-critique-23" class="quarto-xref">Figure&nbsp;<span>20.24</span></a>), and click on the <code>Close</code> button.</li>
+<li>Our “Drug A” variable is categorical (the drug is either present or not), and we are taking a single endpoint measurement, so it is not a repeated measure. Set the <strong>continuous or categorical</strong> field to “categorical, ordinal, nominal or binary”, and the <strong>is repeated factor</strong> field to “no” (<a href="#fig-critique-23" class="quarto-xref">Figure&nbsp;<span>17.24</span></a>), and click on the <code>Close</code> button.</li>
 </ol>
 <div id="fig-critique-23" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -995,13 +1156,13 @@ Figure&nbsp;20.23: The EDA tool finds two kinds of errors with the independent v
 <img src="assets/images/nc3rs-eda-critique-23.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-23-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.24: Set the <strong>continuous or categorical</strong> field to “categorical, ordinal, nominal or binary”, and the <strong>is repeated factor</strong> field to “no”, for the “Drug A” independent variable.
+Figure&nbsp;17.24: Set the <strong>continuous or categorical</strong> field to “categorical, ordinal, nominal or binary”, and the <strong>is repeated factor</strong> field to “no”, for the “Drug A” independent variable.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="rerun-the-critique-tool-3" class="level2" data-number="20.10">
-<h2 data-number="20.10" class="anchored" data-anchor-id="rerun-the-critique-tool-3"><span class="header-section-number">20.10</span> Rerun the <code>Critique</code> tool</h2>
+<section id="rerun-the-critique-tool-3" class="level2" data-number="17.10">
+<h2 data-number="17.10" class="anchored" data-anchor-id="rerun-the-critique-tool-3"><span class="header-section-number">17.10</span> Rerun the <code>Critique</code> tool</h2>
 <ol type="1">
 <li>Use the <code>Tools</code> menu and click on <code>Tools -&gt; Critique</code></li>
 <li>Read the critique output, then click on the <code>OK</code> button to close.</li>
@@ -1012,7 +1173,7 @@ Figure&nbsp;20.24: Set the <strong>continuous or categorical</strong> field to �
 <img src="assets/images/nc3rs-eda-critique-24.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-critique-24-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.25: EDA critique output indicating no errors, 20 warnings, and an advice message associated with our design
+Figure&nbsp;17.25: EDA critique output indicating no errors, 20 warnings, and an advice message associated with our design
 </figcaption>
 </figure>
 </div>
@@ -1078,13 +1239,14 @@ Nieuwenhuis, Sander, Birte U Forstmann, and Eric-Jan Wagenmakers. 2011. <span>�
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1429,12 +1591,12 @@ Nieuwenhuis, Sander, Birte U Forstmann, and Eric-Jan Wagenmakers. 2011. <span>�
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./interventions.html" class="pagination-link" aria-label="Define Interventions and Measurements">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Define Interventions and Measurements</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Define Interventions and Measurements</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./both_sexes.html" class="pagination-link" aria-label="Monitor for Sex Effects">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1456,4 +1618,5 @@ Nieuwenhuis, Sander, Birte U Forstmann, and Eric-Jan Wagenmakers. 2011. <span>�
 
 
 
+<script src="site_libs/quarto-contrib/alpine-3.12/alpine@3.12.min.js"></script>
 </body></html>

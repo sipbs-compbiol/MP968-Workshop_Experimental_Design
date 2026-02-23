@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>17&nbsp; Add an Experiment Node – MP968: Experimental Design Workshop</title>
+<title>14&nbsp; Add an Experiment Node – MP968: Experimental Design Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,14 +36,16 @@ ul.task-list li input[type="checkbox"] {
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5fd9db47a040b21ac2cac9a0b3b722ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +73,107 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+div.callout-callout-data.callout {
+  border-left-color: #32CD32;
+}
+div.callout-callout-data.callout-style-default > .callout-header {
+  background-color: rgba(50, 205, 50, 0.13);
+}
+div.callout-callout-data .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-data.callout-style-default .callout-icon::before, div.callout-callout-data.callout-titled .callout-icon::before {
+  content: '📊';
+  background-image: none;
+}
+div.callout-callout-thumbs-up.callout {
+  border-left-color: #008000;
+}
+div.callout-callout-thumbs-up.callout-style-default > .callout-header {
+  background-color: rgba(0, 128, 0, 0.13);
+}
+div.callout-callout-thumbs-up .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-thumbs-up.callout-style-default .callout-icon::before, div.callout-callout-thumbs-up.callout-titled .callout-icon::before {
+  content: '👍';
+  background-image: none;
+}
+div.callout-callout-challenge.callout {
+  border-left-color: aquamarine;
+}
+div.callout-callout-challenge.callout-style-default > .callout-header {
+  background-color: rgb(from aquamarine r g b / 13%);
+}
+div.callout-callout-challenge .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-challenge.callout-style-default .callout-icon::before, div.callout-callout-challenge.callout-titled .callout-icon::before {
+  content: '🧑‍🏫';
+  background-image: none;
+}
+div.callout-callout-discussion.callout {
+  border-left-color: #BA55D3;
+}
+div.callout-callout-discussion.callout-style-default > .callout-header {
+  background-color: rgba(186, 85, 211, 0.13);
+}
+div.callout-callout-discussion .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-discussion.callout-style-default .callout-icon::before, div.callout-callout-discussion.callout-titled .callout-icon::before {
+  content: '✨';
+  background-image: none;
+}
+div.callout-callout-question.callout {
+  border-left-color: yellow;
+}
+div.callout-callout-question.callout-style-default > .callout-header {
+  background-color: rgb(from yellow r g b / 13%);
+}
+div.callout-callout-question .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-question.callout-style-default .callout-icon::before, div.callout-callout-question.callout-titled .callout-icon::before {
+  content: '🙋';
+  background-image: none;
+}
+div.callout-callout-case-study.callout {
+  border-left-color: #FFA500;
+}
+div.callout-callout-case-study.callout-style-default > .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-callout-case-study .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-case-study.callout-style-default .callout-icon::before, div.callout-callout-case-study.callout-titled .callout-icon::before {
+  content: '🔍';
+  background-image: none;
+}
+div.callout-callout-questions.callout {
+  border-left-color: yellow;
+}
+div.callout-callout-questions.callout-style-default > .callout-header {
+  background-color: rgb(from yellow r g b / 13%);
+}
+div.callout-callout-questions .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-questions.callout-style-default .callout-icon::before, div.callout-callout-questions.callout-titled .callout-icon::before {
+  content: '🙋️';
+  background-image: none;
+}
+div.callout-callout-microbe.callout {
+  border-left-color: #1E90FF;
+}
+div.callout-callout-microbe.callout-style-default > .callout-header {
+  background-color: rgba(30, 144, 255, 0.13);
+}
+div.callout-callout-microbe .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-microbe.callout-style-default .callout-icon::before, div.callout-callout-microbe.callout-titled .callout-icon::before {
+  content: '🧫';
+  background-image: none;
+}
+div.callout-callout-todo.callout {
+  border-left-color: pink;
+}
+div.callout-callout-todo.callout-style-default > .callout-header {
+  background-color: rgb(from pink r g b / 13%);
+}
+div.callout-callout-todo .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-callout-todo.callout-style-default .callout-icon::before, div.callout-callout-todo.callout-titled .callout-icon::before {
+  content: '📝';
+  background-image: none;
+}
+</style>
 
 
 </head>
@@ -84,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./add_experiment_node.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./add_experiment_node.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -120,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface to the 2024-25 presentation</span></a>
+ <span class="menu-text">Preface to the 2025-26 presentation</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -135,21 +238,21 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./disclaimer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Disclaimer</span></span></a>
+ <span class="menu-text">Disclaimer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./objectives.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Learning Objectives</span></span></a>
+ <span class="menu-text">Learning Objectives</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./cause_and_effect.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cause and Effect</span></a>
+            <a href="./why_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why Do We Need Experimental Design?</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -157,22 +260,28 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./problem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Problem With Statistics</span></span></a>
+  <a href="./unnecessary_suffering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">We should not cause unnecessary suffering</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./causal_models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Models</span></span></a>
+  <a href="./design_minimises_suffering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Good Experimental Design Minimises Suffering (And Produces Better Science)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reporting of Research Using Animals</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Measurement</span></a>
+            <a href="./experimental_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Experimental Design</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -180,32 +289,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wet_earth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></a>
+  <a href="./decide_variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./globe_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./globe_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./dodecahedron.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./observations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">How Many Observations?</span></span></a>
+  <a href="./decide_treatments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Treatments and Controls</span></span></a>
   </div>
 </li>
       </ul>
@@ -221,26 +312,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sampling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling From A Population</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./power_considerations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical Power Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./underpowered.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Underpowered Studies</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./effect_sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Effect Sizes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Effect Sizes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./g_power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Using G*Power</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Using G*Power</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,73 +354,137 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eda_account.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">EDA Account Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">EDA Account Setup</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workshop_experiment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The Workshop Experiment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Workshop Experiment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./create_new_diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./add_experiment_node.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./group_assignment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Assign Experimental Units</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Assign Experimental Units</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./interventions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Define Interventions and Measurements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Define Interventions and Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./critique1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critique the Experiment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./both_sexes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Monitor for Sex Effects</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./analysis_suggestion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Obtain an Analysis Suggestion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Obtain an Analysis Suggestion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sample_size.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Estimate Sample Size</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./communicate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Communicating the Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Communicating the Design</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">EDA Templates</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">EDA Templates</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./cause_and_effect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cause and Effect</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">The Problem With Statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./causal_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Causal Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measurement</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wet_earth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">How Wet Is The Earth?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./globe_model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Modelling the Experiment</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./globe_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Tetrahedron Earth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dodecahedron.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Icosahedron Earth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./observations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">How Many Observations?</span></span></a>
   </div>
 </li>
       </ul>
@@ -356,21 +517,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#getting-help" id="toc-getting-help" class="nav-link active" data-scroll-target="#getting-help"><span class="header-section-number">17.1</span> Getting Help</a></li>
-  <li><a href="#add-an-experiment-node" id="toc-add-an-experiment-node" class="nav-link" data-scroll-target="#add-an-experiment-node"><span class="header-section-number">17.2</span> Add an Experiment Node</a>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link active" data-scroll-target="#getting-help"><span class="header-section-number">14.1</span> Getting Help</a></li>
+  <li><a href="#add-an-experiment-node" id="toc-add-an-experiment-node" class="nav-link" data-scroll-target="#add-an-experiment-node"><span class="header-section-number">14.2</span> Add an Experiment Node</a>
   <ul class="collapse">
-  <li><a href="#edit-node-properties" id="toc-edit-node-properties" class="nav-link" data-scroll-target="#edit-node-properties"><span class="header-section-number">17.2.1</span> Edit node properties</a></li>
+  <li><a href="#edit-node-properties" id="toc-edit-node-properties" class="nav-link" data-scroll-target="#edit-node-properties"><span class="header-section-number">14.2.1</span> Edit node properties</a></li>
   </ul></li>
-  <li><a href="#add-an-animal-characteristics-node" id="toc-add-an-animal-characteristics-node" class="nav-link" data-scroll-target="#add-an-animal-characteristics-node"><span class="header-section-number">17.3</span> Add an Animal characteristics node</a></li>
+  <li><a href="#add-an-animal-characteristics-node" id="toc-add-an-animal-characteristics-node" class="nav-link" data-scroll-target="#add-an-animal-characteristics-node"><span class="header-section-number">14.3</span> Add an Animal characteristics node</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/edit/main/add_experiment_node.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/MP968-Workshop_Experimental_Design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./add_experiment_node.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./nc3rs-eda.html">NC3Rs EDA</a></li><li class="breadcrumb-item"><a href="./add_experiment_node.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-add-experiment-node" class="quarto-section-identifier"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span></h1>
+<h1 class="title"><span id="sec-add-experiment-node" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Add an Experiment Node</span></span></h1>
 </div>
 
 
@@ -394,7 +555,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Every experimental design should contain one experiment node.
+<span class="screen-reader-only">Important</span>Every experimental design should contain one experiment node.
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -411,11 +572,11 @@ Every experimental design should contain one experiment node.
 <li><strong>Effect size</strong></li>
 </ul>
 <p>and so on.</p>
-<section id="getting-help" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="getting-help"><span class="header-section-number">17.1</span> Getting Help</h2>
+<section id="getting-help" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="getting-help"><span class="header-section-number">14.1</span> Getting Help</h2>
 <ol type="1">
 <li>Move your mouse pointer over the Experiment node in the EDA window. Note that the entry in the list is highlighted, and a blue question mark appears.</li>
-<li>Click on the blue question mark. This brings up the <code>Help Centre</code> popup (<a href="#fig-nc3rs-help-centre-expt" class="quarto-xref">Figure&nbsp;<span>17.1</span></a>).</li>
+<li>Click on the blue question mark. This brings up the <code>Help Centre</code> popup (<a href="#fig-nc3rs-help-centre-expt" class="quarto-xref">Figure&nbsp;<span>14.1</span></a>).</li>
 </ol>
 <div id="fig-nc3rs-help-centre-expt" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -423,17 +584,17 @@ Every experimental design should contain one experiment node.
 <img src="assets/images/nc3rs-eda-expt-help.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-help-centre-expt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17.1: The NC3Rs EDA, showing the Experiment node Help Centre entry
+Figure&nbsp;14.1: The NC3Rs EDA, showing the Experiment node Help Centre entry
 </figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Help Centre information
+<span class="screen-reader-only">Tip</span>Help Centre information
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -446,11 +607,11 @@ Help Centre information
 </div>
 </div>
 </section>
-<section id="add-an-experiment-node" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="add-an-experiment-node"><span class="header-section-number">17.2</span> Add an Experiment Node</h2>
+<section id="add-an-experiment-node" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="add-an-experiment-node"><span class="header-section-number">14.2</span> Add an Experiment Node</h2>
 <ol type="1">
 <li>Click and hold on the Experiment node in the sidebar.</li>
-<li>Drag and drop the Experiment node on the main canvas to place a blank Experiment node (<a href="#fig-nc3rs-eda-blank-expt" class="quarto-xref">Figure&nbsp;<span>17.2</span></a>).</li>
+<li>Drag and drop the Experiment node on the main canvas to place a blank Experiment node (<a href="#fig-nc3rs-eda-blank-expt" class="quarto-xref">Figure&nbsp;<span>14.2</span></a>).</li>
 </ol>
 <div id="fig-nc3rs-eda-blank-expt" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -458,17 +619,17 @@ Help Centre information
 <img src="assets/images/nc3rs-eda-blank-expt.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-blank-expt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17.2: A blank Experiment node on the NC3Rs EDA canvas. The red square around the node indicates that our diagram has an error (in this case it’s because we have not attached it to any <em>Animal characteristics</em> nodes).
+Figure&nbsp;14.2: A blank Experiment node on the NC3Rs EDA canvas. The red square around the node indicates that our diagram has an error (in this case it’s because we have not attached it to any <em>Animal characteristics</em> nodes).
 </figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The red square
+<span class="screen-reader-only">Warning</span>The red square
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -478,11 +639,11 @@ The red square
 </div>
 </div>
 </div>
-<section id="edit-node-properties" class="level3" data-number="17.2.1">
-<h3 data-number="17.2.1" class="anchored" data-anchor-id="edit-node-properties"><span class="header-section-number">17.2.1</span> Edit node properties</h3>
+<section id="edit-node-properties" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="edit-node-properties"><span class="header-section-number">14.2.1</span> Edit node properties</h3>
 <p>We need to fill in some information in our Experiment node’s properties.</p>
 <ol type="1">
-<li>Click on the <code>properties</code> icon in the bottom right of the node icon (it looks like six short horizontal lines). This will bring up the <code>Node properties</code> edit dialogue box (<a href="#fig-nc3rs-eda-expt-props" class="quarto-xref">Figure&nbsp;<span>17.3</span></a>).</li>
+<li>Click on the <code>properties</code> icon in the bottom right of the node icon (it looks like six short horizontal lines). This will bring up the <code>Node properties</code> edit dialogue box (<a href="#fig-nc3rs-eda-expt-props" class="quarto-xref">Figure&nbsp;<span>14.3</span></a>).</li>
 <li>Enter relevant information for each field, where you have it.</li>
 </ol>
 <div id="fig-nc3rs-eda-expt-props" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -491,7 +652,7 @@ The red square
 <img src="assets/images/nc3rs-eda-expt-props.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-expt-props-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17.3: The Node properties dialogue box for an Experiment node. Fields marked with a single asterisk are essential for the internal validity of the experiment. Those with a double asterisk should be completed once the experiment has concluded.
+Figure&nbsp;14.3: The Node properties dialogue box for an Experiment node. Fields marked with a single asterisk are essential for the internal validity of the experiment. Those with a double asterisk should be completed once the experiment has concluded.
 </figcaption>
 </figure>
 </div>
@@ -500,12 +661,12 @@ Figure&nbsp;17.3: The Node properties dialogue box for an Experiment node. Field
 <li>Leave the other fields blank for now, and click on the <code>Close</code> button.</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fields with an asterisk (*)
+<span class="screen-reader-only">Important</span>Fields with an asterisk (*)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -518,8 +679,8 @@ Fields with an asterisk (*)
 </div>
 </section>
 </section>
-<section id="add-an-animal-characteristics-node" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="add-an-animal-characteristics-node"><span class="header-section-number">17.3</span> Add an Animal characteristics node</h2>
+<section id="add-an-animal-characteristics-node" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="add-an-animal-characteristics-node"><span class="header-section-number">14.3</span> Add an Animal characteristics node</h2>
 <p>The <em>Animal characteristics</em> node describes the characteristics of the animals used in the experiment.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -527,7 +688,7 @@ Fields with an asterisk (*)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Every experimental design should contain at least one Animal characteristics node.
+<span class="screen-reader-only">Important</span>Every experimental design should contain at least one Animal characteristics node.
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -548,7 +709,7 @@ Note
 </div>
 </div>
 <ol type="1">
-<li>Move your mouse over the grey box just to the right of the Experiment node to bring up the tooltip information (<a href="#fig-nc3rs-eda-ac-tooltip" class="quarto-xref">Figure&nbsp;<span>17.4</span></a>).</li>
+<li>Move your mouse over the grey box just to the right of the Experiment node to bring up the tooltip information (<a href="#fig-nc3rs-eda-ac-tooltip" class="quarto-xref">Figure&nbsp;<span>14.4</span></a>).</li>
 </ol>
 <div id="fig-nc3rs-eda-ac-tooltip" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -556,12 +717,12 @@ Note
 <img src="assets/images/nc3rs-eda-ac-tooltip.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-ac-tooltip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17.4: Hovering the mouse pointer over the grey box shows the tooltip.
+Figure&nbsp;14.4: Hovering the mouse pointer over the grey box shows the tooltip.
 </figcaption>
 </figure>
 </div>
 <ol start="2" type="1">
-<li>Click on the grey box. This will link the Experiment node to a new Animal characteristics node (<a href="#fig-nc3rs-eda-ac-link" class="quarto-xref">Figure&nbsp;<span>17.5</span></a>).</li>
+<li>Click on the grey box. This will link the Experiment node to a new Animal characteristics node (<a href="#fig-nc3rs-eda-ac-link" class="quarto-xref">Figure&nbsp;<span>14.5</span></a>).</li>
 </ol>
 <div id="fig-nc3rs-eda-ac-link" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -569,7 +730,7 @@ Figure&nbsp;17.4: Hovering the mouse pointer over the grey box shows the tooltip
 <img src="assets/images/nc3rs-eda-ac-link.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-ac-link-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17.5: The Experiment node, linked to a new Animal characteristics node.
+Figure&nbsp;14.5: The Experiment node, linked to a new Animal characteristics node.
 </figcaption>
 </figure>
 </div>
@@ -578,7 +739,7 @@ Figure&nbsp;17.5: The Experiment node, linked to a new Animal characteristics no
 <li>Change the <strong>label</strong> to “male mice”</li>
 <li>Change the <strong>species</strong> to “mouse” (this is a drop-down choice)</li>
 <li>Specify <strong>sex</strong> as “male” (this is also a drop-down choice)</li>
-<li>Click on the <code>Close</code> button to close the dialogue box (<a href="#fig-nc3rs-eda-ac-props" class="quarto-xref">Figure&nbsp;<span>17.6</span></a>)</li>
+<li>Click on the <code>Close</code> button to close the dialogue box (<a href="#fig-nc3rs-eda-ac-props" class="quarto-xref">Figure&nbsp;<span>14.6</span></a>)</li>
 </ol>
 <div id="fig-nc3rs-eda-ac-props" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -586,7 +747,7 @@ Figure&nbsp;17.5: The Experiment node, linked to a new Animal characteristics no
 <img src="assets/images/nc3rs-eda-ac-props.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nc3rs-eda-ac-props-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17.6: Properties ascribed to the new Animal characteristics node.
+Figure&nbsp;14.6: Properties ascribed to the new Animal characteristics node.
 </figcaption>
 </figure>
 </div>
@@ -646,13 +807,14 @@ Figure&nbsp;17.6: Properties ascribed to the new Animal characteristics node.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -997,12 +1159,12 @@ Figure&nbsp;17.6: Properties ascribed to the new Animal characteristics node.
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./create_new_diagram.html" class="pagination-link" aria-label="Create a New Diagram">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Create a New Diagram</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./group_assignment.html" class="pagination-link" aria-label="Assign Experimental Units">
-        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Assign Experimental Units</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Assign Experimental Units</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1024,4 +1186,5 @@ Figure&nbsp;17.6: Properties ascribed to the new Animal characteristics node.
 
 
 
+<script src="site_libs/quarto-contrib/alpine-3.12/alpine@3.12.min.js"></script>
 </body></html>
