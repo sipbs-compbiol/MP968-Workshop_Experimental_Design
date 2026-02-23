@@ -14,7 +14,8 @@ Imports:
     kableExtra,
     patchwork,
     DT,
-    shiny
+    shiny,
+    shinylive
 Suggests:
     knitr,
     sessioninfo
