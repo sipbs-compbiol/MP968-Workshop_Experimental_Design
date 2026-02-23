@@ -1,0 +1,86 @@
+# Treatments and Controls
+
+**_Treatments_** are the groups representing distinct interventions that are applied to the subjects in an experiment.
+
+**_Controls_** effectively help remove any known or unknown experimental effects when assessing the effects due to the treatment. Controls should be treated in the same way as treatment groups to avoid introducing bias.
+
+The researcher must decide which control groups are required in the experimental design. The choice of control affects which conclusions may reasonably be drawn from the experiment.
+
+::: { .callout-caution title="Beware difference-in-difference"}
+It is often tempting to measure the size of the treatment effect by comparing post-treatment response to a pre-treatment baseline, as this comparison is _within the same animal_ and so the animal itself appears to play the role of a control.
+
+However, **this kind of measurement does not control well _between_ groups**. Individual animal measurements can be subject to (potentially unaccounted-for) time-related and drift effects. Baseline responses may also vary between groups of animals, so **to compare between groups a _difference in difference_ analysis should be performed**.
+:::
+
+::: { .callout-important }
+Introducing too many groups (treatment and controls) but not adjusting the _total_ number of individuals can reduce sample size to a point where the experiment is unlikely to be informative.
+
+**Sample size calculations require you to know how many groups (control, treatment, etc.) you need before you perform the calculation.**
+:::
+
+## Negative controls
+
+Negative controls (e.g. no treatment applied) aim to ensure that an unknown variable is not influencing the experimental outcome, and to avoid false positives.
+
+## Positive controls
+
+A positive control involves giving subjects a treatment that is known to have an effect. This is useful in that it can demonstrate that the experiment would be expected to be successful in terms of being able to detect a known effect (in comparison to a negative control), if there was one to be seen.
+
+## Comparative controls
+
+A comparative control is a form of positive control that may involve giving subjects an alternative or best-in-class treatment. The difference between the compound under study and the alternative/best-in-class treatment can then be measured.
+
+## Vehicle controls
+
+Vehicle controls are a form of negative control where, for example, if the active compound is given in solution, the solution (_but no active compound_) is given to the subject. This allows the researcher to identify the effect of the treatment with respect to the effect of the vehicle (e.g. induced inflammation).
+
+## Sham controls
+
+Sham controls are similar to vehicle controls, but mimic surgical and other physical interventions, without application of the treatment.
+
+::: { .callout-question }
+:::::{.question}
+Suppose you are running a experiment with animal subjects to test the effect of a novel compound and you find the following:
+
+1. The comparison between the novel compound and the _vehicle control_ is not significant
+2. The comparison between the _positive control_ and the _vehicle control_ is significant
+
+What can you conclude?
+
+::::{.choices}
+
+:::{.choice}
+The experiment could not detect a treatment effect if there was one, but the novel compound does have an effect
+:::  
+
+:::{.choice}
+The experiment could not detect a treatment effect if there was one, and the novel compound has no effect
+:::
+
+:::{.choice .correct-choice}
+The experiment would be able to detect a treatment effect if there was one, but the novel compound has no effect
+:::
+
+:::{.choice}
+The experiment would be able to detect a treatment effect if there was one, and the novel compound has an effect
+:::
+
+:::{.button-clear title="Clear answer" button-class="btn btn-xs"}
+:::
+
+::::
+
+::::{.btn-group}
+:::{.button-hint title="Show hint" button-class="btn btn-xs"}
+The _vehicle control_ tells us whether the novel compound has an effect, and the _positive control_ tells us whether the experiment could detect a treatment effect.
+:::
+
+:::{.button-answer title="Show Answer" button-class="btn btn-xs"}
+The _positive control_ has a significant effect over and above the _vehicle control_ and so the experiment could detect a treatment effect, if there was one.
+
+The lack of significance between the novel compound and the _vehicle control_ implies that there is no effect of the novel compound.
+:::
+::::
+
+:::::
+:::

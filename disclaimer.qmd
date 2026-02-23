@@ -1,15 +1,23 @@
-# Disclaimer {#sec-disclaimer}
+# Disclaimer {#sec-disclaimer .unnumbered}
 
-::: {.callout-tip}
-## Disclaimer
+This MP968 workshop is, effectively, a very short statistics primer for people who would rather not be doing statistics.
 
-The workshop is, effectively, a very short statistics primer for people who would rather not be doing statistics. What I think you'd prefer to be doing is carrying out experiments and researching the effectiveness of drug treatments or formulations, or measuring some kind of effect on complex biological systems.
+What I think you'd prefer to be doing is carrying out experiments and researching the effectiveness of drug treatments or formulations, or measuring some kind of effect on complex biological systems.
 
-I think that what you really want to do is collect data about your system, then connect the data you collect with scientific models (which may or may not be mathematical) that might explain whether your drug is effective, if your new formulation improves drug availability, or some other clever thing with great potential to improve society.
+I think that what you really want to do is collect data about your system, then connect the data you collect with scientific models (which may or may not be mathematical) that might explain something important: whether your drug is effective; if your new formulation improves drug availability; or some other clever thing with great potential to improve society.
 
-The way we connect the data you collect with those scientific models is by using a branch of Applied Mathematics called Statistics. But this workshop is not about "learning Statistics" as a topic. Instead we'll be thinking about the use of Statistics as a way to understand and process data collected by scientific investigations, and how what we understand about the science - and **especially how we express this understanding through the design of our experiments** - motivates and guides statistical reasoning.
+::: { .callout-caution title="We're not teaching you statistics…" }
+The way we connect the data you collect with those scientific models of how the world works _is_ by using a branch of Applied Mathematics called Statistics. But this workshop is not _about_ "learning Statistics" as a topic. Instead we'll be thinking about the **use of Statistics as a way to understand and process data collected by scientific investigations**, and how what we understand about the science - **and especially how we express this understanding through the design of our experiments** - motivates and guides statistical reasoning.
 
-This topic is part of a very large field and discipline but we do not have much time together, so this workshop takes a particular line through the material which tries to illustrate how make statistics serve the science and help you start to develop an intuition about how statistics and experimental design work together, not to teach you statistical methods. The approach we're taking involves some simulation and analysis using the `R` language, for the sake of the workshop. It's very effective and I recommend it, but other statistical approaches, tools, and software that we don't touch upon at all may be appropriate or necessary for your experiments and their analysis. We do not have time to cover everything here, but there is an [additional reading list](further_reading.qmd) that you should explore for useful knowledge if your goal is to be a professional scientist.
+This topic is part of a very large field and discipline but we do not have much time together in a single workshop, so we take a particular - and quite limited - line through the material that tries to illustrate how make statistics serve the science and help you **develop greater intuition about how statistics and experimental design work together**. We're _not_ trying to make you expert in statistical methods. 
+:::
 
-**And, if in doubt, consult a statistician.**
+The approach we're taking involves some simulation and analysis using the `R` language, for the sake of the workshop. It's very effective and I recommend it, but other statistical approaches, tools, and software that we don't touch upon at all may be appropriate or necessary for your experiments and their analysis.
+
+::: { .callout-tip }
+We do not have time to cover everything here, but there is an [additional reading list](further_reading.qmd) that you should explore for useful knowledge if your goal is to be a professional scientist, or if you'd just like to know more.
+:::
+
+::: { .callout-important title="If you only learn one thing from this course…" }
+**If in doubt consult a statistician.**
 :::

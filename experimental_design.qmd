@@ -1,0 +1,30 @@
+# Experimental Design {#sec-experimental-design}
+
+## Why design experiments?
+
+Experimental design is crucial in animal research, and has two primary goals:
+
+1. maximise the amount of information gained
+2. reduce the number of animals required
+
+::: { .callout-tip }
+Carefully-planned experimental designs have an advantage in that they can greatly simplify downstream (statistical) analysis.
+:::
+
+::: { .callout-note title="Practical benefits of experimental design" }
+Appropriate experimental design can give us flexibility when conducting an experiment
+
+By taking explicit account of factors such as which technician did the work, day/time of experiment, which equivalent piece of equipment (e.g. habitat) was used - and so on - we can safely conduct an experiment over a longer time period and more conveniently. This is because incorporating these factors into our experiment allows us to estimate any influence of these factors over the experimental outcome, if it exists.
+:::
+
+::: { .callout-caution title="Statistical benefits of experimental design" }
+Good experimental design aims to increase the ratio of _signal_ (the effect you are looking to measure) to _noise_ (the background variability in measurements).
+
+1. **Reducing variability**: Suppose that animal behaviour varies between Mondays (after the quiet of a weekend), and other weekdays. By including a factor in the experiment of `Monday` vs `not Monday`, or by treating each day individually in the experimental design, we could account for variability in animal response between days of the week.
+2. **Increasing signal**: If we can ethically ensure a greater variation between _treatment_ and _control_ (e.g. by using the maximum ethical dose of a treatment), then this can help reduce the number of individuals required. As another example, if one strain of mouse produces a stronger inflammatory response than another, then selecting the strain with the stronger response may require fewer mice to detect a meaningful effect due to intervention. It may even be worthwhile running pilot studies to identify such differences as it may lead to fewer animals being used in the long run.
+3. **Reducing bias**: We are human and all suffer from [_unconscious_ and _cognitive_ biases](https://www.simplypsychology.org/cognitive-bias.html), such as wanting - subconsciously - to see our research work as we think it should. This can lead to unintentional differences in measurement, if we know which subjects receive a treatment and which do not. _Blinding_ and _randomisation_ are experimental design techniques that can help to eliminate such biases.
+:::
+
+## A short introduction to experimental design
+
+Over the next few pages, we will remind ourselves of some fundamental concepts and form a framework for identifying and constructing an experimental design.

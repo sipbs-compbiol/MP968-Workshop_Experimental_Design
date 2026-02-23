@@ -42,22 +42,20 @@ book:
         - disclaimer.qmd
         - objectives.qmd
 
-    - part: cause_and_effect.qmd
+    - part: why_design.qmd
       chapters:
-        - problem.qmd
-        - causal_models.qmd
-        # - dags.qmd
+        - unnecessary_suffering.qmd
+        - design_minimises_suffering.qmd
+        - reporting.qmd
 
-    - part: measurement.qmd
+    - part: experimental_design.qmd
       chapters: 
-        - wet_earth.qmd
-        - globe_model.qmd
-        - globe_analysis.qmd
-        - dodecahedron.qmd
-        - observations.qmd
+        - decide_variables.qmd
+        - decide_treatments.qmd
 
     - part: power.qmd
       chapters: 
+        - sampling.qmd
         - power_considerations.qmd
         - underpowered.qmd
         - effect_sizes.qmd
@@ -77,7 +75,21 @@ book:
         - sample_size.qmd
         - communicate.qmd
         - templates.qmd
-        
+  
+    - part: cause_and_effect.qmd
+      chapters:
+        - problem.qmd
+        - causal_models.qmd
+        # - dags.qmd
+
+    - part: measurement.qmd
+      chapters: 
+        - wet_earth.qmd
+        - globe_model.qmd
+        - globe_analysis.qmd
+        - dodecahedron.qmd
+        - observations.qmd
+
     - summary.qmd
     - references.qmd
     - further_reading.qmd
@@ -104,3 +116,44 @@ format:
 execute:
   freeze: auto
 
+# Add custom callouts
+custom-callout:
+  callout-case-study:
+    title: "Case Study"
+    icon-symbol: "🔍"
+    color: "#FFA500"
+  callout-data:
+    icon-symbol: "📊"
+    title: "Data Analysis"
+    color: "#32CD32"
+  callout-discussion:
+    title: "Discussion Questions:"
+    icon-symbol: "✨"
+    color: "#BA55D3"
+  callout-microbe:
+    title: "Microbe Profile"
+    icon-symbol: "🧫"
+    color: "#1E90FF"
+  callout-thumbs-up:
+    title: "Great job!"
+    icon-symbol: "👍"
+    color: "#008000"
+  callout-todo:
+    icon-symbol: "📝"
+    color: "pink"
+  callout-challenge:
+    title: "Challenge"
+    icon-symbol: "🧑‍🏫"
+    color: "aquamarine"
+  callout-question:
+    title: "Question"
+    icon-symbol: "🙋"
+    color: "yellow"
+  callout-questions:
+    title: "Questions"
+    icon-symbol: "🙋️"
+    color: "yellow"  
+
+filters:
+  - custom-callout
+  - naquiz
